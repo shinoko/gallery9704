@@ -1,0 +1,323 @@
+{
+  "createdAt": "2026-07-30T15:10:39.991Z",
+  "groupUrl": "https://weibo.com/mygroups?gid=5326116946185637",
+  "accountCount": 11,
+  "accountScanSummary": [
+    {
+      "uid": "4069898419",
+      "name": "ElysianSilhouette_0113x0905",
+      "totalCount": 250,
+      "collected": 93,
+      "finalRound": {
+        "i": 33,
+        "visible": 10,
+        "added": 0,
+        "y": 54054.5,
+        "h": 56417
+      }
+    },
+    {
+      "uid": "4079488264",
+      "name": "ERhickey-0113X0905",
+      "totalCount": 75,
+      "collected": 65,
+      "finalRound": {
+        "i": 31,
+        "visible": 7,
+        "added": 0,
+        "y": 39791,
+        "h": 40497
+      }
+    },
+    {
+      "uid": "6533117651",
+      "name": "遇见Happiness_0113x0905",
+      "totalCount": 74,
+      "collected": 51,
+      "finalRound": {
+        "i": 33,
+        "visible": 6,
+        "added": 0,
+        "y": 46898.5,
+        "h": 47604
+      }
+    },
+    {
+      "uid": "8393384219",
+      "name": "Mimosa_0113x0905",
+      "totalCount": 144,
+      "collected": 72,
+      "finalRound": {
+        "i": 33,
+        "visible": 6,
+        "added": 4,
+        "y": 54760.5,
+        "h": 58595
+      }
+    },
+    {
+      "uid": "8015386194",
+      "name": "31Kilometres-0113x0905",
+      "totalCount": 258,
+      "collected": 81,
+      "finalRound": {
+        "i": 27,
+        "visible": 8,
+        "added": 3,
+        "y": 44316.5,
+        "h": 51734
+      }
+    },
+    {
+      "uid": "8013999480",
+      "name": "RedLight丨0113x0905",
+      "totalCount": 363,
+      "collected": 84,
+      "finalRound": {
+        "i": 27,
+        "visible": 7,
+        "added": 3,
+        "y": 42999.5,
+        "h": 47663
+      }
+    },
+    {
+      "uid": "8019292043",
+      "name": "失控丨0113x0905",
+      "totalCount": 210,
+      "collected": 79,
+      "finalRound": {
+        "i": 27,
+        "visible": 8,
+        "added": 3,
+        "y": 44007.5,
+        "h": 50254
+      }
+    },
+    {
+      "uid": "8300677615",
+      "name": "Pointer指针丨0113x0905",
+      "totalCount": 49,
+      "collected": 42,
+      "finalRound": {
+        "i": 21,
+        "visible": 6,
+        "added": 0,
+        "y": 24075.5,
+        "h": 24781
+      }
+    },
+    {
+      "uid": "7686000968",
+      "name": "FoxxBunnyLover_0113x0905",
+      "totalCount": 477,
+      "collected": 92,
+      "finalRound": {
+        "i": 27,
+        "visible": 9,
+        "added": 0,
+        "y": 43595,
+        "h": 44970
+      }
+    },
+    {
+      "uid": "7934854969",
+      "name": "Cosmos_0113x0905",
+      "totalCount": 173,
+      "collected": 75,
+      "finalRound": {
+        "i": 27,
+        "visible": 7,
+        "added": 2,
+        "y": 44688,
+        "h": 47847
+      }
+    },
+    {
+      "uid": "8338137118",
+      "name": "CLING丨0113x0905",
+      "totalCount": 68,
+      "collected": 64,
+      "finalRound": {
+        "i": 27,
+        "visible": 6,
+        "added": 0,
+        "y": 39531,
+        "h": 40237
+      }
+    },
+    {
+      "uid": "8393384219",
+      "name": "Mimosa_0113x0905",
+      "totalCount": 144,
+      "collected": 72,
+      "finalRound": {
+        "i": 7,
+        "visible": 4,
+        "added": 0,
+        "y": 13300,
+        "h": 16981
+      }
+    },
+    {
+      "uid": "8015386194",
+      "name": "31Kilometres-0113x0905",
+      "totalCount": 258,
+      "collected": 81,
+      "finalRound": {
+        "i": 7,
+        "visible": 8,
+        "added": 0,
+        "y": 12234.5,
+        "h": 17545
+      }
+    },
+    {
+      "uid": "8393384219",
+      "name": "Mimosa_0113x0905",
+      "totalCount": 144,
+      "collected": 143,
+      "finalRound": {
+        "i": 74,
+        "visible": 6,
+        "added": 0,
+        "y": 100413.5,
+        "h": 101175
+      }
+    },
+    {
+      "uid": "8015386194",
+      "name": "31Kilometres-0113x0905",
+      "totalCount": 258,
+      "collected": 185,
+      "finalRound": {
+        "i": 74,
+        "visible": 5,
+        "added": 0,
+        "y": 115071.5,
+        "h": 115833
+      }
+    },
+    {
+      "uid": "8013999480",
+      "name": "RedLight丨0113x0905",
+      "totalCount": 363,
+      "collected": 195,
+      "finalRound": {
+        "i": 79,
+        "visible": 8,
+        "added": 3,
+        "y": 143401.5,
+        "h": 146620
+      }
+    },
+    {
+      "uid": "8019292043",
+      "name": "失控丨0113x0905",
+      "totalCount": 210,
+      "collected": 183,
+      "finalRound": {
+        "i": 79,
+        "visible": 8,
+        "added": 0,
+        "y": 102258.5,
+        "h": 103020
+      }
+    },
+    {
+      "uid": "7934854969",
+      "name": "Cosmos_0113x0905",
+      "totalCount": 173,
+      "collected": 162,
+      "finalRound": {
+        "i": 79,
+        "visible": 9,
+        "added": 0,
+        "y": 92700,
+        "h": 93462
+      }
+    },
+    {
+      "uid": "4069898419",
+      "name": "ElysianSilhouette_0113x0905",
+      "totalCount": 250,
+      "collected": 190,
+      "finalRound": {
+        "i": 89,
+        "visible": 11,
+        "added": 0,
+        "y": 112613.5,
+        "h": 113375
+      }
+    },
+    {
+      "uid": "8013999480",
+      "name": "RedLight丨0113x0905",
+      "totalCount": 363,
+      "collected": 257,
+      "finalRound": {
+        "i": 89,
+        "visible": 8,
+        "added": 0,
+        "y": 146970.5,
+        "h": 147732
+      }
+    },
+    {
+      "uid": "7686000968",
+      "name": "FoxxBunnyLover_0113x0905",
+      "totalCount": 477,
+      "collected": 329,
+      "finalRound": {
+        "i": 89,
+        "visible": 9,
+        "added": 3,
+        "y": 161435,
+        "h": 166404
+      }
+    },
+    {
+      "uid": "7686000968",
+      "name": "FoxxBunnyLover_0113x0905",
+      "totalCount": 477,
+      "collected": 358,
+      "finalRound": {
+        "i": 94,
+        "visible": 10,
+        "added": 3,
+        "y": 170935,
+        "h": 175704
+      }
+    },
+    {
+      "uid": "7686000968",
+      "name": "FoxxBunnyLover_0113x0905",
+      "collected": 375,
+      "finalRound": {
+        "i": 17,
+        "visible": 9,
+        "added": 0,
+        "y": 182144,
+        "h": 182906
+      }
+    }
+  ],
+  "groupFeedPostCount": 187,
+  "accountCandidatePostCount": 1717,
+  "finalPostCount": 1285,
+  "uniqueImageFileCount": 7501,
+  "actualImageFileCount": 7501,
+  "curlAttempted": 4008,
+  "curlDownloaded": 4008,
+  "reusedExistingOrSeed": 3493,
+  "failedImageCount": 0,
+  "filters": [
+    "exclude posts without body images",
+    "exclude text containing 晒单",
+    "exclude text containing 抽奖",
+    "exclude cards containing 赞过的微博"
+  ],
+  "maxImagesPerPost": 18,
+  "note": "Fast thumbnail scrape from Weibo station group plus account homepages; cards with more than 18 images were treated as oversized-container false positives, and detail-page hidden +N images were not expanded for every newly discovered homepage post.",
+  "scanPassCount": 23
+}
