@@ -199,9 +199,10 @@ body {
 }
 
 .sidebar-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
+    gap: var(--space-sm);
     margin-bottom: var(--space-xl);
 }
 
@@ -213,6 +214,16 @@ body {
     text-transform: uppercase;
     color: var(--text-primary);
     opacity: 0.5;
+}
+
+.sidebar-count {
+    justify-self: end;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    white-space: nowrap;
 }
 
 .sidebar-close {

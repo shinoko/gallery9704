@@ -19,10 +19,14 @@ const BLACKLIST_TERMS = [
 ];
 
 const KNOWN_THEMES = [
+  { theme: '横店见面会', date: '2025-08-05', tests: ['横店见面会'] },
   { theme: '双人机场', date: '2025-08-15', tests: ['双人机场', '双人机场路透', '机场路透'] },
   { theme: '泰国微博文化交流之夜', date: '2025-08-16', tests: ['泰国微博文化交流之夜', '曼谷微博文化交流之夜'] },
   { theme: '泰国双人见面会', date: '2025-08-17', tests: ['泰国双人见面会', '泰国双人粉丝见面会', '曼谷见面会'] },
+  { theme: '清明上河园见面会', date: '2025-09-07', tests: ['清明上河园见面会', '清明上河园'] },
   { theme: '澳门双人见面会', date: '2025-09-13', tests: ['澳门双人见面会', '澳门双人粉丝见面会', '澳门见面会'] },
+  { theme: '微博奇遇记', date: '2025-09-14', tests: ['微博奇遇记'] },
+  { theme: 'FantasticMan活动', date: '2025-09-22', tests: ['fantasticman', 'fantastic man'] },
   { theme: '巴黎时装周·25秋', from: '2025-10-01', to: '2025-10-08', tests: ['2025巴黎时装周', 'paris fashion week 2025', '巴黎时装周'] },
   { theme: '南京咪豆音乐节', date: '2025-10-02', tests: ['南京咪豆', '咪豆音乐节'] },
   { theme: '宝鸡银杏音乐节', date: '2025-10-04', tests: ['宝鸡银杏', '银杏音乐节'] },
@@ -31,6 +35,8 @@ const KNOWN_THEMES = [
   { theme: '25珑骧活动', date: '2025-10-28', tests: ['25珑骧', '2025珑骧', '珑骧', 'longchamp'] },
   { theme: '赣州Z纪元巅峰音乐节', date: '2025-11-15', tests: ['赣州z纪元', 'z纪元巅峰音乐节', '赣州'] },
   { theme: '新加坡微博文化交流之夜', date: '2025-11-16', tests: ['新加坡微博文化交流之夜', '新加坡'] },
+  { theme: '代言人影响力盛典红毯', date: '2025-11-29', tests: ['代言人影响力盛典红毯', '代言人影响力盛典'] },
+  { theme: 'T风格论坛', date: '2025-12-05', tests: ['t风格论坛', 't 风格论坛'] },
   { theme: '周日下午3点见生日音乐会', date: '2026-01-11', tests: ['周日下午3点见', '生日音乐会'] },
   { theme: 'LOEWE罗意威活动', date: '2026-01-21', tests: ['loewe', '罗意威'] },
   { theme: '深圳奇梦岛开业', date: '2026-02-01', tests: ['奇梦岛'] },
@@ -39,6 +45,7 @@ const KNOWN_THEMES = [
   { theme: '何日君再来', date: '2026-03-28', tests: ['何日君再来'] },
   { theme: 'QQ音乐巅峰之夜', date: '2026-03-28', tests: ['qq音乐巅峰之夜', '巅峰之夜'] },
   { theme: 'MaisonMargiela看秀', date: '2026-04-01', tests: ['maison margiela', 'maison margirla', 'maisonmargiela'] },
+  { theme: 'MaisonMargiela晚宴', date: '2026-04-02', tests: ['maison margiela晚宴', 'maison margirla晚宴', 'maisonmargiela晚宴'] },
   { theme: '26珑骧活动', date: '2026-04-23', tests: ['26珑骧', '2026珑骧', '珑骧', 'longchamp'] },
   { theme: '澳门WIEA国际娱乐盛典', date: '2026-04-26', tests: ['wiea', '国际娱乐盛典'] },
   { theme: '同心结', date: '2026-06-14', tests: ['同心结'] },

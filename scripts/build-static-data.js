@@ -16,12 +16,12 @@ function formatLabel(record) {
 function toGalleryRecord(record, index) {
   const people = Array.isArray(record.targetPeople) ? record.targetPeople : [];
   const tags = Array.isArray(record.tags) ? record.tags : [];
-  const images = Array.isArray(record.imageFiles) ? record.imageFiles : [];
+  const images = Array.isArray(record.imageFiles) ? record.imageFiles.filter(Boolean) : [];
   const descriptionParts = [record.author, record.postTimeText].filter(Boolean);
   return {
     id: record.postUrl || String(index + 1),
     label: formatLabel(record),
-    title: record.theme || '未分类主题',
+    title: record.theme || '',
     theme: record.theme || '',
     date: record.shootDate || '',
     postDate: record.postDate || '',

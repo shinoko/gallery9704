@@ -4,10 +4,14 @@ const STORAGE_KEY = 'gallery9704-maintenance';
 const STATIC_EXPORT = window.GALLERY9704_STATIC_EXPORT === true;
 const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
 const THEME_TIMELINE = [
+    ['横店见面会', '2025-08-05'],
     ['双人机场', '2025-08-15'],
     ['泰国微博文化交流之夜', '2025-08-16'],
     ['泰国双人见面会', '2025-08-17'],
+    ['清明上河园见面会', '2025-09-07'],
     ['澳门双人见面会', '2025-09-13'],
+    ['微博奇遇记', '2025-09-14'],
+    ['FantasticMan活动', '2025-09-22'],
     ['巴黎时装周·25秋', '2025-10-01'],
     ['南京咪豆音乐节', '2025-10-02'],
     ['宝鸡银杏音乐节', '2025-10-04'],
@@ -16,6 +20,8 @@ const THEME_TIMELINE = [
     ['25珑骧活动', '2025-10-28'],
     ['赣州Z纪元巅峰音乐节', '2025-11-15'],
     ['新加坡微博文化交流之夜', '2025-11-16'],
+    ['代言人影响力盛典红毯', '2025-11-29'],
+    ['T风格论坛', '2025-12-05'],
     ['周日下午3点见生日音乐会', '2026-01-11'],
     ['LOEWE罗意威活动', '2026-01-21'],
     ['深圳奇梦岛开业', '2026-02-01'],
@@ -24,6 +30,7 @@ const THEME_TIMELINE = [
     ['何日君再来', '2026-03-28'],
     ['QQ音乐巅峰之夜', '2026-03-28'],
     ['MaisonMargiela看秀', '2026-04-01'],
+    ['MaisonMargiela晚宴', '2026-04-02'],
     ['26珑骧活动', '2026-04-23'],
     ['澳门WIEA国际娱乐盛典', '2026-04-26'],
     ['同心结', '2026-06-14'],
@@ -51,6 +58,7 @@ const els = {
     sidebar: document.getElementById('sidebar'),
     navToggle: document.getElementById('navToggle'),
     sidebarClose: document.getElementById('sidebarClose'),
+    resultCount: document.getElementById('resultCount'),
     browseModeBtn: document.getElementById('browseModeBtn'),
     maintainModeBtn: document.getElementById('maintainModeBtn'),
     selectVisible: document.getElementById('selectVisible'),
@@ -157,10 +165,10 @@ function initListeners() {
     els.saveMaintenance.addEventListener('click', saveMaintenance);
     els.exportMaintenance.addEventListener('click', exportMaintenance);
     els.exportStatic.addEventListener('click', exportStaticBrowse);
-    els.applyFilters.addEventListener('click', applyFilterAndRender);
+    els.applyFilters.addEventListener('click', () => applyFilterAndRender({ scrollTop: true }));
     els.resetFilters.addEventListener('click', resetAndRender);
     els.keywordSearch.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') applyFilterAndRender();
+        if (e.key === 'Enter') applyFilterAndRender({ scrollTop: true });
     });
 
     els.modalClose.addEventListener('click', closeModal);
@@ -263,7 +271,7 @@ function isDeleted(series) {
 
 function getDisplaySeries(series) {
     const patch = state.maintenance.records[getRecordId(series)] || {};
-    const theme = patch.theme || series.theme || series.title || '';
+    const theme = Object.prototype.hasOwnProperty.call(patch, 'theme') ? patch.theme : (series.theme || '');
     const shootDate = patch.date || series.date || '';
     const tags = Array.isArray(patch.tags) ? patch.tags : (series.tags || []);
     return {
@@ -297,7 +305,11 @@ function normalizeIsoDate(value) {
     return value;
 }
 
-function applyFilterAndRender() {
+function scrollToPageTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+}
+
+function applyFilterAndRender(options = {}) {
     state.currentFilters.keyword = els.keywordSearch.value.trim().toLowerCase();
     state.currentFilters.theme = els.themeFilter.value;
     state.currentFilters.author = els.authorFilter.value;
@@ -330,6 +342,7 @@ function applyFilterAndRender() {
         .sort(compareByPostTimeDesc);
 
     renderSeries();
+    if (options.scrollTop) scrollToPageTop();
 }
 
 function resetAndRender() {
@@ -339,12 +352,18 @@ function resetAndRender() {
     els.dateFrom.value = '';
     els.dateTo.value = '';
     state.currentFilters = { keyword: '', theme: '', author: '', dateFrom: '', dateTo: '' };
-    applyFilterAndRender();
+    applyFilterAndRender({ scrollTop: true });
+}
+
+function updateResultCount() {
+    if (!els.resultCount) return;
+    els.resultCount.textContent = `${state.filteredData.length} 条`;
 }
 
 function renderSeries() {
     const container = els.seriesList;
     container.innerHTML = '';
+    updateResultCount();
 
     if (state.filteredData.length === 0) {
         els.emptyState.style.display = 'flex';
@@ -366,7 +385,7 @@ function renderSeries() {
                 ${state.mode === 'maintain' ? `<label class="select-card"><input type="checkbox" data-select-card value="${escapeHtml(getRecordId(series))}" ${state.selectedIds.has(getRecordId(series)) ? 'checked' : ''}><span></span></label>` : ''}
                 <div>
                     <div class="series-label">${escapeHtml(formatCardMeta(series))}</div>
-                    <h2 class="series-title">${escapeHtml(series.title)}</h2>
+                    ${series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
                 </div>
                 <a class="weibo-link" href="${escapeHtml(series.postUrl)}" target="_blank" rel="noreferrer">微博</a>
             </div>
@@ -430,14 +449,36 @@ function formatCardMeta(series) {
     ].filter(Boolean).join(' / ');
 }
 
+function getExistingThemeChoices(selectedTheme = '') {
+    const visibleRecords = galleryData.filter((series) => !isDeleted(series)).map(getDisplaySeries);
+    return sortedThemes([
+        ...(galleryFacets.themes || []),
+        ...visibleRecords.map((series) => series.theme),
+        selectedTheme
+    ].filter(Boolean)).filter((item) => typeof item !== 'object');
+}
+
+function renderThemeOptions() {
+    const choices = getExistingThemeChoices();
+    return choices.map((theme) => `<option value="${escapeHtml(theme)}"></option>`).join('');
+}
+
+function toDomId(value) {
+    return String(value || '').replace(/[^a-zA-Z0-9_-]+/g, '-').slice(0, 80) || 'record';
+}
+
 function renderMaintenanceForm(series) {
     const form = document.createElement('form');
+    const themeListId = `theme-options-${toDomId(getRecordId(series))}`;
     form.className = 'maintenance-form';
     form.innerHTML = `
         <div class="maintenance-grid">
-            <label>
+            <label class="maintenance-theme">
                 <span>活动主题</span>
-                <input name="theme" class="filter-input" value="${escapeHtml(series.theme || '')}">
+                <input name="theme" class="filter-input" value="${escapeHtml(series.theme || '')}" list="${themeListId}" placeholder="筛选已有主题或新建主题">
+                <datalist id="${themeListId}">
+                    ${renderThemeOptions()}
+                </datalist>
             </label>
             <label>
                 <span>维护状态</span>
@@ -544,10 +585,11 @@ async function saveRecordPatch(id, patch) {
 
         const sourceIndex = galleryData.findIndex((series) => getRecordId(series) === id);
         if (sourceIndex !== -1) {
+            const hasThemePatch = Object.prototype.hasOwnProperty.call(patch, 'theme');
             galleryData[sourceIndex] = {
                 ...galleryData[sourceIndex],
-                title: patch.theme || galleryData[sourceIndex].title,
-                theme: patch.theme || galleryData[sourceIndex].theme,
+                title: hasThemePatch ? patch.theme : galleryData[sourceIndex].title,
+                theme: hasThemePatch ? patch.theme : galleryData[sourceIndex].theme,
                 tags: patch.tags || galleryData[sourceIndex].tags,
                 status: patch.status || 'todo',
                 note: patch.note || ''
