@@ -3,6 +3,8 @@
 const STORAGE_KEY = 'gallery9704-maintenance';
 const STATIC_EXPORT = window.GALLERY9704_STATIC_EXPORT === true;
 const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
+const INITIAL_RENDER_COUNT = 24;
+const RENDER_BATCH_SIZE = 24;
 const THEME_TIMELINE = [
     ['横店见面会', '2025-08-05'],
     ['双人机场', '2025-08-15'],
@@ -47,6 +49,8 @@ const state = {
     maintenance: { records: {}, deletedIds: [] },
     selectedIds: new Set(),
     filteredData: [],
+    renderLimit: INITIAL_RENDER_COUNT,
+    loadMoreObserver: null,
     modalOpen: false,
     modalSeriesIndex: 0,
     modalImageIndex: 0,
@@ -315,6 +319,7 @@ function applyFilterAndRender(options = {}) {
     state.currentFilters.author = els.authorFilter.value;
     state.currentFilters.dateFrom = els.dateFrom.value;
     state.currentFilters.dateTo = els.dateTo.value;
+    state.renderLimit = INITIAL_RENDER_COUNT;
 
     state.filteredData = galleryData
         .filter((series) => !isDeleted(series))
@@ -360,10 +365,46 @@ function updateResultCount() {
     els.resultCount.textContent = `${state.filteredData.length} 条`;
 }
 
+function disconnectLoadMoreObserver() {
+    if (!state.loadMoreObserver) return;
+    state.loadMoreObserver.disconnect();
+    state.loadMoreObserver = null;
+}
+
+function loadMoreSeries() {
+    if (state.renderLimit >= state.filteredData.length) return;
+    state.renderLimit = Math.min(state.renderLimit + RENDER_BATCH_SIZE, state.filteredData.length);
+    renderSeries();
+}
+
+function observeLoadMore(target) {
+    disconnectLoadMoreObserver();
+    if (!target || state.renderLimit >= state.filteredData.length || !('IntersectionObserver' in window)) return;
+    state.loadMoreObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) loadMoreSeries();
+    }, { rootMargin: '900px 0px' });
+    state.loadMoreObserver.observe(target);
+}
+
+function renderLoadMoreControl(container) {
+    if (state.renderLimit >= state.filteredData.length) {
+        disconnectLoadMoreObserver();
+        return;
+    }
+    const control = document.createElement('button');
+    control.className = 'load-more';
+    control.type = 'button';
+    control.textContent = `继续加载 ${Math.min(RENDER_BATCH_SIZE, state.filteredData.length - state.renderLimit)} 条`;
+    control.addEventListener('click', loadMoreSeries);
+    container.appendChild(control);
+    observeLoadMore(control);
+}
+
 function renderSeries() {
     const container = els.seriesList;
     container.innerHTML = '';
     updateResultCount();
+    disconnectLoadMoreObserver();
 
     if (state.filteredData.length === 0) {
         els.emptyState.style.display = 'flex';
@@ -373,7 +414,8 @@ function renderSeries() {
 
     els.emptyState.style.display = 'none';
 
-    state.filteredData.forEach((series, seriesIndex) => {
+    const visibleData = state.filteredData.slice(0, state.renderLimit);
+    visibleData.forEach((series, seriesIndex) => {
         const article = document.createElement('article');
         article.className = 'series';
         article.dataset.id = getRecordId(series);
@@ -405,6 +447,7 @@ function renderSeries() {
             img.src = imgSrc;
             img.alt = `${series.title} ${imgIndex + 1}`;
             img.loading = 'lazy';
+            img.decoding = 'async';
             img.addEventListener('click', () => openModal(seriesIndex, imgIndex));
             gridItem.appendChild(img);
 
@@ -438,6 +481,7 @@ function renderSeries() {
         container.appendChild(article);
     });
 
+    renderLoadMoreControl(container);
     updateSelectionState();
 }
 

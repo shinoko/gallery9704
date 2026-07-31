@@ -117,10 +117,21 @@ async function copyFileEnsured(from, to) {
   await fsp.copyFile(from, to);
 }
 
+function formatExportStamp(date = new Date()) {
+  const parts = [
+    date.getFullYear(),
+    String(date.getMonth() + 1).padStart(2, '0'),
+    String(date.getDate()).padStart(2, '0'),
+    String(date.getHours()).padStart(2, '0'),
+    String(date.getMinutes()).padStart(2, '0')
+  ];
+  return parts.join('');
+}
+
 async function exportStatic() {
   buildData();
-  const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-  const exportRoot = path.join(ROOT, 'exports', `gallery9704-static-${stamp}`);
+  const stamp = formatExportStamp();
+  const exportRoot = path.join(ROOT, 'exports', `gallery9704_${stamp}`);
   await fsp.mkdir(exportRoot, { recursive: true });
   await copyFileEnsured(path.join(ROOT, 'index.html'), path.join(exportRoot, 'index.html'));
   await copyFileEnsured(path.join(ROOT, 'css', 'style.css'), path.join(exportRoot, 'css', 'style.css'));
