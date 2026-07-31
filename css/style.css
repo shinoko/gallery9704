@@ -981,6 +981,9 @@ body[data-static-export="true"] .sidebar-bottom {
     border-top: 1px solid var(--border-light);
     padding: var(--space-2xl) var(--space-xl);
     text-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 0.7em;
 }
 
 .footer-meta {

@@ -5,6 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
+    "export:static": "node server.js --export-static",
     "build:data": "node scripts/build-static-data.js",
     "clean:data": "node scripts/clean-metadata.js",
     "clean:data:dry": "node scripts/clean-metadata.js --dry-run"

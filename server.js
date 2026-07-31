@@ -206,6 +206,17 @@ const server = http.createServer((req, res) => {
   serveStatic(req, res, decodeURIComponent(url.pathname));
 });
 
-server.listen(PORT, HOST, () => {
-  console.log(`GALLERY9704 running at http://${HOST}:${PORT}/`);
-});
+if (process.argv.includes('--export-static')) {
+  exportStatic()
+    .then((result) => {
+      console.log(JSON.stringify(result, null, 2));
+    })
+    .catch((error) => {
+      console.error(error);
+      process.exitCode = 1;
+    });
+} else {
+  server.listen(PORT, HOST, () => {
+    console.log(`GALLERY9704 running at http://${HOST}:${PORT}/`);
+  });
+}
