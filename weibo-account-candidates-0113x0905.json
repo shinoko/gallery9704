@@ -1,0 +1,683 @@
+{
+  "existing": [
+    {
+      "uid": "4069898419",
+      "name": "ElysianSilhouette_0113x0905",
+      "url": "https://weibo.com/u/4069898419"
+    },
+    {
+      "uid": "4079488264",
+      "name": "ERhickey-0113X0905",
+      "url": "https://weibo.com/u/4079488264"
+    },
+    {
+      "uid": "6533117651",
+      "name": "遇见Happiness_0113x0905",
+      "url": "https://weibo.com/u/6533117651"
+    },
+    {
+      "uid": "8393384219",
+      "name": "Mimosa_0113x0905",
+      "url": "https://weibo.com/u/8393384219"
+    },
+    {
+      "uid": "8015386194",
+      "name": "31Kilometres-0113x0905",
+      "url": "https://weibo.com/u/8015386194"
+    },
+    {
+      "uid": "8013999480",
+      "name": "RedLight丨0113x0905",
+      "url": "https://weibo.com/u/8013999480"
+    },
+    {
+      "uid": "8019292043",
+      "name": "失控丨0113x0905",
+      "url": "https://weibo.com/u/8019292043"
+    },
+    {
+      "uid": "8300677615",
+      "name": "Pointer指针丨0113x0905",
+      "url": "https://weibo.com/u/8300677615"
+    },
+    {
+      "uid": "7686000968",
+      "name": "FoxxBunnyLover_0113x0905",
+      "url": "https://weibo.com/u/7686000968"
+    },
+    {
+      "uid": "7934854969",
+      "name": "Cosmos_0113x0905",
+      "url": "https://weibo.com/u/7934854969"
+    },
+    {
+      "uid": "8338137118",
+      "name": "CLING丨0113x0905",
+      "url": "https://weibo.com/u/8338137118"
+    }
+  ],
+  "count": 69,
+  "candidates": [
+    {
+      "uid": "8013999480",
+      "name": "RedLight丨0113x0905",
+      "url": "https://weibo.com/u/8013999480",
+      "fans": 100000,
+      "text": "RedLight丨0113x0905  | 粉丝：10万 | 已关注",
+      "existing": true,
+      "score": 4
+    },
+    {
+      "uid": "8019292043",
+      "name": "失控丨0113x0905",
+      "url": "https://weibo.com/u/8019292043",
+      "fans": 33000,
+      "text": "失控丨0113x0905  | 娱乐博主 | 粉丝：3.3万 | 已关注",
+      "existing": true,
+      "score": 4
+    },
+    {
+      "uid": "8338137118",
+      "name": "CLING丨0113x0905",
+      "url": "https://weibo.com/u/8338137118",
+      "fans": 15000,
+      "text": "CLING丨0113x0905 | 粉丝：1.5万 | 已关注",
+      "existing": true,
+      "score": 4
+    },
+    {
+      "uid": "7864379003",
+      "name": "WingSync羽翼共振_0113x0905",
+      "url": "https://weibo.com/u/7864379003",
+      "fans": 13000,
+      "text": "WingSync羽翼共振_0113x0905 | 粉丝：1.3万 | 关注",
+      "existing": false,
+      "score": 4
+    },
+    {
+      "uid": "8002261474",
+      "name": "ParallelUs丨0113x0905",
+      "url": "https://weibo.com/u/8002261474",
+      "fans": 6796,
+      "text": "ParallelUs丨0113x0905 | 娱乐博主 | 粉丝：6796 | 关注",
+      "existing": false,
+      "score": 4
+    },
+    {
+      "uid": "8300677615",
+      "name": "Pointer指针丨0113x0905",
+      "url": "https://weibo.com/u/8300677615",
+      "fans": 2428,
+      "text": "Pointer指针丨0113x0905  | 娱乐博主 | 粉丝：2428 | 已关注",
+      "existing": true,
+      "score": 4
+    },
+    {
+      "uid": "8282610059",
+      "name": "NeverBe永不落_0113x0905",
+      "url": "https://weibo.com/u/8282610059",
+      "fans": 8701,
+      "text": "NeverBe永不落_0113x0905  | 粉丝：8701 | 关注",
+      "existing": false,
+      "score": 3
+    },
+    {
+      "uid": "8348303999",
+      "name": "TheFluffTheEar丨0113x0905",
+      "url": "https://weibo.com/u/8348303999",
+      "fans": 6825,
+      "text": "TheFluffTheEar丨0113x0905 | 粉丝：6825 | 关注",
+      "existing": false,
+      "score": 3
+    },
+    {
+      "uid": "5892109907",
+      "name": "Bond羁绊丨0113x0905",
+      "url": "https://weibo.com/u/5892109907",
+      "fans": 6411,
+      "text": "Bond羁绊丨0113x0905  | 粉丝：6411 | 关注",
+      "existing": false,
+      "score": 3
+    },
+    {
+      "uid": "9065471823",
+      "name": "Spring妙手回春丨0113x0905",
+      "url": "https://weibo.com/u/9065471823",
+      "fans": 4601,
+      "text": "Spring妙手回春丨0113x0905 | 粉丝：4601 | 关注",
+      "existing": false,
+      "score": 3
+    },
+    {
+      "uid": "4086481338",
+      "name": "KYOU_521丨0113x0905",
+      "url": "https://weibo.com/u/4086481338",
+      "fans": 4059,
+      "text": "KYOU_521丨0113x0905 | 粉丝：4059 | 关注",
+      "existing": false,
+      "score": 3
+    },
+    {
+      "uid": "8484396430",
+      "name": "Blush升温丨0113x0905",
+      "url": "https://weibo.com/u/8484396430",
+      "fans": 2720,
+      "text": "Blush升温丨0113x0905  | 粉丝：2720 | 关注",
+      "existing": false,
+      "score": 3
+    },
+    {
+      "uid": "5992676398",
+      "name": "Connect丨0113x0905",
+      "url": "https://weibo.com/u/5992676398",
+      "fans": 2236,
+      "text": "Connect丨0113x0905 | 粉丝：2236 | 关注",
+      "existing": false,
+      "score": 3
+    },
+    {
+      "uid": "4076555020",
+      "name": "无风区丨0113x0905",
+      "url": "https://weibo.com/u/4076555020",
+      "fans": 4456,
+      "text": "无风区丨0113x0905 | 粉丝：4456 | 关注",
+      "existing": false,
+      "score": 2
+    },
+    {
+      "uid": "9068198836",
+      "name": "TheMidnightHush丨0113x0905",
+      "url": "https://weibo.com/u/9068198836",
+      "fans": 1781,
+      "text": "TheMidnightHush丨0113x0905 | 粉丝：1781 | 关注",
+      "existing": false,
+      "score": 2
+    },
+    {
+      "uid": "8015498009",
+      "name": "Forever_0113x0905",
+      "url": "https://weibo.com/u/8015498009",
+      "fans": 1487,
+      "text": "Forever_0113x0905 | 粉丝：1487 | 关注",
+      "existing": false,
+      "score": 2
+    },
+    {
+      "uid": "8388315082",
+      "name": "Present-0113x0905",
+      "url": "https://weibo.com/u/8388315082",
+      "fans": 1133,
+      "text": "Present-0113x0905  | 粉丝：1133 | 关注",
+      "existing": false,
+      "score": 2
+    },
+    {
+      "uid": "3753039847",
+      "name": "别踩我茄_0113x0905",
+      "url": "https://weibo.com/u/3753039847",
+      "fans": 1037,
+      "text": "别踩我茄_0113x0905  | 超话粉丝大咖（马嘉祺超话） | 粉丝：1037 | 关注",
+      "existing": false,
+      "score": 2
+    },
+    {
+      "uid": "7938933652",
+      "name": "love诺竹-0113x0905-",
+      "url": "https://weibo.com/u/7938933652",
+      "fans": 2,
+      "text": "love诺竹-0113x0905- | 粉丝：2 | 关注",
+      "existing": false,
+      "score": 2
+    },
+    {
+      "uid": "1691889593",
+      "name": "一只小酱瓜0113x0905",
+      "url": "https://weibo.com/u/1691889593",
+      "fans": 6438,
+      "text": "一只小酱瓜0113x0905 | 粉丝：6438 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "7977331345",
+      "name": "GENTLE丨0113x0905",
+      "url": "https://weibo.com/u/7977331345",
+      "fans": 784,
+      "text": "GENTLE丨0113x0905 | 粉丝：784 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "8272562112",
+      "name": "Eternal永恒_0113x0905",
+      "url": "https://weibo.com/u/8272562112",
+      "fans": 528,
+      "text": "Eternal永恒_0113x0905 | 粉丝：528 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "6995260608",
+      "name": "WhiteCrow丨0113x0905",
+      "url": "https://weibo.com/u/6995260608",
+      "fans": 190,
+      "text": "WhiteCrow丨0113x0905 | 粉丝：190 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "5327238102",
+      "name": "SSR阿-0113x0905",
+      "url": "https://weibo.com/u/5327238102",
+      "fans": 7,
+      "text": "SSR阿-0113x0905 | 粉丝：7 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "9126832393",
+      "name": "Destin宿命丨0113x0905",
+      "url": "https://weibo.com/u/9126832393",
+      "fans": 6,
+      "text": "Destin宿命丨0113x0905 | 粉丝：6 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "8269190205",
+      "name": "Blushgreenjam丨0113x0905",
+      "url": "https://weibo.com/u/8269190205",
+      "fans": 4,
+      "text": "Blushgreenjam丨0113x0905 | 粉丝：4 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "4068412261",
+      "name": "SHILIU十六不正丨0113x0905",
+      "url": "https://weibo.com/u/4068412261",
+      "fans": 4,
+      "text": "SHILIU十六不正丨0113x0905 | 粉丝：4 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "7979887463",
+      "name": "Wish心愿_0113x0905",
+      "url": "https://weibo.com/u/7979887463",
+      "fans": 4,
+      "text": "Wish心愿_0113x0905 | 粉丝：4 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "7511486222",
+      "name": "Onlylove丨0113x0905",
+      "url": "https://weibo.com/u/7511486222",
+      "fans": 1,
+      "text": "Onlylove丨0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": 1
+    },
+    {
+      "uid": "7767516363",
+      "name": "临界点丨0113x0905",
+      "url": "https://weibo.com/u/7767516363",
+      "fans": 884,
+      "text": "临界点丨0113x0905 | 粉丝：884 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "6509844953",
+      "name": "展展丞丞是一对0113x0905",
+      "url": "https://weibo.com/u/6509844953",
+      "fans": 283,
+      "text": "展展丞丞是一对0113x0905  | 超话粉丝钻咖（展丞超话） | 粉丝：283 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7862954989",
+      "name": "毛毛小狸-0113x0905",
+      "url": "https://weibo.com/u/7862954989",
+      "fans": 149,
+      "text": "毛毛小狸-0113x0905  | 粉丝：149 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "8479727474",
+      "name": "守护脸颊肉军团-0113X0905",
+      "url": "https://weibo.com/u/8479727474",
+      "fans": 140,
+      "text": "守护脸颊肉军团-0113X0905  | 粉丝：140 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7528845497",
+      "name": "柠星渝_0113x0905",
+      "url": "https://weibo.com/u/7528845497",
+      "fans": 123,
+      "text": "柠星渝_0113x0905 | 粉丝：123 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "5223515977",
+      "name": "守护脸颊肉军团_0113X0905",
+      "url": "https://weibo.com/u/5223515977",
+      "fans": 75,
+      "text": "守护脸颊肉军团_0113X0905 | 粉丝：75 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7770072555",
+      "name": "最萌狐兔丨0113x0905",
+      "url": "https://weibo.com/u/7770072555",
+      "fans": 53,
+      "text": "最萌狐兔丨0113x0905 | 粉丝：53 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "6589018108",
+      "name": "不爱喝冰美式_0113x0905",
+      "url": "https://weibo.com/u/6589018108",
+      "fans": 50,
+      "text": "不爱喝冰美式_0113x0905  | 粉丝：50 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "5343020448",
+      "name": "图不抖-0113x0905",
+      "url": "https://weibo.com/u/5343020448",
+      "fans": 50,
+      "text": "图不抖-0113x0905 | 粉丝：50 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "5665870540",
+      "name": "看日出西落尽后丨0113x0905",
+      "url": "https://weibo.com/u/5665870540",
+      "fans": 45,
+      "text": "看日出西落尽后丨0113x0905 | 粉丝：45 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7710925375",
+      "name": "青提芭乐_0113x0905",
+      "url": "https://weibo.com/u/7710925375",
+      "fans": 32,
+      "text": "青提芭乐_0113x0905 | 粉丝：32 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "8010896097",
+      "name": "我肚肚丨0113x0905",
+      "url": "https://weibo.com/u/8010896097",
+      "fans": 29,
+      "text": "我肚肚丨0113x0905 | 粉丝：29 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7367121563",
+      "name": "萌丞叽展-0113x0905",
+      "url": "https://weibo.com/u/7367121563",
+      "fans": 27,
+      "text": "萌丞叽展-0113x0905 | 粉丝：27 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "8484792477",
+      "name": "我肚肚_0113x0905",
+      "url": "https://weibo.com/u/8484792477",
+      "fans": 17,
+      "text": "我肚肚_0113x0905 | 粉丝：17 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7518074051",
+      "name": "芭乐猫丨0113x0905",
+      "url": "https://weibo.com/u/7518074051",
+      "fans": 16,
+      "text": "芭乐猫丨0113x0905 | 粉丝：16 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "9085759506",
+      "name": "薄荷小分队_0113x0905",
+      "url": "https://weibo.com/u/9085759506",
+      "fans": 10,
+      "text": "薄荷小分队_0113x0905 | 粉丝：10 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7384189295",
+      "name": "狐兔万事顺意丨0113x0905",
+      "url": "https://weibo.com/u/7384189295",
+      "fans": 8,
+      "text": "狐兔万事顺意丨0113x0905 | 粉丝：8 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7768671676",
+      "name": "卿尘0113X0905",
+      "url": "https://weibo.com/u/7768671676",
+      "fans": 8,
+      "text": "卿尘0113X0905 | 粉丝：8 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "5307581611",
+      "name": "-日落鲷鱼烧-_0113x0905",
+      "url": "https://weibo.com/u/5307581611",
+      "fans": 6,
+      "text": "-日落鲷鱼烧-_0113x0905 | 粉丝：6 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "4047347915",
+      "name": "阿咩_0113x0905",
+      "url": "https://weibo.com/u/4047347915",
+      "fans": 5,
+      "text": "阿咩_0113x0905  | 粉丝：5 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "5669613275",
+      "name": "芭乐果酱_0113x0905",
+      "url": "https://weibo.com/u/5669613275",
+      "fans": 3,
+      "text": "芭乐果酱_0113x0905 | 粉丝：3 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7655823502",
+      "name": "讨厌早起_0113x0905",
+      "url": "https://weibo.com/u/7655823502",
+      "fans": 3,
+      "text": "讨厌早起_0113x0905 | 粉丝：3 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "8445323428",
+      "name": "这么甜不要命啦_0113x0905",
+      "url": "https://weibo.com/u/8445323428",
+      "fans": 3,
+      "text": "这么甜不要命啦_0113x0905 | 粉丝：3 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7297086692",
+      "name": "辞盏清欢丨0113x0905",
+      "url": "https://weibo.com/u/7297086692",
+      "fans": 2,
+      "text": "辞盏清欢丨0113x0905 | 粉丝：2 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "4083951191",
+      "name": "无人岛日记丨0113x0905",
+      "url": "https://weibo.com/u/4083951191",
+      "fans": 2,
+      "text": "无人岛日记丨0113x0905 | 粉丝：2 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7933091194",
+      "name": "展丞控_0113x0905",
+      "url": "https://weibo.com/u/7933091194",
+      "fans": 2,
+      "text": "展丞控_0113x0905 | 粉丝：2 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7810475494",
+      "name": "爱是三十一公里0113X0905",
+      "url": "https://weibo.com/u/7810475494",
+      "fans": 1,
+      "text": "爱是三十一公里0113X0905  | 粉丝：1 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "8324313967",
+      "name": "里于-0113x0905",
+      "url": "https://weibo.com/u/8324313967",
+      "fans": 1,
+      "text": "里于-0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "9109812103",
+      "name": "泡芙五五_0113x0905",
+      "url": "https://weibo.com/u/9109812103",
+      "fans": 1,
+      "text": "泡芙五五_0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7898799128",
+      "name": "我问你我的心率快吗_0113x0905",
+      "url": "https://weibo.com/u/7898799128",
+      "fans": 1,
+      "text": "我问你我的心率快吗_0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "8447051079",
+      "name": "珍藏悸_0113x0905",
+      "url": "https://weibo.com/u/8447051079",
+      "fans": 1,
+      "text": "珍藏悸_0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "7940673701",
+      "name": "蒸馏水丨0113x0905",
+      "url": "https://weibo.com/u/7940673701",
+      "fans": 1,
+      "text": "蒸馏水丨0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": 0
+    },
+    {
+      "uid": "5836384347",
+      "name": "万事顺意0113x0905",
+      "url": "https://weibo.com/u/5836384347",
+      "fans": 337,
+      "text": "万事顺意0113x0905 | 粉丝：337 | 关注",
+      "existing": false,
+      "score": -1
+    },
+    {
+      "uid": "6602086198",
+      "name": "在睡五分钟0113x0905",
+      "url": "https://weibo.com/u/6602086198",
+      "fans": 22,
+      "text": "在睡五分钟0113x0905 | 粉丝：22 | 关注",
+      "existing": false,
+      "score": -1
+    },
+    {
+      "uid": "8260025210",
+      "name": "景舟0113x0905",
+      "url": "https://weibo.com/u/8260025210",
+      "fans": 21,
+      "text": "景舟0113x0905 | 粉丝：21 | 关注",
+      "existing": false,
+      "score": -1
+    },
+    {
+      "uid": "8446893406",
+      "name": "乖0113x0905",
+      "url": "https://weibo.com/u/8446893406",
+      "fans": 4,
+      "text": "乖0113x0905 | 粉丝：4 | 关注",
+      "existing": false,
+      "score": -1
+    },
+    {
+      "uid": "8015691653",
+      "name": "0113x0905",
+      "url": "https://weibo.com/u/8015691653",
+      "fans": 2,
+      "text": "0113x0905 | 粉丝：2 | 关注",
+      "existing": false,
+      "score": -1
+    },
+    {
+      "uid": "8266210622",
+      "name": "展丞0113x0905",
+      "url": "https://weibo.com/u/8266210622",
+      "fans": 1,
+      "text": "展丞0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": -1
+    },
+    {
+      "uid": "7979392619",
+      "name": "展丞工作室0113x0905",
+      "url": "https://weibo.com/u/7979392619",
+      "fans": 1,
+      "text": "展丞工作室0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": -1
+    },
+    {
+      "uid": "7894856348",
+      "name": "展丞女儿0113x0905",
+      "url": "https://weibo.com/u/7894856348",
+      "fans": 1,
+      "text": "展丞女儿0113x0905 | 粉丝：1 | 关注",
+      "existing": false,
+      "score": -1
+    }
+  ]
+}

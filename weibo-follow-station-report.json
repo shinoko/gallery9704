@@ -1,0 +1,78 @@
+{
+  "followedConfirmed": [
+    {
+      "name": "WingSync羽翼共振_0113x0905",
+      "uid": "7864379003",
+      "url": "https://weibo.com/u/7864379003"
+    },
+    {
+      "name": "ParallelUs丨0113x0905",
+      "uid": "8002261474",
+      "url": "https://weibo.com/u/8002261474"
+    },
+    {
+      "name": "NeverBe永不落_0113x0905",
+      "uid": "8282610059",
+      "url": "https://weibo.com/u/8282610059"
+    },
+    {
+      "name": "TheFluffTheEar丨0113x0905",
+      "uid": "8348303999",
+      "url": "https://weibo.com/u/8348303999"
+    },
+    {
+      "name": "Bond羁绊丨0113x0905",
+      "uid": "5892109907",
+      "url": "https://weibo.com/u/5892109907"
+    },
+    {
+      "name": "Spring妙手回春丨0113x0905",
+      "uid": "9065471823",
+      "url": "https://weibo.com/u/9065471823"
+    },
+    {
+      "name": "KYOU_521丨0113x0905",
+      "uid": "4086481338",
+      "url": "https://weibo.com/u/4086481338"
+    },
+    {
+      "name": "Blush升温丨0113x0905",
+      "uid": "8484396430",
+      "url": "https://weibo.com/u/8484396430"
+    },
+    {
+      "name": "无风区丨0113x0905",
+      "uid": "4076555020",
+      "url": "https://weibo.com/u/4076555020"
+    },
+    {
+      "name": "TheMidnightHush丨0113x0905",
+      "uid": "9068198836",
+      "url": "https://weibo.com/u/9068198836"
+    }
+  ],
+  "notFollowed": [
+    {
+      "name": "GENTLE丨0113x0905",
+      "uid": "7977331345",
+      "url": "https://weibo.com/u/7977331345"
+    },
+    {
+      "name": "TALE_0113x0905",
+      "uid": "6312977401",
+      "url": "https://weibo.com/u/6312977401"
+    },
+    {
+      "name": "69discount_0113x0905",
+      "uid": "8250612132",
+      "url": "https://weibo.com/u/8250612132"
+    }
+  ],
+  "excludedByUser": [
+    "Connect丨0113x0905",
+    "Forever_0113x0905",
+    "Present-0113x0905",
+    "Eternal永恒_0113x0905"
+  ],
+  "note": "Followed accounts were confirmed from their profile buttons and appear in own following list. The current Weibo desktop UI did not expose a move-to-group control; group filter/management only showed group filtering, group rename/delete, batch unfollow, and filter controls."
+}

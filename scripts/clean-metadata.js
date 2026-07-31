@@ -72,7 +72,8 @@ function containsAny(haystack, terms) {
 
 function isBlacklisted(record) {
   const text = normalize(record.text);
-  return BLACKLIST_TERMS.some((term) => text.includes(normalize(term)));
+  if (BLACKLIST_TERMS.some((term) => text.includes(normalize(term)))) return true;
+  return text.includes(normalize('愚人节')) && !text.includes(normalize('展丞'));
 }
 
 function parseDateParts(year, month, day) {
