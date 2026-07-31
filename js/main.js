@@ -5,6 +5,20 @@ const STATIC_EXPORT = window.GALLERY9704_STATIC_EXPORT === true;
 const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
 const INITIAL_RENDER_COUNT = 24;
 const RENDER_BATCH_SIZE = 24;
+const DATASETS = {
+    station: {
+        label: '站姐',
+        data: typeof galleryData !== 'undefined' ? galleryData : [],
+        facets: typeof galleryFacets !== 'undefined' ? galleryFacets : {},
+        maintenanceEnabled: true
+    },
+    official: {
+        label: '官方',
+        data: typeof officialGalleryData !== 'undefined' ? officialGalleryData : [],
+        facets: typeof officialGalleryFacets !== 'undefined' ? officialGalleryFacets : {},
+        maintenanceEnabled: false
+    }
+};
 const THEME_TIMELINE = [
     ['横店见面会', '2025-08-05'],
     ['双人机场', '2025-08-15'],
@@ -43,8 +57,9 @@ const THEME_TIMELINE = [
 const THEME_SORT_META = new Map(THEME_TIMELINE.map(([theme, date], index) => [theme, { date, index }]));
 
 const state = {
+    dataType: 'official',
+    filterVisible: true,
     mode: 'browse',
-    sidebarVisible: true,
     currentFilters: { keyword: '', theme: '', author: '', dateFrom: '', dateTo: '' },
     maintenance: { records: {}, deletedIds: [] },
     selectedIds: new Set(),
@@ -61,6 +76,8 @@ const els = {
     nav: document.querySelector('.nav'),
     sidebar: document.getElementById('sidebar'),
     navToggle: document.getElementById('navToggle'),
+    stationTab: document.getElementById('stationTab'),
+    officialTab: document.getElementById('officialTab'),
     sidebarClose: document.getElementById('sidebarClose'),
     resultCount: document.getElementById('resultCount'),
     browseModeBtn: document.getElementById('browseModeBtn'),
@@ -76,8 +93,10 @@ const els = {
     seriesList: document.getElementById('seriesList'),
     emptyState: document.getElementById('emptyState'),
     keywordSearch: document.getElementById('keywordSearch'),
+    themeFilterGroup: document.getElementById('themeFilterGroup'),
     themeFilter: document.getElementById('themeFilter'),
     authorFilter: document.getElementById('authorFilter'),
+    dateFilterLabel: document.getElementById('dateFilterLabel'),
     dateFrom: document.getElementById('dateFrom'),
     dateTo: document.getElementById('dateTo'),
     applyFilters: document.getElementById('applyFilters'),
@@ -94,11 +113,28 @@ const els = {
 document.addEventListener('DOMContentLoaded', () => {
     loadMaintenance();
     document.body.dataset.staticExport = STATIC_EXPORT ? 'true' : 'false';
+    document.body.dataset.dataType = state.dataType;
+    document.body.dataset.filterVisible = state.filterVisible ? 'true' : 'false';
     initFacets();
     initListeners();
-    if (window.innerWidth <= 1024) closeSidebar();
     updateMode('browse');
 });
+
+function getActiveDataset() {
+    return DATASETS[state.dataType] || DATASETS.station;
+}
+
+function getActiveData() {
+    return getActiveDataset().data || [];
+}
+
+function getActiveFacets() {
+    return getActiveDataset().facets || {};
+}
+
+function isMaintenanceEnabled() {
+    return getActiveDataset().maintenanceEnabled && !STATIC_EXPORT;
+}
 
 function initFacets() {
     refreshFacets();
@@ -107,11 +143,13 @@ function initFacets() {
 function refreshFacets() {
     const currentTheme = els.themeFilter.value;
     const currentAuthor = els.authorFilter.value;
-    const visibleRecords = galleryData.filter((series) => !isDeleted(series)).map(getDisplaySeries);
-    optionize(els.themeFilter, sortedThemes([...(galleryFacets.themes || []), ...visibleRecords.map((series) => series.theme)]), '全部主题');
-    optionize(els.authorFilter, sortedStrings([...(galleryFacets.authors || []), ...visibleRecords.map((series) => series.author)]), '全部账号');
+    const activeFacets = getActiveFacets();
+    const visibleRecords = getActiveData().filter((series) => !isDeleted(series)).map(getDisplaySeries);
+    optionize(els.themeFilter, sortedThemes([...(activeFacets.themes || []), ...visibleRecords.map((series) => series.theme)]), '全部主题');
+    optionize(els.authorFilter, sortedStrings([...(activeFacets.authors || []), ...visibleRecords.map((series) => series.author)]), '全部账号');
     els.themeFilter.value = Array.from(els.themeFilter.options).some((option) => option.value === currentTheme) ? currentTheme : '';
     els.authorFilter.value = Array.from(els.authorFilter.options).some((option) => option.value === currentAuthor) ? currentAuthor : '';
+    updateFilterVisibility();
 }
 
 function optionize(select, values, placeholder) {
@@ -159,8 +197,10 @@ function sortedThemes(values) {
 }
 
 function initListeners() {
-    els.navToggle.addEventListener('click', toggleSidebar);
-    els.sidebarClose.addEventListener('click', closeSidebar);
+    els.navToggle.addEventListener('click', toggleFilterPanel);
+    els.stationTab.addEventListener('click', () => updateDataType('station'));
+    els.officialTab.addEventListener('click', () => updateDataType('official'));
+    els.sidebarClose.addEventListener('click', () => {});
     els.browseModeBtn.addEventListener('click', () => updateMode('browse'));
     els.maintainModeBtn.addEventListener('click', () => updateMode('maintain'));
     els.selectVisible.addEventListener('click', selectVisibleRecords);
@@ -184,27 +224,36 @@ function initListeners() {
     document.addEventListener('keydown', handleKeyPress);
 }
 
-function openSidebar() {
-    state.sidebarVisible = true;
-    els.sidebar.classList.remove('hidden');
+function toggleFilterPanel() {
+    state.filterVisible = !state.filterVisible;
+    document.body.dataset.filterVisible = state.filterVisible ? 'true' : 'false';
+    els.sidebar.classList.toggle('hidden', !state.filterVisible);
+    els.navToggle.setAttribute('aria-pressed', state.filterVisible ? 'true' : 'false');
 }
 
-function toggleSidebar() {
-    state.sidebarVisible = !state.sidebarVisible;
-    els.sidebar.classList.toggle('hidden', !state.sidebarVisible);
-}
-
-function closeSidebar() {
-    state.sidebarVisible = false;
-    els.sidebar.classList.add('hidden');
+function updateDataType(dataType) {
+    if (state.dataType === dataType) return;
+    state.dataType = dataType;
+    document.body.dataset.dataType = dataType;
+    state.selectedIds.clear();
+    if (!isMaintenanceEnabled()) state.mode = 'browse';
+    els.stationTab.classList.toggle('active', dataType === 'station');
+    els.officialTab.classList.toggle('active', dataType === 'official');
+    els.stationTab.setAttribute('aria-selected', dataType === 'station' ? 'true' : 'false');
+    els.officialTab.setAttribute('aria-selected', dataType === 'official' ? 'true' : 'false');
+    resetFilters({ render: false });
+    refreshFacets();
+    updateMode(state.mode);
 }
 
 function updateMode(mode) {
-    if (STATIC_EXPORT && mode === 'maintain') return;
+    if (!isMaintenanceEnabled() && mode === 'maintain') return;
+    if (!isMaintenanceEnabled()) mode = 'browse';
     state.mode = mode;
     document.body.dataset.mode = mode;
     els.browseModeBtn.classList.toggle('active', mode === 'browse');
     els.maintainModeBtn.classList.toggle('active', mode === 'maintain');
+    els.maintainModeBtn.disabled = !isMaintenanceEnabled();
     applyFilterAndRender();
 }
 
@@ -270,6 +319,7 @@ function getRecordId(series) {
 }
 
 function isDeleted(series) {
+    if (!isMaintenanceEnabled()) return false;
     return state.maintenance.deletedIds.includes(getRecordId(series));
 }
 
@@ -290,6 +340,7 @@ function getDisplaySeries(series) {
 }
 
 function getDateForFilter(series) {
+    if (state.dataType === 'official') return normalizeIsoDate(series.postDate);
     return normalizeIsoDate(getDisplaySeries(series).date);
 }
 
@@ -321,7 +372,7 @@ function applyFilterAndRender(options = {}) {
     state.currentFilters.dateTo = els.dateTo.value;
     state.renderLimit = INITIAL_RENDER_COUNT;
 
-    state.filteredData = galleryData
+    state.filteredData = getActiveData()
         .filter((series) => !isDeleted(series))
         .filter((series) => {
             const displaySeries = getDisplaySeries(series);
@@ -335,12 +386,14 @@ function applyFilterAndRender(options = {}) {
                 ...(displaySeries.tags || [])
             ].join(' ').toLowerCase();
             if (state.currentFilters.keyword && !searchable.includes(state.currentFilters.keyword)) return false;
-            if (state.currentFilters.theme === UNCATEGORIZED_THEME_VALUE && displaySeries.theme) return false;
-            if (state.currentFilters.theme && state.currentFilters.theme !== UNCATEGORIZED_THEME_VALUE && displaySeries.theme !== state.currentFilters.theme) return false;
+            if (state.dataType === 'station') {
+                if (state.currentFilters.theme === UNCATEGORIZED_THEME_VALUE && displaySeries.theme) return false;
+                if (state.currentFilters.theme && state.currentFilters.theme !== UNCATEGORIZED_THEME_VALUE && displaySeries.theme !== state.currentFilters.theme) return false;
+            }
             if (state.currentFilters.author && displaySeries.author !== state.currentFilters.author) return false;
-            const shootDate = getDateForFilter(series);
-            if (state.currentFilters.dateFrom && (!shootDate || shootDate < state.currentFilters.dateFrom)) return false;
-            if (state.currentFilters.dateTo && (!shootDate || shootDate > state.currentFilters.dateTo)) return false;
+            const filterDate = getDateForFilter(series);
+            if (state.currentFilters.dateFrom && (!filterDate || filterDate < state.currentFilters.dateFrom)) return false;
+            if (state.currentFilters.dateTo && (!filterDate || filterDate > state.currentFilters.dateTo)) return false;
             return true;
         })
         .map(getDisplaySeries)
@@ -351,13 +404,24 @@ function applyFilterAndRender(options = {}) {
 }
 
 function resetAndRender() {
+    resetFilters({ render: true });
+}
+
+function resetFilters({ render } = { render: true }) {
     els.keywordSearch.value = '';
     els.themeFilter.value = '';
     els.authorFilter.value = '';
     els.dateFrom.value = '';
     els.dateTo.value = '';
     state.currentFilters = { keyword: '', theme: '', author: '', dateFrom: '', dateTo: '' };
-    applyFilterAndRender({ scrollTop: true });
+    if (render) applyFilterAndRender({ scrollTop: true });
+}
+
+function updateFilterVisibility() {
+    const isOfficial = state.dataType === 'official';
+    els.themeFilterGroup.classList.toggle('is-hidden', isOfficial);
+    els.dateFilterLabel.textContent = isOfficial ? '发布时间' : '拍摄时间';
+    els.maintainModeBtn.disabled = !isMaintenanceEnabled();
 }
 
 function updateResultCount() {
@@ -427,7 +491,7 @@ function renderSeries() {
                 ${state.mode === 'maintain' ? `<label class="select-card"><input type="checkbox" data-select-card value="${escapeHtml(getRecordId(series))}" ${state.selectedIds.has(getRecordId(series)) ? 'checked' : ''}><span></span></label>` : ''}
                 <div>
                     <div class="series-label">${escapeHtml(formatCardMeta(series))}</div>
-                    ${series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
+                    ${state.dataType === 'station' && series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
                 </div>
                 <a class="weibo-link" href="${escapeHtml(series.postUrl)}" target="_blank" rel="noreferrer">微博</a>
             </div>
@@ -467,7 +531,7 @@ function renderSeries() {
             article.appendChild(tagsDiv);
         }
 
-        if (state.mode === 'maintain') {
+        if (state.mode === 'maintain' && isMaintenanceEnabled()) {
             article.appendChild(renderMaintenanceForm(series));
             article.appendChild(renderTextPanel(series));
             article.querySelector('[data-select-card]')?.addEventListener('change', (event) => {
@@ -486,6 +550,12 @@ function renderSeries() {
 }
 
 function formatCardMeta(series) {
+    if (state.dataType === 'official') {
+        return [
+            series.postDate ? `${series.postDate} 发布` : '',
+            series.author || ''
+        ].filter(Boolean).join(' / ');
+    }
     return [
         series.date ? `${series.date} 拍摄` : '',
         series.postDate ? `${series.postDate} 发布` : '',
@@ -494,9 +564,10 @@ function formatCardMeta(series) {
 }
 
 function getExistingThemeChoices(selectedTheme = '') {
-    const visibleRecords = galleryData.filter((series) => !isDeleted(series)).map(getDisplaySeries);
+    const activeFacets = getActiveFacets();
+    const visibleRecords = getActiveData().filter((series) => !isDeleted(series)).map(getDisplaySeries);
     return sortedThemes([
-        ...(galleryFacets.themes || []),
+        ...(activeFacets.themes || []),
         ...visibleRecords.map((series) => series.theme),
         selectedTheme
     ].filter(Boolean)).filter((item) => typeof item !== 'object');
@@ -593,7 +664,7 @@ function splitTags(value) {
 }
 
 function selectVisibleRecords() {
-    if (state.mode !== 'maintain') return;
+    if (state.mode !== 'maintain' || !isMaintenanceEnabled()) return;
     state.filteredData.forEach((series) => state.selectedIds.add(getRecordId(series)));
     renderSeries();
 }
@@ -610,6 +681,7 @@ function updateSelectionState() {
 }
 
 async function saveRecordPatch(id, patch) {
+    if (!isMaintenanceEnabled()) return;
     if (STATIC_EXPORT) {
         state.maintenance.records[id] = patch;
         markDirty(true);
@@ -656,6 +728,7 @@ function deleteSelectedRecords() {
 
 async function deleteRecords(ids, message) {
     if (!ids.length) return;
+    if (!isMaintenanceEnabled()) return;
     const confirmed = window.confirm(message);
     if (!confirmed) return;
 

@@ -10,21 +10,25 @@
     <nav class="nav">
         <div class="nav-inner">
             <span class="nav-brand">GALLERY9704</span>
-            <button class="nav-toggle" id="navToggle" title="筛选">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <line x1="2" y1="3" x2="12" y2="3"/>
-                    <line x1="4" y1="7" x2="10" y2="7"/>
-                    <line x1="6" y1="11" x2="8" y2="11"/>
-                </svg>
-                筛选
-            </button>
+            <div class="nav-actions">
+                <div class="data-tabs" role="tablist" aria-label="数据类型">
+                    <button class="data-tab" id="stationTab" type="button" role="tab" aria-selected="false">站姐</button>
+                    <button class="data-tab active" id="officialTab" type="button" role="tab" aria-selected="true">官方</button>
+                </div>
+                <button class="nav-toggle" id="navToggle" title="筛选" aria-label="筛选" aria-pressed="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <line x1="2" y1="3" x2="12" y2="3"/>
+                        <line x1="4" y1="7" x2="10" y2="7"/>
+                        <line x1="6" y1="11" x2="8" y2="11"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- 主布局 -->
-    <div class="app-layout">
-        <!-- 左侧筛选面板 -->
-        <aside class="sidebar" id="sidebar">
+    <!-- 筛选面板 -->
+    <section class="filter-panel" id="sidebar">
+        <div class="filter-panel-inner">
             <div class="sidebar-header">
                 <span class="sidebar-title">筛选条件</span>
                 <span class="sidebar-count" id="resultCount">0 条</span>
@@ -39,7 +43,7 @@
                 </div>
 
                 <!-- 活动主题 -->
-                <div class="filter-group">
+                <div class="filter-group" id="themeFilterGroup">
                     <label class="filter-label">活动主题</label>
                     <select id="themeFilter" class="filter-select">
                         <option value="">全部主题</option>
@@ -55,7 +59,7 @@
 
                 <!-- 拍摄时间 -->
                 <div class="filter-group">
-                    <label class="filter-label">拍摄时间</label>
+                    <label class="filter-label" id="dateFilterLabel">拍摄时间</label>
                     <div class="date-row">
                         <input type="date" id="dateFrom" class="filter-input" placeholder="起始日期">
                         <span class="date-separator">至</span>
@@ -88,8 +92,11 @@
                     <span class="dirty-state" id="dirtyState">已同步</span>
                 </div>
             </div>
-        </aside>
+        </div>
+    </section>
 
+    <!-- 主布局 -->
+    <div class="app-layout">
         <!-- 主内容区 -->
         <main class="main-content" id="mainContent">
             <!-- 空状态 -->
@@ -131,6 +138,7 @@
     </div>
 
     <script src="js/data.js"></script>
+    <script src="js/official-data.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

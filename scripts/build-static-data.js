@@ -47,11 +47,13 @@ function compareByPostTimeDesc(a, b) {
   return postSortValue(b).localeCompare(postSortValue(a));
 }
 
-function loadMetadata() {
-  return JSON.parse(fs.readFileSync(METADATA_PATH, 'utf8'));
+function loadMetadata(metadataPath = METADATA_PATH) {
+  return JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
 }
 
-function buildData(metadata = loadMetadata()) {
+function buildData(metadata = loadMetadata(), dataPath = DATA_PATH, options = {}) {
+  const dataVar = options.dataVar || 'galleryData';
+  const facetsVar = options.facetsVar || 'galleryFacets';
   const galleryData = [...metadata].sort(compareByPostTimeDesc).map(toGalleryRecord);
   const galleryFacets = {
     authors: uniqueSorted(galleryData.map((item) => item.author)),
@@ -62,17 +64,24 @@ function buildData(metadata = loadMetadata()) {
     '// ==================== GALLERY9704 Data ====================',
     '// Generated from local metadata.json. Do not edit manually.',
     '',
-    `const galleryData = ${JSON.stringify(galleryData, null, 2)};`,
+    `const ${dataVar} = ${JSON.stringify(galleryData, null, 2)};`,
     '',
-    `const galleryFacets = ${JSON.stringify(galleryFacets, null, 2)};`,
+    `const ${facetsVar} = ${JSON.stringify(galleryFacets, null, 2)};`,
     ''
   ].join('\n');
-  fs.writeFileSync(DATA_PATH, source);
+  fs.writeFileSync(dataPath, source);
   return { recordCount: galleryData.length, imageCount: galleryData.reduce((sum, item) => sum + item.images.length, 0) };
 }
 
 if (require.main === module) {
-  const result = buildData();
+  const metadataPath = process.argv[2] ? path.resolve(process.cwd(), process.argv[2]) : METADATA_PATH;
+  const dataPath = process.argv[3] ? path.resolve(process.cwd(), process.argv[3]) : DATA_PATH;
+  const dataVarIndex = process.argv.indexOf('--data-var');
+  const facetsVarIndex = process.argv.indexOf('--facets-var');
+  const result = buildData(loadMetadata(metadataPath), dataPath, {
+    dataVar: dataVarIndex >= 0 ? process.argv[dataVarIndex + 1] : 'galleryData',
+    facetsVar: facetsVarIndex >= 0 ? process.argv[facetsVarIndex + 1] : 'galleryFacets'
+  });
   console.log(JSON.stringify(result, null, 2));
 }
 
