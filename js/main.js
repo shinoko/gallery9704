@@ -2,6 +2,36 @@
 
 const STORAGE_KEY = 'gallery9704-maintenance';
 const STATIC_EXPORT = window.GALLERY9704_STATIC_EXPORT === true;
+const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
+const THEME_TIMELINE = [
+    ['双人机场', '2025-08-15'],
+    ['泰国微博文化交流之夜', '2025-08-16'],
+    ['泰国双人见面会', '2025-08-17'],
+    ['澳门双人见面会', '2025-09-13'],
+    ['巴黎时装周·25秋', '2025-10-01'],
+    ['南京咪豆音乐节', '2025-10-02'],
+    ['宝鸡银杏音乐节', '2025-10-04'],
+    ['襄阳国潮音乐节', '2025-10-08'],
+    ['扬州枣林湾音乐节', '2025-10-18'],
+    ['25珑骧活动', '2025-10-28'],
+    ['赣州Z纪元巅峰音乐节', '2025-11-15'],
+    ['新加坡微博文化交流之夜', '2025-11-16'],
+    ['周日下午3点见生日音乐会', '2026-01-11'],
+    ['LOEWE罗意威活动', '2026-01-21'],
+    ['深圳奇梦岛开业', '2026-02-01'],
+    ['巴黎时装周·26春', '2026-03-02'],
+    ['巴黎世家活动', '2026-03-27'],
+    ['何日君再来', '2026-03-28'],
+    ['QQ音乐巅峰之夜', '2026-03-28'],
+    ['MaisonMargiela看秀', '2026-04-01'],
+    ['26珑骧活动', '2026-04-23'],
+    ['澳门WIEA国际娱乐盛典', '2026-04-26'],
+    ['同心结', '2026-06-14'],
+    ['米兰巴黎时装周·26夏', '2026-06-20'],
+    ['搜狐扫楼', '2026-07-03'],
+    ['巴黎高定周·26夏', '2026-07-04']
+];
+const THEME_SORT_META = new Map(THEME_TIMELINE.map(([theme, date], index) => [theme, { date, index }]));
 
 const state = {
     mode: 'browse',
@@ -66,8 +96,8 @@ function refreshFacets() {
     const currentTheme = els.themeFilter.value;
     const currentAuthor = els.authorFilter.value;
     const visibleRecords = galleryData.filter((series) => !isDeleted(series)).map(getDisplaySeries);
-    optionize(els.themeFilter, uniqueSorted([...(galleryFacets.themes || []), ...visibleRecords.map((series) => series.theme)]), '全部主题');
-    optionize(els.authorFilter, uniqueSorted([...(galleryFacets.authors || []), ...visibleRecords.map((series) => series.author)]), '全部账号');
+    optionize(els.themeFilter, sortedThemes([...(galleryFacets.themes || []), ...visibleRecords.map((series) => series.theme)]), '全部主题');
+    optionize(els.authorFilter, sortedStrings([...(galleryFacets.authors || []), ...visibleRecords.map((series) => series.author)]), '全部账号');
     els.themeFilter.value = Array.from(els.themeFilter.options).some((option) => option.value === currentTheme) ? currentTheme : '';
     els.authorFilter.value = Array.from(els.authorFilter.options).some((option) => option.value === currentAuthor) ? currentAuthor : '';
 }
@@ -78,16 +108,42 @@ function optionize(select, values, placeholder) {
     empty.value = '';
     empty.textContent = placeholder;
     select.appendChild(empty);
-    values.forEach((value) => {
+    values.forEach((item) => {
+        const value = typeof item === 'object' ? item.value : item;
+        const label = typeof item === 'object' ? item.label : item;
         const option = document.createElement('option');
         option.value = value;
-        option.textContent = value;
+        option.textContent = label;
         select.appendChild(option);
     });
 }
 
 function uniqueSorted(values) {
+    return sortedStrings(values);
+}
+
+function sortedStrings(values) {
     return Array.from(new Set(values.filter(Boolean))).sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
+}
+
+function sortedThemes(values) {
+    const hasUncategorized = values.some((value) => !value);
+    const themes = Array.from(new Set(values.filter(Boolean))).sort((a, b) => {
+        const metaA = THEME_SORT_META.get(a);
+        const metaB = THEME_SORT_META.get(b);
+        if (metaA && metaB) {
+            const dateCompare = metaA.date.localeCompare(metaB.date);
+            if (dateCompare !== 0) return dateCompare;
+            return metaA.index - metaB.index;
+        }
+        if (metaA) return -1;
+        if (metaB) return 1;
+        return a.localeCompare(b, 'zh-Hans-CN');
+    });
+    if (hasUncategorized) {
+        themes.push({ value: UNCATEGORIZED_THEME_VALUE, label: '未分类活动' });
+    }
+    return themes;
 }
 
 function initListeners() {
@@ -262,8 +318,12 @@ function applyFilterAndRender() {
                 ...(displaySeries.tags || [])
             ].join(' ').toLowerCase();
             if (state.currentFilters.keyword && !searchable.includes(state.currentFilters.keyword)) return false;
-            if (state.currentFilters.theme && displaySeries.theme !== state.currentFilters.theme) return false;
+            if (state.currentFilters.theme === UNCATEGORIZED_THEME_VALUE && displaySeries.theme) return false;
+            if (state.currentFilters.theme && state.currentFilters.theme !== UNCATEGORIZED_THEME_VALUE && displaySeries.theme !== state.currentFilters.theme) return false;
             if (state.currentFilters.author && displaySeries.author !== state.currentFilters.author) return false;
+            const shootDate = getDateForFilter(series);
+            if (state.currentFilters.dateFrom && (!shootDate || shootDate < state.currentFilters.dateFrom)) return false;
+            if (state.currentFilters.dateTo && (!shootDate || shootDate > state.currentFilters.dateTo)) return false;
             return true;
         })
         .map(getDisplaySeries)
@@ -364,6 +424,7 @@ function renderSeries() {
 
 function formatCardMeta(series) {
     return [
+        series.date ? `${series.date} 拍摄` : '',
         series.postDate ? `${series.postDate} 发布` : '',
         series.author || ''
     ].filter(Boolean).join(' / ');
