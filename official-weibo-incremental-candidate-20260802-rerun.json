@@ -1,0 +1,200 @@
+{
+  "collectedAt": "2026-08-02T09:10:01.689Z",
+  "sinceDate": "2026-08-02",
+  "collectionSource": "m-weibo-container-api-official-incremental-20260802-rerun",
+  "summary": {
+    "accounts": [
+      {
+        "name": "展轩",
+        "uid": "5080250314",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 295,
+        "scannedUnique": 20,
+        "keptNew": 1,
+        "skippedNew": 0,
+        "pageCount": 2,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 1,
+          "existingCount": 3,
+          "oldCount": 6,
+          "skipped": 0,
+          "minDate": "2026-06-30",
+          "maxDate": "2026-08-02",
+          "since_id": 5315084890669291
+        },
+        "lastPage": {
+          "page": 2,
+          "cards": 10,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 8,
+          "oldCount": 2,
+          "skipped": 0,
+          "minDate": "2026-05-27",
+          "maxDate": "2026-06-29",
+          "since_id": 5299562471753723
+        }
+      },
+      {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 177,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 6,
+          "oldCount": 4,
+          "skipped": 0,
+          "minDate": "2026-07-03",
+          "maxDate": "2026-08-01",
+          "since_id": 5315593293006548
+        },
+        "lastPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 6,
+          "oldCount": 4,
+          "skipped": 0,
+          "minDate": "2026-07-03",
+          "maxDate": "2026-08-01",
+          "since_id": 5315593293006548
+        }
+      },
+      {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 257,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 3,
+          "oldCount": 7,
+          "skipped": 0,
+          "minDate": "2026-07-21",
+          "maxDate": "2026-07-31",
+          "since_id": 5322694917621326
+        },
+        "lastPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 3,
+          "oldCount": 7,
+          "skipped": 0,
+          "minDate": "2026-07-21",
+          "maxDate": "2026-07-31",
+          "since_id": 5322694917621326
+        }
+      },
+      {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 228,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 2,
+          "oldCount": 8,
+          "skipped": 0,
+          "minDate": "2026-07-09",
+          "maxDate": "2026-08-01",
+          "since_id": 5318694861275289
+        },
+        "lastPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 2,
+          "oldCount": 8,
+          "skipped": 0,
+          "minDate": "2026-07-09",
+          "maxDate": "2026-08-01",
+          "since_id": 5318694861275289
+        }
+      }
+    ],
+    "totals": {
+      "profileTotal": 957,
+      "scannedUnique": 50,
+      "keptNew": 1,
+      "skippedNew": 0,
+      "images": 6
+    },
+    "skipReasons": {}
+  },
+  "records": [
+    {
+      "id": "https://weibo.com/5080250314/RbwXj3BMr",
+      "sourceType": "official-person",
+      "author": "展轩",
+      "authorUrl": "https://weibo.com/u/5080250314",
+      "postUrl": "https://weibo.com/5080250314/RbwXj3BMr",
+      "postDate": "2026-08-02",
+      "postTimeText": "2026-08-02 15:06",
+      "text": "📷#车干日常#",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/005xOdbcly1ifpi21killj32c02c0x6r.jpg",
+        "https://wx4.sinaimg.cn/orj360/005xOdbcly1ifpi22u3rqj31wo1woqv6.jpg",
+        "https://wx2.sinaimg.cn/orj360/005xOdbcly1ifpi24keqcj32c02c0u0z.jpg",
+        "https://wx1.sinaimg.cn/orj360/005xOdbcly1ifpi265kzoj32c02c04qs.jpg",
+        "https://wx3.sinaimg.cn/orj360/005xOdbcly1ifpi1zlviaj32c02c0x6r.jpg",
+        "https://wx4.sinaimg.cn/orj360/005xOdbcly1ifpi289u4wj32c02c01l0.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-08-02_展轩_RbwXj3BMr_01.jpg",
+        "official-images/2026-08-02_展轩_RbwXj3BMr_02.jpg",
+        "official-images/2026-08-02_展轩_RbwXj3BMr_03.jpg",
+        "official-images/2026-08-02_展轩_RbwXj3BMr_04.jpg",
+        "official-images/2026-08-02_展轩_RbwXj3BMr_05.jpg",
+        "official-images/2026-08-02_展轩_RbwXj3BMr_06.jpg"
+      ],
+      "collectionSource": "m-weibo-container-api-official-incremental-20260802-rerun",
+      "collectionAccountUid": "5080250314",
+      "collectionAccountName": "展轩",
+      "mblogId": "5327482930860215",
+      "mid": "5327482930860215",
+      "bid": "RbwXj3BMr",
+      "rawPicNum": 6
+    }
+  ]
+}

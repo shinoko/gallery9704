@@ -86,7 +86,7 @@
     "shootDate": "",
     "theme": "巴黎高定周·26夏",
     "id": "https://weibo.com/4098005675/RaL3cwP8c",
-    "collectionSource": "m-weibo-container-api-rescan",
+    "collectionSource": "m-weibo-container-api-single-post-rerun-20260802",
     "collectionAccountUid": "4098005675",
     "collectionAccountName": "刘轩丞工作室",
     "mblogId": "5325641467823048",
@@ -16481,6 +16481,45 @@
     "bid": "Gqgvw9CDZ",
     "rawPicNum": 1,
     "tags": [],
+    "targetPeople": [],
+    "shootDate": "",
+    "theme": ""
+  },
+  {
+    "id": "https://weibo.com/5080250314/RbwXj3BMr",
+    "sourceType": "official-person",
+    "author": "展轩",
+    "authorUrl": "https://weibo.com/u/5080250314",
+    "postUrl": "https://weibo.com/5080250314/RbwXj3BMr",
+    "postDate": "2026-08-02",
+    "postTimeText": "2026-08-02 15:06",
+    "text": "📷#车干日常#",
+    "imageUrls": [
+      "https://wx1.sinaimg.cn/orj360/005xOdbcly1ifpi21killj32c02c0x6r.jpg",
+      "https://wx4.sinaimg.cn/orj360/005xOdbcly1ifpi22u3rqj31wo1woqv6.jpg",
+      "https://wx2.sinaimg.cn/orj360/005xOdbcly1ifpi24keqcj32c02c0u0z.jpg",
+      "https://wx1.sinaimg.cn/orj360/005xOdbcly1ifpi265kzoj32c02c04qs.jpg",
+      "https://wx3.sinaimg.cn/orj360/005xOdbcly1ifpi1zlviaj32c02c0x6r.jpg",
+      "https://wx4.sinaimg.cn/orj360/005xOdbcly1ifpi289u4wj32c02c01l0.jpg"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-02_展轩_RbwXj3BMr_01.jpg",
+      "official-images/2026-08-02_展轩_RbwXj3BMr_02.jpg",
+      "official-images/2026-08-02_展轩_RbwXj3BMr_03.jpg",
+      "official-images/2026-08-02_展轩_RbwXj3BMr_04.jpg",
+      "official-images/2026-08-02_展轩_RbwXj3BMr_05.jpg",
+      "official-images/2026-08-02_展轩_RbwXj3BMr_06.jpg"
+    ],
+    "collectionSource": "m-weibo-container-api-official-incremental-20260802-rerun",
+    "collectionAccountUid": "5080250314",
+    "collectionAccountName": "展轩",
+    "mblogId": "5327482930860215",
+    "mid": "5327482930860215",
+    "bid": "RbwXj3BMr",
+    "rawPicNum": 6,
+    "tags": [
+      "车干日常"
+    ],
     "targetPeople": [],
     "shootDate": "",
     "theme": ""

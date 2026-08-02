@@ -1,0 +1,46 @@
+{
+  "collectedAt": "2026-08-02T09:13:43.961Z",
+  "collectionSource": "m-weibo-container-api-single-post-rerun-20260802",
+  "sourceUrl": "https://weibo.com/4098005675/RaL3cwP8c",
+  "records": [
+    {
+      "id": "https://weibo.com/4098005675/RaL3cwP8c",
+      "sourceType": "official-studio",
+      "author": "刘轩丞工作室",
+      "authorUrl": "https://weibo.com/u/4098005675",
+      "postUrl": "https://weibo.com/4098005675/RaL3cwP8c",
+      "postDate": "2026-07-28",
+      "postTimeText": "2026-07-28 13:08",
+      "text": "演员刘轩丞 捕捉@刘轩丞- 的动态片刻。#刘轩丞巴黎高定周封面##刘轩丞封面解锁新高定#",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/f4429aably1ifjmkowkwhj20l40l4goc.jpg",
+        "https://wx3.sinaimg.cn/orj360/f4429aably1ifjmknwzjkj20u00u0gso.jpg",
+        "https://wx1.sinaimg.cn/orj360/f4429aably1ifjmksmb8xj20u00u048q.jpg",
+        "https://wx3.sinaimg.cn/orj360/f4429aably1ifjmkwqxtpj20l40l477i.jpg",
+        "https://wx2.sinaimg.cn/orj360/f4429aably1ifjmkq6kbsj22c02c0b1t.jpg",
+        "https://wx4.sinaimg.cn/orj360/f4429aably1ifjmku69z1j20u00u0n3v.jpg",
+        "https://wx3.sinaimg.cn/orj360/f4429aably1ifjmkrhf90j20u00u00vv.jpg",
+        "https://wx2.sinaimg.cn/orj360/f4429aably1ifjmkvb739j20u00u0q6v.jpg",
+        "https://wx4.sinaimg.cn/orj360/f4429aably1ifjmktwrkdj20rh0rhwjp.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_01.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_02.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_03.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_04.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_05.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_06.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_07.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_08.jpg",
+        "official-images/2026-07-28_刘轩丞工作室_RaL3cwP8c_09.jpg"
+      ],
+      "collectionSource": "m-weibo-container-api-single-post-rerun-20260802",
+      "collectionAccountUid": "4098005675",
+      "collectionAccountName": "刘轩丞工作室",
+      "mblogId": "5325641467823048",
+      "mid": "5325641467823048",
+      "bid": "RaL3cwP8c",
+      "rawPicNum": 9
+    }
+  ]
+}

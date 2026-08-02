@@ -1,0 +1,266 @@
+{
+  "collectedAt": "2026-08-02T09:10:01.689Z",
+  "sinceDate": "2026-08-02",
+  "accounts": [
+    {
+      "name": "展轩",
+      "uid": "5080250314",
+      "mode": "incremental",
+      "dataType": "official",
+      "profileTotal": 295,
+      "scannedUnique": 20,
+      "keptNew": 1,
+      "skippedNew": 0,
+      "pageCount": 2,
+      "firstPage": {
+        "page": 1,
+        "cards": 11,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 1,
+        "existingCount": 3,
+        "oldCount": 6,
+        "skipped": 0,
+        "minDate": "2026-06-30",
+        "maxDate": "2026-08-02",
+        "since_id": 5315084890669291
+      },
+      "lastPage": {
+        "page": 2,
+        "cards": 10,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 0,
+        "existingCount": 8,
+        "oldCount": 2,
+        "skipped": 0,
+        "minDate": "2026-05-27",
+        "maxDate": "2026-06-29",
+        "since_id": 5299562471753723
+      }
+    },
+    {
+      "name": "刘轩丞-",
+      "uid": "7904163238",
+      "mode": "incremental",
+      "dataType": "official",
+      "profileTotal": 177,
+      "scannedUnique": 10,
+      "keptNew": 0,
+      "skippedNew": 0,
+      "pageCount": 1,
+      "firstPage": {
+        "page": 1,
+        "cards": 11,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 0,
+        "existingCount": 6,
+        "oldCount": 4,
+        "skipped": 0,
+        "minDate": "2026-07-03",
+        "maxDate": "2026-08-01",
+        "since_id": 5315593293006548
+      },
+      "lastPage": {
+        "page": 1,
+        "cards": 11,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 0,
+        "existingCount": 6,
+        "oldCount": 4,
+        "skipped": 0,
+        "minDate": "2026-07-03",
+        "maxDate": "2026-08-01",
+        "since_id": 5315593293006548
+      }
+    },
+    {
+      "name": "展轩工作室",
+      "uid": "8019492674",
+      "mode": "incremental",
+      "dataType": "official",
+      "profileTotal": 257,
+      "scannedUnique": 10,
+      "keptNew": 0,
+      "skippedNew": 0,
+      "pageCount": 1,
+      "firstPage": {
+        "page": 1,
+        "cards": 11,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 0,
+        "existingCount": 3,
+        "oldCount": 7,
+        "skipped": 0,
+        "minDate": "2026-07-21",
+        "maxDate": "2026-07-31",
+        "since_id": 5322694917621326
+      },
+      "lastPage": {
+        "page": 1,
+        "cards": 11,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 0,
+        "existingCount": 3,
+        "oldCount": 7,
+        "skipped": 0,
+        "minDate": "2026-07-21",
+        "maxDate": "2026-07-31",
+        "since_id": 5322694917621326
+      }
+    },
+    {
+      "name": "刘轩丞工作室",
+      "uid": "4098005675",
+      "mode": "incremental",
+      "dataType": "official",
+      "profileTotal": 228,
+      "scannedUnique": 10,
+      "keptNew": 0,
+      "skippedNew": 0,
+      "pageCount": 1,
+      "firstPage": {
+        "page": 1,
+        "cards": 11,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 0,
+        "existingCount": 2,
+        "oldCount": 8,
+        "skipped": 0,
+        "minDate": "2026-07-09",
+        "maxDate": "2026-08-01",
+        "since_id": 5318694861275289
+      },
+      "lastPage": {
+        "page": 1,
+        "cards": 11,
+        "mblogs": 10,
+        "newUnique": 10,
+        "kept": 0,
+        "existingCount": 2,
+        "oldCount": 8,
+        "skipped": 0,
+        "minDate": "2026-07-09",
+        "maxDate": "2026-08-01",
+        "since_id": 5318694861275289
+      }
+    }
+  ],
+  "skipped": [],
+  "pageStats": [
+    {
+      "account": {
+        "name": "展轩",
+        "uid": "5080250314",
+        "sourceType": "official-person",
+        "dataType": "official",
+        "mode": "incremental"
+      },
+      "pageStats": [
+        {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 1,
+          "existingCount": 3,
+          "oldCount": 6,
+          "skipped": 0,
+          "minDate": "2026-06-30",
+          "maxDate": "2026-08-02",
+          "since_id": 5315084890669291
+        },
+        {
+          "page": 2,
+          "cards": 10,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 8,
+          "oldCount": 2,
+          "skipped": 0,
+          "minDate": "2026-05-27",
+          "maxDate": "2026-06-29",
+          "since_id": 5299562471753723
+        }
+      ]
+    },
+    {
+      "account": {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "sourceType": "official-person",
+        "dataType": "official",
+        "mode": "incremental"
+      },
+      "pageStats": [
+        {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 6,
+          "oldCount": 4,
+          "skipped": 0,
+          "minDate": "2026-07-03",
+          "maxDate": "2026-08-01",
+          "since_id": 5315593293006548
+        }
+      ]
+    },
+    {
+      "account": {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "sourceType": "official-studio",
+        "dataType": "official",
+        "mode": "incremental"
+      },
+      "pageStats": [
+        {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 3,
+          "oldCount": 7,
+          "skipped": 0,
+          "minDate": "2026-07-21",
+          "maxDate": "2026-07-31",
+          "since_id": 5322694917621326
+        }
+      ]
+    },
+    {
+      "account": {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "sourceType": "official-studio",
+        "dataType": "official",
+        "mode": "incremental"
+      },
+      "pageStats": [
+        {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 2,
+          "oldCount": 8,
+          "skipped": 0,
+          "minDate": "2026-07-09",
+          "maxDate": "2026-08-01",
+          "since_id": 5318694861275289
+        }
+      ]
+    }
+  ]
+}
