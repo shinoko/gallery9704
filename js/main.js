@@ -84,6 +84,9 @@ const els = {
     maintainModeBtn: document.getElementById('maintainModeBtn'),
     selectVisible: document.getElementById('selectVisible'),
     clearSelection: document.getElementById('clearSelection'),
+    bulkThemeInput: document.getElementById('bulkThemeInput'),
+    bulkThemeOptions: document.getElementById('bulkThemeOptions'),
+    saveBulkTheme: document.getElementById('saveBulkTheme'),
     deleteSelected: document.getElementById('deleteSelected'),
     selectedState: document.getElementById('selectedState'),
     saveMaintenance: document.getElementById('saveMaintenance'),
@@ -152,6 +155,7 @@ function refreshFacets() {
     optionize(els.authorFilter, sortedStrings([...(activeFacets.authors || []), ...visibleRecords.map((series) => series.author)]), '全部账号');
     els.themeFilter.value = Array.from(els.themeFilter.options).some((option) => option.value === currentTheme) ? currentTheme : '';
     els.authorFilter.value = Array.from(els.authorFilter.options).some((option) => option.value === currentAuthor) ? currentAuthor : '';
+    renderBulkThemeOptions();
     updateFilterVisibility();
 }
 
@@ -208,6 +212,8 @@ function initListeners() {
     els.maintainModeBtn.addEventListener('click', () => updateMode('maintain'));
     els.selectVisible.addEventListener('click', selectVisibleRecords);
     els.clearSelection.addEventListener('click', clearSelection);
+    els.bulkThemeInput.addEventListener('input', updateSelectionState);
+    els.saveBulkTheme.addEventListener('click', saveBulkTheme);
     els.deleteSelected.addEventListener('click', deleteSelectedRecords);
     els.saveMaintenance.addEventListener('click', saveMaintenance);
     els.exportMaintenance.addEventListener('click', exportMaintenance);
@@ -654,6 +660,11 @@ function renderThemeOptions() {
     return choices.map((theme) => `<option value="${escapeHtml(theme)}"></option>`).join('');
 }
 
+function renderBulkThemeOptions() {
+    if (!els.bulkThemeOptions) return;
+    els.bulkThemeOptions.innerHTML = renderThemeOptions();
+}
+
 function toDomId(value) {
     return String(value || '').replace(/[^a-zA-Z0-9_-]+/g, '-').slice(0, 80) || 'record';
 }
@@ -744,6 +755,82 @@ function updateSelectionState() {
     const count = state.selectedIds.size;
     if (els.selectedState) els.selectedState.textContent = `已选择 ${count} 条`;
     if (els.deleteSelected) els.deleteSelected.disabled = count === 0;
+    if (els.saveBulkTheme) els.saveBulkTheme.disabled = count === 0 || !els.bulkThemeInput.value.trim();
+}
+
+async function saveBulkTheme() {
+    if (state.mode !== 'maintain' || !isMaintenanceEnabled()) return;
+    const ids = Array.from(state.selectedIds);
+    const theme = els.bulkThemeInput.value.trim();
+    if (!ids.length) {
+        alert('请先选择要批量维护的卡片。');
+        return;
+    }
+    if (!theme) {
+        alert('请先选择或输入活动主题。');
+        return;
+    }
+
+    const patch = { theme, updatedAt: new Date().toISOString() };
+    if (STATIC_EXPORT) {
+        ids.forEach((id) => {
+            state.maintenance.records[id] = {
+                ...(state.maintenance.records[id] || {}),
+                ...patch
+            };
+        });
+        applyBulkPatchToActiveData(ids, patch);
+        markDirty(true);
+        refreshFacets();
+        applyFilterAndRender();
+        return;
+    }
+
+    els.saveBulkTheme.disabled = true;
+    try {
+        await Promise.all(ids.map((id) => saveRecordPatchRequest(id, patch)));
+        applyBulkPatchToActiveData(ids, patch);
+        ids.forEach((id) => delete state.maintenance.records[id]);
+        markDirty(false);
+        refreshFacets();
+        applyFilterAndRender();
+        alert(`已为 ${ids.length} 条微博批量保存主题。`);
+    } catch (error) {
+        alert(error.message || '批量保存主题失败，请确认当前是通过 npm start 启动的服务端项目。');
+    } finally {
+        updateSelectionState();
+    }
+}
+
+function applyBulkPatchToActiveData(ids, patch) {
+    const idSet = new Set(ids.map(String));
+    const activeData = getActiveData();
+    activeData.forEach((series, index) => {
+        if (!idSet.has(getRecordId(series))) return;
+        activeData[index] = applyPatchToSeries(series, patch);
+    });
+}
+
+function applyPatchToSeries(series, patch) {
+    const hasThemePatch = Object.prototype.hasOwnProperty.call(patch, 'theme');
+    return {
+        ...series,
+        title: hasThemePatch ? patch.theme : series.title,
+        theme: hasThemePatch ? patch.theme : series.theme,
+        tags: patch.tags || series.tags,
+        note: patch.note || series.note || ''
+    };
+}
+
+async function saveRecordPatchRequest(id, patch) {
+    const response = await fetch('/api/records/update', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ dataType: state.dataType, id, patch })
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(payload.error || `保存失败：${response.status}`);
+    return payload;
 }
 
 async function saveRecordPatch(id, patch) {
@@ -757,25 +844,12 @@ async function saveRecordPatch(id, patch) {
     }
 
     try {
-        const response = await fetch('/api/records/update', {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ dataType: state.dataType, id, patch })
-        });
-        const payload = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(payload.error || `保存失败：${response.status}`);
+        await saveRecordPatchRequest(id, patch);
 
         const activeData = getActiveData();
         const sourceIndex = activeData.findIndex((series) => getRecordId(series) === id);
         if (sourceIndex !== -1) {
-            const hasThemePatch = Object.prototype.hasOwnProperty.call(patch, 'theme');
-            activeData[sourceIndex] = {
-                ...activeData[sourceIndex],
-                title: hasThemePatch ? patch.theme : activeData[sourceIndex].title,
-                theme: hasThemePatch ? patch.theme : activeData[sourceIndex].theme,
-                tags: patch.tags || activeData[sourceIndex].tags,
-                note: patch.note || ''
-            };
+            activeData[sourceIndex] = applyPatchToSeries(activeData[sourceIndex], patch);
         }
         delete state.maintenance.records[id];
         markDirty(false);

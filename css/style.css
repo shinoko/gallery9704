@@ -655,6 +655,24 @@ body[data-static-export="true"] .sidebar-bottom {
     align-items: center;
 }
 
+.bulk-theme-field {
+    display: grid;
+    grid-template-columns: auto minmax(180px, 260px);
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.bulk-theme-field span {
+    font-size: 10px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.bulk-theme-field .filter-input {
+    min-height: 38px;
+}
+
 .selection-tools .btn-danger,
 .selection-tools .dirty-state {
     grid-column: auto;
@@ -1379,6 +1397,12 @@ body[data-static-export="true"] .sidebar-bottom {
 
     .filter-actions .btn {
         flex: 1 1 0;
+    }
+
+    .bulk-theme-field {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        flex: 1 1 100%;
     }
 
     .date-row {

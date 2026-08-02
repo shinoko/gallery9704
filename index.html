@@ -103,6 +103,12 @@
                     <div class="selection-tools">
                         <button class="btn btn-secondary" id="selectVisible" type="button">选择当前结果</button>
                         <button class="btn btn-secondary" id="clearSelection" type="button">取消选择</button>
+                        <label class="bulk-theme-field">
+                            <span>批量主题</span>
+                            <input id="bulkThemeInput" class="filter-input" list="bulkThemeOptions" placeholder="选择或输入主题">
+                            <datalist id="bulkThemeOptions"></datalist>
+                        </label>
+                        <button class="btn btn-primary" id="saveBulkTheme" type="button" disabled>批量保存主题</button>
                         <button class="btn btn-danger" id="deleteSelected" type="button" disabled>删除已选</button>
                         <span class="dirty-state" id="selectedState">已选择 0 条</span>
                     </div>
