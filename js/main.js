@@ -493,8 +493,12 @@ function disconnectLoadMoreObserver() {
 
 function loadMoreSeries() {
     if (state.renderLimit >= state.filteredData.length) return;
+    const previousLimit = state.renderLimit;
     state.renderLimit = Math.min(state.renderLimit + RENDER_BATCH_SIZE, state.filteredData.length);
-    renderSeries();
+    els.seriesList.querySelector('.load-more')?.remove();
+    appendSeriesRange(previousLimit, state.renderLimit);
+    renderLoadMoreControl(els.seriesList);
+    updateSelectionState();
 }
 
 function observeLoadMore(target) {
@@ -534,83 +538,91 @@ function renderSeries() {
 
     els.emptyState.style.display = 'none';
 
-    const visibleData = state.filteredData.slice(0, state.renderLimit);
-    visibleData.forEach((series, seriesIndex) => {
-        const article = document.createElement('article');
-        article.className = 'series';
-        article.dataset.id = getRecordId(series);
-
-        const header = document.createElement('div');
-        header.className = 'series-header';
-        header.innerHTML = `
-            <div class="series-meta">
-                ${state.mode === 'maintain' ? `<label class="select-card"><input type="checkbox" data-select-card value="${escapeHtml(getRecordId(series))}" ${state.selectedIds.has(getRecordId(series)) ? 'checked' : ''}><span></span></label>` : ''}
-                <div>
-                    <div class="series-label">${escapeHtml(formatCardMeta(series))}</div>
-                    ${state.dataType === 'station' && series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
-                </div>
-                <a class="weibo-link" href="${escapeHtml(series.postUrl)}" target="_blank" rel="noreferrer" aria-label="打开微博原文" title="打开微博原文">
-                    <svg class="weibo-icon" width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M14.3 7.8c1.1.8 1.7 1.8 1.5 2.9-.4 2.3-3.7 3.9-7.4 3.6-3.7-.3-6.4-2.4-6-4.7.3-1.6 2.2-2.9 4.6-3.4"/>
-                        <path d="M6.2 6.7c.8-1.4 2.2-2.2 3.4-1.8 1.2.4 1.7 1.8 1.2 3.3"/>
-                        <path d="M7.1 9.7c-.1.8.7 1.5 1.8 1.6 1.1.1 2-.4 2.1-1.2.1-.8-.7-1.5-1.8-1.6-1.1-.1-2 .4-2.1 1.2Z"/>
-                        <path d="M12.1 3.3c1.2.2 2.1 1 2.4 2.1"/>
-                        <path d="M12.7 1.4c2.1.3 3.7 1.8 4.1 3.8"/>
-                    </svg>
-                </a>
-            </div>
-        `;
-        article.appendChild(header);
-
-        const grid = document.createElement('div');
-        grid.className = `image-grid count-${Math.min(series.images.length, 3)}`;
-        const spans = computeSpans(series.images.length);
-
-        series.images.forEach((imgSrc, imgIndex) => {
-            const gridItem = document.createElement('div');
-            const spanClass = spans[imgIndex] || '';
-            gridItem.className = 'grid-image' + (spanClass ? ' ' + spanClass : '');
-
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            img.alt = `${series.title} ${imgIndex + 1}`;
-            img.loading = 'lazy';
-            img.decoding = 'async';
-            img.addEventListener('click', () => openModal(seriesIndex, imgIndex));
-            gridItem.appendChild(img);
-
-            grid.appendChild(gridItem);
-        });
-        article.appendChild(grid);
-
-        if (series.tags && series.tags.length > 0) {
-            const tagsDiv = document.createElement('div');
-            tagsDiv.className = 'series-tags';
-            series.tags.forEach((tag) => {
-                const tagSpan = document.createElement('span');
-                tagSpan.className = 'series-tag';
-                tagSpan.textContent = tag;
-                tagsDiv.appendChild(tagSpan);
-            });
-            article.appendChild(tagsDiv);
-        }
-
-        if (state.mode === 'maintain' && isMaintenanceEnabled()) {
-            article.appendChild(renderMaintenanceForm(series));
-            article.appendChild(renderTextPanel(series));
-            article.querySelector('[data-select-card]')?.addEventListener('change', (event) => {
-                const id = event.currentTarget.value;
-                if (event.currentTarget.checked) state.selectedIds.add(id);
-                else state.selectedIds.delete(id);
-                updateSelectionState();
-            });
-        }
-
-        container.appendChild(article);
-    });
-
+    appendSeriesRange(0, state.renderLimit);
     renderLoadMoreControl(container);
     updateSelectionState();
+}
+
+function appendSeriesRange(start, end) {
+    const fragment = document.createDocumentFragment();
+    state.filteredData.slice(start, end).forEach((series, offset) => {
+        fragment.appendChild(renderSeriesItem(series, start + offset));
+    });
+    els.seriesList.appendChild(fragment);
+}
+
+function renderSeriesItem(series, seriesIndex) {
+    const article = document.createElement('article');
+    article.className = 'series';
+    article.dataset.id = getRecordId(series);
+
+    const header = document.createElement('div');
+    header.className = 'series-header';
+    header.innerHTML = `
+        <div class="series-meta">
+            ${state.mode === 'maintain' ? `<label class="select-card"><input type="checkbox" data-select-card value="${escapeHtml(getRecordId(series))}" ${state.selectedIds.has(getRecordId(series)) ? 'checked' : ''}><span></span></label>` : ''}
+            <div>
+                <div class="series-label">${escapeHtml(formatCardMeta(series))}</div>
+                ${state.dataType === 'station' && series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
+            </div>
+            <a class="weibo-link" href="${escapeHtml(series.postUrl)}" target="_blank" rel="noreferrer" aria-label="打开微博原文" title="打开微博原文">
+                <svg class="weibo-icon" width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14.3 7.8c1.1.8 1.7 1.8 1.5 2.9-.4 2.3-3.7 3.9-7.4 3.6-3.7-.3-6.4-2.4-6-4.7.3-1.6 2.2-2.9 4.6-3.4"/>
+                    <path d="M6.2 6.7c.8-1.4 2.2-2.2 3.4-1.8 1.2.4 1.7 1.8 1.2 3.3"/>
+                    <path d="M7.1 9.7c-.1.8.7 1.5 1.8 1.6 1.1.1 2-.4 2.1-1.2.1-.8-.7-1.5-1.8-1.6-1.1-.1-2 .4-2.1 1.2Z"/>
+                    <path d="M12.1 3.3c1.2.2 2.1 1 2.4 2.1"/>
+                    <path d="M12.7 1.4c2.1.3 3.7 1.8 4.1 3.8"/>
+                </svg>
+            </a>
+        </div>
+    `;
+    article.appendChild(header);
+
+    const grid = document.createElement('div');
+    grid.className = `image-grid count-${Math.min(series.images.length, 3)}`;
+    const spans = computeSpans(series.images.length);
+
+    series.images.forEach((imgSrc, imgIndex) => {
+        const gridItem = document.createElement('div');
+        const spanClass = spans[imgIndex] || '';
+        gridItem.className = 'grid-image' + (spanClass ? ' ' + spanClass : '');
+
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `${series.title} ${imgIndex + 1}`;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.addEventListener('click', () => openModal(seriesIndex, imgIndex));
+        gridItem.appendChild(img);
+
+        grid.appendChild(gridItem);
+    });
+    article.appendChild(grid);
+
+    if (series.tags && series.tags.length > 0) {
+        const tagsDiv = document.createElement('div');
+        tagsDiv.className = 'series-tags';
+        series.tags.forEach((tag) => {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = 'series-tag';
+            tagSpan.textContent = tag;
+            tagsDiv.appendChild(tagSpan);
+        });
+        article.appendChild(tagsDiv);
+    }
+
+    if (state.mode === 'maintain' && isMaintenanceEnabled()) {
+        article.appendChild(renderMaintenanceForm(series));
+        article.appendChild(renderTextPanel(series));
+        article.querySelector('[data-select-card]')?.addEventListener('change', (event) => {
+            const id = event.currentTarget.value;
+            if (event.currentTarget.checked) state.selectedIds.add(id);
+            else state.selectedIds.delete(id);
+            updateSelectionState();
+        });
+    }
+
+    return article;
 }
 
 function formatCardMeta(series) {

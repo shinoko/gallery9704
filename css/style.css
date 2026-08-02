@@ -696,8 +696,6 @@ body[data-static-export="true"] .sidebar-bottom {
     min-width: 0;
     padding: 0;
     border-bottom: none;
-    content-visibility: auto;
-    contain-intrinsic-size: 760px;
 }
 
 .series:last-child {
