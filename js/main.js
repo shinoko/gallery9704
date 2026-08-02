@@ -660,15 +660,6 @@ function renderMaintenanceForm(series) {
                 </datalist>
             </label>
             <label>
-                <span>维护状态</span>
-                <select name="status" class="filter-select">
-                    <option value="todo"${series.status === 'todo' ? ' selected' : ''}>待处理</option>
-                    <option value="reviewed"${series.status === 'reviewed' ? ' selected' : ''}>已确认</option>
-                    <option value="needs-info"${series.status === 'needs-info' ? ' selected' : ''}>需补充</option>
-                    <option value="ignored"${series.status === 'ignored' ? ' selected' : ''}>忽略</option>
-                </select>
-            </label>
-            <label>
                 <span>标签</span>
                 <input name="tags" class="filter-input" value="${escapeHtml((series.tags || []).join('，'))}">
             </label>
@@ -689,7 +680,6 @@ function renderMaintenanceForm(series) {
         const id = getRecordId(series);
         const patch = {
             theme: String(formData.get('theme') || '').trim(),
-            status: String(formData.get('status') || 'todo'),
             tags: splitTags(String(formData.get('tags') || '')),
             note: String(formData.get('note') || '').trim(),
             updatedAt: new Date().toISOString()
@@ -772,7 +762,6 @@ async function saveRecordPatch(id, patch) {
                 title: hasThemePatch ? patch.theme : activeData[sourceIndex].title,
                 theme: hasThemePatch ? patch.theme : activeData[sourceIndex].theme,
                 tags: patch.tags || activeData[sourceIndex].tags,
-                status: patch.status || 'todo',
                 note: patch.note || ''
             };
         }

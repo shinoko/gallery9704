@@ -132,7 +132,6 @@ async function updateRecord(dataType, id, patch) {
     theme: String(patch.theme ?? current.theme ?? '').trim(),
     shootDate: String(patch.date ?? current.shootDate ?? '').trim(),
     tags: Array.isArray(patch.tags) ? patch.tags.map(String).map((item) => item.trim()).filter(Boolean) : (current.tags || []),
-    maintenanceStatus: String(patch.status ?? current.maintenanceStatus ?? 'todo'),
     maintenanceNote: String(patch.note ?? current.maintenanceNote ?? '').trim(),
     maintenanceUpdatedAt: new Date().toISOString()
   };
