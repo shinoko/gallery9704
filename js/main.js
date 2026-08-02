@@ -16,7 +16,7 @@ const DATASETS = {
         label: '官方',
         data: typeof officialGalleryData !== 'undefined' ? officialGalleryData : [],
         facets: typeof officialGalleryFacets !== 'undefined' ? officialGalleryFacets : {},
-        maintenanceEnabled: false
+        maintenanceEnabled: true
     }
 };
 const THEME_TIMELINE = [
@@ -58,9 +58,9 @@ const THEME_SORT_META = new Map(THEME_TIMELINE.map(([theme, date], index) => [th
 
 const state = {
     dataType: 'official',
-    filterVisible: true,
+    filterVisible: false,
     mode: 'browse',
-    currentFilters: { keyword: '', theme: '', author: '', dateFrom: '', dateTo: '' },
+    currentFilters: { keyword: '', theme: '', author: '', shootDateFrom: '', shootDateTo: '', postDateFrom: '', postDateTo: '' },
     maintenance: { records: {}, deletedIds: [] },
     selectedIds: new Set(),
     filteredData: [],
@@ -96,9 +96,11 @@ const els = {
     themeFilterGroup: document.getElementById('themeFilterGroup'),
     themeFilter: document.getElementById('themeFilter'),
     authorFilter: document.getElementById('authorFilter'),
-    dateFilterLabel: document.getElementById('dateFilterLabel'),
-    dateFrom: document.getElementById('dateFrom'),
-    dateTo: document.getElementById('dateTo'),
+    shootDateFilterGroup: document.getElementById('shootDateFilterGroup'),
+    shootDateFrom: document.getElementById('shootDateFrom'),
+    shootDateTo: document.getElementById('shootDateTo'),
+    postDateFrom: document.getElementById('postDateFrom'),
+    postDateTo: document.getElementById('postDateTo'),
     applyFilters: document.getElementById('applyFilters'),
     resetFilters: document.getElementById('resetFilters'),
     imageModal: document.getElementById('imageModal'),
@@ -117,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.dataset.filterVisible = state.filterVisible ? 'true' : 'false';
     initFacets();
     initListeners();
+    initDateInputs();
     updateMode('browse');
 });
 
@@ -200,7 +203,7 @@ function initListeners() {
     els.navToggle.addEventListener('click', toggleFilterPanel);
     els.stationTab.addEventListener('click', () => updateDataType('station'));
     els.officialTab.addEventListener('click', () => updateDataType('official'));
-    els.sidebarClose.addEventListener('click', () => {});
+    els.sidebarClose.addEventListener('click', toggleFilterPanel);
     els.browseModeBtn.addEventListener('click', () => updateMode('browse'));
     els.maintainModeBtn.addEventListener('click', () => updateMode('maintain'));
     els.selectVisible.addEventListener('click', selectVisibleRecords);
@@ -221,11 +224,53 @@ function initListeners() {
     els.imageModal.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal-backdrop')) closeModal();
     });
+    document.addEventListener('click', handleOutsideFilterClick);
     document.addEventListener('keydown', handleKeyPress);
 }
 
+function handleOutsideFilterClick(event) {
+    if (!state.filterVisible) return;
+    if (els.sidebar.contains(event.target)) return;
+    if (els.navToggle.contains(event.target)) return;
+    setFilterPanelVisible(false);
+}
+
+function initDateInputs() {
+    [els.shootDateFrom, els.shootDateTo, els.postDateFrom, els.postDateTo].forEach((input) => {
+        if (!input) return;
+        const field = input.closest('.date-field');
+        const syncValueState = () => field?.classList.toggle('has-value', Boolean(input.value));
+
+        input.addEventListener('keydown', (event) => {
+            if (event.key !== 'Tab') event.preventDefault();
+        });
+        input.addEventListener('beforeinput', (event) => event.preventDefault());
+        input.addEventListener('paste', (event) => event.preventDefault());
+        input.addEventListener('drop', (event) => event.preventDefault());
+        input.addEventListener('input', syncValueState);
+        input.addEventListener('change', syncValueState);
+
+        field?.addEventListener('click', () => {
+            input.focus({ preventScroll: true });
+            if (typeof input.showPicker === 'function') input.showPicker();
+        });
+        syncValueState();
+    });
+}
+
+function updateDateFieldStates() {
+    document.querySelectorAll('.date-field').forEach((field) => {
+        const input = field.querySelector('input[type="date"]');
+        field.classList.toggle('has-value', Boolean(input?.value));
+    });
+}
+
 function toggleFilterPanel() {
-    state.filterVisible = !state.filterVisible;
+    setFilterPanelVisible(!state.filterVisible);
+}
+
+function setFilterPanelVisible(visible) {
+    state.filterVisible = visible;
     document.body.dataset.filterVisible = state.filterVisible ? 'true' : 'false';
     els.sidebar.classList.toggle('hidden', !state.filterVisible);
     els.navToggle.setAttribute('aria-pressed', state.filterVisible ? 'true' : 'false');
@@ -339,9 +384,12 @@ function getDisplaySeries(series) {
     };
 }
 
-function getDateForFilter(series) {
-    if (state.dataType === 'official') return normalizeIsoDate(series.postDate);
+function getShootDateForFilter(series) {
     return normalizeIsoDate(getDisplaySeries(series).date);
+}
+
+function getPostDateForFilter(series) {
+    return normalizeIsoDate(series.postDate);
 }
 
 function postSortValue(series) {
@@ -368,8 +416,10 @@ function applyFilterAndRender(options = {}) {
     state.currentFilters.keyword = els.keywordSearch.value.trim().toLowerCase();
     state.currentFilters.theme = els.themeFilter.value;
     state.currentFilters.author = els.authorFilter.value;
-    state.currentFilters.dateFrom = els.dateFrom.value;
-    state.currentFilters.dateTo = els.dateTo.value;
+    state.currentFilters.shootDateFrom = els.shootDateFrom.value;
+    state.currentFilters.shootDateTo = els.shootDateTo.value;
+    state.currentFilters.postDateFrom = els.postDateFrom.value;
+    state.currentFilters.postDateTo = els.postDateTo.value;
     state.renderLimit = INITIAL_RENDER_COUNT;
 
     state.filteredData = getActiveData()
@@ -391,9 +441,12 @@ function applyFilterAndRender(options = {}) {
                 if (state.currentFilters.theme && state.currentFilters.theme !== UNCATEGORIZED_THEME_VALUE && displaySeries.theme !== state.currentFilters.theme) return false;
             }
             if (state.currentFilters.author && displaySeries.author !== state.currentFilters.author) return false;
-            const filterDate = getDateForFilter(series);
-            if (state.currentFilters.dateFrom && (!filterDate || filterDate < state.currentFilters.dateFrom)) return false;
-            if (state.currentFilters.dateTo && (!filterDate || filterDate > state.currentFilters.dateTo)) return false;
+            const shootDate = getShootDateForFilter(series);
+            if (state.currentFilters.shootDateFrom && (!shootDate || shootDate < state.currentFilters.shootDateFrom)) return false;
+            if (state.currentFilters.shootDateTo && (!shootDate || shootDate > state.currentFilters.shootDateTo)) return false;
+            const postDate = getPostDateForFilter(series);
+            if (state.currentFilters.postDateFrom && (!postDate || postDate < state.currentFilters.postDateFrom)) return false;
+            if (state.currentFilters.postDateTo && (!postDate || postDate > state.currentFilters.postDateTo)) return false;
             return true;
         })
         .map(getDisplaySeries)
@@ -411,16 +464,19 @@ function resetFilters({ render } = { render: true }) {
     els.keywordSearch.value = '';
     els.themeFilter.value = '';
     els.authorFilter.value = '';
-    els.dateFrom.value = '';
-    els.dateTo.value = '';
-    state.currentFilters = { keyword: '', theme: '', author: '', dateFrom: '', dateTo: '' };
+    els.shootDateFrom.value = '';
+    els.shootDateTo.value = '';
+    els.postDateFrom.value = '';
+    els.postDateTo.value = '';
+    updateDateFieldStates();
+    state.currentFilters = { keyword: '', theme: '', author: '', shootDateFrom: '', shootDateTo: '', postDateFrom: '', postDateTo: '' };
     if (render) applyFilterAndRender({ scrollTop: true });
 }
 
 function updateFilterVisibility() {
     const isOfficial = state.dataType === 'official';
     els.themeFilterGroup.classList.toggle('is-hidden', isOfficial);
-    els.dateFilterLabel.textContent = isOfficial ? '发布时间' : '拍摄时间';
+    els.shootDateFilterGroup.classList.toggle('is-hidden', isOfficial);
     els.maintainModeBtn.disabled = !isMaintenanceEnabled();
 }
 
@@ -493,7 +549,15 @@ function renderSeries() {
                     <div class="series-label">${escapeHtml(formatCardMeta(series))}</div>
                     ${state.dataType === 'station' && series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
                 </div>
-                <a class="weibo-link" href="${escapeHtml(series.postUrl)}" target="_blank" rel="noreferrer">微博</a>
+                <a class="weibo-link" href="${escapeHtml(series.postUrl)}" target="_blank" rel="noreferrer" aria-label="打开微博原文" title="打开微博原文">
+                    <svg class="weibo-icon" width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14.3 7.8c1.1.8 1.7 1.8 1.5 2.9-.4 2.3-3.7 3.9-7.4 3.6-3.7-.3-6.4-2.4-6-4.7.3-1.6 2.2-2.9 4.6-3.4"/>
+                        <path d="M6.2 6.7c.8-1.4 2.2-2.2 3.4-1.8 1.2.4 1.7 1.8 1.2 3.3"/>
+                        <path d="M7.1 9.7c-.1.8.7 1.5 1.8 1.6 1.1.1 2-.4 2.1-1.2.1-.8-.7-1.5-1.8-1.6-1.1-.1-2 .4-2.1 1.2Z"/>
+                        <path d="M12.1 3.3c1.2.2 2.1 1 2.4 2.1"/>
+                        <path d="M12.7 1.4c2.1.3 3.7 1.8 4.1 3.8"/>
+                    </svg>
+                </a>
             </div>
         `;
         article.appendChild(header);
@@ -694,19 +758,20 @@ async function saveRecordPatch(id, patch) {
         const response = await fetch('/api/records/update', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ id, patch })
+            body: JSON.stringify({ dataType: state.dataType, id, patch })
         });
         const payload = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(payload.error || `保存失败：${response.status}`);
 
-        const sourceIndex = galleryData.findIndex((series) => getRecordId(series) === id);
+        const activeData = getActiveData();
+        const sourceIndex = activeData.findIndex((series) => getRecordId(series) === id);
         if (sourceIndex !== -1) {
             const hasThemePatch = Object.prototype.hasOwnProperty.call(patch, 'theme');
-            galleryData[sourceIndex] = {
-                ...galleryData[sourceIndex],
-                title: hasThemePatch ? patch.theme : galleryData[sourceIndex].title,
-                theme: hasThemePatch ? patch.theme : galleryData[sourceIndex].theme,
-                tags: patch.tags || galleryData[sourceIndex].tags,
+            activeData[sourceIndex] = {
+                ...activeData[sourceIndex],
+                title: hasThemePatch ? patch.theme : activeData[sourceIndex].title,
+                theme: hasThemePatch ? patch.theme : activeData[sourceIndex].theme,
+                tags: patch.tags || activeData[sourceIndex].tags,
                 status: patch.status || 'todo',
                 note: patch.note || ''
             };
@@ -741,14 +806,15 @@ async function deleteRecords(ids, message) {
         const response = await fetch('/api/delete-records', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ ids })
+            body: JSON.stringify({ dataType: state.dataType, ids })
         });
         const payload = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(payload.error || `删除失败：${response.status}`);
 
         const idSet = new Set(ids.map(String));
-        for (let i = galleryData.length - 1; i >= 0; i -= 1) {
-            if (idSet.has(getRecordId(galleryData[i]))) galleryData.splice(i, 1);
+        const activeData = getActiveData();
+        for (let i = activeData.length - 1; i >= 0; i -= 1) {
+            if (idSet.has(getRecordId(activeData[i]))) activeData.splice(i, 1);
         }
         ids.forEach((id) => {
             state.selectedIds.delete(String(id));

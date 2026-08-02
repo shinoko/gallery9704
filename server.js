@@ -3,6 +3,21 @@ const fs = require('fs');
 const fsp = require('fs/promises');
 const path = require('path');
 const { ROOT, METADATA_PATH, buildData, loadMetadata } = require('./scripts/build-static-data');
+const OFFICIAL_METADATA_PATH = path.join(ROOT, 'official-metadata.json');
+const DATASETS = {
+  station: {
+    metadataPath: METADATA_PATH,
+    dataPath: path.join(ROOT, 'js', 'data.js'),
+    dataVar: 'galleryData',
+    facetsVar: 'galleryFacets'
+  },
+  official: {
+    metadataPath: OFFICIAL_METADATA_PATH,
+    dataPath: path.join(ROOT, 'js', 'official-data.js'),
+    dataVar: 'officialGalleryData',
+    facetsVar: 'officialGalleryFacets'
+  }
+};
 
 const PORT = Number(process.env.PORT || 4182);
 const HOST = process.env.HOST || '127.0.0.1';
@@ -49,20 +64,33 @@ function resolveInsideRoot(relativePath) {
   return target;
 }
 
-async function writeMetadata(records) {
-  await fsp.writeFile(METADATA_PATH, JSON.stringify(records, null, 2));
-  return buildData(records);
+function getDataset(dataType) {
+  return DATASETS[dataType] || DATASETS.station;
+}
+
+function loadDatasetMetadata(dataType) {
+  const dataset = getDataset(dataType);
+  return loadMetadata(dataset.metadataPath);
+}
+
+async function writeMetadata(dataType, records) {
+  const dataset = getDataset(dataType);
+  await fsp.writeFile(dataset.metadataPath, `${JSON.stringify(records, null, 2)}\n`);
+  return buildData(records, dataset.dataPath, {
+    dataVar: dataset.dataVar,
+    facetsVar: dataset.facetsVar
+  });
 }
 
 function recordId(record, index) {
   return record.postUrl || String(index + 1);
 }
 
-async function deleteRecords(ids) {
+async function deleteRecords(dataType, ids) {
   const idSet = new Set((ids || []).map(String));
   if (idSet.size === 0) return { deletedRecords: 0, deletedImages: 0, missingImages: 0 };
 
-  const metadata = loadMetadata();
+  const metadata = loadDatasetMetadata(dataType);
   const kept = [];
   const removed = [];
   metadata.forEach((record, index) => {
@@ -85,12 +113,12 @@ async function deleteRecords(ids) {
     }
   }
 
-  const dataResult = await writeMetadata(kept);
+  const dataResult = await writeMetadata(dataType, kept);
   return { deletedRecords: removed.length, deletedImages, missingImages, ...dataResult };
 }
 
-async function updateRecord(id, patch) {
-  const metadata = loadMetadata();
+async function updateRecord(dataType, id, patch) {
+  const metadata = loadDatasetMetadata(dataType);
   const index = metadata.findIndex((record, itemIndex) => recordId(record, itemIndex) === String(id));
   if (index === -1) {
     const error = new Error('未找到对应微博数据');
@@ -108,7 +136,7 @@ async function updateRecord(id, patch) {
     maintenanceNote: String(patch.note ?? current.maintenanceNote ?? '').trim(),
     maintenanceUpdatedAt: new Date().toISOString()
   };
-  const dataResult = await writeMetadata(metadata);
+  const dataResult = await writeMetadata(dataType, metadata);
   return { record: metadata[index], ...dataResult };
 }
 
@@ -129,20 +157,28 @@ function formatExportStamp(date = new Date()) {
 }
 
 async function exportStatic() {
-  buildData();
+  buildData(loadDatasetMetadata('station'), DATASETS.station.dataPath, {
+    dataVar: DATASETS.station.dataVar,
+    facetsVar: DATASETS.station.facetsVar
+  });
+  buildData(loadDatasetMetadata('official'), DATASETS.official.dataPath, {
+    dataVar: DATASETS.official.dataVar,
+    facetsVar: DATASETS.official.facetsVar
+  });
   const stamp = formatExportStamp();
   const exportRoot = path.join(ROOT, 'exports', `gallery9704_${stamp}`);
   await fsp.mkdir(exportRoot, { recursive: true });
   await copyFileEnsured(path.join(ROOT, 'index.html'), path.join(exportRoot, 'index.html'));
   await copyFileEnsured(path.join(ROOT, 'css', 'style.css'), path.join(exportRoot, 'css', 'style.css'));
   await copyFileEnsured(path.join(ROOT, 'js', 'data.js'), path.join(exportRoot, 'js', 'data.js'));
+  await copyFileEnsured(path.join(ROOT, 'js', 'official-data.js'), path.join(exportRoot, 'js', 'official-data.js'));
   let mainSource = await fsp.readFile(path.join(ROOT, 'js', 'main.js'), 'utf8');
   mainSource = `window.GALLERY9704_STATIC_EXPORT = true;\n${mainSource}`;
   await fsp.mkdir(path.join(exportRoot, 'js'), { recursive: true });
   await fsp.writeFile(path.join(exportRoot, 'js', 'main.js'), mainSource);
 
-  const metadata = loadMetadata();
-  const imageFiles = Array.from(new Set(metadata.flatMap((record) => record.imageFiles || [])));
+  const allMetadata = [...loadDatasetMetadata('station'), ...loadDatasetMetadata('official')];
+  const imageFiles = Array.from(new Set(allMetadata.flatMap((record) => record.imageFiles || [])));
   let copiedImages = 0;
   for (const imageFile of imageFiles) {
     const source = resolveInsideRoot(imageFile);
@@ -154,18 +190,18 @@ async function exportStatic() {
       if (error.code !== 'ENOENT') throw error;
     }
   }
-  return { exportPath: exportRoot, records: metadata.length, copiedImages };
+  return { exportPath: exportRoot, records: allMetadata.length, copiedImages };
 }
 
 async function handleApi(req, res, pathname) {
   try {
     if (req.method === 'POST' && pathname === '/api/delete-records') {
       const payload = await readBody(req);
-      return sendJson(res, 200, await deleteRecords(payload.ids));
+      return sendJson(res, 200, await deleteRecords(payload.dataType, payload.ids));
     }
     if (req.method === 'POST' && pathname === '/api/records/update') {
       const payload = await readBody(req);
-      return sendJson(res, 200, await updateRecord(payload.id, payload.patch || {}));
+      return sendJson(res, 200, await updateRecord(payload.dataType, payload.id, payload.patch || {}));
     }
     if (req.method === 'POST' && pathname === '/api/export-static') {
       return sendJson(res, 200, await exportStatic());

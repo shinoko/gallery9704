@@ -12,10 +12,14 @@
             <span class="nav-brand">GALLERY9704</span>
             <div class="nav-actions">
                 <div class="data-tabs" role="tablist" aria-label="数据类型">
-                    <button class="data-tab" id="stationTab" type="button" role="tab" aria-selected="false">站姐</button>
-                    <button class="data-tab active" id="officialTab" type="button" role="tab" aria-selected="true">官方</button>
+                    <button class="data-tab official-tab active" id="officialTab" type="button" role="tab" aria-selected="true" title="官方" aria-label="官方">
+                        <span class="official-icon" aria-hidden="true"><span class="fox-mark"></span><span class="bunny-mark"></span></span>
+                    </button>
+                    <button class="data-tab station-tab" id="stationTab" type="button" role="tab" aria-selected="false" title="站姐" aria-label="站姐">
+                        <span class="heart heart-pink" aria-hidden="true"></span><span class="heart heart-green" aria-hidden="true"></span>
+                    </button>
                 </div>
-                <button class="nav-toggle" id="navToggle" title="筛选" aria-label="筛选" aria-pressed="true">
+                <button class="nav-toggle" id="navToggle" title="筛选" aria-label="筛选" aria-pressed="false">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                         <line x1="2" y1="3" x2="12" y2="3"/>
                         <line x1="4" y1="7" x2="10" y2="7"/>
@@ -27,7 +31,7 @@
     </nav>
 
     <!-- 筛选面板 -->
-    <section class="filter-panel" id="sidebar">
+    <section class="filter-panel hidden" id="sidebar">
         <div class="filter-panel-inner">
             <div class="sidebar-header">
                 <span class="sidebar-title">筛选条件</span>
@@ -57,20 +61,36 @@
                     </select>
                 </div>
 
-                <!-- 拍摄时间 -->
-                <div class="filter-group">
-                    <label class="filter-label" id="dateFilterLabel">拍摄时间</label>
+                <div class="filter-group" id="shootDateFilterGroup">
+                    <label class="filter-label">拍摄时间</label>
                     <div class="date-row">
-                        <input type="date" id="dateFrom" class="filter-input" placeholder="起始日期">
+                        <span class="date-field" data-placeholder="开始日期">
+                            <input type="date" id="shootDateFrom" class="filter-input" aria-label="拍摄开始日期">
+                        </span>
                         <span class="date-separator">至</span>
-                        <input type="date" id="dateTo" class="filter-input" placeholder="结束日期">
+                        <span class="date-field" data-placeholder="结束日期">
+                            <input type="date" id="shootDateTo" class="filter-input" aria-label="拍摄结束日期">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="filter-group" id="postDateFilterGroup">
+                    <label class="filter-label">发布时间</label>
+                    <div class="date-row">
+                        <span class="date-field" data-placeholder="开始日期">
+                            <input type="date" id="postDateFrom" class="filter-input" aria-label="发布开始日期">
+                        </span>
+                        <span class="date-separator">至</span>
+                        <span class="date-field" data-placeholder="结束日期">
+                            <input type="date" id="postDateTo" class="filter-input" aria-label="发布结束日期">
+                        </span>
                     </div>
                 </div>
 
                 <!-- 操作按钮 -->
                 <div class="filter-actions">
-                    <button class="btn btn-primary" id="applyFilters">应用筛选</button>
-                    <button class="btn btn-secondary" id="resetFilters">清空筛选</button>
+                    <button class="btn btn-primary" id="applyFilters">筛选</button>
+                    <button class="btn btn-secondary" id="resetFilters">清空</button>
                 </div>
             </div>
 
