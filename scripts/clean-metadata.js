@@ -27,6 +27,7 @@ const KNOWN_THEMES = [
   { theme: '澳门双人见面会', date: '2025-09-13', tests: ['澳门双人见面会', '澳门双人粉丝见面会', '澳门见面会'] },
   { theme: '微博奇遇记', date: '2025-09-14', tests: ['微博奇遇记'] },
   { theme: 'FantasticMan活动', date: '2025-09-22', tests: ['fantasticman', 'fantastic man'] },
+  { theme: '巴黎时装周·26春', from: '2026-03-02', to: '2026-03-07', tests: ['展轩首次巴黎时装周', '展轩启程巴黎时装周'] },
   { theme: '巴黎时装周·25秋', from: '2025-10-01', to: '2025-10-08', tests: ['2025巴黎时装周', 'paris fashion week 2025', '巴黎时装周'] },
   { theme: '南京咪豆音乐节', date: '2025-10-02', tests: ['南京咪豆', '咪豆音乐节'] },
   { theme: '宝鸡银杏音乐节', date: '2025-10-04', tests: ['宝鸡银杏', '银杏音乐节'] },
@@ -115,6 +116,10 @@ function extractDates(record) {
 
   for (const match of body.matchAll(/\b(20\d{2})(\d{2})(\d{2})\b/g)) {
     add(parseDateParts(match[1], match[2], match[3]));
+  }
+
+  for (const match of body.matchAll(/\b(2[5-9])(\d{2})(\d{2})\b/g)) {
+    add(parseDateParts(`20${match[1]}`, match[2], match[3]));
   }
 
   for (const match of body.matchAll(/\b(\d{1,2})\s*[./\-]\s*(\d{1,2})\s*[./\-]\s*(20\d{2})\b/g)) {
