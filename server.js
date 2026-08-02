@@ -86,6 +86,26 @@ function recordId(record, index) {
   return record.postUrl || String(index + 1);
 }
 
+function getRecordImageFiles(record) {
+  return [
+    ...(Array.isArray(record.imageFiles) ? record.imageFiles : []),
+    ...(Array.isArray(record.images) ? record.images : [])
+  ].filter(Boolean);
+}
+
+function getRemainingImageRefs(dataType, keptRecords) {
+  const refs = new Set(keptRecords.flatMap(getRecordImageFiles));
+  for (const key of Object.keys(DATASETS)) {
+    if (key === dataType) continue;
+    try {
+      loadDatasetMetadata(key).flatMap(getRecordImageFiles).forEach((imageFile) => refs.add(imageFile));
+    } catch {
+      // A missing secondary dataset should not block deleting from the active dataset.
+    }
+  }
+  return refs;
+}
+
 async function deleteRecords(dataType, ids) {
   const idSet = new Set((ids || []).map(String));
   if (idSet.size === 0) return { deletedRecords: 0, deletedImages: 0, missingImages: 0 };
@@ -98,23 +118,32 @@ async function deleteRecords(dataType, ids) {
     else kept.push(record);
   });
 
+  const dataResult = await writeMetadata(dataType, kept);
+  const remainingRefs = getRemainingImageRefs(dataType, kept);
+  const removedUniqueImageFiles = Array.from(new Set(removed.flatMap(getRecordImageFiles)));
+  const removedImageFiles = removedUniqueImageFiles.filter((imageFile) => !remainingRefs.has(imageFile));
+
   let deletedImages = 0;
   let missingImages = 0;
-  for (const record of removed) {
-    for (const imageFile of record.imageFiles || []) {
-      const imagePath = resolveInsideRoot(imageFile);
-      try {
-        await fsp.rm(imagePath, { force: true });
-        deletedImages += 1;
-      } catch (error) {
-        if (error.code === 'ENOENT') missingImages += 1;
-        else throw error;
-      }
+  for (const imageFile of removedImageFiles) {
+    const imagePath = resolveInsideRoot(imageFile);
+    try {
+      await fsp.access(imagePath, fs.constants.F_OK);
+      await fsp.rm(imagePath);
+      deletedImages += 1;
+    } catch (error) {
+      if (error.code === 'ENOENT') missingImages += 1;
+      else throw error;
     }
   }
 
-  const dataResult = await writeMetadata(dataType, kept);
-  return { deletedRecords: removed.length, deletedImages, missingImages, ...dataResult };
+  return {
+    ...dataResult,
+    deletedRecords: removed.length,
+    deletedImages,
+    missingImages,
+    skippedReferencedImages: removedUniqueImageFiles.length - removedImageFiles.length
+  };
 }
 
 async function updateRecord(dataType, id, patch) {

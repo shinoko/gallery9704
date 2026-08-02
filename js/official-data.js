@@ -173,31 +173,6 @@ const officialGalleryData = [
     "layout": "gallery"
   },
   {
-    "id": "https://weibo.com/8019492674/R9S0fq3Vi",
-    "label": "展轩工作室 · 2026-07-22",
-    "title": "",
-    "theme": "",
-    "date": "",
-    "postDate": "2026-07-22",
-    "author": "展轩工作室",
-    "people": [
-      "展轩"
-    ],
-    "postUrl": "https://weibo.com/8019492674/R9S0fq3Vi",
-    "description": "展轩工作室 / 2026-07-22 17:00",
-    "text": "展轩\n\n夏天的美妙打开方式有千万种，想看看你最爱的消暑一刻是哪种？ 现在进入展轩超话，发布一张随手拍的夏日照片，带好双话题 #超有话聊# 和 #隔空投送Hmm给展轩#，把你的夏日闲适时光一键分享出来。参与活动就有可能被@展轩  点赞或翻牌互动噢~",
-    "images": [
-      "official-images/2026-07-22_展轩工作室_R9S0fq3Vi_01.jpg"
-    ],
-    "tags": [
-      "超有话聊",
-      "隔空投送Hmm给展轩"
-    ],
-    "status": "todo",
-    "note": "",
-    "layout": "gallery"
-  },
-  {
     "id": "https://weibo.com/8019492674/R9PDW6tmw",
     "label": "展轩工作室 · 2026-07-22",
     "title": "",
@@ -1129,60 +1104,6 @@ const officialGalleryData = [
     "layout": "gallery"
   },
   {
-    "id": "https://weibo.com/7904163238/R1OnY7DBK",
-    "label": "刘轩丞- · 2026-05-30",
-    "title": "同心结",
-    "theme": "同心结",
-    "date": "2026-06-14",
-    "postDate": "2026-05-30",
-    "author": "刘轩丞-",
-    "people": [],
-    "postUrl": "https://weibo.com/7904163238/R1OnY7DBK",
-    "description": "刘轩丞- / 2026-05-30 17:05",
-    "text": "天音版精品力作《同心结》6.13-6.14日即将登陆国家大剧院！期待王宏伟院长领衔演绎的英雄黄继光，不见不散！#民族歌剧同心结##国家大剧院##天津音乐学院##民族英雄黄继光#",
-    "images": [
-      "official-images/2026-05-30_刘轩丞-_R1OnY7DBK_01.jpg",
-      "official-images/2026-05-30_刘轩丞-_R1OnY7DBK_02.jpg",
-      "official-images/2026-05-30_刘轩丞-_R1OnY7DBK_03.jpg",
-      "official-images/2026-05-30_刘轩丞-_R1OnY7DBK_04.jpg",
-      "official-images/2026-05-30_刘轩丞-_R1OnY7DBK_05.jpg",
-      "official-images/2026-05-30_刘轩丞-_R1OnY7DBK_06.jpg"
-    ],
-    "tags": [
-      "民族歌剧同心结",
-      "国家大剧院",
-      "天津音乐学院",
-      "民族英雄黄继光"
-    ],
-    "status": "todo",
-    "note": "",
-    "layout": "gallery"
-  },
-  {
-    "id": "https://weibo.com/8019492674/R1sKwB1tH",
-    "label": "展轩工作室 · 2026-05-28",
-    "title": "",
-    "theme": "",
-    "date": "",
-    "postDate": "2026-05-28",
-    "author": "展轩工作室",
-    "people": [
-      "展轩"
-    ],
-    "postUrl": "https://weibo.com/8019492674/R1sKwB1tH",
-    "description": "展轩工作室 / 2026-05-28 10:00",
-    "text": "展轩  · #展轩新歌晚风#\n\n5月28日10:00-6月15日23:59 限时惊喜来袭！在@展轩 博文留下关键词“晚风吹过” 即可解锁「评论区彩蛋」、还可以按照图中具体指引，前往展轩的微博主页，轻松解锁同款「微博主页状态」~  一起来微博和展轩吹吹《晚风》，拥抱一个浪漫夏日吧~",
-    "images": [
-      "official-images/2026-05-28_展轩工作室_R1sKwB1tH_01.jpg"
-    ],
-    "tags": [
-      "展轩新歌晚风"
-    ],
-    "status": "todo",
-    "note": "",
-    "layout": "gallery"
-  },
-  {
     "id": "https://weibo.com/5080250314/R1mcBjgMK",
     "label": "展轩 · 2026-05-27",
     "title": "",
@@ -1635,28 +1556,6 @@ const officialGalleryData = [
       "official-images/2026-04-22_展轩工作室_QBWU08wmN_02.jpg",
       "official-images/2026-04-22_展轩工作室_QBWU08wmN_03.jpg",
       "official-images/2026-04-22_展轩工作室_QBWU08wmN_04.jpg"
-    ],
-    "tags": [],
-    "status": "todo",
-    "note": "",
-    "layout": "gallery"
-  },
-  {
-    "id": "https://weibo.com/4098005675/QB4waegTI",
-    "label": "刘轩丞工作室 · 2026-04-16",
-    "title": "",
-    "theme": "",
-    "date": "",
-    "postDate": "2026-04-16",
-    "author": "刘轩丞工作室",
-    "people": [
-      "刘轩丞"
-    ],
-    "postUrl": "https://weibo.com/4098005675/QB4waegTI",
-    "description": "刘轩丞工作室 / 2026-04-16 15:46",
-    "text": "网络并非法外之地，言论自由亦有法律边界。刘轩丞先生始终遵纪守法、专注作品，对于一切恶意侵权行为，我们零容忍、严维权、必追责，坚决捍卫艺人的合法权益，维护法律尊严与网络清朗。",
-    "images": [
-      "official-images/2026-04-16_刘轩丞工作室_QB4waegTI_01.jpg"
     ],
     "tags": [],
     "status": "todo",
@@ -4089,30 +3988,6 @@ const officialGalleryData = [
     "layout": "gallery"
   },
   {
-    "id": "https://weibo.com/8019492674/QjL6KCfXL",
-    "label": "展轩工作室 · 2025-12-23",
-    "title": "周日下午3点见生日音乐会",
-    "theme": "周日下午3点见生日音乐会",
-    "date": "2026-01-11",
-    "postDate": "2025-12-23",
-    "author": "展轩工作室",
-    "people": [
-      "展轩"
-    ],
-    "postUrl": "https://weibo.com/8019492674/QjL6KCfXL",
-    "description": "展轩工作室 / 2025-12-23 19:06",
-    "text": "展轩  就在明天11:13！@展轩 「周日下午3点见」生日音乐会门票即将准时开启，我们留意到大家还有些比较关心的问题，在此做出补充解答~ 小室祝大家明天都顺利抢到票，SEE YOU ON SUNDAY 3PM！ #展轩周日下午3点见#",
-    "images": [
-      "official-images/2025-12-23_展轩工作室_QjL6KCfXL_01.jpg"
-    ],
-    "tags": [
-      "展轩周日下午3点见"
-    ],
-    "status": "todo",
-    "note": "",
-    "layout": "gallery"
-  },
-  {
     "id": "https://weibo.com/4098005675/QjKFX0ZkK",
     "label": "刘轩丞工作室 · 2025-12-23",
     "title": "",
@@ -4764,30 +4639,6 @@ const officialGalleryData = [
       "首届代言人影响力盛典",
       "代言人影响力盛典阵容"
     ],
-    "status": "todo",
-    "note": "",
-    "layout": "gallery"
-  },
-  {
-    "id": "https://weibo.com/4098005675/Qf97GB0q5",
-    "label": "刘轩丞工作室 · 2025-11-23",
-    "title": "",
-    "theme": "",
-    "date": "",
-    "postDate": "2025-11-23",
-    "author": "刘轩丞工作室",
-    "people": [
-      "刘轩丞"
-    ],
-    "postUrl": "https://weibo.com/4098005675/Qf97GB0q5",
-    "description": "刘轩丞工作室 / 2025-11-23 11:02",
-    "text": "现就我工作室艺人刘轩丞先生网络维权工作的相关进展如下",
-    "images": [
-      "official-images/2025-11-23_刘轩丞工作室_Qf97GB0q5_01.jpg",
-      "official-images/2025-11-23_刘轩丞工作室_Qf97GB0q5_02.jpg",
-      "official-images/2025-11-23_刘轩丞工作室_Qf97GB0q5_03.jpg"
-    ],
-    "tags": [],
     "status": "todo",
     "note": "",
     "layout": "gallery"
@@ -5793,26 +5644,6 @@ const officialGalleryData = [
       "thombrowne",
       "thombrowness26"
     ],
-    "status": "todo",
-    "note": "",
-    "layout": "gallery"
-  },
-  {
-    "id": "https://weibo.com/8019492674/Q81ASk2dO",
-    "label": "展轩工作室 · 2025-10-07",
-    "title": "",
-    "theme": "",
-    "date": "",
-    "postDate": "2025-10-07",
-    "author": "展轩工作室",
-    "people": [],
-    "postUrl": "https://weibo.com/8019492674/Q81ASk2dO",
-    "description": "展轩工作室 / 2025-10-07 15:00",
-    "text": "网络空间绝非法外之地，编造传播虚假不实信息、违法窃取个人信息等行为已触犯法律底线！律师已完成取证公证工作，正式启动法律诉讼程序。对侵权行为追责到底！",
-    "images": [
-      "official-images/2025-10-07_展轩工作室_Q81ASk2dO_01.jpg"
-    ],
-    "tags": [],
     "status": "todo",
     "note": "",
     "layout": "gallery"
@@ -11922,7 +11753,6 @@ const officialGalleryFacets = {
     "彩虹的重力",
     "柴鸡蛋 逆袭",
     "超友趣嗨玩局",
-    "超有话聊",
     "车干日常",
     "春节",
     "大牌空降评论区",
@@ -11935,7 +11765,6 @@ const officialGalleryFacets = {
     "非正式跨年派对",
     "分级修护卓有丞效",
     "赣州Z纪元音乐节",
-    "隔空投送Hmm给展轩",
     "工作使我快乐",
     "郭城宇",
     "国家大剧院",
