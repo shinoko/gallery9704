@@ -1,0 +1,160 @@
+{
+  "collectedAt": "2026-08-02T06:51:35.524Z",
+  "sinceDate": "2026-08-01",
+  "collectionSource": "m-weibo-container-api-official-incremental-20260802",
+  "summary": {
+    "accounts": [
+      {
+        "name": "展轩",
+        "uid": "5080250314",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 294,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 10,
+          "minDate": "2026-06-29",
+          "maxDate": "2026-07-31",
+          "since_id": 5314852437368359
+        },
+        "lastPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 10,
+          "minDate": "2026-06-29",
+          "maxDate": "2026-07-31",
+          "since_id": 5314852437368359
+        }
+      },
+      {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 177,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "pageCount": 1,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 9,
+          "minDate": "2026-07-03",
+          "maxDate": "2026-08-01",
+          "since_id": 5315593293006548
+        },
+        "lastPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 9,
+          "minDate": "2026-07-03",
+          "maxDate": "2026-08-01",
+          "since_id": 5315593293006548
+        }
+      },
+      {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 257,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 10,
+          "minDate": "2026-07-21",
+          "maxDate": "2026-07-31",
+          "since_id": 5322694917621326
+        },
+        "lastPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 10,
+          "minDate": "2026-07-21",
+          "maxDate": "2026-07-31",
+          "since_id": 5322694917621326
+        }
+      },
+      {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "mode": "incremental",
+        "dataType": "official",
+        "profileTotal": 228,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "pageCount": 1,
+        "firstPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 9,
+          "minDate": "2026-07-09",
+          "maxDate": "2026-08-01",
+          "since_id": 5318694861275289
+        },
+        "lastPage": {
+          "page": 1,
+          "cards": 11,
+          "mblogs": 10,
+          "newUnique": 10,
+          "kept": 0,
+          "existingCount": 0,
+          "oldCount": 9,
+          "minDate": "2026-07-09",
+          "maxDate": "2026-08-01",
+          "since_id": 5318694861275289
+        }
+      }
+    ],
+    "totals": {
+      "profileTotal": 956,
+      "scannedUnique": 40,
+      "keptNew": 0,
+      "skippedNew": 2,
+      "images": 0
+    },
+    "skipReasons": {
+      "repost": 2
+    }
+  },
+  "records": []
+}

@@ -49,13 +49,6 @@
       "name": "TheMidnightHush丨0113x0905",
       "uid": "9068198836",
       "url": "https://weibo.com/u/9068198836"
-    }
-  ],
-  "notFollowed": [
-    {
-      "name": "GENTLE丨0113x0905",
-      "uid": "7977331345",
-      "url": "https://weibo.com/u/7977331345"
     },
     {
       "name": "TALE_0113x0905",
@@ -68,11 +61,13 @@
       "url": "https://weibo.com/u/8250612132"
     }
   ],
+  "notFollowed": [],
   "excludedByUser": [
     "Connect丨0113x0905",
     "Forever_0113x0905",
     "Present-0113x0905",
-    "Eternal永恒_0113x0905"
+    "Eternal永恒_0113x0905",
+    "GENTLE丨0113x0905"
   ],
-  "note": "Followed accounts were confirmed from their profile buttons and appear in own following list. The current Weibo desktop UI did not expose a move-to-group control; group filter/management only showed group filtering, group rename/delete, batch unfollow, and filter controls."
+  "note": "Followed accounts were confirmed from their profile buttons and appear in own following list. TALE_0113x0905 and 69discount_0113x0905 were confirmed by the user as followed and assigned to the station group on 2026-08-02. GENTLE丨0113x0905 is excluded by user request and will not be tracked."
 }
