@@ -354,7 +354,8 @@ body[data-filter-visible="true"]::before {
     right: 0;
     z-index: 95;
     max-height: calc(100vh - var(--nav-height));
-    overflow: visible;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     background: var(--bg-sidebar);
     backdrop-filter: blur(18px) saturate(160%);
     -webkit-backdrop-filter: blur(18px) saturate(160%);
@@ -606,6 +607,23 @@ body[data-filter-visible="true"]::before {
     border: 1px solid var(--border-light);
     border-radius: var(--radius-sm);
     box-shadow: 0 10px 28px rgba(45, 45, 45, 0.1);
+}
+
+/* 下拉菜单和日期面板脱离筛选面板滚动区域，作为视口浮层定位。 */
+.filter-floating-popover {
+    position: fixed !important;
+    z-index: 110;
+    max-width: calc(100vw - 16px);
+    max-height: calc(100vh - 16px);
+    overflow-y: auto;
+}
+
+.date-picker-popover.filter-floating-popover {
+    z-index: 110;
+}
+
+.custom-select-menu.filter-floating-popover {
+    max-height: min(240px, 50vh);
 }
 
 .custom-select-option {
@@ -1641,7 +1659,7 @@ body[data-no-image="true"] .modal-image-container img {
     
     .filter-panel {
         max-height: calc(100vh - var(--nav-height));
-        overflow: visible;
+        overflow-y: auto;
     }
 
     .filter-panel-inner {
@@ -1725,11 +1743,11 @@ body[data-no-image="true"] .modal-image-container img {
     }
 
     .date-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     }
 
     .date-separator {
-        text-align: left;
+        text-align: center;
     }
     
     .main-content {

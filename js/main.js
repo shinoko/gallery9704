@@ -146,6 +146,7 @@ function initFacets() {
 }
 
 function refreshFacets() {
+    closeFilterPopovers();
     const currentTheme = els.themeFilter.value;
     const currentAuthor = els.authorFilter.value;
     const visibleRecords = getActiveData().map(getDisplaySeries);
@@ -198,7 +199,9 @@ function initFilterControls() {
     document.querySelectorAll('[data-custom-select]').forEach((root) => {
         const select = root.querySelector('select');
         const trigger = root.querySelector('.custom-select-trigger');
-        if (!select || !trigger) return;
+        const menu = root.querySelector('.custom-select-menu')
+            || document.querySelector(`[data-filter-popover-for="${root.querySelector('select')?.id}"]`);
+        if (!select || !trigger || !menu) return;
 
         trigger.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -206,7 +209,8 @@ function initFilterControls() {
             closeFilterPopovers();
             root.classList.toggle('is-open', willOpen);
             trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-            root.querySelector('.custom-select-menu').hidden = !willOpen;
+            menu.hidden = !willOpen;
+            if (willOpen) positionFloatingPopover(trigger, menu);
             syncFilterPopoverState();
         });
         trigger.addEventListener('keydown', (event) => {
@@ -216,7 +220,10 @@ function initFilterControls() {
             }
             if (event.key === 'Escape') closeFilterPopovers();
         });
-        root.addEventListener('click', (event) => {
+        menu.classList.add('filter-floating-popover');
+        menu.dataset.filterPopover = 'true';
+        menu.dataset.filterPopoverFor = select.id;
+        menu.addEventListener('click', (event) => {
             event.stopPropagation();
             const option = event.target.closest('[data-select-value]');
             if (!option) return;
@@ -226,6 +233,7 @@ function initFilterControls() {
             closeFilterPopovers();
             trigger.focus({ preventScroll: true });
         });
+        document.body.appendChild(menu);
         syncCustomSelect(select);
     });
 
@@ -237,7 +245,8 @@ function syncCustomSelect(select) {
     if (!root) return;
     const selected = Array.from(select.options).find((option) => option.value === select.value);
     const label = root.querySelector('[data-select-label]');
-    const menu = root.querySelector('.custom-select-menu');
+    const menu = root.querySelector('.custom-select-menu')
+        || document.querySelector(`[data-filter-popover-for="${select.id}"]`);
     if (label) label.textContent = selected?.textContent || '';
     if (!menu) return;
     menu.textContent = '';
@@ -258,7 +267,9 @@ function closeFilterPopovers(except = null) {
         if (root === except) return;
         root.classList.remove('is-open');
         root.querySelector('.custom-select-trigger')?.setAttribute('aria-expanded', 'false');
-        const menu = root.querySelector('.custom-select-menu');
+        const select = root.querySelector('select');
+        const menu = root.querySelector('.custom-select-menu')
+            || document.querySelector(`[data-filter-popover-for="${select?.id}"]`);
         if (menu) menu.hidden = true;
     });
     datePickerStates.forEach((picker) => {
@@ -315,6 +326,18 @@ function initListeners() {
     els.keywordSearch.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') applyFilterAndRender({ scrollTop: true });
     });
+    [
+        els.keywordSearch,
+        els.themeFilter,
+        els.authorFilter,
+        els.shootDateFrom,
+        els.shootDateTo,
+        els.postDateFrom,
+        els.postDateTo
+    ].filter(Boolean).forEach((control) => {
+        control.addEventListener('input', closeFilterPopovers);
+        control.addEventListener('change', closeFilterPopovers);
+    });
 
     els.modalClose.addEventListener('click', closeModal);
     els.modalPrev.addEventListener('click', () => navigateModal(-1));
@@ -325,13 +348,16 @@ function initListeners() {
     document.addEventListener('click', handleOutsideFilterClick);
     document.addEventListener('keydown', handleKeyPress);
     window.addEventListener('resize', () => {
-        datePickerStates.forEach((picker) => positionDatePicker(picker));
+        repositionOpenFilterPopovers();
     });
+    els.sidebar.addEventListener('scroll', repositionOpenFilterPopovers, { passive: true });
 }
 
 function handleOutsideFilterClick(event) {
-    if (!event.target.closest('[data-custom-select], [data-date-picker]')) closeFilterPopovers();
+    const insideFilterPopover = event.target.closest('[data-custom-select], [data-date-picker], [data-filter-popover]');
+    if (!insideFilterPopover) closeFilterPopovers();
     if (!state.filterVisible) return;
+    if (insideFilterPopover) return;
     if (els.sidebar.contains(event.target)) return;
     if (els.navToggle.contains(event.target)) return;
     setFilterPanelVisible(false);
@@ -354,6 +380,11 @@ function initDateInputs() {
             viewYear: selected.getFullYear(),
             viewMonth: selected.getMonth()
         };
+        picker.popover.classList.add('filter-floating-popover');
+        picker.popover.dataset.filterPopover = 'true';
+        picker.popover.dataset.filterPopoverFor = input.id;
+        picker.popover.addEventListener('click', (event) => event.stopPropagation());
+        document.body.appendChild(picker.popover);
         datePickerStates.set(input.id, picker);
         trigger.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -400,10 +431,40 @@ function setDatePickerOpen(picker, open) {
 
 function positionDatePicker(picker) {
     if (!picker.root.classList.contains('is-open')) return;
+    positionFloatingPopover(picker.trigger, picker.popover, { width: 248 });
+}
+
+function positionFloatingPopover(trigger, popover, options = {}) {
+    if (!trigger || !popover || popover.hidden) return;
     const viewportPadding = 8;
-    const popoverRect = picker.popover.getBoundingClientRect();
-    const shouldAlignRight = popoverRect.right > window.innerWidth - viewportPadding;
-    picker.root.classList.toggle('align-right', shouldAlignRight);
+    const gap = 6;
+    const triggerRect = trigger.getBoundingClientRect();
+    const width = Math.min(options.width || triggerRect.width, window.innerWidth - viewportPadding * 2);
+    const height = popover.getBoundingClientRect().height;
+    const spaceBelow = window.innerHeight - triggerRect.bottom - viewportPadding;
+    const spaceAbove = triggerRect.top - viewportPadding;
+    const openAbove = spaceBelow < height && spaceAbove > viewportPadding + gap;
+    const top = openAbove
+        ? Math.max(viewportPadding, triggerRect.top - height - gap)
+        : Math.min(window.innerHeight - height - viewportPadding, triggerRect.bottom + gap);
+    const left = Math.min(
+        Math.max(viewportPadding, triggerRect.left),
+        window.innerWidth - width - viewportPadding
+    );
+    popover.style.width = `${width}px`;
+    popover.style.left = `${left}px`;
+    popover.style.right = 'auto';
+    popover.style.top = `${Math.max(viewportPadding, top)}px`;
+}
+
+function repositionOpenFilterPopovers() {
+    document.querySelectorAll('[data-custom-select].is-open').forEach((root) => {
+        const select = root.querySelector('select');
+        const menu = root.querySelector('.custom-select-menu')
+            || document.querySelector(`[data-filter-popover-for="${select?.id}"]`);
+        positionFloatingPopover(root.querySelector('.custom-select-trigger'), menu);
+    });
+    datePickerStates.forEach((picker) => positionDatePicker(picker));
 }
 
 function shiftDatePickerMonth(picker, offset) {
@@ -473,6 +534,7 @@ function setFilterPanelVisible(visible) {
 
 function updateDataType(dataType) {
     if (state.dataType === dataType) return;
+    closeFilterPopovers();
     state.dataType = dataType;
     document.body.dataset.dataType = dataType;
     state.selectedIds.clear();
@@ -491,6 +553,7 @@ function updateDataType(dataType) {
 function updateMode(mode) {
     if (!isMaintenanceEnabled() && mode === 'maintain') return;
     if (!isMaintenanceEnabled()) mode = 'browse';
+    closeFilterPopovers();
     state.mode = mode;
     document.body.dataset.mode = mode;
     els.browseModeBtn.classList.toggle('active', mode === 'browse');
@@ -577,6 +640,7 @@ function scrollToPageTop() {
 }
 
 function applyFilterAndRender(options = {}) {
+    closeFilterPopovers();
     state.currentFilters.keyword = els.keywordSearch.value.trim().toLowerCase();
     state.currentFilters.theme = els.themeFilter.value;
     state.currentFilters.author = els.authorFilter.value;
@@ -624,6 +688,7 @@ function resetAndRender() {
 }
 
 function resetFilters({ render } = { render: true }) {
+    closeFilterPopovers();
     els.keywordSearch.value = '';
     document.querySelectorAll('[data-clear-input]').forEach((button) => {
         const input = document.getElementById(button.dataset.clearInput);
