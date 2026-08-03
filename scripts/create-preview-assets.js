@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 const { chromium } = require('playwright');
 const sharp = require('sharp');
@@ -259,54 +260,56 @@ function previewHtml({ mode, screenshot, background }) {
 }
 
 async function main() {
-  await ensureDir(outDir);
+    await ensureDir(outDir);
 
-  const url = process.env.PREVIEW_URL || 'http://127.0.0.1:4182/';
-  const suffix = process.env.PREVIEW_SUFFIX ? `-${process.env.PREVIEW_SUFFIX}` : '';
-  const stateName = process.env.PREVIEW_STATE || 'default';
-  const stateSuffix = stateName === 'default' ? suffix : `${suffix}-${stateName}`;
-  const desktopRaw = path.join(outDir, `gallery9704-desktop-screenshot${stateSuffix}.png`);
-  const mobileRaw = path.join(outDir, `gallery9704-mobile-screenshot${stateSuffix}.png`);
-  const desktopHtml = path.join(outDir, `desktop-preview${stateSuffix}.html`);
-  const mobileHtml = path.join(outDir, `mobile-preview${stateSuffix}.html`);
-  const desktopPreview = path.join(outDir, `gallery9704-desktop-preview${stateSuffix}.png`);
-  const mobilePreview = path.join(outDir, `gallery9704-mobile-preview${stateSuffix}.png`);
-  const background = process.env.PREVIEW_BACKGROUND
-    ? path.resolve(root, process.env.PREVIEW_BACKGROUND)
-    : path.join(outDir, 'gallery9704-preview-bg.png');
+    const url = process.env.PREVIEW_URL || 'http://127.0.0.1:4182/';
+    const suffix = process.env.PREVIEW_SUFFIX ? `-${process.env.PREVIEW_SUFFIX}` : '';
+    const stateName = process.env.PREVIEW_STATE || 'default';
+    const stateSuffix = stateName === 'default' ? suffix : `${suffix}-${stateName}`;
+    const workDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'gallery9704-preview-'));
+    const desktopRaw = path.join(workDir, `desktop-screenshot${stateSuffix}.png`);
+    const mobileRaw = path.join(workDir, `mobile-screenshot${stateSuffix}.png`);
+    const background = process.env.PREVIEW_BACKGROUND
+        ? path.resolve(root, process.env.PREVIEW_BACKGROUND)
+        : path.join(outDir, 'gallery9704-preview-bg.png');
 
-  const browser = await launchChromium();
-  const page = await browser.newPage({ deviceScaleFactor: 1 });
-  await capturePage(page, url, { width: 1440, height: 980 }, desktopRaw, stateName);
-  await capturePage(page, url, { width: 390, height: 844 }, mobileRaw, stateName);
-  await browser.close();
+    try {
+        const browser = await launchChromium();
+        const page = await browser.newPage({ deviceScaleFactor: 1 });
+        await capturePage(page, url, { width: 1440, height: 980 }, desktopRaw, stateName);
+        await capturePage(page, url, { width: 390, height: 844 }, mobileRaw, stateName);
+        await browser.close();
 
-  const rel = (file) => './' + path.basename(file);
-  await fs.promises.writeFile(
-    desktopHtml,
-    previewHtml({ mode: 'desktop', screenshot: rel(desktopRaw), background: rel(background) })
-  );
-  await fs.promises.writeFile(
-    mobileHtml,
-    previewHtml({ mode: 'mobile', screenshot: rel(mobileRaw), background: rel(background) })
-  );
-
-  const previewBrowser = await launchChromium();
-  const desktopPage = await previewBrowser.newPage({ viewport: { width: 1600, height: 1000 }, deviceScaleFactor: 1 });
-  await desktopPage.goto('file://' + desktopHtml, { waitUntil: 'load' });
-  await desktopPage.screenshot({ path: desktopPreview, fullPage: false });
-
-  const mobilePage = await previewBrowser.newPage({ viewport: { width: 1200, height: 1600 }, deviceScaleFactor: 1 });
-  await mobilePage.goto('file://' + mobileHtml, { waitUntil: 'load' });
-  await mobilePage.screenshot({ path: mobilePreview, fullPage: false });
-  await previewBrowser.close();
-
-  console.log([
-    desktopRaw,
-    mobileRaw,
-    desktopPreview,
-    mobilePreview,
-  ].join('\n'));
+        const rel = (file) => 'file://' + file;
+        const variants = [
+            { name: 'desktop', mode: 'desktop', screenshot: desktopRaw, viewport: { width: 1600, height: 1000 } },
+            { name: 'mobile', mode: 'mobile', screenshot: mobileRaw, viewport: { width: 1200, height: 1600 } },
+            { name: 'square', mode: 'desktop', screenshot: desktopRaw, viewport: { width: 1200, height: 1200 } },
+        ];
+        const previewBrowser = await launchChromium();
+        const outputs = [];
+        for (const variant of variants) {
+            const htmlPath = path.join(workDir, `${variant.name}-preview${stateSuffix}.html`);
+            const outputPath = path.join(outDir, `gallery9704-${variant.name}-preview${stateSuffix}.png`);
+            await fs.promises.writeFile(
+                htmlPath,
+                previewHtml({
+                    mode: variant.mode,
+                    screenshot: rel(variant.screenshot),
+                    background: rel(background),
+                })
+            );
+            const previewPage = await previewBrowser.newPage({ viewport: variant.viewport, deviceScaleFactor: 1 });
+            await previewPage.goto('file://' + htmlPath, { waitUntil: 'load' });
+            await previewPage.screenshot({ path: outputPath, fullPage: false });
+            await previewPage.close();
+            outputs.push(outputPath);
+        }
+        await previewBrowser.close();
+        console.log(outputs.join('\n'));
+    } finally {
+        await fs.promises.rm(workDir, { recursive: true, force: true });
+    }
 }
 
 main().catch((error) => {
