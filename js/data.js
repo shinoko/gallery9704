@@ -4563,8 +4563,8 @@ const galleryData = [
   {
     "id": "https://weibo.com/8484396430/QCIvVlY0H",
     "label": "Blush升温丨0113x0905 · 2026-04-27",
-    "title": "",
-    "theme": "",
+    "title": "澳门WIEA国际娱乐盛典",
+    "theme": "澳门WIEA国际娱乐盛典",
     "date": "",
     "postDate": "2026-04-27",
     "author": "Blush升温丨0113x0905",
@@ -6136,8 +6136,8 @@ const galleryData = [
   {
     "id": "https://weibo.com/8484396430/QyCSNhL0p",
     "label": "Blush升温丨0113x0905 · 2026-03-31",
-    "title": "",
-    "theme": "",
+    "title": "何日君再来",
+    "theme": "何日君再来",
     "date": "",
     "postDate": "2026-03-31",
     "author": "Blush升温丨0113x0905",
@@ -7442,8 +7442,8 @@ const galleryData = [
   {
     "id": "https://weibo.com/8484396430/QybVzDqQU",
     "label": "Blush升温丨0113x0905 · 2026-03-28",
-    "title": "",
-    "theme": "",
+    "title": "何日君再来",
+    "theme": "何日君再来",
     "date": "",
     "postDate": "2026-03-28",
     "author": "Blush升温丨0113x0905",

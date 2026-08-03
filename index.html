@@ -176,27 +176,16 @@
                     <div class="selection-tools">
                         <button class="btn btn-secondary" id="selectVisible" type="button">选择当前结果</button>
                         <button class="btn btn-secondary" id="clearSelection" type="button">取消选择</button>
-                        <label class="bulk-theme-field">
-                            <span>批量主题</span>
-                            <span class="filter-input-wrap">
-                                <input id="bulkThemeInput" class="filter-input" list="bulkThemeOptions" placeholder="选择或输入主题">
-                                <button class="filter-clear" type="button" data-clear-input="bulkThemeInput" aria-label="清空批量主题" hidden>×</button>
-                            </span>
-                            <datalist id="bulkThemeOptions"></datalist>
-                        </label>
-                        <button class="btn btn-primary" id="saveBulkTheme" type="button" disabled>批量保存主题</button>
                         <button class="btn btn-danger" id="deleteSelected" type="button" disabled>删除已选</button>
-                        <span class="dirty-state" id="selectedState">已选择 0 条</span>
+                        <span class="selection-state" id="selectedState">已选择 0 条</span>
                     </div>
-                    <button class="btn btn-secondary" id="saveMaintenance" type="button">保存维护数据</button>
-                    <button class="btn btn-secondary" id="exportMaintenance" type="button">导出 JSON</button>
+                    <button class="btn btn-primary" id="saveCardThemes" type="button" disabled>保存主题修改</button>
                     <button class="btn btn-secondary" id="exportStatic" type="button">导出静态浏览版</button>
                     <label class="toggle-field" title="维护模式下隐藏真实图片">
                         <input id="noImageToggle" type="checkbox">
                         <span class="toggle-track" aria-hidden="true"></span>
                         <span>无图</span>
                     </label>
-                    <span class="dirty-state" id="dirtyState">已同步</span>
                 </div>
             </div>
         </div>

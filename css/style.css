@@ -810,6 +810,16 @@ body[data-filter-popover="true"] {
     background: #000;
 }
 
+#applyFilters {
+    background: var(--bg-link);
+    color: #A45E62;
+}
+
+#applyFilters:hover {
+    background: #FAD0D5;
+    color: #6F3E42;
+}
+
 .btn-secondary {
     background: transparent;
     color: var(--text-secondary);
@@ -891,36 +901,9 @@ body[data-static-export="true"] .sidebar-bottom {
     align-items: center;
 }
 
-.bulk-theme-field {
-    display: grid;
-    grid-template-columns: auto minmax(180px, 260px);
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.bulk-theme-field span {
-    font-size: 10px;
-    color: var(--text-secondary);
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
-
-.bulk-theme-field .filter-input {
-    min-height: 38px;
-}
-
-.selection-tools .btn-danger,
-.selection-tools .dirty-state {
-    grid-column: auto;
-}
-
-.dirty-state {
+.selection-state {
     font-size: 11px;
     color: var(--text-muted);
-}
-
-.dirty-state.dirty {
-    color: #A45E62;
 }
 
 .toggle-field {
@@ -1286,32 +1269,6 @@ body[data-no-image="true"] .grid-image img {
     font-size: 10px;
     color: var(--text-secondary);
     letter-spacing: 1px;
-}
-
-.maintenance-note textarea {
-    min-height: 72px;
-    resize: vertical;
-    width: 100%;
-    padding: 10px 14px;
-    background: var(--bg-input);
-    border: 1px solid transparent;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--text-primary);
-    outline: none;
-}
-
-.maintenance-note textarea:focus {
-    border-color: var(--border-medium);
-    background: var(--bg-primary);
-}
-
-.maintenance-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-sm);
-    margin-top: var(--space-md);
 }
 
 .weibo-text-panel {
@@ -1707,12 +1664,6 @@ body[data-no-image="true"] .modal-image-container img {
 
     .filter-actions .btn {
         flex: 1 1 0;
-    }
-
-    .bulk-theme-field {
-        grid-template-columns: 1fr;
-        align-items: stretch;
-        flex: 1 1 100%;
     }
 
     .date-row {
