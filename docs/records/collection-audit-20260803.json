@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-08-03T14:36:14.098Z",
+  "source": {
+    "facingDangerRecords": 75,
+    "facingDangerImages": 366,
+    "incrementalRecords": 1,
+    "incrementalImages": 1,
+    "totalRecords": 76,
+    "totalImages": 367
+  },
+  "downloadMethod": "browser-page-assets-from-m-weibo-status",
+  "download": {
+    "expected": 367,
+    "ok": 367,
+    "missing": 0,
+    "zeroBytes": 0,
+    "bytes": 7747656
+  },
+  "metadata": {
+    "records": 1187,
+    "newRecords": 76,
+    "duplicatePostUrls": 0,
+    "newImages": 367
+  },
+  "missing": [],
+  "zeroBytes": [],
+  "duplicatePostUrls": []
+}

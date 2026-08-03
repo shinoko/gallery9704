@@ -1,0 +1,657 @@
+{
+  "collectedAt": "2026-08-03T14:30:02.782Z",
+  "sinceDate": "2026-08-02",
+  "collectionSource": "m-weibo-container-api-incremental-20260803",
+  "excludedAccounts": [
+    {
+      "name": "GENTLE丨0113x0905",
+      "uid": "7977331345",
+      "reason": "ignored-by-user"
+    }
+  ],
+  "summary": {
+    "accounts": [
+      {
+        "name": "Mimosa_0113x0905",
+        "uid": "8393384219",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 11,
+            "recent": 0,
+            "maxDate": "Thu Aug 21 19:59",
+            "minDate": "Mon Jul 06 23:47",
+            "since_id": 5317826755691506
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "CLING丨0113x0905",
+        "uid": "8338137118",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Tue Jan 13 03:34",
+            "minDate": "Sat Oct 18 18:16",
+            "since_id": 5223152768517032
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "Pointer指针丨0113x0905",
+        "uid": "8300677615",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Fri Jul 17 21:06",
+            "minDate": "Fri May 22 00:00",
+            "since_id": 5301062661572437
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "失控丨0113x0905",
+        "uid": "8019292043",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 12,
+            "mblogs": 11,
+            "recent": 0,
+            "maxDate": "Mon Aug 18 20:39",
+            "minDate": "Fri Apr 03 10:25",
+            "since_id": 5283563226539169
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "31Kilometres-0113x0905",
+        "uid": "8015386194",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 13,
+            "mblogs": 12,
+            "recent": 0,
+            "maxDate": "Sat Aug 02 20:24",
+            "minDate": "Tue Jun 23 13:24",
+            "since_id": 5312751964521381
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "RedLight丨0113x0905",
+        "uid": "8013999480",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 12,
+            "mblogs": 11,
+            "recent": 0,
+            "maxDate": "Sat Aug 16 22:58",
+            "minDate": "Wed Jul 08 00:38",
+            "since_id": 5317825075876298
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "Cosmos_0113x0905",
+        "uid": "7934854969",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 12,
+            "mblogs": 12,
+            "recent": 0,
+            "maxDate": "Sat Sep 13 21:31",
+            "minDate": "Sun Mar 29 14:52",
+            "since_id": 5281764827727840
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "FoxxBunnyLover_0113x0905",
+        "uid": "7686000968",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Mon Jun 22 21:17",
+            "minDate": "Thu Apr 23 17:24",
+            "since_id": 5290915371681316
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "遇见Happiness_0113x0905",
+        "uid": "6533117651",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 12,
+            "mblogs": 11,
+            "recent": 0,
+            "maxDate": "Sun Jun 28 13:14",
+            "minDate": "Tue Jul 21 10:49",
+            "since_id": 5322886820664432
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "ERhickey-0113X0905",
+        "uid": "4079488264",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 3,
+        "keptNew": 1,
+        "skippedNew": 2,
+        "pageCount": 2,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 3,
+            "maxDate": "Mon Aug 03 18:00",
+            "minDate": "Tue Jul 21 18:29",
+            "since_id": 5323087440516494
+          },
+          {
+            "page": 2,
+            "cards": 10,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Tue Jul 21 12:00",
+            "minDate": "Fri Jul 17 21:13",
+            "since_id": 5321600888212427
+          }
+        ],
+        "excludedReasons": {
+          "blacklist": 2
+        },
+        "imageCount": 1
+      },
+      {
+        "name": "ElysianSilhouette_0113x0905",
+        "uid": "4069898419",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 1,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "pageCount": 2,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 12,
+            "mblogs": 11,
+            "recent": 1,
+            "maxDate": "Sat Sep 27 13:14",
+            "minDate": "Sun Jul 19 18:31",
+            "since_id": 5320677143874120
+          },
+          {
+            "page": 2,
+            "cards": 10,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Tue Jul 14 20:22",
+            "minDate": "Sun Jun 28 10:16",
+            "since_id": 5314447545469691
+          }
+        ],
+        "excludedReasons": {
+          "not_public": 1
+        },
+        "imageCount": 0
+      },
+      {
+        "name": "TheMidnightHush丨0113x0905",
+        "uid": "9068198836",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Mon Mar 30 22:00",
+            "minDate": "Sun Feb 01 18:47",
+            "since_id": 5261533787456429
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "WingSync羽翼共振_0113x0905",
+        "uid": "7864379003",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Wed Apr 01 12:57",
+            "minDate": "Thu Feb 12 23:32",
+            "since_id": 5264955436697671
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "ParallelUs丨0113x0905",
+        "uid": "8002261474",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Sat Mar 28 13:36",
+            "minDate": "Fri Jan 16 12:31",
+            "since_id": 5254760392297375
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "NeverBe永不落_0113x0905",
+        "uid": "8282610059",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 13,
+            "mblogs": 12,
+            "recent": 0,
+            "maxDate": "Thu Oct 30 21:52",
+            "minDate": "Sun Mar 29 20:45",
+            "since_id": 5281907279660394
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "TheFluffTheEar丨0113x0905",
+        "uid": "8348303999",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 10,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Tue Oct 28 01:55",
+            "minDate": "Sat Sep 13 18:29",
+            "since_id": 5210444398858711
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "Bond羁绊丨0113x0905",
+        "uid": "5892109907",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 11,
+            "recent": 0,
+            "maxDate": "Sun Nov 09 20:00",
+            "minDate": "Sat Mar 28 13:59",
+            "since_id": 5280755364139093
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "Spring妙手回春丨0113x0905",
+        "uid": "9065471823",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 10,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Tue Jan 13 01:15",
+            "minDate": "Sun Aug 31 19:04",
+            "since_id": 5205056456756449
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "KYOU_521丨0113x0905",
+        "uid": "4086481338",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 10,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Sat Mar 14 10:00",
+            "minDate": "Wed Nov 26 19:50",
+            "since_id": 5236941336348206
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "Blush升温丨0113x0905",
+        "uid": "8484396430",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 13,
+            "mblogs": 12,
+            "recent": 0,
+            "maxDate": "Sat Mar 28 23:34",
+            "minDate": "Mon Mar 30 11:14",
+            "since_id": 5282124757468386
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "无风区丨0113x0905",
+        "uid": "4076555020",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Mon Apr 27 20:03",
+            "minDate": "Sun Feb 01 14:13",
+            "since_id": 5259411360846068
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "TALE_0113x0905",
+        "uid": "6312977401",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 12,
+            "mblogs": 11,
+            "recent": 0,
+            "maxDate": "Mon Dec 22 15:30",
+            "minDate": "Tue May 26 14:22",
+            "since_id": 5298311063666880
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      },
+      {
+        "name": "69discount_0113x0905",
+        "uid": "8250612132",
+        "mode": "incremental",
+        "dataType": "station",
+        "profileTotal": null,
+        "scannedUnique": 0,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "pageCount": 1,
+        "scannedPages": [
+          {
+            "page": 1,
+            "cards": 11,
+            "mblogs": 10,
+            "recent": 0,
+            "maxDate": "Sun Mar 29 14:38",
+            "minDate": "Sat Mar 28 16:38",
+            "since_id": 5281464888852691
+          }
+        ],
+        "excludedReasons": {},
+        "imageCount": 0
+      }
+    ],
+    "totals": {
+      "keptNew": 1,
+      "excluded": 3,
+      "imageCount": 1,
+      "reasonCounts": {
+        "blacklist": 2,
+        "not_public": 1
+      }
+    }
+  },
+  "records": [
+    {
+      "author": "ERhickey-0113X0905",
+      "authorUrl": "https://weibo.com/u/4079488264",
+      "postUrl": "https://weibo.com/4079488264/RbHwl5Xq9",
+      "postTimeText": "2026-08-03 18:00",
+      "postDate": "2026-08-03",
+      "text": "ERhickey-0113X0905\n展丞超话\n2026-08-03 18:00\n来自 展丞超话\n展丞💋ER × 展丞 | 巴黎是家，纪念PB#展丞99# \n\n光沿直线传播，直到遇见折射它的介质——\n于是31公里的风，有了名为“展丞”的归途。\n\n我们负责记录流光，时间负责见证。\n收录所有关于心动的证据，将那些关于巴黎的记忆，藏进这一本PB中……\n\nER 诚意献上巴黎｜PB珍藏辑，以此存档。\n\n⚠️注 ...全文",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/f3280d08gy1ifpjgkqd3qj21wwa4fu18.jpg"
+      ],
+      "imageFiles": [
+        "images/2026-08-03_ERhickey-0113X0905_RbHwl5Xq9_01.jpg"
+      ],
+      "collectionSource": "m-weibo-container-api-incremental-20260803",
+      "collectionAccountUid": "4079488264",
+      "collectionAccountName": "ERhickey-0113X0905",
+      "mblogId": "5327889051420057",
+      "mid": "5327889051420057",
+      "bid": "RbHwl5Xq9",
+      "rawPicNum": 1,
+      "tags": [
+        "展丞99"
+      ],
+      "targetPeople": [],
+      "shootDate": "2026-08-03",
+      "theme": ""
+    }
+  ],
+  "excluded": [
+    {
+      "postUrl": "https://weibo.com/4079488264/RbFDQoclv",
+      "mblogId": "5327816825767333",
+      "postDate": "2026-08-03",
+      "reason": "blacklist",
+      "text": "展丞💋ER × 展轩 | 泰国微博之夜应援企划#向全世界安利展轩# \n\nPART2：泰兰德之约·线下手幅发放\n\n发放时间：2026年8月8日（具体时段见当日通知）\n发放地点：百丽宫场馆附近，具体地点见@ERhickey-0113X0905 实时动态\n\n发放数量：50份\n领取条件：关注#展丞#超话，关注@展轩 、@刘轩丞 ，和 ...全文",
+      "account": "ERhickey-0113X0905",
+      "uid": "4079488264"
+    },
+    {
+      "postUrl": "https://weibo.com/4079488264/RbuAGrVU9",
+      "mblogId": "5327392026657445",
+      "postDate": "2026-08-02",
+      "reason": "blacklist",
+      "text": "展丞💋ER × @展轩  | 泰国微博之夜应援企划\n\nPART 1: 踏光而来，载爱相迎\n\n同频的共振，始于曼谷的微风。\n爱是具体的坐标，也是移动的风景。\n\n📅 时间： 2026年8月6日 — 8月12日\n📍 地点： 泰国 · 曼谷\n🚕 企划： 31辆嘟嘟车（Tuk Tuk）全城投放\n*完整企划请见主视觉海报\n\n泰兰德的夏 ...全文",
+      "account": "ERhickey-0113X0905",
+      "uid": "4079488264"
+    },
+    {
+      "postUrl": "https://weibo.com/4069898419/RbHgp2T1B",
+      "mblogId": "5327879170688175",
+      "postDate": "2026-08-03",
+      "reason": "not_public",
+      "text": "抽奖的东西会陆续发出 大家记得收货哦不然会退回",
+      "account": "ElysianSilhouette_0113x0905",
+      "uid": "4069898419"
+    }
+  ]
+}

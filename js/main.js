@@ -71,7 +71,8 @@ const state = {
     modalImageIndex: 0,
     noImageMode: false,
     pendingThemeEdits: new Map(),
-    savingThemeEdits: false
+    savingThemeEdits: false,
+    savingThemeIds: new Set()
 };
 
 const els = {
@@ -323,6 +324,9 @@ function initListeners() {
     });
     document.addEventListener('click', handleOutsideFilterClick);
     document.addEventListener('keydown', handleKeyPress);
+    window.addEventListener('resize', () => {
+        datePickerStates.forEach((picker) => positionDatePicker(picker));
+    });
 }
 
 function handleOutsideFilterClick(event) {
@@ -384,10 +388,22 @@ function updateDateFieldStates() {
 
 function setDatePickerOpen(picker, open) {
     picker.root.classList.toggle('is-open', open);
+    picker.root.classList.toggle('align-right', false);
     picker.popover.hidden = !open;
     picker.trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) renderDatePicker(picker);
+    if (open) {
+        renderDatePicker(picker);
+        positionDatePicker(picker);
+    }
     syncFilterPopoverState();
+}
+
+function positionDatePicker(picker) {
+    if (!picker.root.classList.contains('is-open')) return;
+    const viewportPadding = 8;
+    const popoverRect = picker.popover.getBoundingClientRect();
+    const shouldAlignRight = popoverRect.right > window.innerWidth - viewportPadding;
+    picker.root.classList.toggle('align-right', shouldAlignRight);
 }
 
 function shiftDatePickerMonth(picker, offset) {
@@ -768,6 +784,7 @@ function renderSeriesItem(series, seriesIndex) {
     if (state.mode === 'maintain' && isMaintenanceEnabled()) {
         article.appendChild(renderMaintenanceForm(series));
         article.appendChild(renderTextPanel(series));
+        article.appendChild(renderMaintenanceActions(series));
         article.querySelector('[data-select-card]')?.addEventListener('change', (event) => {
             const id = event.currentTarget.value;
             if (event.currentTarget.checked) state.selectedIds.add(id);
@@ -845,6 +862,21 @@ function renderMaintenanceForm(series) {
     return form;
 }
 
+function renderMaintenanceActions(series) {
+    const actions = document.createElement('div');
+    const id = getRecordId(series);
+    actions.className = 'maintenance-card-actions';
+    actions.innerHTML = `
+        <button class="btn btn-primary" type="button" data-card-save-theme>保存主题</button>
+        <button class="btn btn-danger" type="button" data-card-delete>删除</button>
+    `;
+    actions.querySelector('[data-card-save-theme]').addEventListener('click', () => saveCardTheme(series));
+    actions.querySelector('[data-card-delete]').addEventListener('click', () => {
+        deleteRecords([id], '确定删除这条微博数据吗？对应的本地图片文件也会被删除。');
+    });
+    return actions;
+}
+
 function renderTextPanel(series) {
     const details = document.createElement('details');
     details.className = 'weibo-text-panel';
@@ -882,6 +914,39 @@ function updateSelectionState() {
 function updateCardThemeSaveState() {
     if (els.saveCardThemes) {
         els.saveCardThemes.disabled = state.savingThemeEdits || state.pendingThemeEdits.size === 0;
+    }
+    document.querySelectorAll('[data-card-save-theme]').forEach((button) => {
+        const id = button.closest('.series')?.dataset.id;
+        const saving = state.savingThemeEdits || state.savingThemeIds.has(id);
+        button.disabled = saving || !state.pendingThemeEdits.has(id);
+        button.textContent = saving ? '保存中…' : '保存主题';
+    });
+    document.querySelectorAll('[data-card-delete]').forEach((button) => {
+        const id = button.closest('.series')?.dataset.id;
+        button.disabled = state.savingThemeIds.has(id);
+    });
+}
+
+async function saveCardTheme(series) {
+    if (state.mode !== 'maintain' || !isMaintenanceEnabled()) return;
+    const id = getRecordId(series);
+    if (!state.pendingThemeEdits.has(id) || state.savingThemeIds.has(id)) return;
+    const theme = state.pendingThemeEdits.get(id);
+    state.savingThemeIds.add(id);
+    updateCardThemeSaveState();
+
+    try {
+        await saveRecordPatchRequest(id, { theme, updatedAt: new Date().toISOString() });
+        applyThemeEditsToActiveData(new Map([[id, theme]]));
+        if (state.pendingThemeEdits.get(id) === theme) state.pendingThemeEdits.delete(id);
+        refreshFacets();
+        applyFilterAndRender();
+        alert('已保存这条微博的活动主题。');
+    } catch (error) {
+        alert(error.message || '保存活动主题失败，请确认当前是通过 npm start 启动的服务端项目。');
+    } finally {
+        state.savingThemeIds.delete(id);
+        updateCardThemeSaveState();
     }
 }
 
@@ -986,6 +1051,7 @@ async function deleteRecords(ids, message) {
         ids.forEach((id) => {
             state.selectedIds.delete(String(id));
             state.pendingThemeEdits.delete(String(id));
+            state.savingThemeIds.delete(String(id));
         });
         refreshFacets();
         applyFilterAndRender();

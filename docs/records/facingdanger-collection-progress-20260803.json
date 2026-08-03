@@ -1,0 +1,26 @@
+{
+  "collectedAt": "2026-08-03T14:25:46.749Z",
+  "account": {
+    "name": "FacingDanger",
+    "uid": "7808883350",
+    "url": "https://weibo.com/u/7808883350",
+    "mode": "full",
+    "profileTotal": 105
+  },
+  "summary": {
+    "scannedPages": 11,
+    "scannedUnique": 100,
+    "keptNew": 75,
+    "skippedNew": 0,
+    "excluded": 25,
+    "excludedReasons": {
+      "no_weibo_image": 3,
+      "not_public": 5,
+      "video": 8,
+      "repost": 6,
+      "blacklist": 3
+    },
+    "imageCount": 366,
+    "maxImageCount": 9
+  }
+}

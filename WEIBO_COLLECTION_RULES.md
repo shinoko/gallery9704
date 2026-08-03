@@ -323,3 +323,21 @@
 - `QnXyrccMX`
 - `QnRIl54yB`
 - `QnQoYzivj`
+
+## 2026-08-03 FacingDanger 全量与其他站姐增量
+
+`FacingDanger`（UID `7808883350`）按全量规则扫描主页接口：接口总数 105，分页得到 100 条唯一微博；保留 75 条图片微博，共 366 张图片。剔除 25 条：视频 8 条、转发 6 条、非公开 5 条、命中删除规则 3 条、无图片 3 条。
+
+其他 23 个已追踪站姐账号按 `2026-08-02` 起做增量扫描，使用 `postUrl` 去重。本批只有 `ERhickey-0113X0905` 新增 1 条图片微博、1 张图片；另剔除 3 条（命中删除规则 2 条、非公开 1 条），其余账号无新的可入库图片微博。
+
+本批候选、进度、图片候选与校验记录：
+
+- `docs/records/facingdanger-collection-candidate-20260803.json`
+- `docs/records/facingdanger-collection-progress-20260803.json`
+- `docs/records/weibo-batch-collection-candidate-20260803.json`
+- `docs/records/weibo-batch-collection-progress-20260803.json`
+- `docs/records/weibo-batch-image-candidate-20260803.json`
+- `docs/records/weibo-batch-image-download-report-20260803.json`
+- `docs/records/collection-audit-20260803.json`
+
+本批共新增 76 条微博、367 张图片；下载校验 `missing=0`、`zeroBytes=0`、重复 `postUrl=0`。

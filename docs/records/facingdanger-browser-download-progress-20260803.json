@@ -1,0 +1,13 @@
+{
+  "updatedAt": "2026-08-03T14:37:07.598Z",
+  "status": "completed",
+  "downloadMethod": "browser-page-assets-from-m-weibo-status",
+  "account": "FacingDanger",
+  "uid": "7808883350",
+  "recordsExpected": 75,
+  "recordsCompleted": 75,
+  "imagesExpected": 366,
+  "imagesCompleted": 366,
+  "missing": 0,
+  "errors": 0
+}
