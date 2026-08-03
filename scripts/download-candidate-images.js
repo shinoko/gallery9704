@@ -3,8 +3,9 @@ const https = require('https');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const inputPath = process.argv[2] || path.join(ROOT, 'themidnighthush-collection-candidate.json');
-const outputPath = process.argv[3] || path.join(ROOT, 'themidnighthush-image-download-report.json');
+const RECORDS_DIR = path.join(ROOT, 'docs', 'records');
+const inputPath = process.argv[2] || path.join(RECORDS_DIR, 'themidnighthush-collection-candidate.json');
+const outputPath = process.argv[3] || path.join(RECORDS_DIR, 'themidnighthush-image-download-report.json');
 const force = process.argv.includes('--force');
 
 function toThumbnailUrl(url) {

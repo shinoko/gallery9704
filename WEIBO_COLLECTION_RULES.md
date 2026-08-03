@@ -2,6 +2,8 @@
 
 本文档用于后续从微博账号增量采集图片数据。规则由 `DATA_CLEANING_RULES.md` 的删除规则反向整理而来：先判断是否应剔除，再将保留微博写入对应的 metadata 文件。
 
+采集过程文件统一归档在 `docs/records/`：候选记录、扫描进度、下载报告、审计清单和重试清单都放入该目录。根目录仅保留规则类文档、正式 metadata 数据源和应用运行文件。
+
 ## 本次试采账号
 
 | 账号 | UID | 主页 |
@@ -158,23 +160,23 @@
 
 复扫候选记录：
 
-- `official-weibo-rescan-candidate-20260801.json`
+- `docs/records/official-weibo-rescan-candidate-20260801.json`
 
 复扫进度与剔除记录：
 
-- `official-weibo-rescan-progress-20260801.json`
+- `docs/records/official-weibo-rescan-progress-20260801.json`
 
 复扫图片下载报告：
 
-- `official-weibo-rescan-image-download-report-20260801.json`
+- `docs/records/official-weibo-rescan-image-download-report-20260801.json`
 
 初次候选记录：
 
-- `official-weibo-collection-candidate-20260801.json`
+- `docs/records/official-weibo-collection-candidate-20260801.json`
 
 初次图片下载报告：
 
-- `official-weibo-image-download-report-20260801.json`
+- `docs/records/official-weibo-image-download-report-20260801.json`
 
 复扫采集结果：
 
@@ -220,11 +222,11 @@
 
 本批候选、进度与下载报告：
 
-- `weibo-batch-collection-candidate-20260802.json`
-- `weibo-batch-collection-progress-20260802.json`
-- `weibo-batch-image-download-report-20260802.json`
-- `official-weibo-incremental-candidate-20260802.json`
-- `official-weibo-incremental-progress-20260802.json`
+- `docs/records/weibo-batch-collection-candidate-20260802.json`
+- `docs/records/weibo-batch-collection-progress-20260802.json`
+- `docs/records/weibo-batch-image-download-report-20260802.json`
+- `docs/records/official-weibo-incremental-candidate-20260802.json`
+- `docs/records/official-weibo-incremental-progress-20260802.json`
 
 站姐账号采集结果：
 
@@ -267,9 +269,9 @@
 
 本次按 `2026-08-02` 及之后再次扫描四个官方账号，候选与进度文件：
 
-- `official-weibo-incremental-candidate-20260802-rerun.json`
-- `official-weibo-incremental-progress-20260802-rerun.json`
-- `official-weibo-incremental-image-download-report-20260802-rerun.json`
+- `docs/records/official-weibo-incremental-candidate-20260802-rerun.json`
+- `docs/records/official-weibo-incremental-progress-20260802-rerun.json`
+- `docs/records/official-weibo-incremental-image-download-report-20260802-rerun.json`
 
 采集结果：
 
@@ -291,7 +293,7 @@
 - 本地已有：17 条。
 - 新增入库：91 条，453 张缩略图。
 - 剔除：142 条，其中视频 57 条、仅粉丝可见 42 条、命中删除词 21 条、转发 14 条、无图 8 条。
-- 候选、进度与下载报告：`weibo-31kilometres-rescan-candidate-20260802.json`、`weibo-31kilometres-rescan-progress-20260802.json`、`weibo-31kilometres-rescan-image-download-report-20260802.json`。
+- 候选、进度与下载报告：`docs/records/weibo-31kilometres-rescan-candidate-20260802.json`、`docs/records/weibo-31kilometres-rescan-progress-20260802.json`、`docs/records/weibo-31kilometres-rescan-image-download-report-20260802.json`。
 
 `FoxxBunnyLover_0113x0905` 重新扫描主题分类：
 
@@ -303,11 +305,11 @@
 
 候选记录保存在：
 
-- `themidnighthush-collection-candidate.json`
+- `docs/records/themidnighthush-collection-candidate.json`
 
 图片下载报告保存在：
 
-- `themidnighthush-image-download-report.json`
+- `docs/records/themidnighthush-image-download-report.json`
 
 已剔除样本：
 
