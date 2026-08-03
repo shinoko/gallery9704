@@ -687,6 +687,61 @@ body[data-static-export="true"] .sidebar-bottom {
     color: #A45E62;
 }
 
+.toggle-field {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 38px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-field input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toggle-track {
+    position: relative;
+    width: 34px;
+    height: 18px;
+    border-radius: 999px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-medium);
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.toggle-track::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+    transition: transform var(--transition-fast);
+}
+
+.toggle-field input:checked + .toggle-track {
+    background: #D9E3DA;
+    border-color: #B7C8B9;
+}
+
+.toggle-field input:checked + .toggle-track::after {
+    transform: translateX(16px);
+}
+
+.toggle-field input:disabled + .toggle-track,
+.toggle-field input:disabled ~ span {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
 /* ==================== 主内容区 ==================== */
 .main-content {
     min-width: 0;
@@ -896,12 +951,21 @@ body[data-static-export="true"] .sidebar-bottom {
     aspect-ratio: 3 / 4;
 }
 
+body[data-no-image="true"] .grid-image {
+    background: #E3E3DF;
+}
+
 .grid-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
+}
+
+body[data-no-image="true"] .grid-image img {
+    background: #E3E3DF;
+    object-fit: cover;
 }
 
 .grid-image:hover img {
@@ -1195,11 +1259,21 @@ body[data-static-export="true"] .sidebar-bottom {
     background: #1a1a1a;
 }
 
+body[data-no-image="true"] .modal-image-container {
+    background: #E3E3DF;
+}
+
 .modal-image-container img {
     max-width: 88vw;
     max-height: 78vh;
     object-fit: contain;
     display: block;
+}
+
+body[data-no-image="true"] .modal-image-container img {
+    min-width: min(72vw, 520px);
+    min-height: min(72vh, 680px);
+    background: #E3E3DF;
 }
 
 .modal-info {

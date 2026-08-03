@@ -5,6 +5,7 @@ const STATIC_EXPORT = window.GALLERY9704_STATIC_EXPORT === true;
 const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
 const INITIAL_RENDER_COUNT = 24;
 const RENDER_BATCH_SIZE = 24;
+const NO_IMAGE_PLACEHOLDER_SRC = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="3" height="4" viewBox="0 0 3 4"%3E%3Crect width="3" height="4" fill="%23e3e3df"/%3E%3C/svg%3E';
 const DATASETS = {
     station: {
         label: '站姐',
@@ -69,6 +70,7 @@ const state = {
     modalOpen: false,
     modalSeriesIndex: 0,
     modalImageIndex: 0,
+    noImageMode: false,
     dirty: false
 };
 
@@ -92,6 +94,7 @@ const els = {
     saveMaintenance: document.getElementById('saveMaintenance'),
     exportMaintenance: document.getElementById('exportMaintenance'),
     exportStatic: document.getElementById('exportStatic'),
+    noImageToggle: document.getElementById('noImageToggle'),
     dirtyState: document.getElementById('dirtyState'),
     seriesList: document.getElementById('seriesList'),
     emptyState: document.getElementById('emptyState'),
@@ -218,6 +221,7 @@ function initListeners() {
     els.saveMaintenance.addEventListener('click', saveMaintenance);
     els.exportMaintenance.addEventListener('click', exportMaintenance);
     els.exportStatic.addEventListener('click', exportStaticBrowse);
+    els.noImageToggle.addEventListener('change', (event) => updateNoImageMode(event.currentTarget.checked));
     els.applyFilters.addEventListener('click', () => applyFilterAndRender({ scrollTop: true }));
     els.resetFilters.addEventListener('click', resetAndRender);
     els.keywordSearch.addEventListener('keydown', (e) => {
@@ -305,7 +309,28 @@ function updateMode(mode) {
     els.browseModeBtn.classList.toggle('active', mode === 'browse');
     els.maintainModeBtn.classList.toggle('active', mode === 'maintain');
     els.maintainModeBtn.disabled = !isMaintenanceEnabled();
+    syncNoImageMode();
     applyFilterAndRender();
+}
+
+function isNoImageActive() {
+    return state.mode === 'maintain' && state.noImageMode;
+}
+
+function syncNoImageMode() {
+    const active = isNoImageActive();
+    document.body.dataset.noImage = active ? 'true' : 'false';
+    if (els.noImageToggle) {
+        els.noImageToggle.checked = state.noImageMode;
+        els.noImageToggle.disabled = state.mode !== 'maintain' || !isMaintenanceEnabled();
+    }
+}
+
+function updateNoImageMode(enabled) {
+    state.noImageMode = Boolean(enabled);
+    syncNoImageMode();
+    renderSeries();
+    if (state.modalOpen) updateModalContent();
 }
 
 function loadMaintenance() {
@@ -594,7 +619,8 @@ function renderSeriesItem(series, seriesIndex) {
         gridItem.className = 'grid-image' + (spanClass ? ' ' + spanClass : '');
 
         const img = document.createElement('img');
-        img.src = imgSrc;
+        img.src = isNoImageActive() ? NO_IMAGE_PLACEHOLDER_SRC : imgSrc;
+        if (isNoImageActive()) img.dataset.realSrc = imgSrc;
         img.alt = `${series.title} ${imgIndex + 1}`;
         img.loading = 'lazy';
         img.decoding = 'async';
@@ -943,7 +969,9 @@ function updateModalContent() {
     const series = state.filteredData[state.modalSeriesIndex];
     const imgSrc = series.images[state.modalImageIndex];
 
-    els.modalImage.src = imgSrc;
+    els.modalImage.src = isNoImageActive() ? NO_IMAGE_PLACEHOLDER_SRC : imgSrc;
+    if (isNoImageActive()) els.modalImage.dataset.realSrc = imgSrc;
+    else delete els.modalImage.dataset.realSrc;
     els.modalImage.alt = series.title;
     els.modalTitle.textContent = series.title;
     els.modalDescription.textContent = `${formatCardMeta(series)} · ${state.modalImageIndex + 1} / ${series.images.length}`;
