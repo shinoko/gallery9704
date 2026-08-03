@@ -67,6 +67,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
     overflow-y: scroll;
     scrollbar-gutter: stable;
 }
@@ -103,6 +104,16 @@ body {
     line-height: 1.5;
     min-height: 100vh;
     overflow-x: hidden;
+    touch-action: manipulation;
+}
+
+button,
+a,
+input,
+select,
+textarea,
+[role="button"] {
+    touch-action: manipulation;
 }
 
 body[data-filter-popover="true"] {
@@ -1753,5 +1764,12 @@ body[data-no-image="true"] .modal-image-container img {
     .modal-close {
         top: 16px;
         right: 16px;
+    }
+
+    /* iOS Safari 会在聚焦小字号输入框时自动放大页面。 */
+    input:not([type="checkbox"]):not([type="radio"]):not([type="date"]),
+    textarea,
+    select {
+        font-size: 16px;
     }
 }
