@@ -409,7 +409,7 @@ body[data-filter-popover="true"] {
 .filter-section {
     min-width: 0;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: start;
     gap: var(--space-md) var(--space-lg);
 }
@@ -418,6 +418,7 @@ body[data-filter-popover="true"] {
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+    min-width: 0;
 }
 
 .is-hidden {
@@ -505,7 +506,7 @@ body[data-filter-popover="true"] {
 
 .date-row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
     align-items: center;
     gap: var(--space-sm);
 }
@@ -765,11 +766,12 @@ body[data-filter-popover="true"] {
 }
 
 .filter-actions {
-    grid-column: 5 / 6;
+    grid-column: -2 / -1;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-sm);
     align-self: start;
+    justify-self: end;
     padding-top: calc(10px * 1.5 + var(--space-sm));
     margin-top: 0;
     border-top: none;
@@ -1568,6 +1570,22 @@ body[data-no-image="true"] .modal-image-container img {
 }
 
 /* ==================== 响应式设计 ==================== */
+@media (min-width: 1600px) {
+    .filter-section {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1279px) {
+    .filter-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filter-actions {
+        grid-column: 2 / 3;
+    }
+}
+
 @media (max-width: 1200px) {
     .modal-prev {
         left: var(--space-md);
@@ -1606,7 +1624,7 @@ body[data-no-image="true"] .modal-image-container img {
     }
 
     .filter-actions {
-        grid-column: 1 / -1;
+        grid-column: 2 / 3;
         padding-top: 0;
     }
 
@@ -1659,6 +1677,7 @@ body[data-no-image="true"] .modal-image-container img {
     }
 
     .filter-actions {
+        grid-column: 1 / -1;
         justify-content: stretch;
     }
 
