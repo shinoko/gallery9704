@@ -43,47 +43,120 @@
                 <!-- 关键词 -->
                 <div class="filter-group">
                     <label class="filter-label">关键词</label>
-                    <input type="text" id="keywordSearch" class="filter-input" placeholder="输入关键词搜索...">
+                    <div class="filter-input-wrap">
+                        <input type="text" id="keywordSearch" class="filter-input" placeholder="输入关键词搜索...">
+                        <button class="filter-clear" type="button" data-clear-input="keywordSearch" aria-label="清空关键词" hidden>×</button>
+                    </div>
                 </div>
 
                 <!-- 活动主题 -->
                 <div class="filter-group" id="themeFilterGroup">
                     <label class="filter-label">活动主题</label>
-                    <select id="themeFilter" class="filter-select">
-                        <option value="">全部主题</option>
-                    </select>
+                    <div class="custom-select" data-custom-select>
+                        <button class="custom-select-trigger" id="themeFilterTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="custom-select-value" data-select-label>全部主题</span>
+                            <span class="custom-select-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="custom-select-menu" role="listbox" aria-label="活动主题选项" hidden></div>
+                        <select id="themeFilter" class="custom-select-native" tabindex="-1" aria-hidden="true">
+                            <option value="">全部主题</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="filter-group">
                     <label class="filter-label">发布账号</label>
-                    <select id="authorFilter" class="filter-select">
-                        <option value="">全部账号</option>
-                    </select>
+                    <div class="custom-select" data-custom-select>
+                        <button class="custom-select-trigger" id="authorFilterTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="custom-select-value" data-select-label>全部账号</span>
+                            <span class="custom-select-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="custom-select-menu" role="listbox" aria-label="发布账号选项" hidden></div>
+                        <select id="authorFilter" class="custom-select-native" tabindex="-1" aria-hidden="true">
+                            <option value="">全部账号</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="filter-group" id="shootDateFilterGroup">
                     <label class="filter-label">拍摄时间</label>
                     <div class="date-row">
-                        <span class="date-field" data-placeholder="开始日期">
-                            <input type="date" id="shootDateFrom" class="filter-input" aria-label="拍摄开始日期">
-                        </span>
+                        <div class="date-picker" data-date-picker>
+                            <button class="date-picker-trigger" type="button" data-date-trigger aria-haspopup="dialog" aria-expanded="false" aria-label="拍摄开始日期">
+                                <span class="date-picker-value" data-date-value>开始日期</span>
+                                <span class="date-picker-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="date-picker-popover" role="dialog" aria-label="选择拍摄开始日期" hidden>
+                                <div class="date-picker-header">
+                                    <button class="date-picker-nav" type="button" data-date-prev aria-label="上个月">‹</button>
+                                    <span class="date-picker-month" data-date-month></span>
+                                    <button class="date-picker-nav" type="button" data-date-next aria-label="下个月">›</button>
+                                </div>
+                                <div class="date-picker-weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+                                <div class="date-picker-grid" data-date-grid role="grid"></div>
+                                <button class="date-picker-clear" type="button" data-date-clear>清除日期</button>
+                            </div>
+                            <input type="date" id="shootDateFrom" class="date-input-native" tabindex="-1" aria-hidden="true">
+                        </div>
                         <span class="date-separator">至</span>
-                        <span class="date-field" data-placeholder="结束日期">
-                            <input type="date" id="shootDateTo" class="filter-input" aria-label="拍摄结束日期">
-                        </span>
+                        <div class="date-picker" data-date-picker>
+                            <button class="date-picker-trigger" type="button" data-date-trigger aria-haspopup="dialog" aria-expanded="false" aria-label="拍摄结束日期">
+                                <span class="date-picker-value" data-date-value>结束日期</span>
+                                <span class="date-picker-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="date-picker-popover" role="dialog" aria-label="选择拍摄结束日期" hidden>
+                                <div class="date-picker-header">
+                                    <button class="date-picker-nav" type="button" data-date-prev aria-label="上个月">‹</button>
+                                    <span class="date-picker-month" data-date-month></span>
+                                    <button class="date-picker-nav" type="button" data-date-next aria-label="下个月">›</button>
+                                </div>
+                                <div class="date-picker-weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+                                <div class="date-picker-grid" data-date-grid role="grid"></div>
+                                <button class="date-picker-clear" type="button" data-date-clear>清除日期</button>
+                            </div>
+                            <input type="date" id="shootDateTo" class="date-input-native" tabindex="-1" aria-hidden="true">
+                        </div>
                     </div>
                 </div>
 
                 <div class="filter-group" id="postDateFilterGroup">
                     <label class="filter-label">发布时间</label>
                     <div class="date-row">
-                        <span class="date-field" data-placeholder="开始日期">
-                            <input type="date" id="postDateFrom" class="filter-input" aria-label="发布开始日期">
-                        </span>
+                        <div class="date-picker" data-date-picker>
+                            <button class="date-picker-trigger" type="button" data-date-trigger aria-haspopup="dialog" aria-expanded="false" aria-label="发布开始日期">
+                                <span class="date-picker-value" data-date-value>开始日期</span>
+                                <span class="date-picker-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="date-picker-popover" role="dialog" aria-label="选择发布开始日期" hidden>
+                                <div class="date-picker-header">
+                                    <button class="date-picker-nav" type="button" data-date-prev aria-label="上个月">‹</button>
+                                    <span class="date-picker-month" data-date-month></span>
+                                    <button class="date-picker-nav" type="button" data-date-next aria-label="下个月">›</button>
+                                </div>
+                                <div class="date-picker-weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+                                <div class="date-picker-grid" data-date-grid role="grid"></div>
+                                <button class="date-picker-clear" type="button" data-date-clear>清除日期</button>
+                            </div>
+                            <input type="date" id="postDateFrom" class="date-input-native" tabindex="-1" aria-hidden="true">
+                        </div>
                         <span class="date-separator">至</span>
-                        <span class="date-field" data-placeholder="结束日期">
-                            <input type="date" id="postDateTo" class="filter-input" aria-label="发布结束日期">
-                        </span>
+                        <div class="date-picker" data-date-picker>
+                            <button class="date-picker-trigger" type="button" data-date-trigger aria-haspopup="dialog" aria-expanded="false" aria-label="发布结束日期">
+                                <span class="date-picker-value" data-date-value>结束日期</span>
+                                <span class="date-picker-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="date-picker-popover" role="dialog" aria-label="选择发布结束日期" hidden>
+                                <div class="date-picker-header">
+                                    <button class="date-picker-nav" type="button" data-date-prev aria-label="上个月">‹</button>
+                                    <span class="date-picker-month" data-date-month></span>
+                                    <button class="date-picker-nav" type="button" data-date-next aria-label="下个月">›</button>
+                                </div>
+                                <div class="date-picker-weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+                                <div class="date-picker-grid" data-date-grid role="grid"></div>
+                                <button class="date-picker-clear" type="button" data-date-clear>清除日期</button>
+                            </div>
+                            <input type="date" id="postDateTo" class="date-input-native" tabindex="-1" aria-hidden="true">
+                        </div>
                     </div>
                 </div>
 
@@ -105,7 +178,10 @@
                         <button class="btn btn-secondary" id="clearSelection" type="button">取消选择</button>
                         <label class="bulk-theme-field">
                             <span>批量主题</span>
-                            <input id="bulkThemeInput" class="filter-input" list="bulkThemeOptions" placeholder="选择或输入主题">
+                            <span class="filter-input-wrap">
+                                <input id="bulkThemeInput" class="filter-input" list="bulkThemeOptions" placeholder="选择或输入主题">
+                                <button class="filter-clear" type="button" data-clear-input="bulkThemeInput" aria-label="清空批量主题" hidden>×</button>
+                            </span>
                             <datalist id="bulkThemeOptions"></datalist>
                         </label>
                         <button class="btn btn-primary" id="saveBulkTheme" type="button" disabled>批量保存主题</button>

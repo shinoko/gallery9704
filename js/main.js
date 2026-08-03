@@ -56,6 +56,7 @@ const THEME_TIMELINE = [
     ['巴黎高定周·26夏', '2026-07-04']
 ];
 const THEME_SORT_META = new Map(THEME_TIMELINE.map(([theme, date], index) => [theme, { date, index }]));
+const datePickerStates = new Map();
 
 const state = {
     dataType: 'official',
@@ -123,9 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.dataset.staticExport = STATIC_EXPORT ? 'true' : 'false';
     document.body.dataset.dataType = state.dataType;
     document.body.dataset.filterVisible = state.filterVisible ? 'true' : 'false';
+    document.body.dataset.filterPopover = 'false';
+    initFilterControls();
     initFacets();
     initListeners();
-    initDateInputs();
     updateMode('browse');
 });
 
@@ -158,6 +160,8 @@ function refreshFacets() {
     optionize(els.authorFilter, sortedStrings([...(activeFacets.authors || []), ...visibleRecords.map((series) => series.author)]), '全部账号');
     els.themeFilter.value = Array.from(els.themeFilter.options).some((option) => option.value === currentTheme) ? currentTheme : '';
     els.authorFilter.value = Array.from(els.authorFilter.options).some((option) => option.value === currentAuthor) ? currentAuthor : '';
+    syncCustomSelect(els.themeFilter);
+    syncCustomSelect(els.authorFilter);
     renderBulkThemeOptions();
     updateFilterVisibility();
 }
@@ -176,6 +180,105 @@ function optionize(select, values, placeholder) {
         option.textContent = label;
         select.appendChild(option);
     });
+    syncCustomSelect(select);
+}
+
+function initFilterControls() {
+    document.querySelectorAll('[data-clear-input]').forEach((button) => {
+        const input = document.getElementById(button.dataset.clearInput);
+        if (!input) return;
+        const sync = () => {
+            button.hidden = !input.value;
+        };
+        input.addEventListener('input', sync);
+        input.addEventListener('change', sync);
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            input.value = '';
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            if (input === els.keywordSearch) applyFilterAndRender({ scrollTop: true });
+            else updateSelectionState();
+        });
+        sync();
+    });
+
+    document.querySelectorAll('[data-custom-select]').forEach((root) => {
+        const select = root.querySelector('select');
+        const trigger = root.querySelector('.custom-select-trigger');
+        if (!select || !trigger) return;
+
+        trigger.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const willOpen = !root.classList.contains('is-open');
+            closeFilterPopovers();
+            root.classList.toggle('is-open', willOpen);
+            trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            root.querySelector('.custom-select-menu').hidden = !willOpen;
+            syncFilterPopoverState();
+        });
+        trigger.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                trigger.click();
+            }
+            if (event.key === 'Escape') closeFilterPopovers();
+        });
+        root.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const option = event.target.closest('[data-select-value]');
+            if (!option) return;
+            select.value = option.dataset.selectValue;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+            syncCustomSelect(select);
+            closeFilterPopovers();
+            trigger.focus({ preventScroll: true });
+        });
+        syncCustomSelect(select);
+    });
+
+    initDateInputs();
+}
+
+function syncCustomSelect(select) {
+    const root = select?.closest('[data-custom-select]');
+    if (!root) return;
+    const selected = Array.from(select.options).find((option) => option.value === select.value);
+    const label = root.querySelector('[data-select-label]');
+    const menu = root.querySelector('.custom-select-menu');
+    if (label) label.textContent = selected?.textContent || '';
+    if (!menu) return;
+    menu.textContent = '';
+    Array.from(select.options).forEach((option) => {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'custom-select-option';
+        item.dataset.selectValue = option.value;
+        item.setAttribute('role', 'option');
+        item.setAttribute('aria-selected', option.value === select.value ? 'true' : 'false');
+        item.textContent = option.textContent;
+        menu.appendChild(item);
+    });
+}
+
+function closeFilterPopovers(except = null) {
+    document.querySelectorAll('[data-custom-select].is-open').forEach((root) => {
+        if (root === except) return;
+        root.classList.remove('is-open');
+        root.querySelector('.custom-select-trigger')?.setAttribute('aria-expanded', 'false');
+        const menu = root.querySelector('.custom-select-menu');
+        if (menu) menu.hidden = true;
+    });
+    datePickerStates.forEach((picker) => {
+        if (picker.root === except) return;
+        setDatePickerOpen(picker, false);
+    });
+    syncFilterPopoverState();
+}
+
+function syncFilterPopoverState() {
+    const hasOpenPopover = Boolean(document.querySelector('[data-custom-select].is-open, [data-date-picker].is-open'));
+    document.body.dataset.filterPopover = hasOpenPopover ? 'true' : 'false';
 }
 
 function uniqueSorted(values) {
@@ -239,6 +342,7 @@ function initListeners() {
 }
 
 function handleOutsideFilterClick(event) {
+    if (!event.target.closest('[data-custom-select], [data-date-picker]')) closeFilterPopovers();
     if (!state.filterVisible) return;
     if (els.sidebar.contains(event.target)) return;
     if (els.navToggle.contains(event.target)) return;
@@ -246,33 +350,113 @@ function handleOutsideFilterClick(event) {
 }
 
 function initDateInputs() {
-    [els.shootDateFrom, els.shootDateTo, els.postDateFrom, els.postDateTo].forEach((input) => {
-        if (!input) return;
-        const field = input.closest('.date-field');
-        const syncValueState = () => field?.classList.toggle('has-value', Boolean(input.value));
-
-        input.addEventListener('keydown', (event) => {
-            if (event.key !== 'Tab') event.preventDefault();
+    document.querySelectorAll('[data-date-picker]').forEach((root) => {
+        const input = root.querySelector('input[type="date"]');
+        const trigger = root.querySelector('[data-date-trigger]');
+        if (!input || !trigger) return;
+        const today = new Date();
+        const selected = input.value ? new Date(`${input.value}T00:00:00`) : today;
+        const picker = {
+            root,
+            input,
+            trigger,
+            popover: root.querySelector('.date-picker-popover'),
+            monthLabel: root.querySelector('[data-date-month]'),
+            grid: root.querySelector('[data-date-grid]'),
+            viewYear: selected.getFullYear(),
+            viewMonth: selected.getMonth()
+        };
+        datePickerStates.set(input.id, picker);
+        trigger.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const willOpen = picker.popover.hidden;
+            closeFilterPopovers();
+            setDatePickerOpen(picker, willOpen);
         });
-        input.addEventListener('beforeinput', (event) => event.preventDefault());
-        input.addEventListener('paste', (event) => event.preventDefault());
-        input.addEventListener('drop', (event) => event.preventDefault());
-        input.addEventListener('input', syncValueState);
-        input.addEventListener('change', syncValueState);
-
-        field?.addEventListener('click', () => {
-            input.focus({ preventScroll: true });
-            if (typeof input.showPicker === 'function') input.showPicker();
+        root.querySelector('[data-date-prev]')?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            shiftDatePickerMonth(picker, -1);
         });
-        syncValueState();
+        root.querySelector('[data-date-next]')?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            shiftDatePickerMonth(picker, 1);
+        });
+        root.querySelector('[data-date-clear]')?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            input.value = '';
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+            syncDatePicker(picker);
+            setDatePickerOpen(picker, false);
+        });
+        syncDatePicker(picker);
     });
 }
 
 function updateDateFieldStates() {
-    document.querySelectorAll('.date-field').forEach((field) => {
-        const input = field.querySelector('input[type="date"]');
-        field.classList.toggle('has-value', Boolean(input?.value));
+    datePickerStates.forEach((picker) => {
+        syncDatePicker(picker);
     });
+}
+
+function setDatePickerOpen(picker, open) {
+    picker.root.classList.toggle('is-open', open);
+    picker.popover.hidden = !open;
+    picker.trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) renderDatePicker(picker);
+    syncFilterPopoverState();
+}
+
+function shiftDatePickerMonth(picker, offset) {
+    const next = new Date(picker.viewYear, picker.viewMonth + offset, 1);
+    picker.viewYear = next.getFullYear();
+    picker.viewMonth = next.getMonth();
+    renderDatePicker(picker);
+}
+
+function formatDateValue(year, month, day) {
+    return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+function renderDatePicker(picker) {
+    const { viewYear, viewMonth } = picker;
+    picker.monthLabel.textContent = `${viewYear}年${viewMonth + 1}月`;
+    picker.grid.textContent = '';
+    const firstDay = (new Date(viewYear, viewMonth, 1).getDay() + 6) % 7;
+    const dayCount = new Date(viewYear, viewMonth + 1, 0).getDate();
+    for (let index = 0; index < firstDay; index += 1) {
+        const spacer = document.createElement('span');
+        spacer.className = 'date-picker-spacer';
+        spacer.setAttribute('aria-hidden', 'true');
+        picker.grid.appendChild(spacer);
+    }
+    const today = new Date();
+    const todayValue = formatDateValue(today.getFullYear(), today.getMonth(), today.getDate());
+    for (let day = 1; day <= dayCount; day += 1) {
+        const value = formatDateValue(viewYear, viewMonth, day);
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'date-picker-day';
+        button.textContent = String(day);
+        button.dataset.dateValue = value;
+        button.setAttribute('role', 'gridcell');
+        if (picker.input.value === value) button.classList.add('is-selected');
+        if (todayValue === value) button.classList.add('is-today');
+        button.addEventListener('click', () => {
+            picker.input.value = value;
+            picker.input.dispatchEvent(new Event('change', { bubbles: true }));
+            syncDatePicker(picker);
+            setDatePickerOpen(picker, false);
+        });
+        picker.grid.appendChild(button);
+    }
+}
+
+function syncDatePicker(picker) {
+    const value = picker.input.value;
+    const valueLabel = picker.root.querySelector('[data-date-value]');
+    const placeholder = picker.trigger.getAttribute('aria-label')?.replace(/^(拍摄|发布)/, '') || '选择日期';
+    valueLabel.textContent = value || placeholder;
+    picker.root.classList.toggle('has-value', Boolean(value));
 }
 
 function toggleFilterPanel() {
@@ -284,6 +468,7 @@ function setFilterPanelVisible(visible) {
     document.body.dataset.filterVisible = state.filterVisible ? 'true' : 'false';
     els.sidebar.classList.toggle('hidden', !state.filterVisible);
     els.navToggle.setAttribute('aria-pressed', state.filterVisible ? 'true' : 'false');
+    if (!state.filterVisible) closeFilterPopovers();
 }
 
 function updateDataType(dataType) {
@@ -493,8 +678,14 @@ function resetAndRender() {
 
 function resetFilters({ render } = { render: true }) {
     els.keywordSearch.value = '';
+    document.querySelectorAll('[data-clear-input]').forEach((button) => {
+        const input = document.getElementById(button.dataset.clearInput);
+        if (input) button.hidden = !input.value;
+    });
     els.themeFilter.value = '';
     els.authorFilter.value = '';
+    syncCustomSelect(els.themeFilter);
+    syncCustomSelect(els.authorFilter);
     els.shootDateFrom.value = '';
     els.shootDateTo.value = '';
     els.postDateFrom.value = '';
@@ -988,8 +1179,12 @@ function updateModalContent() {
 }
 
 function handleKeyPress(e) {
+    if (e.key === 'Escape') {
+        closeFilterPopovers();
+        if (state.modalOpen) closeModal();
+        return;
+    }
     if (!state.modalOpen) return;
-    if (e.key === 'Escape') closeModal();
     if (e.key === 'ArrowLeft') navigateModal(-1);
     if (e.key === 'ArrowRight') navigateModal(1);
 }

@@ -2,3 +2,4 @@
 node_modules/
 exports/
 preview-assets/
+.wrangler/
