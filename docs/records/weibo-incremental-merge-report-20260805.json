@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-08-04T16:46:22.313Z",
+  "scope": {
+    "sinceDate": "2026-08-03",
+    "endDate": "2026-08-05",
+    "stationAccounts": 23,
+    "officialAccounts": 4
+  },
+  "candidate": {
+    "records": 3,
+    "images": 4,
+    "retry": 0,
+    "skipped": 1
+  },
+  "download": {
+    "total": 4,
+    "ok": 4,
+    "failed": 0
+  },
+  "merge": {
+    "importedRecords": 2,
+    "excludedCandidateRecords": 1,
+    "imported": [
+      {
+        "postDate": "2026-08-04",
+        "author": "31Kilometres-0113x0905",
+        "postUrl": "https://weibo.com/8015386194/RbSKH9Vun",
+        "imageCount": 2
+      },
+      {
+        "postDate": "2026-08-03",
+        "author": "ERhickey-0113X0905",
+        "postUrl": "https://weibo.com/4079488264/RbHwl5Xq9",
+        "imageCount": 1
+      }
+    ],
+    "excluded": [
+      {
+        "postDate": "2026-08-03",
+        "author": "ERhickey-0113X0905",
+        "postUrl": "https://weibo.com/4079488264/RbFDQoclv",
+        "reason": "blacklist_or_existing_after_merge",
+        "text": "展丞💋ER × 展轩 | 泰国微博之夜应援企划#向全世界安利展轩# \n\nPART2：泰兰德之约·线下手幅发放\n\n发放时间：2026年8月8日（具体时段见当日通知）\n发放地点：百丽宫场馆附近，具体地点见@ERhickey-0113X0905 实时动态\n\n发放数量：50份\n领取条件：关注#展丞#超话，关注@展轩 、@刘轩丞 ，和 ...全文"
+      }
+    ]
+  },
+  "audit": {
+    "stationRecords": 1183,
+    "officialRecords": 553,
+    "missingImages": 0,
+    "zeroBytes": 0,
+    "duplicatePostUrls": 0,
+    "orphanCandidateFiles": []
+  }
+}

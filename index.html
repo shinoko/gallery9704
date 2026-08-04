@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="filter-backdrop" id="filterBackdrop" aria-hidden="true"></div>
     <nav class="nav">
         <div class="nav-inner">
             <span class="nav-brand">GALLERY9704</span>
@@ -74,6 +75,20 @@
                         <div class="custom-select-menu" role="listbox" aria-label="发布账号选项" hidden></div>
                         <select id="authorFilter" class="custom-select-native" tabindex="-1" aria-hidden="true">
                             <option value="">全部账号</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-group" id="platformFilterGroup">
+                    <label class="filter-label">发布平台</label>
+                    <div class="custom-select" data-custom-select>
+                        <button class="custom-select-trigger" id="platformFilterTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="custom-select-value" data-select-label>全部平台</span>
+                            <span class="custom-select-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="custom-select-menu" role="listbox" aria-label="发布平台选项" hidden></div>
+                        <select id="platformFilter" class="custom-select-native" tabindex="-1" aria-hidden="true">
+                            <option value="">全部平台</option>
                         </select>
                     </div>
                 </div>
@@ -196,10 +211,10 @@
         <!-- 主内容区 -->
         <main class="main-content" id="mainContent">
             <!-- 空状态 -->
-            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-state" id="emptyState" style="display: none;">
                 <div class="empty-state-icon">☷</div>
                 <h3>暂无匹配内容</h3>
-                <p>调整筛选条件查看更多微博影像</p>
+                <p>调整筛选条件查看更多影像</p>
             </div>
 
             <!-- 系列列表将通过 JS 动态生成 -->
@@ -209,7 +224,7 @@
 
     <footer class="footer">
         <div class="footer-meta">
-            Last updated: 2026/08/03
+            Last updated: 2026/08/05
         </div>
         <div class="footer-meta">
             Made with &nbsp;<span class="heart heart-pink" aria-label="粉色爱心"></span><span class="heart heart-green" aria-label="绿色爱心"></span>&nbsp; by shinoko

@@ -347,6 +347,26 @@ body[data-filter-visible="true"]::before {
 }
 
 /* ==================== 筛选面板 ==================== */
+.filter-backdrop {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background: rgba(45, 45, 45, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+body[data-filter-visible="true"] .filter-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
 .filter-panel {
     position: fixed;
     top: var(--nav-height);
@@ -1126,6 +1146,7 @@ body[data-static-export="true"] .sidebar-bottom {
     letter-spacing: 0;
 }
 
+.source-link,
 .weibo-link {
     flex-shrink: 0;
     display: inline-flex;
@@ -1142,13 +1163,31 @@ body[data-static-export="true"] .sidebar-bottom {
     transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
 }
 
+.source-link:hover,
 .weibo-link:hover {
     color: #6F3E42;
     background: var(--bg-link);
     transform: translateY(-1px);
 }
 
-.weibo-icon {
+.source-link.platform-weibo,
+.weibo-link.platform-weibo,
+.weibo-link:not([class*="platform-"]) {
+    color: #A45E62;
+}
+
+.source-link.platform-xiaohongshu,
+.weibo-link.platform-xiaohongshu {
+    color: #D83B32;
+}
+
+.source-link.platform-xiaohongshu:hover,
+.weibo-link.platform-xiaohongshu:hover {
+    color: #B52720;
+}
+
+.weibo-icon,
+.xhs-icon {
     width: 16px;
     height: 16px;
 }

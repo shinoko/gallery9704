@@ -5,6 +5,10 @@ const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
 const INITIAL_RENDER_COUNT = 24;
 const RENDER_BATCH_SIZE = 24;
 const NO_IMAGE_PLACEHOLDER_SRC = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="3" height="4" viewBox="0 0 3 4"%3E%3Crect width="3" height="4" fill="%23e3e3df"/%3E%3C/svg%3E';
+const PLATFORM_LABELS = {
+    weibo: '微博',
+    xiaohongshu: '小红书'
+};
 const DATASETS = {
     station: {
         label: '站姐',
@@ -61,7 +65,7 @@ const state = {
     dataType: 'official',
     filterVisible: false,
     mode: 'browse',
-    currentFilters: { keyword: '', theme: '', author: '', shootDateFrom: '', shootDateTo: '', postDateFrom: '', postDateTo: '' },
+    currentFilters: { keyword: '', theme: '', author: '', platform: '', shootDateFrom: '', shootDateTo: '', postDateFrom: '', postDateTo: '' },
     selectedIds: new Set(),
     filteredData: [],
     renderLimit: INITIAL_RENDER_COUNT,
@@ -77,6 +81,7 @@ const state = {
 
 const els = {
     nav: document.querySelector('.nav'),
+    filterBackdrop: document.getElementById('filterBackdrop'),
     sidebar: document.getElementById('sidebar'),
     navToggle: document.getElementById('navToggle'),
     stationTab: document.getElementById('stationTab'),
@@ -98,6 +103,8 @@ const els = {
     themeFilterGroup: document.getElementById('themeFilterGroup'),
     themeFilter: document.getElementById('themeFilter'),
     authorFilter: document.getElementById('authorFilter'),
+    platformFilterGroup: document.getElementById('platformFilterGroup'),
+    platformFilter: document.getElementById('platformFilter'),
     shootDateFilterGroup: document.getElementById('shootDateFilterGroup'),
     shootDateFrom: document.getElementById('shootDateFrom'),
     shootDateTo: document.getElementById('shootDateTo'),
@@ -149,13 +156,21 @@ function refreshFacets() {
     closeFilterPopovers();
     const currentTheme = els.themeFilter.value;
     const currentAuthor = els.authorFilter.value;
+    const currentPlatform = els.platformFilter?.value || '';
     const visibleRecords = getActiveData().map(getDisplaySeries);
     optionize(els.themeFilter, sortedThemes(visibleRecords.map((series) => series.theme)), '全部主题');
-    optionize(els.authorFilter, sortedStrings(visibleRecords.map((series) => series.author)), '全部账号');
+    optionize(els.authorFilter, sortedStrings(visibleRecords.map(formatAuthorFilterValue)), '全部账号');
+    optionize(
+        els.platformFilter,
+        sortedPlatforms(visibleRecords.map(normalizePlatform)),
+        '全部平台'
+    );
     els.themeFilter.value = Array.from(els.themeFilter.options).some((option) => option.value === currentTheme) ? currentTheme : '';
     els.authorFilter.value = Array.from(els.authorFilter.options).some((option) => option.value === currentAuthor) ? currentAuthor : '';
+    els.platformFilter.value = Array.from(els.platformFilter.options).some((option) => option.value === currentPlatform) ? currentPlatform : '';
     syncCustomSelect(els.themeFilter);
     syncCustomSelect(els.authorFilter);
+    syncCustomSelect(els.platformFilter);
     updateFilterVisibility();
 }
 
@@ -310,6 +325,7 @@ function sortedThemes(values) {
 
 function initListeners() {
     els.navToggle.addEventListener('click', toggleFilterPanel);
+    els.filterBackdrop?.addEventListener('click', () => setFilterPanelVisible(false));
     els.stationTab.addEventListener('click', () => updateDataType('station'));
     els.officialTab.addEventListener('click', () => updateDataType('official'));
     els.sidebarClose.addEventListener('click', toggleFilterPanel);
@@ -330,6 +346,7 @@ function initListeners() {
         els.keywordSearch,
         els.themeFilter,
         els.authorFilter,
+        els.platformFilter,
         els.shootDateFrom,
         els.shootDateTo,
         els.postDateFrom,
@@ -619,6 +636,28 @@ function getPostDateForFilter(series) {
     return normalizeIsoDate(series.postDate);
 }
 
+function normalizePlatform(series) {
+    return series?.platform === 'xiaohongshu' ? 'xiaohongshu' : 'weibo';
+}
+
+function formatAuthorFilterValue(series) {
+    const author = typeof series === 'string' ? series : series?.author;
+    if (state.dataType === 'official' && author === '刘轩丞-') return '刘轩丞';
+    return author || '';
+}
+
+function formatPlatformLabel(seriesOrPlatform) {
+    const platform = typeof seriesOrPlatform === 'string' ? seriesOrPlatform : normalizePlatform(seriesOrPlatform);
+    return PLATFORM_LABELS[platform] || platform || PLATFORM_LABELS.weibo;
+}
+
+function sortedPlatforms(platforms) {
+    const order = ['weibo', 'xiaohongshu'];
+    return Array.from(new Set(platforms.filter(Boolean)))
+        .sort((a, b) => order.indexOf(a) - order.indexOf(b))
+        .map((platform) => ({ value: platform, label: formatPlatformLabel(platform) }));
+}
+
 function postSortValue(series) {
     const time = String(series.description || '').match(/\d{1,2}:\d{2}/)?.[0] || '00:00';
     return `${series.postDate || ''} ${time}`;
@@ -644,6 +683,7 @@ function applyFilterAndRender(options = {}) {
     state.currentFilters.keyword = els.keywordSearch.value.trim().toLowerCase();
     state.currentFilters.theme = els.themeFilter.value;
     state.currentFilters.author = els.authorFilter.value;
+    state.currentFilters.platform = els.platformFilter.value;
     state.currentFilters.shootDateFrom = els.shootDateFrom.value;
     state.currentFilters.shootDateTo = els.shootDateTo.value;
     state.currentFilters.postDateFrom = els.postDateFrom.value;
@@ -657,6 +697,8 @@ function applyFilterAndRender(options = {}) {
                 displaySeries.title,
                 displaySeries.theme,
                 displaySeries.author,
+                formatAuthorFilterValue(displaySeries),
+                formatPlatformLabel(displaySeries),
                 displaySeries.description,
                 displaySeries.text,
                 displaySeries.note,
@@ -667,7 +709,8 @@ function applyFilterAndRender(options = {}) {
                 if (state.currentFilters.theme === UNCATEGORIZED_THEME_VALUE && displaySeries.theme) return false;
                 if (state.currentFilters.theme && state.currentFilters.theme !== UNCATEGORIZED_THEME_VALUE && displaySeries.theme !== state.currentFilters.theme) return false;
             }
-            if (state.currentFilters.author && displaySeries.author !== state.currentFilters.author) return false;
+            if (state.currentFilters.author && formatAuthorFilterValue(displaySeries) !== state.currentFilters.author) return false;
+            if (state.currentFilters.platform && normalizePlatform(displaySeries) !== state.currentFilters.platform) return false;
             const shootDate = getShootDateForFilter(series);
             if (state.currentFilters.shootDateFrom && (!shootDate || shootDate < state.currentFilters.shootDateFrom)) return false;
             if (state.currentFilters.shootDateTo && (!shootDate || shootDate > state.currentFilters.shootDateTo)) return false;
@@ -696,20 +739,23 @@ function resetFilters({ render } = { render: true }) {
     });
     els.themeFilter.value = '';
     els.authorFilter.value = '';
+    els.platformFilter.value = '';
     syncCustomSelect(els.themeFilter);
     syncCustomSelect(els.authorFilter);
+    syncCustomSelect(els.platformFilter);
     els.shootDateFrom.value = '';
     els.shootDateTo.value = '';
     els.postDateFrom.value = '';
     els.postDateTo.value = '';
     updateDateFieldStates();
-    state.currentFilters = { keyword: '', theme: '', author: '', shootDateFrom: '', shootDateTo: '', postDateFrom: '', postDateTo: '' };
+    state.currentFilters = { keyword: '', theme: '', author: '', platform: '', shootDateFrom: '', shootDateTo: '', postDateFrom: '', postDateTo: '' };
     if (render) applyFilterAndRender({ scrollTop: true });
 }
 
 function updateFilterVisibility() {
     const isOfficial = state.dataType === 'official';
     els.themeFilterGroup.classList.toggle('is-hidden', isOfficial);
+    els.platformFilterGroup.classList.toggle('is-hidden', !isOfficial);
     els.shootDateFilterGroup.classList.toggle('is-hidden', isOfficial);
     els.maintainModeBtn.disabled = !isMaintenanceEnabled();
 }
@@ -799,15 +845,7 @@ function renderSeriesItem(series, seriesIndex) {
                 <div class="series-label">${escapeHtml(formatCardMeta(series))}</div>
                 ${state.dataType === 'station' && series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
             </div>
-            <a class="weibo-link" href="${escapeHtml(series.postUrl)}" target="_blank" rel="noreferrer" aria-label="打开微博原文" title="打开微博原文">
-                <svg class="weibo-icon" width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M14.3 7.8c1.1.8 1.7 1.8 1.5 2.9-.4 2.3-3.7 3.9-7.4 3.6-3.7-.3-6.4-2.4-6-4.7.3-1.6 2.2-2.9 4.6-3.4"/>
-                    <path d="M6.2 6.7c.8-1.4 2.2-2.2 3.4-1.8 1.2.4 1.7 1.8 1.2 3.3"/>
-                    <path d="M7.1 9.7c-.1.8.7 1.5 1.8 1.6 1.1.1 2-.4 2.1-1.2.1-.8-.7-1.5-1.8-1.6-1.1-.1-2 .4-2.1 1.2Z"/>
-                    <path d="M12.1 3.3c1.2.2 2.1 1 2.4 2.1"/>
-                    <path d="M12.7 1.4c2.1.3 3.7 1.8 4.1 3.8"/>
-                </svg>
-            </a>
+            ${renderSourceLink(series)}
         </div>
     `;
     article.appendChild(header);
@@ -865,7 +903,8 @@ function formatCardMeta(series) {
     if (state.dataType === 'official') {
         return [
             series.postDate ? `${series.postDate} 发布` : '',
-            series.author || ''
+            series.author || '',
+            formatPlatformLabel(series)
         ].filter(Boolean).join(' / ');
     }
     return [
@@ -873,6 +912,54 @@ function formatCardMeta(series) {
         series.postDate ? `${series.postDate} 发布` : '',
         series.author || ''
     ].filter(Boolean).join(' / ');
+}
+
+function renderSourceLink(series) {
+    if (!series.postUrl) return '';
+    const platform = normalizePlatform(series);
+    const href = getSourceHref(series);
+    const label = getSourceLinkLabel(series);
+    return `
+        <a class="source-link weibo-link platform-${escapeHtml(platform)}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">
+            ${renderSourceIcon(platform)}
+        </a>
+    `;
+}
+
+function getSourceHref(series) {
+    return series.webUrl || series.pcUrl || series.postUrl;
+}
+
+function getSourceLinkLabel(series) {
+    const platform = normalizePlatform(series);
+    if (platform !== 'xiaohongshu') return '打开微博原文';
+    return /[?&]xsec_token=/.test(getSourceHref(series))
+        ? '打开小红书笔记'
+        : '打开小红书笔记（PC 端可能需要 App 扫码，后续采集到 xsec_token 后可改善）';
+}
+
+function renderSourceIcon(platform) {
+    if (platform === 'xiaohongshu') {
+        return `
+            <svg class="xhs-icon" width="16" height="16" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12.9 35.4c-.7-4.9-1-9.7-.8-14.6.1-4.5 1.2-6.1 5.7-6.6 4.1-.4 8.3-.4 12.4 0 4.5.5 5.6 2.1 5.7 6.6.2 4.9-.1 9.7-.8 14.6"/>
+                <path d="M16.8 20.5c4.8.4 9.6.4 14.4 0"/>
+                <path d="M17.4 27.1c4.4.4 8.8.4 13.2 0"/>
+                <path d="M19.1 33.7c3.3.3 6.5.3 9.8 0"/>
+                <path d="M19 11.8c.2-2.1 1.9-3.7 4-3.9h2c2.1.2 3.8 1.8 4 3.9"/>
+                <path d="M14.1 39c6.6 1.6 13.2 1.6 19.8 0"/>
+            </svg>
+        `;
+    }
+    return `
+        <svg class="weibo-icon" width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.3 7.8c1.1.8 1.7 1.8 1.5 2.9-.4 2.3-3.7 3.9-7.4 3.6-3.7-.3-6.4-2.4-6-4.7.3-1.6 2.2-2.9 4.6-3.4"/>
+            <path d="M6.2 6.7c.8-1.4 2.2-2.2 3.4-1.8 1.2.4 1.7 1.8 1.2 3.3"/>
+            <path d="M7.1 9.7c-.1.8.7 1.5 1.8 1.6 1.1.1 2-.4 2.1-1.2.1-.8-.7-1.5-1.8-1.6-1.1-.1-2 .4-2.1 1.2Z"/>
+            <path d="M12.1 3.3c1.2.2 2.1 1 2.4 2.1"/>
+            <path d="M12.7 1.4c2.1.3 3.7 1.8 4.1 3.8"/>
+        </svg>
+    `;
 }
 
 function getMaintenanceThemeChoices(selectedTheme = '') {
@@ -937,7 +1024,7 @@ function renderMaintenanceActions(series) {
     `;
     actions.querySelector('[data-card-save-theme]').addEventListener('click', () => saveCardTheme(series));
     actions.querySelector('[data-card-delete]').addEventListener('click', () => {
-        deleteRecords([id], '确定删除这条微博数据吗？对应的本地图片文件也会被删除。');
+        deleteRecords([id], '确定删除这条数据吗？对应的本地图片文件也会被删除。');
     });
     return actions;
 }
@@ -947,7 +1034,7 @@ function renderTextPanel(series) {
     details.className = 'weibo-text-panel';
 
     const summary = document.createElement('summary');
-    summary.textContent = '微博文案';
+    summary.textContent = normalizePlatform(series) === 'xiaohongshu' ? '小红书笔记正文' : '微博文案';
     details.appendChild(summary);
 
     const content = document.createElement('div');

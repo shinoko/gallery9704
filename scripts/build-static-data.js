@@ -9,6 +9,10 @@ function uniqueSorted(values) {
   return Array.from(new Set(values.filter(Boolean))).sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
 }
 
+function normalizePlatform(record) {
+  return record.platform === 'xiaohongshu' ? 'xiaohongshu' : 'weibo';
+}
+
 function formatLabel(record) {
   return [record.author, record.postDate].filter(Boolean).join(' · ');
 }
@@ -18,6 +22,7 @@ function toGalleryRecord(record, index) {
   const tags = Array.isArray(record.tags) ? record.tags : [];
   const images = Array.isArray(record.imageFiles) ? record.imageFiles.filter(Boolean) : [];
   const descriptionParts = [record.author, record.postTimeText].filter(Boolean);
+  const platform = normalizePlatform(record);
   return {
     id: record.postUrl || String(index + 1),
     label: formatLabel(record),
@@ -26,8 +31,12 @@ function toGalleryRecord(record, index) {
     date: record.shootDate || '',
     postDate: record.postDate || '',
     author: record.author || '',
+    platform,
+    platformLabel: platform === 'xiaohongshu' ? '小红书' : '微博',
+    sourceType: record.sourceType || '',
     people,
     postUrl: record.postUrl || '',
+    webUrl: record.webUrl || record.pcUrl || '',
     description: descriptionParts.join(' / '),
     text: record.text || '',
     images,
@@ -57,6 +66,7 @@ function buildData(metadata = loadMetadata(), dataPath = DATA_PATH, options = {}
   const galleryData = [...metadata].sort(compareByPostTimeDesc).map(toGalleryRecord);
   const galleryFacets = {
     authors: uniqueSorted(galleryData.map((item) => item.author)),
+    platforms: uniqueSorted(galleryData.map((item) => item.platform)),
     themes: uniqueSorted(galleryData.map((item) => item.theme)),
     tags: uniqueSorted(galleryData.flatMap((item) => item.tags || []))
   };

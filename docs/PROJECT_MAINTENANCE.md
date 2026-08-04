@@ -38,6 +38,7 @@ gallery9704/
 | 站姐微博数据 | `metadata.json` | `npm run build:data` |
 | 官方/工作室微博数据 | `official-metadata.json` | `npm run build:data` |
 | 站姐采集规则 | `WEIBO_COLLECTION_RULES.md` | 无需生成 |
+| 小红书官方采集规则 | `docs/XHS_COLLECTION_RULES.md` | 无需生成 |
 | 数据清理规则 | `DATA_CLEANING_RULES.md` | 无需生成 |
 | 采集过程记录 | `docs/records/` | 无需生成 |
 
@@ -95,6 +96,25 @@ npm run build:data
 - `docs/records/`
 
 候选记录、扫描进度和下载报告写入 `docs/records/`。下载器产生的图片路径仍指向 `images/` 或 `official-images/`，这是数据运行关系，不代表图片目录属于文档目录。
+
+### 每次增量更新
+
+每次做数据增量更新时，同时检查微博和小红书两个来源。
+
+微博增量按 `WEIBO_COLLECTION_RULES.md` 执行：先确定本次账号范围和日期 cutoff，只导入本地没有的 `postUrl`，图片下载和合并过程记录放入 `docs/records/`。
+
+小红书增量按 `docs/XHS_COLLECTION_RULES.md` 执行：检查展轩、刘轩丞、展轩工作室三个账号主页，从最新卡片开始向下扫描，遇到已存在于 `official-metadata.json` 的 `noteId` / `postUrl` 后停止继续向旧内容扩展；跳过视频，只导入新增图文笔记及其全部图片。导入后删除采集目录里的原始/中间图片，只保留 JSON 记录和 `official-images/xhs/` 正式图片，然后必须重新生成静态数据并审计缺图、超限、重复和生成数据一致性。
+
+采集、导入、静态数据重建和审计都完成后，更新 `index.html` 页面 footer 里的 `Last updated: YYYY/MM/DD` 为本次更新完成日期。这个日期表示对外页面的数据更新时间，不随未导入的试采集过程变更。
+
+推荐收尾检查：
+
+```bash
+npm run build:data
+git diff --check
+```
+
+如果本机没有全局 `npm` / `node`，使用 Codex bundled Node 执行 `scripts/build-static-data.js` 两次，分别生成 `js/data.js` 和 `js/official-data.js`。
 
 ### 发布或检查静态导出
 
