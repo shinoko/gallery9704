@@ -4,6 +4,11 @@ const STATIC_EXPORT = window.GALLERY9704_STATIC_EXPORT === true;
 const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
 const INITIAL_RENDER_COUNT = 24;
 const RENDER_BATCH_SIZE = 24;
+const DATE_PICKER_MIN_YEAR = 2018;
+const DATE_PICKER_MIN_MONTH = 6;
+const DATE_PICKER_MIN_VALUE = '2018-07-01';
+const DATE_PICKER_MAX_YEAR = new Date().getFullYear();
+const DATE_PICKER_MAX_VALUE = `${DATE_PICKER_MAX_YEAR}-12-31`;
 const NO_IMAGE_PLACEHOLDER_SRC = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="3" height="4" viewBox="0 0 3 4"%3E%3Crect width="3" height="4" fill="%23e3e3df"/%3E%3C/svg%3E';
 const PLATFORM_LABELS = {
     weibo: '微博',
@@ -387,6 +392,8 @@ function initDateInputs() {
         if (!input || !trigger) return;
         const today = new Date();
         const selected = input.value ? new Date(`${input.value}T00:00:00`) : today;
+        input.min = DATE_PICKER_MIN_VALUE;
+        input.max = DATE_PICKER_MAX_VALUE;
         const picker = {
             root,
             input,
@@ -397,6 +404,7 @@ function initDateInputs() {
             viewYear: selected.getFullYear(),
             viewMonth: selected.getMonth()
         };
+        initDatePickerSelectors(picker);
         picker.popover.classList.add('filter-floating-popover');
         picker.popover.dataset.filterPopover = 'true';
         picker.popover.dataset.filterPopoverFor = input.id;
@@ -409,15 +417,17 @@ function initDateInputs() {
             closeFilterPopovers();
             setDatePickerOpen(picker, willOpen);
         });
-        root.querySelector('[data-date-prev]')?.addEventListener('click', (event) => {
+        picker.previousButton = picker.popover.querySelector('[data-date-prev]');
+        picker.nextButton = picker.popover.querySelector('[data-date-next]');
+        picker.previousButton?.addEventListener('click', (event) => {
             event.stopPropagation();
             shiftDatePickerMonth(picker, -1);
         });
-        root.querySelector('[data-date-next]')?.addEventListener('click', (event) => {
+        picker.nextButton?.addEventListener('click', (event) => {
             event.stopPropagation();
             shiftDatePickerMonth(picker, 1);
         });
-        root.querySelector('[data-date-clear]')?.addEventListener('click', (event) => {
+        picker.popover.querySelector('[data-date-clear]')?.addEventListener('click', (event) => {
             event.stopPropagation();
             input.value = '';
             input.dispatchEvent(new Event('change', { bubbles: true }));
@@ -425,6 +435,98 @@ function initDateInputs() {
             setDatePickerOpen(picker, false);
         });
         syncDatePicker(picker);
+    });
+}
+
+function initDatePickerSelectors(picker) {
+    if (!picker.monthLabel) return;
+    picker.monthLabel.textContent = '';
+    const yearOptions = [];
+    for (let year = DATE_PICKER_MIN_YEAR; year <= DATE_PICKER_MAX_YEAR; year += 1) {
+        yearOptions.push({ value: String(year), label: `${year}年` });
+    }
+    const monthOptions = [];
+    for (let month = 0; month < 12; month += 1) {
+        monthOptions.push({ value: String(month), label: `${month + 1}月` });
+    }
+
+    picker.yearSelect = createDatePickerSelector(picker, 'year', '选择年份', yearOptions, (value) => {
+        picker.viewYear = Number(value);
+        if (picker.viewYear === DATE_PICKER_MIN_YEAR && picker.viewMonth < DATE_PICKER_MIN_MONTH) {
+            picker.viewMonth = DATE_PICKER_MIN_MONTH;
+        }
+        renderDatePicker(picker);
+    });
+    picker.monthSelect = createDatePickerSelector(picker, 'month', '选择月份', monthOptions, (value) => {
+        picker.viewMonth = Number(value);
+        renderDatePicker(picker);
+    });
+    picker.monthLabel.append(picker.yearSelect.root, picker.monthSelect.root);
+}
+
+function createDatePickerSelector(picker, type, ariaLabel, options, onSelect) {
+    const root = document.createElement('div');
+    root.className = `date-picker-select date-picker-${type}-select`;
+
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'date-picker-select-trigger';
+    trigger.setAttribute('aria-label', ariaLabel);
+    trigger.setAttribute('aria-haspopup', 'listbox');
+    trigger.setAttribute('aria-expanded', 'false');
+    const label = document.createElement('span');
+    const chevron = document.createElement('span');
+    chevron.className = 'custom-select-chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    trigger.append(label, chevron);
+
+    const menu = document.createElement('div');
+    menu.className = 'custom-select-menu date-picker-select-menu';
+    menu.setAttribute('role', 'listbox');
+    menu.setAttribute('aria-label', `${ariaLabel}选项`);
+    menu.hidden = true;
+    const optionButtons = options.map((option) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'custom-select-option';
+        button.dataset.selectValue = option.value;
+        button.setAttribute('role', 'option');
+        button.textContent = option.label;
+        button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (button.disabled) return;
+            onSelect(option.value);
+        });
+        menu.appendChild(button);
+        return button;
+    });
+
+    trigger.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const willOpen = menu.hidden;
+        closeDatePickerSelectorMenus(picker);
+        menu.hidden = !willOpen;
+        root.classList.toggle('is-open', willOpen);
+        trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+    root.append(trigger, menu);
+    return { root, trigger, label, menu, options, optionButtons, value: '' };
+}
+
+function closeDatePickerSelectorMenus(picker) {
+    [picker.yearSelect, picker.monthSelect].filter(Boolean).forEach((control) => {
+        control.menu.hidden = true;
+        control.root.classList.remove('is-open');
+        control.trigger.setAttribute('aria-expanded', 'false');
+    });
+}
+
+function syncDatePickerSelector(control, value) {
+    const stringValue = String(value);
+    control.value = stringValue;
+    control.label.textContent = control.options.find((option) => option.value === stringValue)?.label || '';
+    control.optionButtons.forEach((button) => {
+        button.setAttribute('aria-selected', button.dataset.selectValue === stringValue ? 'true' : 'false');
     });
 }
 
@@ -439,6 +541,7 @@ function setDatePickerOpen(picker, open) {
     picker.root.classList.toggle('align-right', false);
     picker.popover.hidden = !open;
     picker.trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (!open) closeDatePickerSelectorMenus(picker);
     if (open) {
         renderDatePicker(picker);
         positionDatePicker(picker);
@@ -486,6 +589,8 @@ function repositionOpenFilterPopovers() {
 
 function shiftDatePickerMonth(picker, offset) {
     const next = new Date(picker.viewYear, picker.viewMonth + offset, 1);
+    const nextValue = formatDateValue(next.getFullYear(), next.getMonth(), 1);
+    if (nextValue < DATE_PICKER_MIN_VALUE || nextValue > DATE_PICKER_MAX_VALUE) return;
     picker.viewYear = next.getFullYear();
     picker.viewMonth = next.getMonth();
     renderDatePicker(picker);
@@ -497,7 +602,19 @@ function formatDateValue(year, month, day) {
 
 function renderDatePicker(picker) {
     const { viewYear, viewMonth } = picker;
-    picker.monthLabel.textContent = `${viewYear}年${viewMonth + 1}月`;
+    closeDatePickerSelectorMenus(picker);
+    syncDatePickerSelector(picker.yearSelect, viewYear);
+    syncDatePickerSelector(picker.monthSelect, viewMonth);
+    picker.monthSelect.optionButtons.forEach((button) => {
+        const month = Number(button.dataset.selectValue);
+        button.disabled = viewYear === DATE_PICKER_MIN_YEAR && month < DATE_PICKER_MIN_MONTH;
+    });
+    if (picker.previousButton) {
+        picker.previousButton.disabled = viewYear === DATE_PICKER_MIN_YEAR && viewMonth === DATE_PICKER_MIN_MONTH;
+    }
+    if (picker.nextButton) {
+        picker.nextButton.disabled = viewYear === DATE_PICKER_MAX_YEAR && viewMonth === 11;
+    }
     picker.grid.textContent = '';
     const firstDay = (new Date(viewYear, viewMonth, 1).getDay() + 6) % 7;
     const dayCount = new Date(viewYear, viewMonth + 1, 0).getDate();
