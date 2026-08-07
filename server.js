@@ -3,6 +3,7 @@ const fs = require('fs');
 const fsp = require('fs/promises');
 const path = require('path');
 const { ROOT, METADATA_PATH, buildData, loadMetadata } = require('./scripts/build-static-data');
+const { buildAppConfig } = require('./scripts/build-app-config');
 const OFFICIAL_METADATA_PATH = path.join(ROOT, 'official-metadata.json');
 const DATASETS = {
   station: {
@@ -186,6 +187,7 @@ function formatExportStamp(date = new Date()) {
 }
 
 async function exportStatic() {
+  buildAppConfig();
   buildData(loadDatasetMetadata('station'), DATASETS.station.dataPath, {
     dataVar: DATASETS.station.dataVar,
     facetsVar: DATASETS.station.facetsVar
@@ -199,6 +201,7 @@ async function exportStatic() {
   await fsp.mkdir(exportRoot, { recursive: true });
   await copyFileEnsured(path.join(ROOT, 'index.html'), path.join(exportRoot, 'index.html'));
   await copyFileEnsured(path.join(ROOT, 'css', 'style.css'), path.join(exportRoot, 'css', 'style.css'));
+  await copyFileEnsured(path.join(ROOT, 'js', 'config.js'), path.join(exportRoot, 'js', 'config.js'));
   await copyFileEnsured(path.join(ROOT, 'js', 'data.js'), path.join(exportRoot, 'js', 'data.js'));
   await copyFileEnsured(path.join(ROOT, 'js', 'official-data.js'), path.join(exportRoot, 'js', 'official-data.js'));
   let mainSource = await fsp.readFile(path.join(ROOT, 'js', 'main.js'), 'utf8');

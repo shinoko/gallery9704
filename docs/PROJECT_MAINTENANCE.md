@@ -8,7 +8,9 @@
 gallery9704/
 ├── index.html                    页面结构和脚本入口
 ├── css/style.css                 页面样式
+├── config/                       主题、账号、平台等业务配置
 ├── js/main.js                    前端交互、筛选、维护模式、图片查看
+├── js/config.js                  由 config/*.json 生成的前端配置
 ├── js/data.js                    由 metadata.json 生成的站姐静态数据
 ├── js/official-data.js           由 official-metadata.json 生成的官方静态数据
 ├── metadata.json                 站姐数据源
@@ -41,12 +43,13 @@ gallery9704/
 | --- | --- | --- |
 | 站姐微博数据 | `metadata.json` | `npm run build:data` |
 | 官方/工作室微博数据 | `official-metadata.json` | `npm run build:data` |
+| 主题、账号、平台配置 | `config/*.json` | `npm run build:data` |
 | 站姐采集规则 | `docs/WEIBO_COLLECTION_RULES.md` | 无需生成 |
 | 小红书官方采集规则 | `docs/XHS_COLLECTION_RULES.md` | 无需生成 |
 | 数据清理规则 | `docs/DATA_CLEANING_RULES.md` | 无需生成 |
 | 采集过程记录 | `docs/records/` | 无需生成 |
 
-`js/data.js` 和 `js/official-data.js` 是生成文件，正常情况下不要手动编辑；它们会被 `npm run build:data` 或维护页面的保存操作重新生成。
+`js/config.js`、`js/data.js` 和 `js/official-data.js` 是生成文件，正常情况下不要手动编辑；它们会被 `npm run build:data` 重新生成，数据文件也会被维护页面的保存操作重新生成。
 
 ## 按任务选择访问目录
 
@@ -79,6 +82,9 @@ gallery9704/
 - `metadata.json` 或 `official-metadata.json`
 - `scripts/clean-metadata.js`
 - `scripts/build-static-data.js`
+- `config/themes.json`
+- `config/platforms.json`
+- `config/accounts.json`
 
 推荐命令：
 

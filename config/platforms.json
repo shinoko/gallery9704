@@ -1,0 +1,4 @@
+[
+  { "id": "weibo", "label": "微博", "order": 1 },
+  { "id": "xiaohongshu", "label": "小红书", "order": 2 }
+]

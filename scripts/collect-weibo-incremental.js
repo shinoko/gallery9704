@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { isBlacklisted } = require('./clean-metadata');
+const { loadAppConfig } = require('./config');
 
 const ROOT = path.resolve(__dirname, '..');
 const RECORDS_DIR = path.join(ROOT, 'docs', 'records');
@@ -18,35 +19,7 @@ const API_DIR = process.argv.includes('--api-dir')
   ? path.resolve(process.cwd(), process.argv[process.argv.indexOf('--api-dir') + 1])
   : '';
 
-const ACCOUNTS = [
-  { name: 'Mimosa_0113x0905', uid: '8393384219', dataType: 'station' },
-  { name: 'CLING丨0113x0905', uid: '8338137118', dataType: 'station' },
-  { name: 'Pointer指针丨0113x0905', uid: '8300677615', dataType: 'station' },
-  { name: '失控丨0113x0905', uid: '8019292043', dataType: 'station' },
-  { name: '31Kilometres-0113x0905', uid: '8015386194', dataType: 'station' },
-  { name: 'RedLight丨0113x0905', uid: '8013999480', dataType: 'station' },
-  { name: 'Cosmos_0113x0905', uid: '7934854969', dataType: 'station' },
-  { name: 'FoxxBunnyLover_0113x0905', uid: '7686000968', dataType: 'station' },
-  { name: '遇见Happiness_0113x0905', uid: '6533117651', dataType: 'station' },
-  { name: 'ERhickey-0113X0905', uid: '4079488264', dataType: 'station' },
-  { name: 'ElysianSilhouette_0113x0905', uid: '4069898419', dataType: 'station' },
-  { name: 'TheMidnightHush丨0113x0905', uid: '9068198836', dataType: 'station' },
-  { name: 'WingSync羽翼共振_0113x0905', uid: '7864379003', dataType: 'station' },
-  { name: 'ParallelUs丨0113x0905', uid: '8002261474', dataType: 'station' },
-  { name: 'NeverBe永不落_0113x0905', uid: '8282610059', dataType: 'station' },
-  { name: 'TheFluffTheEar丨0113x0905', uid: '8348303999', dataType: 'station' },
-  { name: 'Bond羁绊丨0113x0905', uid: '5892109907', dataType: 'station' },
-  { name: 'Spring妙手回春丨0113x0905', uid: '9065471823', dataType: 'station' },
-  { name: 'KYOU_521丨0113x0905', uid: '4086481338', dataType: 'station' },
-  { name: 'Blush升温丨0113x0905', uid: '8484396430', dataType: 'station' },
-  { name: '无风区丨0113x0905', uid: '4076555020', dataType: 'station' },
-  { name: 'TALE_0113x0905', uid: '6312977401', dataType: 'station' },
-  { name: '69discount_0113x0905', uid: '8250612132', dataType: 'station' },
-  { name: '展轩', uid: '5080250314', dataType: 'official', sourceType: 'official-person' },
-  { name: '刘轩丞-', uid: '7904163238', dataType: 'official', sourceType: 'official-person' },
-  { name: '展轩工作室', uid: '8019492674', dataType: 'official', sourceType: 'official-studio' },
-  { name: '刘轩丞工作室', uid: '4098005675', dataType: 'official', sourceType: 'official-studio' }
-];
+const ACCOUNTS = loadAppConfig().accounts.weiboCollectionAccounts || [];
 
 function loadExisting(dataType) {
   const filename = dataType === 'official' ? 'official-metadata.json' : 'metadata.json';

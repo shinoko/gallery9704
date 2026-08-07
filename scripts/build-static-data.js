@@ -1,49 +1,55 @@
 const fs = require('fs');
 const path = require('path');
+const { getPlatformMap } = require('./config');
 
 const ROOT = path.resolve(__dirname, '..');
 const METADATA_PATH = path.join(ROOT, 'metadata.json');
 const DATA_PATH = path.join(ROOT, 'js', 'data.js');
+const PLATFORM_MAP = getPlatformMap();
 
 function uniqueSorted(values) {
   return Array.from(new Set(values.filter(Boolean))).sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
 }
 
 function normalizePlatform(record) {
-  return record.platform === 'xiaohongshu' ? 'xiaohongshu' : 'weibo';
-}
-
-function formatLabel(record) {
-  return [record.author, record.postDate].filter(Boolean).join(' · ');
+  return PLATFORM_MAP.has(record.platform) ? record.platform : 'weibo';
 }
 
 function toGalleryRecord(record, index) {
-  const people = Array.isArray(record.targetPeople) ? record.targetPeople : [];
   const tags = Array.isArray(record.tags) ? record.tags : [];
-  const images = Array.isArray(record.imageFiles) ? record.imageFiles.filter(Boolean) : [];
-  const descriptionParts = [record.author, record.postTimeText].filter(Boolean);
+  const targetPeople = Array.isArray(record.targetPeople) ? record.targetPeople : [];
+  const imageFiles = Array.isArray(record.imageFiles) ? record.imageFiles.filter(Boolean) : [];
   const platform = normalizePlatform(record);
   return {
     id: record.postUrl || String(index + 1),
-    label: formatLabel(record),
-    title: record.theme || '',
-    theme: record.theme || '',
-    date: record.shootDate || '',
-    postDate: record.postDate || '',
-    author: record.author || '',
     platform,
-    platformLabel: platform === 'xiaohongshu' ? '小红书' : '微博',
-    sourceType: record.sourceType || '',
-    people,
     postUrl: record.postUrl || '',
     webUrl: record.webUrl || record.pcUrl || '',
-    description: descriptionParts.join(' / '),
+    author: record.author || '',
+    authorUrl: record.authorUrl || '',
+    postDate: record.postDate || '',
+    postTimeText: record.postTimeText || '',
+    shootDate: record.shootDate || '',
+    theme: record.theme || '',
     text: record.text || '',
-    images,
     tags,
-    status: record.maintenanceStatus || 'todo',
-    note: record.maintenanceNote || '',
-    layout: 'gallery'
+    targetPeople,
+    imageFiles,
+    source: {
+      type: record.sourceType || '',
+      accountUid: record.collectionAccountUid || '',
+      accountName: record.collectionAccountName || '',
+      collectionSource: record.collectionSource || '',
+      mblogId: record.mblogId || '',
+      mid: record.mid || '',
+      bid: record.bid || '',
+      noteId: record.noteId || ''
+    },
+    maintenance: {
+      status: record.maintenanceStatus || 'todo',
+      note: record.maintenanceNote || '',
+      updatedAt: record.maintenanceUpdatedAt || ''
+    }
   };
 }
 
@@ -80,7 +86,7 @@ function buildData(metadata = loadMetadata(), dataPath = DATA_PATH, options = {}
     ''
   ].join('\n');
   fs.writeFileSync(dataPath, source);
-  return { recordCount: galleryData.length, imageCount: galleryData.reduce((sum, item) => sum + item.images.length, 0) };
+  return { recordCount: galleryData.length, imageCount: galleryData.reduce((sum, item) => sum + item.imageFiles.length, 0) };
 }
 
 if (require.main === module) {

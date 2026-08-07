@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "export:static": "node server.js --export-static",
-    "build:data": "node scripts/build-static-data.js && node scripts/build-static-data.js official-metadata.json js/official-data.js --data-var officialGalleryData --facets-var officialGalleryFacets",
+    "build:data": "node scripts/build-app-config.js && node scripts/build-static-data.js && node scripts/build-static-data.js official-metadata.json js/official-data.js --data-var officialGalleryData --facets-var officialGalleryFacets",
     "clean:data": "node scripts/clean-metadata.js",
     "clean:data:dry": "node scripts/clean-metadata.js --dry-run"
   }

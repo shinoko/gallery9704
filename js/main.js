@@ -11,10 +11,11 @@ const DATE_PICKER_MIN_VALUE = '2018-07-01';
 const DATE_PICKER_MAX_YEAR = new Date().getFullYear();
 const DATE_PICKER_MAX_VALUE = `${DATE_PICKER_MAX_YEAR}-12-31`;
 const NO_IMAGE_PLACEHOLDER_SRC = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="3" height="4" viewBox="0 0 3 4"%3E%3Crect width="3" height="4" fill="%23e3e3df"/%3E%3C/svg%3E';
-const PLATFORM_LABELS = {
-    weibo: '微博',
-    xiaohongshu: '小红书'
-};
+const APP_CONFIG = window.GALLERY9704_CONFIG || {};
+const PLATFORM_CONFIG = Array.isArray(APP_CONFIG.platforms) ? APP_CONFIG.platforms : [];
+const PLATFORM_LABELS = Object.fromEntries(PLATFORM_CONFIG.map((platform) => [platform.id, platform.label]));
+const PLATFORM_ORDER = PLATFORM_CONFIG.map((platform) => platform.id);
+const AUTHOR_ALIASES = APP_CONFIG.authorAliases || {};
 const DATASETS = {
     station: {
         label: '站姐',
@@ -29,42 +30,10 @@ const DATASETS = {
         maintenanceEnabled: true
     }
 };
-const THEME_TIMELINE = [
-    ['横店见面会', '2025-08-05'],
-    ['双人机场', '2025-08-15'],
-    ['泰国微博文化交流之夜', '2025-08-16'],
-    ['泰国双人见面会', '2025-08-17'],
-    ['清明上河园见面会', '2025-09-07'],
-    ['澳门双人见面会', '2025-09-13'],
-    ['微博奇遇记', '2025-09-14'],
-    ['FantasticMan活动', '2025-09-22'],
-    ['巴黎时装周·25秋', '2025-10-01'],
-    ['南京咪豆音乐节', '2025-10-02'],
-    ['宝鸡银杏音乐节', '2025-10-04'],
-    ['襄阳国潮音乐节', '2025-10-08'],
-    ['扬州枣林湾音乐节', '2025-10-18'],
-    ['25珑骧活动', '2025-10-28'],
-    ['赣州Z纪元巅峰音乐节', '2025-11-15'],
-    ['新加坡微博文化交流之夜', '2025-11-16'],
-    ['代言人影响力盛典红毯', '2025-11-29'],
-    ['T风格论坛', '2025-12-05'],
-    ['周日下午3点见生日音乐会', '2026-01-11'],
-    ['LOEWE罗意威活动', '2026-01-21'],
-    ['深圳奇梦岛开业', '2026-02-01'],
-    ['巴黎时装周·26春', '2026-03-02'],
-    ['巴黎世家活动', '2026-03-27'],
-    ['何日君再来', '2026-03-28'],
-    ['QQ音乐巅峰之夜', '2026-03-28'],
-    ['MaisonMargiela看秀', '2026-04-01'],
-    ['MaisonMargiela晚宴', '2026-04-02'],
-    ['26珑骧活动', '2026-04-23'],
-    ['澳门WIEA国际娱乐盛典', '2026-04-26'],
-    ['同心结', '2026-06-14'],
-    ['米兰巴黎时装周·26夏', '2026-06-20'],
-    ['搜狐扫楼', '2026-07-03'],
-    ['巴黎高定周·26夏', '2026-07-04']
-];
-const THEME_SORT_META = new Map(THEME_TIMELINE.map(([theme, date], index) => [theme, { date, index }]));
+const THEME_SORT_META = new Map((APP_CONFIG.themes || []).map((theme, index) => [theme.name, {
+    date: theme.date || theme.from || '',
+    index: Number.isFinite(theme.order) ? theme.order : index
+}]));
 const datePickerStates = new Map();
 
 const state = {
@@ -736,20 +705,36 @@ function getRecordId(series) {
     return String(series.postUrl || series.id || series.label);
 }
 
+function getSeriesTheme(series) {
+    return series?.theme || '';
+}
+
+function getSeriesImageFiles(series) {
+    return Array.isArray(series?.imageFiles)
+        ? series.imageFiles
+        : (Array.isArray(series?.images) ? series.images : []);
+}
+
+function getSeriesMaintenanceNote(series) {
+    return series?.maintenance?.note || series?.maintenanceNote || series?.note || '';
+}
+
+function getSeriesPostTimeText(series) {
+    return series?.postTimeText || series?.description || '';
+}
+
 function getDisplaySeries(series) {
     const id = getRecordId(series);
-    const theme = state.pendingThemeEdits.has(id) ? state.pendingThemeEdits.get(id) : (series.theme || '');
+    const theme = state.pendingThemeEdits.has(id) ? state.pendingThemeEdits.get(id) : getSeriesTheme(series);
     return {
         ...series,
-        title: theme,
         theme,
-        tags: series.tags || [],
-        note: series.note || ''
+        tags: series.tags || []
     };
 }
 
 function getShootDateForFilter(series) {
-    return normalizeIsoDate(getDisplaySeries(series).date);
+    return normalizeIsoDate(getDisplaySeries(series).shootDate || series.date);
 }
 
 function getPostDateForFilter(series) {
@@ -757,29 +742,34 @@ function getPostDateForFilter(series) {
 }
 
 function normalizePlatform(series) {
-    return series?.platform === 'xiaohongshu' ? 'xiaohongshu' : 'weibo';
+    return PLATFORM_LABELS[series?.platform] ? series.platform : 'weibo';
 }
 
 function formatAuthorFilterValue(series) {
     const author = typeof series === 'string' ? series : series?.author;
-    if (state.dataType === 'official' && author === '刘轩丞-') return '刘轩丞';
-    return author || '';
+    return AUTHOR_ALIASES[author] || author || '';
 }
 
 function formatPlatformLabel(seriesOrPlatform) {
     const platform = typeof seriesOrPlatform === 'string' ? seriesOrPlatform : normalizePlatform(seriesOrPlatform);
-    return PLATFORM_LABELS[platform] || platform || PLATFORM_LABELS.weibo;
+    return PLATFORM_LABELS[platform] || platform || '微博';
 }
 
 function sortedPlatforms(platforms) {
-    const order = ['weibo', 'xiaohongshu'];
     return Array.from(new Set(platforms.filter(Boolean)))
-        .sort((a, b) => order.indexOf(a) - order.indexOf(b))
+        .sort((a, b) => {
+            const indexA = PLATFORM_ORDER.indexOf(a);
+            const indexB = PLATFORM_ORDER.indexOf(b);
+            if (indexA >= 0 && indexB >= 0) return indexA - indexB;
+            if (indexA >= 0) return -1;
+            if (indexB >= 0) return 1;
+            return a.localeCompare(b);
+        })
         .map((platform) => ({ value: platform, label: formatPlatformLabel(platform) }));
 }
 
 function postSortValue(series) {
-    const time = String(series.description || '').match(/\d{1,2}:\d{2}/)?.[0] || '00:00';
+    const time = String(getSeriesPostTimeText(series)).match(/\d{1,2}:\d{2}/)?.[0] || '00:00';
     return `${series.postDate || ''} ${time}`;
 }
 
@@ -847,9 +837,9 @@ function applyFilterAndRender(options = {}) {
                 displaySeries.author,
                 formatAuthorFilterValue(displaySeries),
                 formatPlatformLabel(displaySeries),
-                displaySeries.description,
+                getSeriesPostTimeText(displaySeries),
                 displaySeries.text,
-                displaySeries.note,
+                getSeriesMaintenanceNote(displaySeries),
                 ...(displaySeries.tags || [])
             ].join(' ').toLowerCase();
             if (state.currentFilters.keyword && !searchable.includes(state.currentFilters.keyword)) return false;
@@ -991,7 +981,7 @@ function renderSeriesItem(series, seriesIndex) {
             ${state.mode === 'maintain' ? `<label class="select-card"><input type="checkbox" data-select-card value="${escapeHtml(getRecordId(series))}" ${state.selectedIds.has(getRecordId(series)) ? 'checked' : ''}><span></span></label>` : ''}
             <div>
                 <div class="series-label">${escapeHtml(formatCardMeta(series))}</div>
-                ${state.dataType === 'station' && series.title ? `<h2 class="series-title">${escapeHtml(series.title)}</h2>` : ''}
+                ${state.dataType === 'station' && series.theme ? `<h2 class="series-title">${escapeHtml(series.theme)}</h2>` : ''}
             </div>
             ${renderSourceLink(series)}
         </div>
@@ -999,10 +989,11 @@ function renderSeriesItem(series, seriesIndex) {
     article.appendChild(header);
 
     const grid = document.createElement('div');
-    grid.className = `image-grid count-${Math.min(series.images.length, 3)}`;
-    const spans = computeSpans(series.images.length);
+    const imageFiles = getSeriesImageFiles(series);
+    grid.className = `image-grid count-${Math.min(imageFiles.length, 3)}`;
+    const spans = computeSpans(imageFiles.length);
 
-    series.images.forEach((imgSrc, imgIndex) => {
+    imageFiles.forEach((imgSrc, imgIndex) => {
         const gridItem = document.createElement('div');
         const spanClass = spans[imgIndex] || '';
         gridItem.className = 'grid-image' + (spanClass ? ' ' + spanClass : '');
@@ -1010,7 +1001,7 @@ function renderSeriesItem(series, seriesIndex) {
         const img = document.createElement('img');
         img.src = isNoImageActive() ? NO_IMAGE_PLACEHOLDER_SRC : imgSrc;
         if (isNoImageActive()) img.dataset.realSrc = imgSrc;
-        img.alt = `${series.title} ${imgIndex + 1}`;
+        img.alt = `${series.theme || series.author || '图库图片'} ${imgIndex + 1}`;
         img.loading = 'lazy';
         img.decoding = 'async';
         img.addEventListener('click', () => openModal(seriesIndex, imgIndex));
@@ -1056,7 +1047,7 @@ function formatCardMeta(series) {
         ].filter(Boolean).join(' / ');
     }
     return [
-        series.date ? `${series.date} 拍摄` : '',
+        series.shootDate ? `${series.shootDate} 拍摄` : '',
         series.postDate ? `${series.postDate} 发布` : '',
         series.author || ''
     ].filter(Boolean).join(' / ');
@@ -1291,7 +1282,6 @@ function applyPatchToSeries(series, patch) {
     const hasThemePatch = Object.prototype.hasOwnProperty.call(patch, 'theme');
     return {
         ...series,
-        title: hasThemePatch ? patch.theme : series.title,
         theme: hasThemePatch ? patch.theme : series.theme
     };
 }
@@ -1382,16 +1372,17 @@ function closeModal() {
 
 function navigateModal(direction) {
     const series = state.filteredData[state.modalSeriesIndex];
+    const imageFiles = getSeriesImageFiles(series);
     let nextImageIndex = state.modalImageIndex + direction;
 
-    if (nextImageIndex >= 0 && nextImageIndex < series.images.length) {
+    if (nextImageIndex >= 0 && nextImageIndex < imageFiles.length) {
         state.modalImageIndex = nextImageIndex;
     } else if (direction > 0 && state.modalSeriesIndex < state.filteredData.length - 1) {
         state.modalSeriesIndex++;
         state.modalImageIndex = 0;
     } else if (direction < 0 && state.modalSeriesIndex > 0) {
         state.modalSeriesIndex--;
-        state.modalImageIndex = state.filteredData[state.modalSeriesIndex].images.length - 1;
+        state.modalImageIndex = getSeriesImageFiles(state.filteredData[state.modalSeriesIndex]).length - 1;
     }
 
     updateModalContent();
@@ -1399,19 +1390,21 @@ function navigateModal(direction) {
 
 function updateModalContent() {
     const series = state.filteredData[state.modalSeriesIndex];
-    const imgSrc = series.images[state.modalImageIndex];
+    const imageFiles = getSeriesImageFiles(series);
+    const imgSrc = imageFiles[state.modalImageIndex];
 
     els.modalImage.src = isNoImageActive() ? NO_IMAGE_PLACEHOLDER_SRC : imgSrc;
     if (isNoImageActive()) els.modalImage.dataset.realSrc = imgSrc;
     else delete els.modalImage.dataset.realSrc;
-    els.modalImage.alt = series.title;
-    els.modalTitle.textContent = series.title;
-    els.modalDescription.textContent = `${formatCardMeta(series)} · ${state.modalImageIndex + 1} / ${series.images.length}`;
+    els.modalImage.alt = series.theme || series.author || '图库图片';
+    els.modalTitle.textContent = series.theme || series.author || '图库图片';
+    els.modalDescription.textContent = `${formatCardMeta(series)} · ${state.modalImageIndex + 1} / ${imageFiles.length}`;
 
     const isFirst = state.modalSeriesIndex === 0 && state.modalImageIndex === 0;
     const lastSeries = state.filteredData[state.filteredData.length - 1];
+    const lastSeriesImages = getSeriesImageFiles(lastSeries);
     const isLast = state.modalSeriesIndex === state.filteredData.length - 1 &&
-        state.modalImageIndex === lastSeries.images.length - 1;
+        state.modalImageIndex === lastSeriesImages.length - 1;
 
     els.modalPrev.disabled = isFirst;
     els.modalNext.disabled = isLast;
