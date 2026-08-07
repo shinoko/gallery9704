@@ -18,8 +18,12 @@ gallery9704/
 ├── scripts/                      数据清理、生成、采集和预览脚本
 ├── images/                       站姐图片资源，仅在数据或导出涉及图片时访问
 ├── official-images/              官方图片资源，仅在数据或导出涉及图片时访问
+├── README.md                     项目入口和文档索引
 ├── docs/
 │   ├── PROJECT_MAINTENANCE.md    本文档
+│   ├── DATA_CLEANING_RULES.md    数据清理规则
+│   ├── WEIBO_COLLECTION_RULES.md 微博采集规则
+│   ├── XHS_COLLECTION_RULES.md   小红书采集规则
 │   └── records/                  采集候选、进度、报告、审计和重试记录
 ├── exports/                      静态导出产物，自动生成，可忽略
 ├── preview-assets/               预览截图/素材，自动生成，可忽略
@@ -29,7 +33,7 @@ gallery9704/
 
 ## 根目录文件原则
 
-根目录只放运行必需文件、正式数据源和规则类文档。一次性的采集过程文件统一放到 `docs/records/`，不要把候选 JSON、下载报告、扫描进度或重试清单放回根目录。
+根目录只放项目入口、运行必需文件和正式数据源。规则类文档统一放到 `docs/`，一次性的采集过程文件统一放到 `docs/records/`，不要把候选 JSON、下载报告、扫描进度或重试清单放回根目录。
 
 正式数据源与生成文件的关系如下：
 
@@ -37,9 +41,9 @@ gallery9704/
 | --- | --- | --- |
 | 站姐微博数据 | `metadata.json` | `npm run build:data` |
 | 官方/工作室微博数据 | `official-metadata.json` | `npm run build:data` |
-| 站姐采集规则 | `WEIBO_COLLECTION_RULES.md` | 无需生成 |
+| 站姐采集规则 | `docs/WEIBO_COLLECTION_RULES.md` | 无需生成 |
 | 小红书官方采集规则 | `docs/XHS_COLLECTION_RULES.md` | 无需生成 |
-| 数据清理规则 | `DATA_CLEANING_RULES.md` | 无需生成 |
+| 数据清理规则 | `docs/DATA_CLEANING_RULES.md` | 无需生成 |
 | 采集过程记录 | `docs/records/` | 无需生成 |
 
 `js/data.js` 和 `js/official-data.js` 是生成文件，正常情况下不要手动编辑；它们会被 `npm run build:data` 或维护页面的保存操作重新生成。
@@ -71,7 +75,7 @@ gallery9704/
 
 优先访问：
 
-- `DATA_CLEANING_RULES.md`
+- `docs/DATA_CLEANING_RULES.md`
 - `metadata.json` 或 `official-metadata.json`
 - `scripts/clean-metadata.js`
 - `scripts/build-static-data.js`
@@ -90,7 +94,7 @@ npm run build:data
 
 优先访问：
 
-- `WEIBO_COLLECTION_RULES.md`
+- `docs/WEIBO_COLLECTION_RULES.md`
 - `scripts/download-candidate-images.js`
 - `scripts/merge-candidate-metadata.js`
 - `docs/records/`
@@ -101,7 +105,7 @@ npm run build:data
 
 每次做数据增量更新时，同时检查微博和小红书两个来源。
 
-微博增量按 `WEIBO_COLLECTION_RULES.md` 执行：先确定本次账号范围和日期 cutoff，只导入本地没有的 `postUrl`，图片下载和合并过程记录放入 `docs/records/`。
+微博增量按 `docs/WEIBO_COLLECTION_RULES.md` 执行：先确定本次账号范围和日期 cutoff，只导入本地没有的 `postUrl`，图片下载和合并过程记录放入 `docs/records/`。
 
 小红书增量按 `docs/XHS_COLLECTION_RULES.md` 执行：检查展轩、刘轩丞、展轩工作室三个账号主页，从最新卡片开始向下扫描，遇到已存在于 `official-metadata.json` 的 `noteId` / `postUrl` 后停止继续向旧内容扩展；跳过视频，只导入新增图文笔记及其全部图片。导入后删除采集目录里的原始/中间图片，只保留 JSON 记录和 `official-images/xhs/` 正式图片，然后必须重新生成静态数据并审计缺图、超限、重复和生成数据一致性。
 

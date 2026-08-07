@@ -93,13 +93,7 @@ npm run build:data
 - 删除采集归档里的原始/中间图片目录，避免大量过程图片进入 Git
 - 重新生成后由官方页面读取 `js/official-data.js`
 
-当前正式全量基线为：
-
-```bash
-docs/records/xhs-capture-all-notes-20260804-2345/metadata.json
-```
-
-基线结果：展轩 32 篇图文 / 154 张图，刘轩丞 29 篇图文 / 158 张图，展轩工作室 40 篇图文 / 181 张图，合计 101 篇图文 / 493 张图。
+已完成的小红书全量基线和采集结果见 `docs/records/xhs-collection-log.md`。
 
 ## 增量流程
 
@@ -124,8 +118,4 @@ node -e "const d=require('./official-metadata.json'); console.log(d.filter(x=>x.
 npm run build:data
 ```
 
-当前正式全量基线结果：
-
-- 小红书记录：101
-- 小红书图片：493
-- 单图大小：不超过 `100000 bytes`
+正式全量基线结果归档在 `docs/records/xhs-collection-log.md`。

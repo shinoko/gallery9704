@@ -12,11 +12,7 @@ Sampled accounts:
 
 ## Retry Queue
 
-The following accounts were not followed successfully and should be retried later:
-
-- GENTLE丨0113x0905: https://weibo.com/u/7977331345
-- TALE_0113x0905: https://weibo.com/u/6312977401
-- 69discount_0113x0905: https://weibo.com/u/8250612132
+Follow retry items are maintained in [`weibo-follow-retry-list.md`](weibo-follow-retry-list.md). This audit keeps only the risk observations that informed the collection rules.
 
 ## Observed Cases
 
