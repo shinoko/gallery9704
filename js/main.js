@@ -798,9 +798,8 @@ function showToast(message, type = 'info') {
     toast.textContent = message;
     els.toastViewport.appendChild(toast);
     state.toastTimer = window.setTimeout(() => {
-        toast.classList.add('is-hiding');
-        toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-    }, 3200);
+        toast.remove();
+    }, 3000);
 }
 
 function validateDateRanges() {
