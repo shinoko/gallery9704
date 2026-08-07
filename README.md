@@ -6,10 +6,12 @@
 
 ```bash
 npm start
+node server.js --no-image
 npm run build:data
 ```
 
 - 本地服务默认地址：`http://127.0.0.1:4182/`
+- 使用 `node server.js --no-image` 启动时，页面默认进入维护模式，并打开无图开关。
 - 站姐数据源：`metadata.json`
 - 官方数据源：`official-metadata.json`
 - 生成数据：`js/data.js`、`js/official-data.js`

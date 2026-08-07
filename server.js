@@ -21,6 +21,7 @@ const DATASETS = {
 
 const PORT = Number(process.env.PORT || 4182);
 const HOST = process.env.HOST || '127.0.0.1';
+const DEFAULT_NO_IMAGE = process.argv.includes('--no-image');
 const MIME = {
   '.html': 'text/html;charset=utf-8',
   '.css': 'text/css;charset=utf-8',
@@ -256,6 +257,18 @@ function serveStatic(req, res, pathname) {
       res.end('Not found');
       return;
     }
+    if (relativePath === 'js/main.js' && DEFAULT_NO_IMAGE) {
+      fs.readFile(filePath, 'utf8', (readError, source) => {
+        if (readError) {
+          res.writeHead(500);
+          res.end('Server error');
+          return;
+        }
+        res.writeHead(200, { 'content-type': MIME['.js'] });
+        res.end(`window.GALLERY9704_DEFAULT_NO_IMAGE = true;\n${source}`);
+      });
+      return;
+    }
     res.writeHead(200, { 'content-type': MIME[path.extname(filePath).toLowerCase()] || 'application/octet-stream' });
     fs.createReadStream(filePath).pipe(res);
   });
@@ -282,5 +295,6 @@ if (process.argv.includes('--export-static')) {
 } else {
   server.listen(PORT, HOST, () => {
     console.log(`GALLERY9704 running at http://${HOST}:${PORT}/`);
+    if (DEFAULT_NO_IMAGE) console.log('Default maintenance mode with no-image enabled.');
   });
 }

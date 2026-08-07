@@ -132,6 +132,53 @@ body[data-filter-visible="true"]::before {
     pointer-events: auto;
 }
 
+.toast-viewport {
+    position: fixed;
+    top: var(--space-md);
+    left: 50%;
+    z-index: 220;
+    display: grid;
+    gap: var(--space-sm);
+    width: min(360px, calc(100vw - var(--space-md) * 2));
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+.toast {
+    padding: 12px 14px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 252, 248, 0.96);
+    color: var(--text-primary);
+    box-shadow: 0 18px 48px rgba(45, 45, 45, 0.14);
+    font-size: 13px;
+    line-height: 1.5;
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    transform: translateY(-6px);
+    opacity: 0;
+    animation: toast-in var(--transition-normal) forwards;
+}
+
+.toast-error {
+    border-color: rgba(164, 94, 98, 0.24);
+    background: rgba(249, 231, 230, 0.96);
+    color: #6F3E42;
+}
+
+.toast.is-hiding {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+@keyframes toast-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ==================== 顶部导航 ==================== */
 .nav {
     position: fixed;

@@ -1,6 +1,7 @@
 // ==================== GALLERY9704 Main Logic ====================
 
 const STATIC_EXPORT = window.GALLERY9704_STATIC_EXPORT === true;
+const DEFAULT_NO_IMAGE = window.GALLERY9704_DEFAULT_NO_IMAGE === true;
 const UNCATEGORIZED_THEME_VALUE = '__uncategorized__';
 const INITIAL_RENDER_COUNT = 24;
 const RENDER_BATCH_SIZE = 24;
@@ -69,7 +70,7 @@ const datePickerStates = new Map();
 const state = {
     dataType: 'official',
     filterVisible: false,
-    mode: 'browse',
+    mode: DEFAULT_NO_IMAGE ? 'maintain' : 'browse',
     currentFilters: { keyword: '', theme: '', author: '', platform: '', shootDateFrom: '', shootDateTo: '', postDateFrom: '', postDateTo: '' },
     selectedIds: new Set(),
     filteredData: [],
@@ -78,15 +79,17 @@ const state = {
     modalOpen: false,
     modalSeriesIndex: 0,
     modalImageIndex: 0,
-    noImageMode: false,
+    noImageMode: DEFAULT_NO_IMAGE,
     pendingThemeEdits: new Map(),
     savingThemeEdits: false,
-    savingThemeIds: new Set()
+    savingThemeIds: new Set(),
+    toastTimer: null
 };
 
 const els = {
     nav: document.querySelector('.nav'),
     filterBackdrop: document.getElementById('filterBackdrop'),
+    toastViewport: document.getElementById('toastViewport'),
     sidebar: document.getElementById('sidebar'),
     navToggle: document.getElementById('navToggle'),
     stationTab: document.getElementById('stationTab'),
@@ -134,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFilterControls();
     initFacets();
     initListeners();
-    updateMode('browse');
+    updateMode(state.mode);
 });
 
 function getActiveDataset() {
@@ -795,8 +798,36 @@ function scrollToPageTop() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 }
 
+function showToast(message, type = 'info') {
+    if (!els.toastViewport) return;
+    window.clearTimeout(state.toastTimer);
+    els.toastViewport.textContent = '';
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.setAttribute('role', 'status');
+    toast.textContent = message;
+    els.toastViewport.appendChild(toast);
+    state.toastTimer = window.setTimeout(() => {
+        toast.classList.add('is-hiding');
+        toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+    }, 3200);
+}
+
+function validateDateRanges() {
+    const ranges = [
+        { label: '拍摄时间', from: els.shootDateFrom, to: els.shootDateTo },
+        { label: '发布时间', from: els.postDateFrom, to: els.postDateTo }
+    ];
+    const invalidRange = ranges.find(({ from, to }) => from?.value && to?.value && from.value > to.value);
+    if (!invalidRange) return true;
+    showToast(`${invalidRange.label}的开始日期不能晚于结束日期，请重新选择。`, 'error');
+    datePickerStates.get(invalidRange.from.id)?.trigger?.focus({ preventScroll: true });
+    return false;
+}
+
 function applyFilterAndRender(options = {}) {
     closeFilterPopovers();
+    if (!validateDateRanges()) return;
     state.currentFilters.keyword = els.keywordSearch.value.trim().toLowerCase();
     state.currentFilters.theme = els.themeFilter.value;
     state.currentFilters.author = els.authorFilter.value;
