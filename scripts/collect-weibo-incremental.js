@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { isBlacklisted } = require('./clean-metadata');
 const { loadAppConfig } = require('./config');
+const { deletedPostUrlSet } = require('./deleted-records');
 
 const ROOT = path.resolve(__dirname, '..');
 const RECORDS_DIR = path.join(ROOT, 'docs', 'records');
-const TODAY = '2026-08-06';
+const TODAY = '2026-08-08';
 const SINCE_DATE = process.argv.includes('--since')
   ? process.argv[process.argv.indexOf('--since') + 1]
   : TODAY;
@@ -173,7 +174,7 @@ function summarizeReasons(items) {
   }, {});
 }
 
-async function collectAccount(account, existingUrls) {
+async function collectAccount(account, existingUrls, deletedUrls) {
   const seen = new Set();
   const records = [];
   const skipped = [];
@@ -211,6 +212,11 @@ async function collectAccount(account, existingUrls) {
         continue;
       }
       pageStats.recent += 1;
+      if (deletedUrls.has(record.postUrl)) {
+        skipped.push({ account: account.name, uid: account.uid, postUrl: record.postUrl, postDate: record.postDate, reason: 'manual-delete', text: record.text });
+        pageStats.skipped += 1;
+        continue;
+      }
       const reason = skipReason(mblog, record);
       if (reason === 'incomplete_pic_list') {
         retry.push({ account: account.name, uid: account.uid, postUrl: record.postUrl, postDate: record.postDate, reason, rawPicNum: record.rawPicNum, listedImages: record.imageUrls.length });
@@ -257,13 +263,17 @@ async function main() {
     station: loadExisting('station'),
     official: loadExisting('official')
   };
+  const deleted = {
+    station: deletedPostUrlSet('station'),
+    official: deletedPostUrlSet('official')
+  };
   const outputs = {
     station: { records: [], skipped: [], retry: [], accounts: [] },
     official: { records: [], skipped: [], retry: [], accounts: [] }
   };
 
   for (const account of ACCOUNTS) {
-    const result = await collectAccount(account, existing[account.dataType]);
+    const result = await collectAccount(account, existing[account.dataType], deleted[account.dataType]);
     outputs[account.dataType].records.push(...result.records);
     outputs[account.dataType].skipped.push(...result.skipped);
     outputs[account.dataType].retry.push(...result.retry);

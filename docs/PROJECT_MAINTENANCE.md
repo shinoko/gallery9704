@@ -96,6 +96,8 @@ npm run build:data
 
 清理微博记录时，注意图片文件可能被多条记录引用。删除数据必须遵守规则文档中的引用检查，不要直接批量删除 `images/` 或 `official-images/`。
 
+维护模式中手动删除的数据会追加到 `docs/records/manual-deleted-records.json`，该清单用于后续增量采集跳过同一条 `postUrl` / `noteId`，避免被再次导入。清单只记录数据标识和简要来源信息，不记录图片文件；删除后的图片不需要保留。
+
 ### 新增微博采集或重跑下载
 
 优先访问：

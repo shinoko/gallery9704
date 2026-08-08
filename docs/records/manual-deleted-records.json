@@ -1,0 +1,50 @@
+[
+  {
+    "dataType": "station",
+    "sourceType": "",
+    "postUrl": "https://weibo.com/4079488264/RbHwl5Xq9",
+    "noteId": "",
+    "author": "ERhickey-0113X0905",
+    "authorUrl": "https://weibo.com/u/4079488264",
+    "collectionAccountUid": "4079488264",
+    "collectionAccountName": "ERhickey-0113X0905",
+    "postDate": "2026-08-03",
+    "postTimeText": "2026-08-03 18:00",
+    "bid": "RbHwl5Xq9",
+    "mid": "5327889051420057",
+    "reason": "manual-delete",
+    "deletedAt": "2026-08-08T04:03:43.595Z"
+  },
+  {
+    "dataType": "station",
+    "sourceType": "",
+    "postUrl": "https://weibo.com/8015386194/RbSKH9Vun",
+    "noteId": "",
+    "author": "31Kilometres-0113x0905",
+    "authorUrl": "https://weibo.com/u/8015386194",
+    "collectionAccountUid": "8015386194",
+    "collectionAccountName": "31Kilometres-0113x0905",
+    "postDate": "2026-08-04",
+    "postTimeText": "2026-08-04 22:35",
+    "bid": "RbSKH9Vun",
+    "mid": "5328320792365943",
+    "reason": "manual-delete",
+    "deletedAt": "2026-08-08T04:03:40.700Z"
+  },
+  {
+    "dataType": "official",
+    "sourceType": "official-studio",
+    "postUrl": "https://weibo.com/4098005675/RcaoKzZBf",
+    "noteId": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "collectionAccountUid": "4098005675",
+    "collectionAccountName": "刘轩丞工作室",
+    "postDate": "2026-08-06",
+    "postTimeText": "2026-08-06 19:30",
+    "bid": "RcaoKzZBf",
+    "mid": "5328999108578273",
+    "reason": "manual-delete",
+    "deletedAt": "2026-08-08T04:03:34.688Z"
+  }
+]

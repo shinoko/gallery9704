@@ -1,0 +1,51 @@
+{
+  "collectedAt": "2026-08-08T03:39:06.807Z",
+  "sinceDate": "2026-08-03",
+  "endDate": "2026-08-08",
+  "dataType": "station",
+  "collectionSource": "m-weibo-facingdanger-incremental-20260808",
+  "summary": {
+    "accounts": [
+      {
+        "name": "FacingDanger",
+        "uid": "7808883350",
+        "mode": "incremental",
+        "dataType": "station",
+        "keptNew": 1,
+        "imageCount": 2
+      }
+    ],
+    "totalRecords": 1,
+    "totalImages": 2,
+    "retryCount": 0,
+    "skippedCount": 0
+  },
+  "records": [
+    {
+      "author": "FacingDanger",
+      "authorUrl": "https://weibo.com/u/7808883350",
+      "postUrl": "https://weibo.com/7808883350/RcfpokVzA",
+      "postDate": "2026-08-07",
+      "postTimeText": "2026-08-07 08:16",
+      "text": "🛫",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/008wthhsly1ifuybmy3m9j323u35snpd.jpg",
+        "https://wx4.sinaimg.cn/orj360/008wthhsly1ifuybojfhrj323u35su0x.jpg"
+      ],
+      "imageFiles": [
+        "images/2026-08-07_FacingDanger_RcfpokVzA_01.jpg",
+        "images/2026-08-07_FacingDanger_RcfpokVzA_02.jpg"
+      ],
+      "sourceType": "station",
+      "collectionSource": "m-weibo-facingdanger-incremental-20260808",
+      "collectionAccountUid": "7808883350",
+      "collectionAccountName": "FacingDanger",
+      "mblogId": "5329191704987874",
+      "mid": "5329191704987874",
+      "bid": "RcfpokVzA",
+      "rawPicNum": 2
+    }
+  ],
+  "retry": [],
+  "skipped": []
+}

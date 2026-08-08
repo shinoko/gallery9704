@@ -1,0 +1,267 @@
+{
+  "collectedAt": "2026-08-08T03:29:26.991Z",
+  "sinceDate": "2026-08-03",
+  "endDate": "2026-08-08",
+  "dataType": "official",
+  "collectionSource": "m-weibo-container-api-incremental-20260808",
+  "summary": {
+    "accounts": [
+      {
+        "name": "展轩",
+        "uid": "5080250314",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 295,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-06-30",
+            "maxDate": "2026-08-02"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 173,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 1,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "existingCount": 1,
+        "oldCount": 17,
+        "excludedReasons": {
+          "repost": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 2,
+            "kept": 1,
+            "skipped": 1,
+            "existing": 1,
+            "old": 7,
+            "minDate": "2026-07-08",
+            "maxDate": "2026-08-07"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-06-01",
+            "maxDate": "2026-07-07"
+          }
+        ],
+        "imageCount": 3
+      },
+      {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 257,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-21",
+            "maxDate": "2026-07-31"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 234,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 1,
+        "skippedNew": 6,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 13,
+        "excludedReasons": {
+          "repost": 5,
+          "video": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 7,
+            "kept": 1,
+            "skipped": 6,
+            "existing": 0,
+            "old": 3,
+            "minDate": "2026-07-28",
+            "maxDate": "2026-08-07"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-08",
+            "maxDate": "2026-07-24"
+          }
+        ],
+        "imageCount": 1
+      }
+    ],
+    "totalRecords": 2,
+    "totalImages": 4,
+    "retryCount": 0,
+    "skippedCount": 7
+  },
+  "records": [
+    {
+      "author": "刘轩丞-",
+      "authorUrl": "https://weibo.com/u/7904163238",
+      "postUrl": "https://weibo.com/7904163238/Rcl7pjVQ3",
+      "postDate": "2026-08-07",
+      "postTimeText": "2026-08-07 22:48",
+      "text": "一般立秋要喝什么吃什么呢🤔  #立秋的仪式感#演员刘轩丞",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/008CV3VQly1ifvnigenpqj30z91gvnlx.jpg",
+        "https://wx3.sinaimg.cn/orj360/008CV3VQly1ifvnifrypbj311y1kwhbo.jpg",
+        "https://wx1.sinaimg.cn/orj360/008CV3VQly1ifvnienkrtj30tl18ck1a.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-08-07_刘轩丞-_Rcl7pjVQ3_01.jpg",
+        "official-images/2026-08-07_刘轩丞-_Rcl7pjVQ3_02.jpg",
+        "official-images/2026-08-07_刘轩丞-_Rcl7pjVQ3_03.jpg"
+      ],
+      "sourceType": "official-person",
+      "collectionSource": "m-weibo-container-api-incremental-20260808",
+      "collectionAccountUid": "7904163238",
+      "collectionAccountName": "刘轩丞-",
+      "mblogId": "5329411194750567",
+      "mid": "5329411194750567",
+      "bid": "Rcl7pjVQ3",
+      "rawPicNum": 3
+    },
+    {
+      "author": "刘轩丞工作室",
+      "authorUrl": "https://weibo.com/u/4098005675",
+      "postUrl": "https://weibo.com/4098005675/RcaoKzZBf",
+      "postDate": "2026-08-06",
+      "postTimeText": "2026-08-06 19:30",
+      "text": "演员刘轩丞 \n致不能经常见面的朋友：\n\n暂别镜头与忙碌行程，卸下所有紧绷与疲惫\n屏幕前的你总会藏起生活里的琐碎心事，跨越山海，赴一场热带之约🌴\n\n@刘轩丞- 「丞长没烦恼」曼谷站 正式开启。",
+      "imageUrls": [
+        "https://wx4.sinaimg.cn/orj360/f4429aably1ifuc5tnkazj22gx3jn7wk.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-08-06_刘轩丞工作室_RcaoKzZBf_01.jpg"
+      ],
+      "sourceType": "official-studio",
+      "collectionSource": "m-weibo-container-api-incremental-20260808",
+      "collectionAccountUid": "4098005675",
+      "collectionAccountName": "刘轩丞工作室",
+      "mblogId": "5328999108578273",
+      "mid": "5328999108578273",
+      "bid": "RcaoKzZBf",
+      "rawPicNum": 1
+    }
+  ],
+  "retry": [],
+  "skipped": [
+    {
+      "account": "刘轩丞-",
+      "uid": "7904163238",
+      "postUrl": "https://weibo.com/7904163238/Rc7488b7a",
+      "postDate": "2026-08-06",
+      "reason": "repost",
+      "text": "很荣幸担任《青春读行记之京城书香行》青春领读者。  读万卷书，行万里路。这场文化探索之旅，我将和大家一起走近传统文化，在行走中触摸真实，在阅读中汲取力量，在非遗技艺中感受岁月沉淀与匠心坚守，共同探寻中华文脉的深厚底蕴。"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/Rcl7X1fwV",
+      "postDate": "2026-08-07",
+      "reason": "repost",
+      "text": "演员刘轩丞 吃面否？#立秋的仪式感#"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/RcfJn3eb4",
+      "postDate": "2026-08-07",
+      "reason": "video",
+      "text": "演员刘轩丞 @刘轩丞-  一观、一听、一思，沉浸式感受文字沉淀的力量\n《青春读行记之京城书香行》碎片加载完毕📖 立秋快乐\n\n#刘轩丞青春读行记##青春读行记之京城书香行##时尚新封面# 刘轩丞工作室的微博视频"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/Rc7OIhAPy",
+      "postDate": "2026-08-06",
+      "reason": "repost",
+      "text": "演员刘轩丞 感谢@中国青年报 的邀请与信任 @刘轩丞- 作为青年演员，能够有机会分享自己对于成长与时代的所思所想。青年当笃行致远，往后也会保持敬畏之心，踏实打磨作品，不负时代，不负热爱，继续稳步前行。#刘轩丞青春领读者# #刘轩丞青春读行记#"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/Rc7ua6Qp9",
+      "postDate": "2026-08-06",
+      "reason": "repost",
+      "text": "演员刘轩丞 穿行古都古苑，跟着@刘轩丞- 探访传统工坊，以青春之姿 📖 赴文化之约#刘轩丞青春领读者# #刘轩丞青春读行记# #青春读行记之京城书香行#"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/Rc75o4ne9",
+      "postDate": "2026-08-06",
+      "reason": "repost",
+      "text": "演员刘轩丞 跟着@刘轩丞- 走入古香院落，感受中华文脉 //@刘轩丞-:很荣幸担任《青春读行记之京城书香行》青春领读者。  读万卷书，行万里路。这场文化探索之旅，我将和大家一起走近传统文化，在行走中触摸真实，在阅读中汲取力量，在非遗技艺中感受岁月沉淀与匠心坚守，共同探寻中华文脉的深厚...全文"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/RbY2EbGS0",
+      "postDate": "2026-08-05",
+      "reason": "repost",
+      "text": "演员刘轩丞 和@刘轩丞-  一起，以青春之姿，赴京城书香之约。#刘轩丞青春读行记# #青春读行记之京城书香行# #时尚新封面#"
+    }
+  ]
+}

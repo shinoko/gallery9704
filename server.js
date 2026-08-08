@@ -4,6 +4,7 @@ const fsp = require('fs/promises');
 const path = require('path');
 const { ROOT, METADATA_PATH, buildData, loadMetadata } = require('./scripts/build-static-data');
 const { buildAppConfig } = require('./scripts/build-app-config');
+const { appendDeletedRecords } = require('./scripts/deleted-records');
 const OFFICIAL_METADATA_PATH = path.join(ROOT, 'official-metadata.json');
 const DATASETS = {
   station: {
@@ -121,6 +122,7 @@ async function deleteRecords(dataType, ids) {
   });
 
   const dataResult = await writeMetadata(dataType, kept);
+  const deletedRecordResult = appendDeletedRecords(removed, dataType);
   const remainingRefs = getRemainingImageRefs(dataType, kept);
   const removedUniqueImageFiles = Array.from(new Set(removed.flatMap(getRecordImageFiles)));
   const removedImageFiles = removedUniqueImageFiles.filter((imageFile) => !remainingRefs.has(imageFile));
@@ -142,6 +144,7 @@ async function deleteRecords(dataType, ids) {
   return {
     ...dataResult,
     deletedRecords: removed.length,
+    recordedDeletedRecords: deletedRecordResult.added,
     deletedImages,
     missingImages,
     skippedReferencedImages: removedUniqueImageFiles.length - removedImageFiles.length

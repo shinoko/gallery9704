@@ -3,6 +3,45 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/7904163238/Rcl7pjVQ3",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/Rcl7pjVQ3",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-08-07",
+    "postTimeText": "2026-08-07 22:48",
+    "shootDate": "",
+    "theme": "",
+    "text": "一般立秋要喝什么吃什么呢🤔  #立秋的仪式感#演员刘轩丞",
+    "tags": [
+      "立秋的仪式感"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-07_刘轩丞-_Rcl7pjVQ3_01.jpg",
+      "official-images/2026-08-07_刘轩丞-_Rcl7pjVQ3_02.jpg",
+      "official-images/2026-08-07_刘轩丞-_Rcl7pjVQ3_03.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260808",
+      "mblogId": "5329411194750567",
+      "mid": "5329411194750567",
+      "bid": "Rcl7pjVQ3",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/7904163238/Rc7u0C9Go",
     "platform": "weibo",
     "postUrl": "https://weibo.com/7904163238/Rc7u0C9Go",
@@ -21621,6 +21660,7 @@ const officialGalleryFacets = {
     "开工大吉",
     "开学季",
     "抗击新型肺炎我们在行动",
+    "立秋的仪式感",
     "另起一行",
     "刘轩丞",
     "刘轩丞0905生日快乐",

@@ -1,0 +1,876 @@
+{
+  "collectedAt": "2026-08-08T03:29:26.989Z",
+  "sinceDate": "2026-08-03",
+  "endDate": "2026-08-08",
+  "dataType": "station",
+  "collectionSource": "m-weibo-container-api-incremental-20260808",
+  "summary": {
+    "accounts": [
+      {
+        "name": "Mimosa_0113x0905",
+        "uid": "8393384219",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 146,
+        "pageCount": 2,
+        "scannedUnique": 21,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 1,
+        "existingCount": 0,
+        "oldCount": 20,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2025-08-21",
+            "maxDate": "2026-08-07"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-06-25",
+            "maxDate": "2026-07-06"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "CLING丨0113x0905",
+        "uid": "8338137118",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 68,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2025-10-18",
+            "maxDate": "2026-01-13"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "Pointer指针丨0113x0905",
+        "uid": "8300677615",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 49,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-05-22",
+            "maxDate": "2026-07-17"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "失控丨0113x0905",
+        "uid": "8019292043",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 210,
+        "pageCount": 1,
+        "scannedUnique": 11,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 11,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 11,
+            "minDate": "2025-08-18",
+            "maxDate": "2026-07-06"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "31Kilometres-0113x0905",
+        "uid": "8015386194",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 252,
+        "pageCount": 2,
+        "scannedUnique": 22,
+        "keptNew": 1,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 21,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 12,
+            "recent": 1,
+            "kept": 1,
+            "skipped": 0,
+            "existing": 0,
+            "old": 11,
+            "minDate": "2025-08-02",
+            "maxDate": "2026-08-04"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-05-13",
+            "maxDate": "2026-06-23"
+          }
+        ],
+        "imageCount": 2
+      },
+      {
+        "name": "RedLight丨0113x0905",
+        "uid": "8013999480",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 363,
+        "pageCount": 1,
+        "scannedUnique": 11,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 11,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 11,
+            "minDate": "2025-08-16",
+            "maxDate": "2026-07-24"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "Cosmos_0113x0905",
+        "uid": "7934854969",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 173,
+        "pageCount": 1,
+        "scannedUnique": 12,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 12,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 12,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 12,
+            "minDate": "2025-09-07",
+            "maxDate": "2026-04-27"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "FoxxBunnyLover_0113x0905",
+        "uid": "7686000968",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 477,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-04-23",
+            "maxDate": "2026-06-22"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "遇见Happiness_0113x0905",
+        "uid": "6533117651",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 63,
+        "pageCount": 2,
+        "scannedUnique": 21,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 20,
+        "excludedReasons": {
+          "not_public": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-06-28",
+            "maxDate": "2026-08-07"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-04",
+            "maxDate": "2026-07-21"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "ERhickey-0113X0905",
+        "uid": "4079488264",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 82,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 1,
+        "skippedNew": 4,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 15,
+        "excludedReasons": {
+          "repost": 1,
+          "no_weibo_image": 1,
+          "video": 1,
+          "blacklist": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 5,
+            "kept": 1,
+            "skipped": 4,
+            "existing": 0,
+            "old": 5,
+            "minDate": "2026-07-23",
+            "maxDate": "2026-08-06"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-19",
+            "maxDate": "2026-07-22"
+          }
+        ],
+        "imageCount": 1
+      },
+      {
+        "name": "ElysianSilhouette_0113x0905",
+        "uid": "4069898419",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 238,
+        "pageCount": 2,
+        "scannedUnique": 21,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 20,
+        "excludedReasons": {
+          "not_public": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2025-09-27",
+            "maxDate": "2026-08-03"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-06-28",
+            "maxDate": "2026-07-14"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "TheMidnightHush丨0113x0905",
+        "uid": "9068198836",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 28,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-02-01",
+            "maxDate": "2026-03-30"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "WingSync羽翼共振_0113x0905",
+        "uid": "7864379003",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 215,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-02-12",
+            "maxDate": "2026-04-01"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "ParallelUs丨0113x0905",
+        "uid": "8002261474",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 89,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-01-16",
+            "maxDate": "2026-03-28"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "NeverBe永不落_0113x0905",
+        "uid": "8282610059",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 136,
+        "pageCount": 1,
+        "scannedUnique": 12,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 12,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 12,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 12,
+            "minDate": "2025-10-30",
+            "maxDate": "2026-07-08"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "TheFluffTheEar丨0113x0905",
+        "uid": "8348303999",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 13,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2025-09-13",
+            "maxDate": "2025-10-28"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "Bond羁绊丨0113x0905",
+        "uid": "5892109907",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 60,
+        "pageCount": 2,
+        "scannedUnique": 21,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 20,
+        "excludedReasons": {
+          "no_weibo_image": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2025-11-09",
+            "maxDate": "2026-08-08"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-02-01",
+            "maxDate": "2026-03-28"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "Spring妙手回春丨0113x0905",
+        "uid": "9065471823",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 25,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2025-08-31",
+            "maxDate": "2026-01-13"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "KYOU_521丨0113x0905",
+        "uid": "4086481338",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 18,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2025-11-26",
+            "maxDate": "2026-03-14"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "Blush升温丨0113x0905",
+        "uid": "8484396430",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 35,
+        "pageCount": 1,
+        "scannedUnique": 12,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 12,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 12,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 12,
+            "minDate": "2026-03-07",
+            "maxDate": "2026-06-07"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "无风区丨0113x0905",
+        "uid": "4076555020",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 19,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-02-01",
+            "maxDate": "2026-04-27"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "TALE_0113x0905",
+        "uid": "6312977401",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 119,
+        "pageCount": 1,
+        "scannedUnique": 11,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 11,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 11,
+            "minDate": "2025-12-22",
+            "maxDate": "2026-07-12"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "69discount_0113x0905",
+        "uid": "8250612132",
+        "mode": "incremental",
+        "dataType": "station",
+        "total": 99,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-03-28",
+            "maxDate": "2026-07-13"
+          }
+        ],
+        "imageCount": 0
+      }
+    ],
+    "totalRecords": 2,
+    "totalImages": 3,
+    "retryCount": 1,
+    "skippedCount": 7
+  },
+  "records": [
+    {
+      "author": "31Kilometres-0113x0905",
+      "authorUrl": "https://weibo.com/u/8015386194",
+      "postUrl": "https://weibo.com/8015386194/RbSKH9Vun",
+      "postDate": "2026-08-04",
+      "postTimeText": "2026-08-04 22:35",
+      "text": "《心动片场》包裹一包裹二全部整合完毕\n请大家查看VD主页或直接绿泡泡扫码查询\n（图1包裹1 图2包裹2）\n对应包裹发货单请查看VD详情页检查\n网站专属栏目所有视频三本周六（8.8）后解锁\n（包含本次PB电子版）\n输入包裹二快递单号进入查看（一个单号可以绑定三个账号）\n感谢大家耐心等待🙏🙏\n开箱请务 ...全文",
+      "imageUrls": [
+        "https://wx3.sinaimg.cn/orj360/008KrK6ugy1ifqqt2ehapj30640640t0.jpg",
+        "https://wx3.sinaimg.cn/orj360/008KrK6ugy1ifqqt2pjiaj3064064dgf.jpg"
+      ],
+      "imageFiles": [
+        "images/2026-08-04_31Kilometres-0113x0905_RbSKH9Vun_01.jpg",
+        "images/2026-08-04_31Kilometres-0113x0905_RbSKH9Vun_02.jpg"
+      ],
+      "sourceType": "",
+      "collectionSource": "m-weibo-container-api-incremental-20260808",
+      "collectionAccountUid": "8015386194",
+      "collectionAccountName": "31Kilometres-0113x0905",
+      "mblogId": "5328320792365943",
+      "mid": "5328320792365943",
+      "bid": "RbSKH9Vun",
+      "rawPicNum": 2
+    },
+    {
+      "author": "ERhickey-0113X0905",
+      "authorUrl": "https://weibo.com/u/4079488264",
+      "postUrl": "https://weibo.com/4079488264/RbHwl5Xq9",
+      "postDate": "2026-08-03",
+      "postTimeText": "2026-08-03 18:00",
+      "text": "展丞💋ER × 展丞 | 巴黎是家，纪念PB#展丞99# \n\n光沿直线传播，直到遇见折射它的介质——\n于是31公里的风，有了名为“展丞”的归途。\n\n我们负责记录流光，时间负责见证。\n收录所有关于心动的证据，将那些关于巴黎的记忆，藏进这一本PB中……\n\nER 诚意献上巴黎｜PB珍藏辑，以此存档。\n\n⚠️注 ...全文",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/f3280d08gy1ifpjgkqd3qj21wwa4fu18.jpg"
+      ],
+      "imageFiles": [
+        "images/2026-08-03_ERhickey-0113X0905_RbHwl5Xq9_01.jpg"
+      ],
+      "sourceType": "",
+      "collectionSource": "m-weibo-container-api-incremental-20260808",
+      "collectionAccountUid": "4079488264",
+      "collectionAccountName": "ERhickey-0113X0905",
+      "mblogId": "5327889051420057",
+      "mid": "5327889051420057",
+      "bid": "RbHwl5Xq9",
+      "rawPicNum": 1
+    }
+  ],
+  "retry": [
+    {
+      "account": "Mimosa_0113x0905",
+      "uid": "8393384219",
+      "postUrl": "https://weibo.com/8393384219/RcjtIFyEb",
+      "postDate": "2026-08-07",
+      "reason": "incomplete_pic_list",
+      "rawPicNum": 12,
+      "listedImages": 9
+    }
+  ],
+  "skipped": [
+    {
+      "account": "遇见Happiness_0113x0905",
+      "uid": "6533117651",
+      "postUrl": "https://weibo.com/6533117651/RchZqreM3",
+      "postDate": "2026-08-07",
+      "reason": "not_public",
+      "text": "#氛围感男头"
+    },
+    {
+      "account": "ERhickey-0113X0905",
+      "uid": "4079488264",
+      "postUrl": "https://weibo.com/4079488264/Rc9Asguq6",
+      "postDate": "2026-08-06",
+      "reason": "repost",
+      "text": "💋嘟嘟车返图 查看图片"
+    },
+    {
+      "account": "ERhickey-0113X0905",
+      "uid": "4079488264",
+      "postUrl": "https://weibo.com/4079488264/Rc1XXD5LL",
+      "postDate": "2026-08-05",
+      "reason": "no_weibo_image",
+      "text": "收到了好多粉丝的私信，感谢大家的关心，私信里问到的wf痛楼问题，在这里统一回复一下：未授权，已提醒相关方，将换掉未授权图片。如果各位需要授权使用图片，请务必提前私信告知用途及具体图片（严禁一切商用行为）。谢谢各位 \n\n风止于此，感谢。"
+    },
+    {
+      "account": "ERhickey-0113X0905",
+      "uid": "4079488264",
+      "postUrl": "https://weibo.com/4079488264/Rc0iJmbSP",
+      "postDate": "2026-08-05",
+      "reason": "video",
+      "text": "展丞 \n🛫 + 👦+🩷💚 + 🇹🇭 = ？\n《爸爸去哪儿》跨国版，Action！\n\n本视频由ER卡卡卡的要死破电脑，独家出品\n\nสวัสดีค่ะ，ER Studio 💋\n@展轩 @刘轩丞- ERhickey-0113X0905的微博视频"
+    },
+    {
+      "account": "ERhickey-0113X0905",
+      "uid": "4079488264",
+      "postUrl": "https://weibo.com/4079488264/RbFDQoclv",
+      "postDate": "2026-08-03",
+      "reason": "blacklist",
+      "text": "展丞💋ER × 展轩 | 泰国微博之夜应援企划#向全世界安利展轩# \n\nPART2：泰兰德之约·线下手幅发放\n\n发放时间：2026年8月8日（具体时段见当日通知）\n发放地点：百丽宫场馆附近，具体地点见@ERhickey-0113X0905 实时动态\n\n发放数量：50份\n领取条件：关注#展丞#超话，关注@展轩 、@刘轩丞 ，和 ...全文"
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "uid": "4069898419",
+      "postUrl": "https://weibo.com/4069898419/RbHgp2T1B",
+      "postDate": "2026-08-03",
+      "reason": "not_public",
+      "text": "抽奖的东西会陆续发出 大家记得收货哦不然会退回"
+    },
+    {
+      "account": "Bond羁绊丨0113x0905",
+      "uid": "5892109907",
+      "postUrl": "https://weibo.com/5892109907/Rcm184LiY",
+      "postDate": "2026-08-08",
+      "reason": "no_weibo_image",
+      "text": ""
+    }
+  ]
+}

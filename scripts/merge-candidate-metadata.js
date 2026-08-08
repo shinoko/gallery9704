@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { buildData, METADATA_PATH, DATA_PATH, loadMetadata } = require('./build-static-data');
 const { applyMetadataRules, isBlacklisted } = require('./clean-metadata');
+const { deletedPostUrlSet } = require('./deleted-records');
 
 const inputPath = process.argv[2];
 const metadataArgIndex = process.argv.indexOf('--metadata');
@@ -22,6 +23,8 @@ const absoluteInputPath = path.resolve(process.cwd(), inputPath);
 const candidate = JSON.parse(fs.readFileSync(absoluteInputPath, 'utf8'));
 const metadata = fs.existsSync(metadataPath) ? loadMetadata(metadataPath) : [];
 const existingUrls = new Set(metadata.map((record) => record.postUrl).filter(Boolean));
+const inferredDataType = path.basename(metadataPath) === 'official-metadata.json' ? 'official' : 'station';
+const deletedUrls = deletedPostUrlSet(inferredDataType);
 
 function cleanTag(tag) {
   return String(tag || '')
@@ -57,6 +60,7 @@ function applyCollectionFields(record) {
 
 const incoming = (candidate.records || [])
   .filter((record) => record.postUrl && !existingUrls.has(record.postUrl))
+  .filter((record) => !deletedUrls.has(record.postUrl))
   .filter((record) => !isBlacklisted(record))
   .map(applyCollectionFields)
   .map(applyMetadataRules);
@@ -74,5 +78,6 @@ console.log(JSON.stringify({
   incomingRecords: incoming.length,
   afterRecords: merged.length,
   skippedExisting: (candidate.records || []).filter((record) => existingUrls.has(record.postUrl)).length,
+  skippedManualDeleted: (candidate.records || []).filter((record) => deletedUrls.has(record.postUrl)).length,
   buildResult
 }, null, 2));
