@@ -14,7 +14,7 @@ window.GALLERY9704_CONFIG = {
       "order": 2
     },
     {
-      "name": "泰国微博文化交流之夜",
+      "name": "泰国微博文化交流之夜·25",
       "date": "2025-08-16",
       "order": 3
     },
@@ -171,6 +171,11 @@ window.GALLERY9704_CONFIG = {
       "from": "2026-07-04",
       "to": "2026-07-12",
       "order": 33
+    },
+    {
+      "name": "泰国微博文化交流之夜·26",
+      "date": "2026-08-08",
+      "order": 34
     }
   ],
   "platforms": [
