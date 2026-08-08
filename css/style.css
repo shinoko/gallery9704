@@ -1494,6 +1494,15 @@ body[data-no-image="true"] .grid-image img {
     letter-spacing: 1px;
 }
 
+.maintenance-theme-select {
+    appearance: auto;
+    cursor: pointer;
+}
+
+.maintenance-theme-select:disabled {
+    cursor: not-allowed;
+}
+
 .weibo-text-panel {
     margin-top: var(--space-md);
     background: rgba(247, 244, 239, 0.72);

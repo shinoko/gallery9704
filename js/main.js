@@ -695,9 +695,9 @@ async function exportStaticBrowse() {
         const response = await fetch('/api/export-static', { method: 'POST' });
         const payload = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(payload.error || `导出失败：${response.status}`);
-        alert(`静态浏览版已导出：\n${payload.exportPath}`);
+        showToast(`静态浏览版已导出：${payload.exportPath}`);
     } catch (error) {
-        alert(error.message || '导出静态浏览版失败，请确认当前是通过 npm start 启动的服务端项目。');
+        showToast(error.message || '导出静态浏览版失败，请确认当前是通过 npm start 启动的服务端项目。', 'error');
     }
 }
 
@@ -1113,13 +1113,13 @@ function getMaintenanceThemeChoices(selectedTheme = '') {
 }
 
 function renderThemeOptions(selectedTheme = '') {
+    const selected = String(selectedTheme || '');
     return getMaintenanceThemeChoices(selectedTheme)
-        .map((theme) => `<option value="${escapeHtml(theme)}"></option>`)
+        .map((theme) => {
+            const isSelected = theme === selected ? ' selected' : '';
+            return `<option value="${escapeHtml(theme)}"${isSelected}>${escapeHtml(theme)}</option>`;
+        })
         .join('');
-}
-
-function toDomId(value) {
-    return String(value || '').replace(/[^a-zA-Z0-9_-]+/g, '-').slice(0, 80) || 'record';
 }
 
 function renderMaintenanceForm(series) {
@@ -1128,22 +1128,21 @@ function renderMaintenanceForm(series) {
     const sourceSeries = getActiveData().find((item) => getRecordId(item) === id) || series;
     const originalTheme = sourceSeries.theme || '';
     const currentTheme = state.pendingThemeEdits.has(id) ? state.pendingThemeEdits.get(id) : (series.theme || '');
-    const themeListId = `theme-options-${toDomId(id)}`;
     form.className = 'maintenance-form';
     form.innerHTML = `
         <div class="maintenance-grid">
             <label class="maintenance-theme">
                 <span>活动主题</span>
-                <input name="theme" class="filter-input" value="${escapeHtml(currentTheme)}" list="${themeListId}" placeholder="输入活动主题">
-                <datalist id="${themeListId}">
+                <select name="theme" class="filter-input maintenance-theme-select" data-card-theme-select>
+                    <option value=""${currentTheme ? '' : ' selected'}>未设置活动主题</option>
                     ${renderThemeOptions(currentTheme)}
-                </datalist>
+                </select>
             </label>
         </div>
     `;
 
-    form.querySelector('input[name="theme"]').addEventListener('input', (event) => {
-        const theme = event.currentTarget.value.trim();
+    form.querySelector('select[name="theme"]').addEventListener('change', (event) => {
+        const theme = event.currentTarget.value;
         if (theme === originalTheme) state.pendingThemeEdits.delete(id);
         else state.pendingThemeEdits.set(id, theme);
         updateCardThemeSaveState();
@@ -1215,6 +1214,10 @@ function updateCardThemeSaveState() {
         const id = button.closest('.series')?.dataset.id;
         button.disabled = state.savingThemeIds.has(id);
     });
+    document.querySelectorAll('[data-card-theme-select]').forEach((select) => {
+        const id = select.closest('.series')?.dataset.id;
+        select.disabled = state.savingThemeEdits || state.savingThemeIds.has(id);
+    });
 }
 
 async function saveCardTheme(series) {
@@ -1231,9 +1234,9 @@ async function saveCardTheme(series) {
         if (state.pendingThemeEdits.get(id) === theme) state.pendingThemeEdits.delete(id);
         refreshFacets();
         applyFilterAndRender();
-        alert('已保存这条微博的活动主题。');
+        showToast('已保存这条微博的活动主题。');
     } catch (error) {
-        alert(error.message || '保存活动主题失败，请确认当前是通过 npm start 启动的服务端项目。');
+        showToast(error.message || '保存活动主题失败，请确认当前是通过 npm start 启动的服务端项目。', 'error');
     } finally {
         state.savingThemeIds.delete(id);
         updateCardThemeSaveState();
@@ -1259,9 +1262,9 @@ async function saveCardThemes() {
         });
         refreshFacets();
         applyFilterAndRender();
-        alert(`已保存 ${edits.size} 条活动主题。`);
+        showToast(`已保存 ${edits.size} 条活动主题。`);
     } catch (error) {
-        alert(error.message || '保存活动主题失败，请确认当前是通过 npm start 启动的服务端项目。');
+        showToast(error.message || '保存活动主题失败，请确认当前是通过 npm start 启动的服务端项目。', 'error');
     } finally {
         state.savingThemeEdits = false;
         updateCardThemeSaveState();
@@ -1319,7 +1322,7 @@ async function deleteRecords(ids, message) {
     if (!confirmed) return;
 
     if (STATIC_EXPORT) {
-        alert('静态浏览版不支持删除源数据，请在服务端维护项目中操作。');
+        showToast('静态浏览版不支持删除源数据，请在服务端维护项目中操作。', 'error');
         return;
     }
 
@@ -1344,9 +1347,9 @@ async function deleteRecords(ids, message) {
         });
         refreshFacets();
         applyFilterAndRender();
-        alert(`已删除 ${payload.deletedRecords || ids.length} 条微博数据，删除图片 ${payload.deletedImages || 0} 个。`);
+        showToast(`已删除 ${payload.deletedRecords || ids.length} 条微博数据，删除图片 ${payload.deletedImages || 0} 个。`);
     } catch (error) {
-        alert(error.message || '删除失败，请确认当前是通过 npm start 启动的服务端项目。');
+        showToast(error.message || '删除失败，请确认当前是通过 npm start 启动的服务端项目。', 'error');
     }
 }
 
