@@ -1315,6 +1315,10 @@ body[data-static-export="true"] .sidebar-bottom {
     align-items: start;
 }
 
+.image-grid.count-4 {
+    grid-template-columns: repeat(2, calc((100% - 12px) / 3));
+}
+
 /* 特殊宽图 */
 .grid-image.span-2-rows {
     grid-row: span 2;

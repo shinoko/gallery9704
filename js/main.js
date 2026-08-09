@@ -989,7 +989,8 @@ function renderSeriesItem(series, seriesIndex) {
 
     const grid = document.createElement('div');
     const imageFiles = getSeriesImageFiles(series);
-    grid.className = `image-grid count-${Math.min(imageFiles.length, 3)}`;
+    const imageLayoutCount = imageFiles.length === 4 ? 4 : Math.min(imageFiles.length, 3);
+    grid.className = `image-grid count-${imageLayoutCount}`;
     const spans = computeSpans(imageFiles.length);
 
     imageFiles.forEach((imgSrc, imgIndex) => {
