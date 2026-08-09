@@ -113,7 +113,7 @@ npm run build:data
 
 每次做数据增量更新时，同时检查微博和小红书两个来源。
 
-微博增量按 `docs/WEIBO_COLLECTION_RULES.md` 执行：先确定本次账号范围和日期 cutoff，只导入本地没有的 `postUrl`，图片下载和合并过程记录放入 `docs/records/`。
+微博增量按 `docs/WEIBO_COLLECTION_RULES.md` 执行：先确定本次账号范围和日期 cutoff，只导入本地没有的 `postUrl`，图片下载和合并过程记录放入 `docs/records/`。如果没有指定具体日期范围，按常规增量处理：从 `index.html` footer 的 `Last updated` 日期开始扫到执行当天，并在成功执行后把 footer 更新为本次执行日期；这样下次增量会重扫上次执行当天，覆盖当天后续编辑或补图。
 
 小红书增量按 `docs/XHS_COLLECTION_RULES.md` 执行：检查展轩、刘轩丞、展轩工作室三个账号主页，从最新卡片开始向下扫描，遇到已存在于 `official-metadata.json` 的 `noteId` / `postUrl` 后停止继续向旧内容扩展；跳过视频，只导入新增图文笔记及其全部图片。导入后删除采集目录里的原始/中间图片，只保留 JSON 记录和 `official-images/xhs/` 正式图片，然后必须重新生成静态数据并审计缺图、超限、重复和生成数据一致性。
 

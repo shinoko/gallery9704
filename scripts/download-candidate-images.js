@@ -59,7 +59,15 @@ function download(url, dest) {
 async function main() {
   const candidate = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
   const results = [];
-  for (const record of candidate.records || []) {
+  const records = [
+    ...(candidate.records || []),
+    ...(candidate.replacementRecords || [])
+  ];
+  const seen = new Set();
+  for (const record of records) {
+    const key = record.postUrl || record.id || JSON.stringify(record.imageFiles || []);
+    if (seen.has(key)) continue;
+    seen.add(key);
     for (let index = 0; index < (record.imageUrls || []).length; index += 1) {
       const dest = path.join(ROOT, record.imageFiles[index]);
       const url = toThumbnailUrl(record.imageUrls[index]);

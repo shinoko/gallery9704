@@ -33,6 +33,16 @@
 - 用 `postUrl` 做增量去重；已存在的微博不重复写入 `metadata.json`。
 - 维护模式中手动删除过的数据记录在 `docs/records/manual-deleted-records.json`；后续增量采集和候选合并都必须把这些 `postUrl` 当作已排除项，不得重新下载图片或再次入库。
 
+## 日期范围
+
+常规增量采集指没有显式传入 `--since` 或 `--end` 的采集。此时脚本必须按页面 footer 的 `Last updated: YYYY/MM/DD` 作为起始日期，结束日期为执行当天，且起止日期都包含在扫描范围内。
+
+- 例如 footer 是 `Last updated: 2026/08/08`，在 `2026-08-09` 执行常规增量时，实际范围是 `2026-08-08` 到 `2026-08-09`。
+- 起始日期包含上次执行日期，是为了覆盖上次执行当天后续编辑、新增补图或延迟可见的微博。
+- 常规增量成功执行后，候选文件和进度文件都记录 `executionDate`，并把 `index.html` footer 更新为本次执行日期。
+- 如果手动传入 `--since` 或 `--end`，视为指定范围采集；脚本尊重传入范围，不自动用 footer 推断完整常规范围，也不自动推进 footer。
+- 如果用户口头指定“补 08-03 到今天”这类范围，必须转成明确参数，例如 `--since 2026-08-03 --end 2026-08-09`。
+
 ## 必须剔除
 
 微博文案命中 `DATA_CLEANING_RULES.md` 中“删除规则”任一删除词或条件时剔除。删除词列表只维护在 `DATA_CLEANING_RULES.md`，避免两份规则漂移。
@@ -43,9 +53,20 @@
 - 文案包含 `赞过的微博` 时剔除。
 - 文案包含 `仅粉丝可见`、`粉丝可见`、`关注后可见`、`作者设置`、`暂无权限`、`不可见` 时剔除。
 - 卡片是转发或引用包装时剔除。DOM 兜底信号包括：一个卡片里出现多个不同微博链接、`//@`、`转发微博`、`来自 微博抽奖平台`、嵌入 `@账号` 原微博和第二个时间戳。
+- 卡片是转发包装、且转发内嵌的原微博文案包含 `已编辑` 时，仍按转发剔除，但必须额外写入 `repostOriginalReview` 清单。采集结束后访问原微博详情，确认原微博是否已经在对应 metadata 中采集到最新 `text` 和图片列表；如未采集或与详情不一致，按详情生成 `replacementRecords`，再人工确认后更新正式数据。
 - 卡片是视频微博时剔除。优先信号是 `微博视频`、`播放视频`、`video.weibo.com/show?fid=...`，不要只用 `00:26` 这类时间格式判断视频，因为发布时间也可能是 `13:14`。
 - 没有正文媒体图片时剔除。
 - `postUrl` 命中 `docs/records/manual-deleted-records.json` 时剔除，剔除原因记为 `manual-delete`。该清单只保留微博或笔记标识、作者、日期和删除时间，不保留本地图片路径；被删图片不需要保留。
+
+## 编辑占位复查
+
+如果图文微博正文包含 `【待编辑】`、`【待替换】`、`待编辑` 或 `待替换`，不要直接把列表卡片数据当成最终数据入库：
+
+- 先把该微博写入候选 JSON 的 `editReview` 清单，跳过原因记为 `pending_edit_placeholder_review`。
+- 增量扫描结束后访问微博详情，重新读取完整正文和正文图片。
+- 如果详情正文仍包含上述占位词，保持 `still_contains_placeholder`，等待下次增量继续复查。
+- 如果详情正文不再包含占位词，且详情微博仍是公开图文、非视频、非转发、图片列表完整，则按详情生成 `replacementRecord`，并放入候选 JSON 的 `replacementRecords`。后续 `download-candidate-images.js` 会下载 `records` 与 `replacementRecords` 的图片，`merge-candidate-metadata.js` 会用 `replacementRecord.imageUrls` / `replacementRecord.imageFiles` 覆盖已存在微博，或补入尚未采集的微博。
+- 如果当前网络或浏览器缓存里没有详情证据，状态记为 `needs_detail_cache`；需要用已登录浏览器补存 `status-{mid}.json`、`status-{bid}.json` 或 `detail-{mid}-images.json` 后再跑采集脚本，不得凭列表数据猜测占位是否已改完。
 
 ## 图片识别
 

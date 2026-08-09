@@ -58,14 +58,34 @@ function applyCollectionFields(record) {
   };
 }
 
+function normalizeIncomingRecord(record) {
+  return applyMetadataRules(applyCollectionFields(record));
+}
+
 const incoming = (candidate.records || [])
   .filter((record) => record.postUrl && !existingUrls.has(record.postUrl))
   .filter((record) => !deletedUrls.has(record.postUrl))
   .filter((record) => !isBlacklisted(record))
-  .map(applyCollectionFields)
-  .map(applyMetadataRules);
+  .map(normalizeIncomingRecord);
 
-const merged = [...metadata, ...incoming];
+const replacementRecords = (candidate.replacementRecords || [])
+  .filter((record) => record.postUrl)
+  .filter((record) => !deletedUrls.has(record.postUrl))
+  .filter((record) => !isBlacklisted(record))
+  .map(normalizeIncomingRecord);
+const replacementsByPostUrl = new Map(replacementRecords.map((record) => [record.postUrl, record]));
+const replacedExistingUrls = new Set();
+const mergedExisting = metadata.map((record) => {
+  const replacement = replacementsByPostUrl.get(record.postUrl);
+  if (!replacement) return record;
+  replacedExistingUrls.add(record.postUrl);
+  return {
+    ...record,
+    ...replacement
+  };
+});
+const replacementIncoming = replacementRecords.filter((record) => !existingUrls.has(record.postUrl));
+const merged = [...mergedExisting, ...incoming, ...replacementIncoming.filter((record) => !incoming.some((item) => item.postUrl === record.postUrl))];
 fs.writeFileSync(metadataPath, `${JSON.stringify(merged, null, 2)}\n`);
 const buildResult = buildData(merged, dataPath, { dataVar, facetsVar });
 
@@ -76,6 +96,9 @@ console.log(JSON.stringify({
   facetsVar,
   beforeRecords: metadata.length,
   incomingRecords: incoming.length,
+  replacementRecords: replacementRecords.length,
+  replacedExisting: replacedExistingUrls.size,
+  replacementIncoming: replacementIncoming.length,
   afterRecords: merged.length,
   skippedExisting: (candidate.records || []).filter((record) => existingUrls.has(record.postUrl)).length,
   skippedManualDeleted: (candidate.records || []).filter((record) => deletedUrls.has(record.postUrl)).length,
