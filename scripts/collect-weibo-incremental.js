@@ -23,8 +23,22 @@ const MAX_PAGES = Number(process.argv.includes('--max-pages')
 const API_DIR = process.argv.includes('--api-dir')
   ? path.resolve(process.cwd(), process.argv[process.argv.indexOf('--api-dir') + 1])
   : '';
+const ACCOUNT_FILTER = process.argv.includes('--account')
+  ? process.argv[process.argv.indexOf('--account') + 1]
+  : '';
+const UID_FILTER = process.argv.includes('--uid')
+  ? process.argv[process.argv.indexOf('--uid') + 1]
+  : '';
+const OUTPUT_PREFIX = process.argv.includes('--output-prefix')
+  ? process.argv[process.argv.indexOf('--output-prefix') + 1]
+  : 'incremental';
+const COLLECTION_MODE = process.argv.includes('--mode')
+  ? process.argv[process.argv.indexOf('--mode') + 1]
+  : 'incremental';
 
-const ACCOUNTS = loadAppConfig().accounts.weiboCollectionAccounts || [];
+const ACCOUNTS = (loadAppConfig().accounts.weiboCollectionAccounts || [])
+  .filter((account) => !ACCOUNT_FILTER || account.name === ACCOUNT_FILTER)
+  .filter((account) => !UID_FILTER || String(account.uid) === String(UID_FILTER));
 const EDIT_PLACEHOLDER_RE = /【待编辑】|【待替换】|待编辑|待替换/;
 const EDITED_RE = /【已编辑】|已编辑/;
 
@@ -180,7 +194,7 @@ function toRecord(account, mblog) {
     imageUrls,
     imageFiles,
     sourceType: account.sourceType || '',
-    collectionSource: `m-weibo-container-api-incremental-${TODAY.replace(/-/g, '')}`,
+    collectionSource: `m-weibo-container-api-${COLLECTION_MODE}-${TODAY.replace(/-/g, '')}`,
     collectionAccountUid: account.uid,
     collectionAccountName: account.name,
     mblogId: String(mblog.idstr || mblog.id || ''),
@@ -216,12 +230,17 @@ function parseJsonFile(filePath) {
 
 function extractDetailMblog(payload) {
   if (!payload || typeof payload !== 'object') return null;
-  return payload.mblog
-    || payload.status
-    || payload.data?.mblog
-    || payload.data?.status
-    || (payload.data?.id || payload.data?.idstr || payload.data?.mid ? payload.data : null)
-    || (payload.id || payload.idstr || payload.mid ? payload : null);
+  const candidates = [
+    payload.mblog,
+    payload.status,
+    payload.data?.mblog,
+    payload.data?.status,
+    payload.data,
+    payload
+  ];
+  return candidates.find((item) => item
+    && typeof item === 'object'
+    && (item.created_at || item.text || item.user || item.pics || item.pic_num)) || null;
 }
 
 function applyDetailImages(mblog, payload) {
@@ -480,8 +499,44 @@ async function collectAccount(account, existingUrls, deletedUrls, existingIndex)
       }
       const reason = skipReason(mblog, record);
       if (reason === 'incomplete_pic_list') {
-        retry.push({ account: account.name, uid: account.uid, postUrl: record.postUrl, postDate: record.postDate, reason, rawPicNum: record.rawPicNum, listedImages: record.imageUrls.length });
-        pageStats.skipped += 1;
+        const detail = await fetchDetailMblog(mblog);
+        const detailMblog = detail.mblog || (detail.imageOnly ? applyDetailImages(mblog, detail.imageOnly) : null);
+        if (detailMblog) {
+          const detailRecord = toRecord(account, detailMblog);
+          const detailReason = skipReason(detailMblog, detailRecord);
+          if (!detailReason) {
+            records.push(detailRecord);
+            pageStats.kept += 1;
+          } else {
+            retry.push({
+              account: account.name,
+              uid: account.uid,
+              postUrl: record.postUrl,
+              postDate: record.postDate,
+              reason,
+              detailReason,
+              detailSource: detail.source,
+              rawPicNum: record.rawPicNum,
+              listedImages: record.imageUrls.length,
+              detailImages: detailRecord.imageUrls.length
+            });
+            pageStats.skipped += 1;
+          }
+        } else {
+          retry.push({
+            account: account.name,
+            uid: account.uid,
+            postUrl: record.postUrl,
+            postDate: record.postDate,
+            reason,
+            detailSource: detail.source,
+            detailError: detail.error || '',
+            rawPicNum: record.rawPicNum,
+            listedImages: record.imageUrls.length,
+            detailImages: detail.imageOnly?.imageUrls?.length || 0
+          });
+          pageStats.skipped += 1;
+        }
       } else if (reason) {
         skipped.push({ account: account.name, uid: account.uid, postUrl: record.postUrl, postDate: record.postDate, reason, text: record.text });
         pageStats.skipped += 1;
@@ -510,7 +565,7 @@ async function collectAccount(account, existingUrls, deletedUrls, existingIndex)
     summary: {
       name: account.name,
       uid: account.uid,
-      mode: 'incremental',
+      mode: COLLECTION_MODE,
       dataType: account.dataType,
       total,
       pageCount: scannedPages.length,
@@ -538,6 +593,9 @@ async function collectAccount(account, existingUrls, deletedUrls, existingIndex)
 
 async function main() {
   fs.mkdirSync(RECORDS_DIR, { recursive: true });
+  if (!ACCOUNTS.length) {
+    throw new Error(`No matching accounts for --account ${ACCOUNT_FILTER || '*'} --uid ${UID_FILTER || '*'}`);
+  }
   const existing = {
     station: loadExisting('station'),
     official: loadExisting('official')
@@ -568,10 +626,12 @@ async function main() {
   }
 
   const stamp = TODAY.replace(/-/g, '');
+  const stationToken = OUTPUT_PREFIX === 'incremental' ? 'incremental' : `${OUTPUT_PREFIX}-candidate`;
+  const officialToken = OUTPUT_PREFIX === 'incremental' ? 'incremental' : `${OUTPUT_PREFIX}-candidate`;
   const files = {
-    station: path.join(RECORDS_DIR, `weibo-station-incremental-candidate-${stamp}.json`),
-    official: path.join(RECORDS_DIR, `official-weibo-incremental-candidate-${stamp}.json`),
-    progress: path.join(RECORDS_DIR, `weibo-incremental-progress-${stamp}.json`)
+    station: path.join(RECORDS_DIR, `weibo-station-${stationToken}-${stamp}.json`),
+    official: path.join(RECORDS_DIR, `official-weibo-${officialToken}-${stamp}.json`),
+    progress: path.join(RECORDS_DIR, `weibo-${OUTPUT_PREFIX}-progress-${stamp}.json`)
   };
 
   for (const dataType of ['station', 'official']) {
@@ -583,7 +643,7 @@ async function main() {
       endDate: END_DATE,
       regularIncremental: REGULAR_INCREMENTAL,
       dataType,
-      collectionSource: `m-weibo-container-api-incremental-${stamp}`,
+      collectionSource: `m-weibo-container-api-${COLLECTION_MODE}-${stamp}`,
       summary: {
         accounts: output.accounts,
         totalRecords: output.records.length,

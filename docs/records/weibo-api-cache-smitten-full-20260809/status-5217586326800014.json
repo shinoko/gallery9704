@@ -1,0 +1,5 @@
+{
+  "ok": 0,
+  "parseError": "SyntaxError: Unexpected token '不', \"不合法的请求\" is not valid JSON",
+  "raw": "不合法的请求"
+}

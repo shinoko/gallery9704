@@ -1,0 +1,295 @@
+{
+  "collectedAt": "2026-08-09T04:22:33.253Z",
+  "sinceDate": "2020-01-01",
+  "endDate": "2026-08-09",
+  "regularIncremental": false,
+  "executionDate": "2026-08-09",
+  "footerUpdated": false,
+  "accounts": [
+    {
+      "name": "Smitten_0113x0905",
+      "uid": "4055848271",
+      "mode": "full",
+      "dataType": "station",
+      "total": 221,
+      "pageCount": 23,
+      "scannedUnique": 166,
+      "keptNew": 85,
+      "skippedNew": 81,
+      "retryNew": 0,
+      "editReviewCount": 0,
+      "editReviewResolved": 0,
+      "repostOriginalReviewCount": 0,
+      "repostOriginalNeedsUpdate": 0,
+      "existingCount": 0,
+      "oldCount": 0,
+      "excludedReasons": {
+        "no_weibo_image": 20,
+        "repost": 12,
+        "video": 37,
+        "blacklist": 12
+      },
+      "scannedPages": [
+        {
+          "page": 1,
+          "mblogs": 9,
+          "recent": 9,
+          "kept": 4,
+          "skipped": 5,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-04",
+          "maxDate": "2026-08-09"
+        },
+        {
+          "page": 2,
+          "mblogs": 9,
+          "recent": 9,
+          "kept": 1,
+          "skipped": 8,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2026-05-22",
+          "maxDate": "2026-06-27"
+        },
+        {
+          "page": 3,
+          "mblogs": 5,
+          "recent": 5,
+          "kept": 3,
+          "skipped": 2,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2026-04-14",
+          "maxDate": "2026-05-20"
+        },
+        {
+          "page": 4,
+          "mblogs": 10,
+          "recent": 10,
+          "kept": 4,
+          "skipped": 6,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2026-03-28",
+          "maxDate": "2026-04-01"
+        },
+        {
+          "page": 5,
+          "mblogs": 7,
+          "recent": 7,
+          "kept": 3,
+          "skipped": 4,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2026-02-16",
+          "maxDate": "2026-03-22"
+        },
+        {
+          "page": 6,
+          "mblogs": 8,
+          "recent": 8,
+          "kept": 5,
+          "skipped": 3,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2026-01-19",
+          "maxDate": "2026-02-14"
+        },
+        {
+          "page": 7,
+          "mblogs": 8,
+          "recent": 8,
+          "kept": 4,
+          "skipped": 4,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2026-01-12",
+          "maxDate": "2026-01-15"
+        },
+        {
+          "page": 8,
+          "mblogs": 8,
+          "recent": 8,
+          "kept": 3,
+          "skipped": 5,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2026-01-10",
+          "maxDate": "2026-01-12"
+        },
+        {
+          "page": 9,
+          "mblogs": 4,
+          "recent": 4,
+          "kept": 4,
+          "skipped": 0,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-12-26",
+          "maxDate": "2026-01-05"
+        },
+        {
+          "page": 10,
+          "mblogs": 3,
+          "recent": 3,
+          "kept": 1,
+          "skipped": 2,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-12-22",
+          "maxDate": "2025-12-24"
+        },
+        {
+          "page": 11,
+          "mblogs": 4,
+          "recent": 4,
+          "kept": 3,
+          "skipped": 1,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-12-10",
+          "maxDate": "2025-12-20"
+        },
+        {
+          "page": 12,
+          "mblogs": 4,
+          "recent": 4,
+          "kept": 2,
+          "skipped": 2,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-11-24",
+          "maxDate": "2025-11-29"
+        },
+        {
+          "page": 13,
+          "mblogs": 8,
+          "recent": 8,
+          "kept": 3,
+          "skipped": 5,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-11-17",
+          "maxDate": "2025-11-23"
+        },
+        {
+          "page": 14,
+          "mblogs": 7,
+          "recent": 7,
+          "kept": 2,
+          "skipped": 5,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-11-14",
+          "maxDate": "2025-11-16"
+        },
+        {
+          "page": 15,
+          "mblogs": 10,
+          "recent": 10,
+          "kept": 6,
+          "skipped": 4,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-11-03",
+          "maxDate": "2025-11-14"
+        },
+        {
+          "page": 16,
+          "mblogs": 7,
+          "recent": 7,
+          "kept": 4,
+          "skipped": 3,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-31",
+          "maxDate": "2025-11-02"
+        },
+        {
+          "page": 17,
+          "mblogs": 9,
+          "recent": 9,
+          "kept": 7,
+          "skipped": 2,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-26",
+          "maxDate": "2025-10-31"
+        },
+        {
+          "page": 18,
+          "mblogs": 9,
+          "recent": 9,
+          "kept": 7,
+          "skipped": 2,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-08",
+          "maxDate": "2025-10-25"
+        },
+        {
+          "page": 19,
+          "mblogs": 9,
+          "recent": 9,
+          "kept": 1,
+          "skipped": 8,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-06",
+          "maxDate": "2025-10-08"
+        },
+        {
+          "page": 20,
+          "mblogs": 9,
+          "recent": 9,
+          "kept": 1,
+          "skipped": 8,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-05",
+          "maxDate": "2025-10-06"
+        },
+        {
+          "page": 21,
+          "mblogs": 8,
+          "recent": 8,
+          "kept": 7,
+          "skipped": 1,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-03",
+          "maxDate": "2025-10-05"
+        },
+        {
+          "page": 22,
+          "mblogs": 10,
+          "recent": 10,
+          "kept": 10,
+          "skipped": 0,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-02",
+          "maxDate": "2025-10-03"
+        },
+        {
+          "page": 23,
+          "mblogs": 1,
+          "recent": 1,
+          "kept": 0,
+          "skipped": 1,
+          "existing": 0,
+          "old": 0,
+          "minDate": "2025-10-02",
+          "maxDate": "2025-10-02"
+        }
+      ],
+      "imageCount": 357
+    }
+  ],
+  "files": {
+    "station": "/Users/orisun/Downloads/gallery9704/docs/records/weibo-station-smitten-full-candidate-20260809.json",
+    "official": "/Users/orisun/Downloads/gallery9704/docs/records/official-weibo-smitten-full-candidate-20260809.json",
+    "progress": "/Users/orisun/Downloads/gallery9704/docs/records/weibo-smitten-full-progress-20260809.json"
+  }
+}
