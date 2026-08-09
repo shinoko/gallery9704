@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-08-09T16:50:25.580Z",
+  "datasets": {
+    "station": {
+      "records": 1273,
+      "imageRefs": 6562,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedFile": "js/data.js",
+      "generatedPostUrlMarkers": 1273,
+      "missing": [],
+      "zeroBytes": [],
+      "hasExpectedDataVar": true
+    },
+    "official": {
+      "records": 550,
+      "imageRefs": 2507,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedFile": "js/official-data.js",
+      "generatedPostUrlMarkers": 550,
+      "missing": [],
+      "zeroBytes": [],
+      "hasExpectedDataVar": true
+    }
+  },
+  "downloadReports": [
+    {
+      "file": "docs/records/weibo-station-incremental-image-download-report-20260810.json",
+      "total": 12,
+      "ok": 12,
+      "failed": 0
+    },
+    {
+      "file": "docs/records/official-weibo-incremental-image-download-report-20260810.json",
+      "total": 9,
+      "ok": 9,
+      "failed": 0
+    }
+  ]
+}

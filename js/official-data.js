@@ -3,6 +3,49 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/5080250314/RcAimAai3",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/5080250314/RcAimAai3",
+    "webUrl": "",
+    "author": "展轩",
+    "authorUrl": "https://weibo.com/u/5080250314",
+    "postDate": "2026-08-09",
+    "postTimeText": "2026-08-09 13:26",
+    "shootDate": "",
+    "theme": "",
+    "text": "再次站上舞台\n虽忐忑 但心跳还是远比想象中的更热烈\n感谢#微博文化交流之夜泰国站# 颁发的肯定\n一样的 每一份荣誉 有我也有你们 与你们共享\n有大家的支持和陪伴  从未孤单\n热爱如初 那就 继续一起并肩走吧",
+    "tags": [
+      "微博文化交流之夜泰国站"
+    ],
+    "targetPeople": [],
+    "imageFiles": [
+      "official-images/2026-08-09_展轩_RcAimAai3_01.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_02.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_03.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_04.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_05.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_06.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_07.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_08.jpg",
+      "official-images/2026-08-09_展轩_RcAimAai3_09.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "5080250314",
+      "accountName": "展轩",
+      "collectionSource": "m-weibo-container-api-incremental-20260810",
+      "mblogId": "5329994588619367",
+      "mid": "5329994588619367",
+      "bid": "RcAimAai3",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/8019492674/Rct5e95Hy",
     "platform": "weibo",
     "postUrl": "https://weibo.com/8019492674/Rct5e95Hy",
