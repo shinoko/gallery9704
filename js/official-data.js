@@ -3,6 +3,142 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/8019492674/Rct5e95Hy",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/Rct5e95Hy",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-08-08",
+    "postTimeText": "2026-08-08 19:05",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩  \n是月光染过的清辉，也是繁星落肩的私语。今夜，将盛典的聚光灯化作流光。@展轩 以用心的舞台，叙述如初的热望。#微博文化交流之夜泰国站#\n\n妆发：英子\n摄影：木菟【warmstudio】\n造型：@09_Space_official",
+    "tags": [
+      "微博文化交流之夜泰国站"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_01.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_02.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_03.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_04.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_05.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_06.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_07.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_08.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_09.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_10.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_11.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_12.jpg",
+      "official-images/2026-08-08_展轩工作室_Rct5e95Hy_13.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-detail-page-retry-20260809",
+      "mblogId": "5329717362166872",
+      "mid": "5329717362166872",
+      "bid": "Rct5e95Hy",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/8019492674/Rcsiweq9K",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/Rcsiweq9K",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-08-08",
+    "postTimeText": "2026-08-08 17:05",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩  \n光影交叠，从容居中。不多言语，早已将氛围拉满。深邃轮廓里的沉静，比任何表达都更有力量。 #微博文化交流之夜泰国站# 稍后见@展轩  \n\n妆发：英子\n摄影：木菟【warmstudio】\n造型：@09_Space_official",
+    "tags": [
+      "微博文化交流之夜泰国站"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_01.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_02.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_03.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_04.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_05.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_06.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_07.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_08.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_09.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_10.jpg",
+      "official-images/2026-08-08_展轩工作室_Rcsiweq9K_11.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-detail-page-retry-20260809",
+      "mblogId": "5329687163437140",
+      "mid": "5329687163437140",
+      "bid": "Rcsiweq9K",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/8019492674/RcquTu39x",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/RcquTu39x",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-08-08",
+    "postTimeText": "2026-08-08 12:30",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩  熟悉的话筒紧握，舞台光又再次起落。反复打磨每一处节奏与情绪，把珍视的心意融入彩排时刻。静待今晚赴约，与@展轩 温柔相见🎤",
+    "tags": [],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-08_展轩工作室_RcquTu39x_01.jpg",
+      "official-images/2026-08-08_展轩工作室_RcquTu39x_02.jpg",
+      "official-images/2026-08-08_展轩工作室_RcquTu39x_03.jpg",
+      "official-images/2026-08-08_展轩工作室_RcquTu39x_04.jpg",
+      "official-images/2026-08-08_展轩工作室_RcquTu39x_05.jpg",
+      "official-images/2026-08-08_展轩工作室_RcquTu39x_06.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260809",
+      "mblogId": "5329617957161963",
+      "mid": "5329617957161963",
+      "bid": "RcquTu39x",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/7904163238/Rcl7pjVQ3",
     "platform": "weibo",
     "postUrl": "https://weibo.com/7904163238/Rcl7pjVQ3",
@@ -21751,6 +21887,7 @@ const officialGalleryFacets = {
     "微博十年",
     "微博文化交流之夜",
     "微博文化交流之夜盛典",
+    "微博文化交流之夜泰国站",
     "微博文化交流之夜新加坡站",
     "微博抓马",
     "文荣奖",

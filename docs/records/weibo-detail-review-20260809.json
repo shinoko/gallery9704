@@ -1,0 +1,59 @@
+{
+  "collectedAt": "2026-08-09T03:54:44.808Z",
+  "items": [
+    {
+      "kind": "editReview",
+      "account": "Mimosa_0113x0905",
+      "postUrl": "https://weibo.com/8393384219/RcuJNlDCJ",
+      "mid": "5329780955157205",
+      "bid": "RcuJNlDCJ",
+      "imageCount": 10,
+      "stillPlaceholder": true
+    },
+    {
+      "kind": "editReview",
+      "account": "Mimosa_0113x0905",
+      "postUrl": "https://weibo.com/8393384219/RcsWSqPkw",
+      "mid": "5329712186393844",
+      "bid": "RcsWSqPkw",
+      "imageCount": 10,
+      "stillPlaceholder": true
+    },
+    {
+      "kind": "editReview",
+      "account": "遇见Happiness_0113x0905",
+      "postUrl": "https://weibo.com/6533117651/RcuDdvw1m",
+      "mid": "5329776877511260",
+      "bid": "RcuDdvw1m",
+      "imageCount": 5,
+      "stillPlaceholder": true
+    },
+    {
+      "kind": "editReview",
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/Rcv6A7HLy",
+      "mid": "5329795081836536",
+      "bid": "Rcv6A7HLy",
+      "imageCount": 3,
+      "stillPlaceholder": true
+    },
+    {
+      "kind": "officialRetry",
+      "account": "展轩工作室",
+      "postUrl": "https://weibo.com/8019492674/Rct5e95Hy",
+      "mid": "5329717362166872",
+      "bid": "Rct5e95Hy",
+      "imageCount": 14,
+      "stillPlaceholder": false
+    },
+    {
+      "kind": "officialRetry",
+      "account": "展轩工作室",
+      "postUrl": "https://weibo.com/8019492674/Rcsiweq9K",
+      "mid": "5329687163437140",
+      "bid": "Rcsiweq9K",
+      "imageCount": 12,
+      "stillPlaceholder": false
+    }
+  ]
+}

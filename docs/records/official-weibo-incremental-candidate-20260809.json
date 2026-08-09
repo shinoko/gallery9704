@@ -1,0 +1,254 @@
+{
+  "collectedAt": "2026-08-09T03:51:40.726Z",
+  "executionDate": "2026-08-09",
+  "sinceDate": "2026-08-08",
+  "endDate": "2026-08-09",
+  "regularIncremental": true,
+  "dataType": "official",
+  "collectionSource": "m-weibo-container-api-incremental-20260809",
+  "summary": {
+    "accounts": [
+      {
+        "name": "展轩",
+        "uid": "5080250314",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 295,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 19,
+        "excludedReasons": {
+          "no_weibo_image": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 0,
+            "old": 9,
+            "minDate": "2026-07-06",
+            "maxDate": "2026-08-09"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-06-01",
+            "maxDate": "2026-06-30"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 180,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-08",
+            "maxDate": "2026-08-07"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 262,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 1,
+        "skippedNew": 1,
+        "retryNew": 2,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 16,
+        "excludedReasons": {
+          "video": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 4,
+            "kept": 1,
+            "skipped": 3,
+            "existing": 0,
+            "old": 6,
+            "minDate": "2026-07-22",
+            "maxDate": "2026-08-08"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-03",
+            "maxDate": "2026-07-22"
+          }
+        ],
+        "imageCount": 6
+      },
+      {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 235,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-28",
+            "maxDate": "2026-08-07"
+          }
+        ],
+        "imageCount": 0
+      }
+    ],
+    "totalRecords": 1,
+    "totalImages": 6,
+    "retryCount": 2,
+    "skippedCount": 2,
+    "editReviewCount": 0,
+    "editReviewResolved": 0,
+    "repostOriginalReviewCount": 0,
+    "repostOriginalNeedsUpdate": 0
+  },
+  "records": [
+    {
+      "author": "展轩工作室",
+      "authorUrl": "https://weibo.com/u/8019492674",
+      "postUrl": "https://weibo.com/8019492674/RcquTu39x",
+      "postDate": "2026-08-08",
+      "postTimeText": "2026-08-08 12:30",
+      "text": "展轩  熟悉的话筒紧握，舞台光又再次起落。反复打磨每一处节奏与情绪，把珍视的心意融入彩排时刻。静待今晚赴约，与@展轩 温柔相见🎤",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/008KIYo2ly1ifwb4u5eb6j31aa1xg4qp.jpg",
+        "https://wx1.sinaimg.cn/orj360/008KIYo2ly1ifwb4vgccaj324w1fcnpd.jpg",
+        "https://wx4.sinaimg.cn/orj360/008KIYo2ly1ifwb4stbm1j31eu2454qp.jpg",
+        "https://wx1.sinaimg.cn/orj360/008KIYo2ly1ifwb4xd57cj31fc24wu0x.jpg",
+        "https://wx4.sinaimg.cn/orj360/008KIYo2ly1ifwb506nzkj31fc24wb29.jpg",
+        "https://wx3.sinaimg.cn/orj360/008KIYo2ly1ifwb4yvxnzj31fc24wx6p.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-08-08_展轩工作室_RcquTu39x_01.jpg",
+        "official-images/2026-08-08_展轩工作室_RcquTu39x_02.jpg",
+        "official-images/2026-08-08_展轩工作室_RcquTu39x_03.jpg",
+        "official-images/2026-08-08_展轩工作室_RcquTu39x_04.jpg",
+        "official-images/2026-08-08_展轩工作室_RcquTu39x_05.jpg",
+        "official-images/2026-08-08_展轩工作室_RcquTu39x_06.jpg"
+      ],
+      "sourceType": "official-studio",
+      "collectionSource": "m-weibo-container-api-incremental-20260809",
+      "collectionAccountUid": "8019492674",
+      "collectionAccountName": "展轩工作室",
+      "mblogId": "5329617957161963",
+      "mid": "5329617957161963",
+      "bid": "RcquTu39x",
+      "rawPicNum": 6
+    }
+  ],
+  "retry": [
+    {
+      "account": "展轩工作室",
+      "uid": "8019492674",
+      "postUrl": "https://weibo.com/8019492674/Rct5e95Hy",
+      "postDate": "2026-08-08",
+      "reason": "incomplete_pic_list",
+      "rawPicNum": 13,
+      "listedImages": 9
+    },
+    {
+      "account": "展轩工作室",
+      "uid": "8019492674",
+      "postUrl": "https://weibo.com/8019492674/Rcsiweq9K",
+      "postDate": "2026-08-08",
+      "reason": "incomplete_pic_list",
+      "rawPicNum": 11,
+      "listedImages": 9
+    }
+  ],
+  "editReview": [],
+  "repostOriginalReview": [],
+  "replacementRecords": [],
+  "skipped": [
+    {
+      "account": "展轩",
+      "uid": "5080250314",
+      "postUrl": "https://weibo.com/5080250314/Rcv10EvZm",
+      "postDate": "2026-08-09",
+      "reason": "no_weibo_image",
+      "text": ""
+    },
+    {
+      "account": "展轩工作室",
+      "uid": "8019492674",
+      "postUrl": "https://weibo.com/8019492674/RctPTjSCF",
+      "postDate": "2026-08-08",
+      "reason": "video",
+      "text": "展轩  \n\n目之所及，行在当下。镜头拉近，是眼眸里的笃定；镜头拉远，步履间更见风华。动静相宜，捕捉一份从容的矜贵@展轩   #微博文化交流之夜泰国站# 展轩工作室的微博视频"
+    }
+  ]
+}
