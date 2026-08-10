@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-08-10T14:44:58.880Z",
+  "items": [
+    {
+      "account": "Mimosa_0113x0905",
+      "postUrl": "https://weibo.com/8393384219/RcsWSqPkw",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "ready_to_collect",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329712186393844.txt",
+      "imageCount": 16
+    },
+    {
+      "account": "Mimosa_0113x0905",
+      "postUrl": "https://weibo.com/8393384219/RcuJNlDCJ",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "ready_to_collect",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329780955157205.txt",
+      "imageCount": 9
+    },
+    {
+      "account": "遇见Happiness_0113x0905",
+      "postUrl": "https://weibo.com/6533117651/RcuDdvw1m",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "still_contains_placeholder",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329776877511260.txt"
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/Rcv6A7HLy",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "still_contains_placeholder",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329795081836536.txt"
+    }
+  ]
+}

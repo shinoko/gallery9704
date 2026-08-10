@@ -1,0 +1,170 @@
+{
+  "collectedAt": "2026-08-10T14:44:58.880Z",
+  "executionDate": "2026-08-10",
+  "sinceDate": "2026-08-08",
+  "endDate": "2026-08-10",
+  "regularIncremental": false,
+  "dataType": "station",
+  "collectionSource": "m-weibo-detail-edit-review-20260810-rerun",
+  "summary": {
+    "accounts": [
+      {
+        "name": "Mimosa_0113x0905",
+        "uid": "8393384219",
+        "mode": "edit-review",
+        "dataType": "station",
+        "keptNew": 2,
+        "imageCount": 25
+      }
+    ],
+    "totalRecords": 2,
+    "totalImages": 25,
+    "retryCount": 0,
+    "skippedCount": 2,
+    "editReviewCount": 4,
+    "editReviewResolved": 2
+  },
+  "records": [
+    {
+      "author": "Mimosa_0113x0905",
+      "authorUrl": "https://weibo.com/u/8393384219",
+      "postUrl": "https://weibo.com/8393384219/RcsWSqPkw",
+      "postDate": "2026-08-08",
+      "postTimeText": "8-8 18:44",
+      "text": "展丞\n𝟎𝟖.𝟎𝟖.𝟐𝟎𝟐𝟔 微博交流之夜🇹🇭 - 红毯\n\n@展轩\n\n#微博文化交流之夜泰国站#\n#微博文化交流之夜泰国站红毯#\n#微博文化交流之夜#",
+      "imageUrls": [
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifwn0w6kt2j32fg3n6e82.jpg",
+        "https://wx4.sinaimg.cn/orj360/009a1MEPgy1ifwn105st3j32jz3tznpf.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifwn12ionwj32do3kh1l0.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifwn156pa8j32ee3lmu0z.jpg",
+        "https://wx3.sinaimg.cn/orj360/009a1MEPgy1ifwn18amrvj33344moe85.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifwn1b0cwdj32bs3hnkjn.jpg",
+        "https://wx3.sinaimg.cn/orj360/009a1MEPgy1ifxybznkhjj31sm2owx6p.jpg",
+        "https://wx1.sinaimg.cn/orj360/009a1MEPgy1ifwn1ekjzqj33344mox6t.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifxyc393gyj32q5437e84.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifxyc5ky6pj32o940dqv7.jpg",
+        "https://wx4.sinaimg.cn/orj360/009a1MEPgy1ifwn1j0otbj33014i1qv8.jpg",
+        "https://wx1.sinaimg.cn/orj360/009a1MEPgy1ifxyc7sgg7j32e83lcb2d.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifxycalcy7j32kq3v3x6r.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifxycijqbfj33344mob2e.jpg",
+        "https://wx3.sinaimg.cn/orj360/009a1MEPgy1ifxyclfgm3j32653984qs.jpg",
+        "https://wx3.sinaimg.cn/orj360/009a1MEPgy1ifxyco2pzxj32ht3qqx6t.jpg"
+      ],
+      "imageFiles": [
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_01.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_02.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_03.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_04.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_05.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_06.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_07.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_08.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_09.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_10.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_11.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_12.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_13.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_14.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_15.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcsWSqPkw_16.jpg"
+      ],
+      "sourceType": "",
+      "collectionSource": "m-weibo-detail-edit-review-20260810-rerun",
+      "collectionAccountUid": "8393384219",
+      "collectionAccountName": "Mimosa_0113x0905",
+      "mblogId": "5329712186393844",
+      "mid": "5329712186393844",
+      "bid": "RcsWSqPkw",
+      "rawPicNum": 16
+    },
+    {
+      "author": "Mimosa_0113x0905",
+      "authorUrl": "https://weibo.com/u/8393384219",
+      "postUrl": "https://weibo.com/8393384219/RcuJNlDCJ",
+      "postDate": "2026-08-08",
+      "postTimeText": "8-8 23:17",
+      "text": "展丞\n𝟎𝟖.𝟎𝟖.𝟐𝟎𝟐𝟔 微博交流之夜🇹🇭 - 內场\n\n@展轩\n\n#微博文化交流之夜泰国站#\n#微博文化交流之夜#",
+      "imageUrls": [
+        "https://wx4.sinaimg.cn/orj360/009a1MEPgy1ifwvfoc3c6j328i3cqnpf.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifwvg0irvfj31om2ix1kz.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifwvfr2jghj329o3ei7wl.jpg",
+        "https://wx2.sinaimg.cn/orj360/009a1MEPgy1ifwxd5mm43j323t35pe81.jpg",
+        "https://wx1.sinaimg.cn/orj360/009a1MEPly1ify2jtg4d6j30u01kx423.jpg",
+        "https://wx3.sinaimg.cn/orj360/009a1MEPgy1ifwxd3yysyj328w3dcx6r.jpg",
+        "https://wx1.sinaimg.cn/orj360/009a1MEPgy1ifwvfyc7ouj32243367wk.jpg",
+        "https://wx3.sinaimg.cn/orj360/009a1MEPgy1ifwxd9peu3j33344moqv9.jpg",
+        "https://wx1.sinaimg.cn/orj360/009a1MEPgy1ifwvftrxcwj32m83xchdy.jpg"
+      ],
+      "imageFiles": [
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_01.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_02.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_03.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_04.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_05.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_06.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_07.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_08.jpg",
+        "images/2026-08-08_Mimosa_0113x0905_RcuJNlDCJ_09.jpg"
+      ],
+      "sourceType": "",
+      "collectionSource": "m-weibo-detail-edit-review-20260810-rerun",
+      "collectionAccountUid": "8393384219",
+      "collectionAccountName": "Mimosa_0113x0905",
+      "mblogId": "5329780955157205",
+      "mid": "5329780955157205",
+      "bid": "RcuJNlDCJ",
+      "rawPicNum": 9
+    }
+  ],
+  "retry": [],
+  "editReview": [
+    {
+      "account": "Mimosa_0113x0905",
+      "postUrl": "https://weibo.com/8393384219/RcsWSqPkw",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "ready_to_collect",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329712186393844.txt",
+      "imageCount": 16
+    },
+    {
+      "account": "Mimosa_0113x0905",
+      "postUrl": "https://weibo.com/8393384219/RcuJNlDCJ",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "ready_to_collect",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329780955157205.txt",
+      "imageCount": 9
+    },
+    {
+      "account": "遇见Happiness_0113x0905",
+      "postUrl": "https://weibo.com/6533117651/RcuDdvw1m",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "still_contains_placeholder",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329776877511260.txt"
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/Rcv6A7HLy",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "still_contains_placeholder",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329795081836536.txt"
+    }
+  ],
+  "repostOriginalReview": [],
+  "replacementRecords": [],
+  "skipped": [
+    {
+      "account": "遇见Happiness_0113x0905",
+      "postUrl": "https://weibo.com/6533117651/RcuDdvw1m",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "still_contains_placeholder",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329776877511260.txt"
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/Rcv6A7HLy",
+      "previousStatus": "needs_detail_cache",
+      "currentStatus": "still_contains_placeholder",
+      "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329795081836536.txt"
+    }
+  ]
+}

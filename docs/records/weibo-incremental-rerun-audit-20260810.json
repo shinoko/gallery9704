@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-08-10T14:45:59.244Z",
+  "datasets": {
+    "station": {
+      "records": 1277,
+      "imageRefs": 6591,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedPostUrlMarkers": 1277,
+      "hasExpectedDataVar": true,
+      "missing": [],
+      "zeroBytes": []
+    },
+    "official": {
+      "records": 550,
+      "imageRefs": 2507,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedPostUrlMarkers": 550,
+      "hasExpectedDataVar": true,
+      "missing": [],
+      "zeroBytes": []
+    }
+  },
+  "downloadReports": [
+    {
+      "file": "docs/records/weibo-station-incremental-rerun-image-download-report-20260810.json",
+      "total": 4,
+      "ok": 4,
+      "failed": 0
+    },
+    {
+      "file": "docs/records/weibo-station-edit-review-resolved-image-download-report-20260810.json",
+      "total": 25,
+      "ok": 25,
+      "failed": 0
+    }
+  ],
+  "editReview": {
+    "checked": 4,
+    "resolved": 2,
+    "stillPending": 2,
+    "items": [
+      {
+        "account": "Mimosa_0113x0905",
+        "postUrl": "https://weibo.com/8393384219/RcsWSqPkw",
+        "previousStatus": "needs_detail_cache",
+        "currentStatus": "ready_to_collect",
+        "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329712186393844.txt",
+        "imageCount": 16
+      },
+      {
+        "account": "Mimosa_0113x0905",
+        "postUrl": "https://weibo.com/8393384219/RcuJNlDCJ",
+        "previousStatus": "needs_detail_cache",
+        "currentStatus": "ready_to_collect",
+        "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329780955157205.txt",
+        "imageCount": 9
+      },
+      {
+        "account": "遇见Happiness_0113x0905",
+        "postUrl": "https://weibo.com/6533117651/RcuDdvw1m",
+        "previousStatus": "needs_detail_cache",
+        "currentStatus": "still_contains_placeholder",
+        "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329776877511260.txt"
+      },
+      {
+        "account": "ElysianSilhouette_0113x0905",
+        "postUrl": "https://weibo.com/4069898419/Rcv6A7HLy",
+        "previousStatus": "needs_detail_cache",
+        "currentStatus": "still_contains_placeholder",
+        "detailSource": "docs/records/weibo-api-cache-20260810-rerun/detail-page-5329795081836536.txt"
+      }
+    ]
+  }
+}

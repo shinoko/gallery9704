@@ -1,0 +1,159 @@
+{
+  "collectedAt": "2026-08-10T14:43:13.283Z",
+  "executionDate": "2026-08-10",
+  "sinceDate": "2026-08-10",
+  "endDate": "2026-08-10",
+  "regularIncremental": true,
+  "dataType": "official",
+  "collectionSource": "m-weibo-container-api-incremental-20260810",
+  "summary": {
+    "accounts": [
+      {
+        "name": "展轩",
+        "uid": "5080250314",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 297,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-11",
+            "maxDate": "2026-08-09"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 180,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-08",
+            "maxDate": "2026-08-07"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 262,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-22",
+            "maxDate": "2026-08-09"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 235,
+        "pageCount": 1,
+        "scannedUnique": 10,
+        "keptNew": 0,
+        "skippedNew": 0,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 10,
+        "excludedReasons": {},
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-28",
+            "maxDate": "2026-08-07"
+          }
+        ],
+        "imageCount": 0
+      }
+    ],
+    "totalRecords": 0,
+    "totalImages": 0,
+    "retryCount": 0,
+    "skippedCount": 0,
+    "editReviewCount": 0,
+    "editReviewResolved": 0,
+    "repostOriginalReviewCount": 0,
+    "repostOriginalNeedsUpdate": 0
+  },
+  "records": [],
+  "retry": [],
+  "editReview": [],
+  "repostOriginalReview": [],
+  "replacementRecords": [],
+  "skipped": []
+}
