@@ -1,0 +1,311 @@
+{
+  "checkedAt": "2026-08-12T14:56:54.577Z",
+  "summary": {
+    "metadataPlaceholderCount": 31,
+    "queuedUnimportedCount": 2,
+    "totalChecked": 33,
+    "resolved": 0,
+    "stillPending": 33,
+    "errors": 0
+  },
+  "items": [
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/R46G1p2Wl",
+      "postDate": "2026-06-14",
+      "reviewUrl": "https://m.weibo.cn/status/R46G1p2Wl",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 3
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QyZl1iqrN",
+      "postDate": "2026-04-02",
+      "reviewUrl": "https://m.weibo.cn/status/QyZl1iqrN",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QyYjRu1rw",
+      "postDate": "2026-04-02",
+      "reviewUrl": "https://m.weibo.cn/status/QyYjRu1rw",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QyNRAoOI0",
+      "postDate": "2026-04-01",
+      "reviewUrl": "https://m.weibo.cn/status/QyNRAoOI0",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 4
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Qybm31D0J",
+      "postDate": "2026-03-28",
+      "reviewUrl": "https://m.weibo.cn/status/Qybm31D0J",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 3
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Qy2Lhu0pe",
+      "postDate": "2026-03-27",
+      "reviewUrl": "https://m.weibo.cn/status/Qy2Lhu0pe",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 2
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuzhAfgX5",
+      "postDate": "2026-03-04",
+      "reviewUrl": "https://m.weibo.cn/status/QuzhAfgX5",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuYw4aOav",
+      "postDate": "2026-03-07",
+      "reviewUrl": "https://m.weibo.cn/status/QuYw4aOav",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 3
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QurGpnwp5",
+      "postDate": "2026-03-04",
+      "reviewUrl": "https://m.weibo.cn/status/QurGpnwp5",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 3
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuQV7qI4w",
+      "postDate": "2026-03-06",
+      "reviewUrl": "https://m.weibo.cn/status/QuQV7qI4w",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuNFKnlBZ",
+      "postDate": "2026-03-06",
+      "reviewUrl": "https://m.weibo.cn/status/QuNFKnlBZ",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 2
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuLgqAbCJ",
+      "postDate": "2026-03-06",
+      "reviewUrl": "https://m.weibo.cn/status/QuLgqAbCJ",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuLEW0ydX",
+      "postDate": "2026-03-06",
+      "reviewUrl": "https://m.weibo.cn/status/QuLEW0ydX",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuKr3m0PJ",
+      "postDate": "2026-03-06",
+      "reviewUrl": "https://m.weibo.cn/status/QuKr3m0PJ",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QuKiLg0sK",
+      "postDate": "2026-03-06",
+      "reviewUrl": "https://m.weibo.cn/status/QuKiLg0sK",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 2
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Quiy14VyW",
+      "postDate": "2026-03-03",
+      "reviewUrl": "https://m.weibo.cn/status/Quiy14VyW",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QpOiPAY9v",
+      "postDate": "2026-02-01",
+      "reviewUrl": "https://m.weibo.cn/status/QpOiPAY9v",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 3
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QoaXI5MyQ",
+      "postDate": "2026-01-21",
+      "reviewUrl": "https://m.weibo.cn/status/QoaXI5MyQ",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QmEe16LjM",
+      "postDate": "2026-01-11",
+      "reviewUrl": "https://m.weibo.cn/status/QmEe16LjM",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Qh0aMsfXB",
+      "postDate": "2025-12-05",
+      "reviewUrl": "https://m.weibo.cn/status/Qh0aMsfXB",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 2
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QgZXTolPy",
+      "postDate": "2025-12-05",
+      "reviewUrl": "https://m.weibo.cn/status/QgZXTolPy",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 5
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/QgZufcnGi",
+      "postDate": "2025-12-05",
+      "reviewUrl": "https://m.weibo.cn/status/QgZufcnGi",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Qg7ltCJkV",
+      "postDate": "2025-11-29",
+      "reviewUrl": "https://m.weibo.cn/status/Qg7ltCJkV",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Qg6gCfRdf",
+      "postDate": "2025-11-29",
+      "reviewUrl": "https://m.weibo.cn/status/Qg6gCfRdf",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Qe8Wm8gje",
+      "postDate": "2025-11-16",
+      "reviewUrl": "https://m.weibo.cn/status/Qe8Wm8gje",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Qe8acoCM2",
+      "postDate": "2025-11-16",
+      "reviewUrl": "https://m.weibo.cn/status/Qe8acoCM2",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "FoxxBunnyLover_0113x0905",
+      "postUrl": "https://weibo.com/7686000968/Q8cH4dptZ",
+      "postDate": "2025-10-08",
+      "reviewUrl": "https://m.weibo.cn/status/Q8cH4dptZ",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 4
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/R6YJpdKJN",
+      "postDate": "2026-07-03",
+      "reviewUrl": "https://m.weibo.cn/status/R6YJpdKJN",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 2
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/R6b6nDZ4T",
+      "postDate": "2026-06-28",
+      "reviewUrl": "https://m.weibo.cn/status/R6b6nDZ4T",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 6
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/QybNFlQFr",
+      "postDate": "2026-03-28",
+      "reviewUrl": "https://m.weibo.cn/status/QybNFlQFr",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 3
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/QuLx9bxqb",
+      "postDate": "2026-03-06",
+      "reviewUrl": "https://m.weibo.cn/status/QuLx9bxqb",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": false,
+      "detailImageCount": 1
+    },
+    {
+      "account": "遇见Happiness_0113x0905",
+      "postUrl": "https://weibo.com/6533117651/RcuDdvw1m",
+      "postDate": "2026-08-08",
+      "reviewUrl": "https://m.weibo.cn/detail/5329776877511260",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 4
+    },
+    {
+      "account": "ElysianSilhouette_0113x0905",
+      "postUrl": "https://weibo.com/4069898419/Rcv6A7HLy",
+      "postDate": "2026-08-08",
+      "reviewUrl": "https://m.weibo.cn/detail/5329795081836536",
+      "currentStatus": "still_contains_placeholder",
+      "hasEditedMarker": true,
+      "detailImageCount": 4
+    }
+  ]
+}
+
