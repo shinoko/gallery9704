@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-08-19T13:45:59.612Z",
+  "range": {
+    "since": "2026-08-12",
+    "end": "2026-08-19"
+  },
+  "datasets": {
+    "station": {
+      "records": 1266,
+      "imageRefs": 6588,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedPostUrlMarkers": 1266
+    },
+    "official": {
+      "records": 551,
+      "imageRefs": 2514,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedPostUrlMarkers": 551
+    }
+  },
+  "weibo": {
+    "candidateRecords": 5,
+    "candidateImages": 19,
+    "downloadTotal": 19,
+    "downloadOk": 19,
+    "downloadFailed": 0,
+    "orphanCandidateAssets": 0
+  },
+  "xiaohongshu": {
+    "records": 101,
+    "oversizedCount": 0
+  },
+  "editReview": {
+    "metadataPlaceholderCount": 31,
+    "queuedUnimportedCount": 2,
+    "totalChecked": 33,
+    "resolved": 0,
+    "stillPending": 33,
+    "errors": 0
+  },
+  "manualDeleted": {
+    "records": 22,
+    "containsImageFiles": false
+  }
+}

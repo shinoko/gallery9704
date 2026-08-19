@@ -3,6 +3,47 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/5080250314/Re6uw0BB1",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/5080250314/Re6uw0BB1",
+    "webUrl": "",
+    "author": "展轩",
+    "authorUrl": "https://weibo.com/u/5080250314",
+    "postDate": "2026-08-19",
+    "postTimeText": "2026-08-19 13:14",
+    "shootDate": "",
+    "theme": "",
+    "text": "七七七七 七夕快乐 #心动来电#",
+    "tags": [
+      "心动来电"
+    ],
+    "targetPeople": [],
+    "imageFiles": [
+      "official-images/2026-08-19_展轩_Re6uw0BB1_01.jpg",
+      "official-images/2026-08-19_展轩_Re6uw0BB1_02.jpg",
+      "official-images/2026-08-19_展轩_Re6uw0BB1_03.jpg",
+      "official-images/2026-08-19_展轩_Re6uw0BB1_04.jpg",
+      "official-images/2026-08-19_展轩_Re6uw0BB1_05.jpg",
+      "official-images/2026-08-19_展轩_Re6uw0BB1_06.jpg",
+      "official-images/2026-08-19_展轩_Re6uw0BB1_07.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "5080250314",
+      "accountName": "展轩",
+      "collectionSource": "m-weibo-container-api-incremental-20260819",
+      "mblogId": "5333615480144523",
+      "mid": "5333615480144523",
+      "bid": "Re6uw0BB1",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/5080250314/RcAimAai3",
     "platform": "weibo",
     "postUrl": "https://weibo.com/5080250314/RcAimAai3",
@@ -21953,6 +21994,7 @@ const officialGalleryFacets = {
     "小瓶子涂鸦大赛",
     "小雪",
     "写真",
+    "心动来电",
     "心里空落落的",
     "新年快乐",
     "新人演员",
