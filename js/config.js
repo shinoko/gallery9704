@@ -176,6 +176,11 @@ window.GALLERY9704_CONFIG = {
       "name": "泰国微博文化交流之夜·26",
       "date": "2026-08-08",
       "order": 34
+    },
+    {
+      "name": "丞长没烦恼曼谷见面会",
+      "date": "2026-08-29",
+      "order": 35
     }
   ],
   "platforms": [
