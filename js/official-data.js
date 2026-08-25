@@ -3,6 +3,78 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/7904163238/ReAFXpNRA",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/ReAFXpNRA",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-08-22",
+    "postTimeText": "2026-08-22 18:05",
+    "shootDate": "",
+    "theme": "",
+    "text": "致不常见面的朋友：\n\n很快，我们就要在曼谷见面了，很感谢你们愿意奔赴这一场异国之约，把期待留给即将到来的舞台。\n\n我知道很多人为了这次见面，做了许许多多的准备，跨越距离来到这里，这份心意我一直都记在心里。\n\n也想悄悄和你们说，奔赴见面的同时，请一定照顾好自己，出行注意安全，安顿好生活。 ...全文",
+    "tags": [],
+    "targetPeople": [],
+    "imageFiles": [
+      "official-images/2026-08-22_刘轩丞-_ReAFXpNRA_01.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260825",
+      "mblogId": "5334775776149878",
+      "mid": "5334775776149878",
+      "bid": "ReAFXpNRA",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/4098005675/ReqpOnkT9",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/ReqpOnkT9",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-08-21",
+    "postTimeText": "2026-08-21 15:58",
+    "shootDate": "",
+    "theme": "",
+    "text": "演员刘轩丞 专注一下，期待一下……#刘轩丞日常#",
+    "tags": [
+      "刘轩丞日常"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-21_刘轩丞工作室_ReqpOnkT9_01.jpg",
+      "official-images/2026-08-21_刘轩丞工作室_ReqpOnkT9_02.jpg",
+      "official-images/2026-08-21_刘轩丞工作室_ReqpOnkT9_03.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260825",
+      "mblogId": "5334381365561843",
+      "mid": "5334381365561843",
+      "bid": "ReqpOnkT9",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/5080250314/Re6uw0BB1",
     "platform": "weibo",
     "postUrl": "https://weibo.com/5080250314/Re6uw0BB1",
@@ -21898,6 +21970,7 @@ const officialGalleryFacets = {
     "刘轩丞精彩OK九月刊封面",
     "刘轩丞片场路透",
     "刘轩丞人民交通十月刊封面",
+    "刘轩丞日常",
     "刘轩丞少年感水光上线",
     "刘轩丞生日快乐",
     "刘轩丞首张ep非你不可",
