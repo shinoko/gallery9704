@@ -43069,5 +43069,41 @@
     ],
     "shootDate": "2026-07-08",
     "theme": "巴黎高定周·26夏"
+  },
+  {
+    "author": "FacingDanger",
+    "authorUrl": "https://weibo.com/u/7808883350",
+    "postUrl": "https://weibo.com/7808883350/RfvxPjqin",
+    "postDate": "2026-08-28",
+    "postTimeText": "2026-08-28 18:51",
+    "text": "",
+    "imageUrls": [
+      "https://wx4.sinaimg.cn/orj360/008wthhsgy1igjqp31girj323u35sb2b.jpg",
+      "https://wx3.sinaimg.cn/orj360/008wthhsgy1igjqoems62j323u35sb29.jpg",
+      "https://wx2.sinaimg.cn/orj360/008wthhsgy1igjqpamzzzj31jf2b61ky.jpg",
+      "https://wx3.sinaimg.cn/orj360/008wthhsgy1igjqokhsk3j323u35s4qp.jpg",
+      "https://wx1.sinaimg.cn/orj360/008wthhsgy1igjqpktmrdj31ia29fe82.jpg",
+      "https://wx4.sinaimg.cn/orj360/008wthhsgy1igjqosogtzj323u35s7wi.jpg"
+    ],
+    "imageFiles": [
+      "images/2026-08-28_FacingDanger_RfvxPjqin_01.jpg",
+      "images/2026-08-28_FacingDanger_RfvxPjqin_02.jpg",
+      "images/2026-08-28_FacingDanger_RfvxPjqin_03.jpg",
+      "images/2026-08-28_FacingDanger_RfvxPjqin_04.jpg",
+      "images/2026-08-28_FacingDanger_RfvxPjqin_05.jpg",
+      "images/2026-08-28_FacingDanger_RfvxPjqin_06.jpg"
+    ],
+    "sourceType": "",
+    "collectionSource": "m-weibo-container-api-incremental-20260828",
+    "collectionAccountUid": "7808883350",
+    "collectionAccountName": "FacingDanger",
+    "mblogId": "5336961814629315",
+    "mid": "5336961814629315",
+    "bid": "RfvxPjqin",
+    "rawPicNum": 6,
+    "tags": [],
+    "targetPeople": [],
+    "shootDate": "",
+    "theme": ""
   }
 ]

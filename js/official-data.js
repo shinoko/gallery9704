@@ -3,6 +3,238 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/4098005675/Rfx1UulkP",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/Rfx1UulkP",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-08-28",
+    "postTimeText": "2026-08-28 22:38",
+    "shootDate": "",
+    "theme": "",
+    "text": "演员刘轩丞 现场实况转播📹 @刘轩丞- 全力以赴的彩排时刻✨",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-28_刘轩丞工作室_Rfx1UulkP_01.jpg",
+      "official-images/2026-08-28_刘轩丞工作室_Rfx1UulkP_02.jpg",
+      "official-images/2026-08-28_刘轩丞工作室_Rfx1UulkP_03.jpg",
+      "official-images/2026-08-28_刘轩丞工作室_Rfx1UulkP_04.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260828",
+      "mblogId": "5337018907231855",
+      "mid": "5337018907231855",
+      "bid": "Rfx1UulkP",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/8019492674/Rfs4hCgGc",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/Rfs4hCgGc",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-08-28",
+    "postTimeText": "2026-08-28 10:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩 · #展轩新歌VIBE#\n\n炽色漫溢，释放内在张力。\n内敛褪去，炙热正在肆意铺开。\n@展轩   《VIBE》信号已就位\n\n▶  音源8/31  00:00\n▶  MV  9/02  00:00",
+    "tags": [
+      "展轩新歌VIBE"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-28_展轩工作室_Rfs4hCgGc_01.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260828",
+      "mblogId": "5336828179120584",
+      "mid": "5336828179120584",
+      "bid": "Rfs4hCgGc",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://www.xiaohongshu.com/explore/6a90eb7a000000001f001ca3",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6a90eb7a000000001f001ca3",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/6635cc5c0000000003032d2d",
+    "postDate": "2026-08-28",
+    "postTimeText": "13小时前 北京",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩《VIBE》·主视觉海报\n炽色漫溢，释放内在张力。褪去内敛，@展轩 VIBE信号已就位。\n▶ 音源 8/31 00:00\n▶ MV 9/02 00:00\n#展轩 #展轩VIBE #夏日进行时 #有音乐真好",
+    "tags": [
+      "展轩",
+      "展轩VIBE",
+      "夏日进行时",
+      "有音乐真好"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/xhs/zhanxuan-studio/6a90eb7a000000001f001ca3/01.jpg"
+    ],
+    "source": {
+      "type": "xhs-studio",
+      "accountUid": "",
+      "accountName": "展轩工作室",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6a90eb7a000000001f001ca3"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/8019492674/RfiDN4aj1",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/RfiDN4aj1",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-08-27",
+    "postTimeText": "2026-08-27 10:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩 · #展轩新歌VIBE#  \n\n静至听见，溢出声色。 \n平行空间，情绪共生，动静皆是VIBE。@展轩 \n\n▶  音源8/31  00:00 \n▶  MV  9/02  00:00",
+    "tags": [
+      "展轩新歌VIBE"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-27_展轩工作室_RfiDN4aj1_01.jpg",
+      "official-images/2026-08-27_展轩工作室_RfiDN4aj1_02.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260828",
+      "mblogId": "5336465790992931",
+      "mid": "5336465790992931",
+      "bid": "RfiDN4aj1",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/4098005675/RfbRanRoR",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/RfbRanRoR",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-08-26",
+    "postTimeText": "2026-08-26 16:44",
+    "shootDate": "",
+    "theme": "",
+    "text": "演员刘轩丞 @刘轩丞- 蓄力ing……\n\n#刘轩丞练习室碎片#",
+    "tags": [
+      "刘轩丞练习室碎片"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-26_刘轩丞工作室_RfbRanRoR_01.jpg",
+      "official-images/2026-08-26_刘轩丞工作室_RfbRanRoR_02.jpg",
+      "official-images/2026-08-26_刘轩丞工作室_RfbRanRoR_03.jpg",
+      "official-images/2026-08-26_刘轩丞工作室_RfbRanRoR_04.jpg",
+      "official-images/2026-08-26_刘轩丞工作室_RfbRanRoR_05.jpg",
+      "official-images/2026-08-26_刘轩丞工作室_RfbRanRoR_06.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260828",
+      "mblogId": "5336205005686817",
+      "mid": "5336205005686817",
+      "bid": "RfbRanRoR",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/8019492674/Rf9cY6sjO",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/Rf9cY6sjO",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-08-26",
+    "postTimeText": "2026-08-26 10:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩  ·  #展轩新歌VIBE# \n\n掌握主动权的转盘即将启动，你，要靠近吗？\nWe already vibing\n@展轩  《VIBE》 \n\n▶  🎧音源 8/31  00:00\n▶   🎬MV  9/02  00:00",
+    "tags": [
+      "展轩新歌VIBE"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-26_展轩工作室_Rf9cY6sjO_01.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260828",
+      "mblogId": "5336103201538828",
+      "mid": "5336103201538828",
+      "bid": "Rf9cY6sjO",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/7904163238/ReAFXpNRA",
     "platform": "weibo",
     "postUrl": "https://weibo.com/7904163238/ReAFXpNRA",
@@ -21968,6 +22200,7 @@ const officialGalleryFacets = {
     "刘轩丞高定封面大片",
     "刘轩丞会继续在公益这条路一直走下去",
     "刘轩丞精彩OK九月刊封面",
+    "刘轩丞练习室碎片",
     "刘轩丞片场路透",
     "刘轩丞人民交通十月刊封面",
     "刘轩丞日常",
@@ -22061,6 +22294,7 @@ const officialGalleryFacets = {
     "我同意加入咪豆音乐节",
     "喜人奇妙夜",
     "系列剧不一样的她",
+    "夏日进行时",
     "夏日青春派对",
     "先喂手机吃一口",
     "小红书影像激励计划",
@@ -22096,6 +22330,7 @@ const officialGalleryFacets = {
     "影视",
     "优时颜",
     "优时颜新生代言人展轩",
+    "有音乐真好",
     "与刘轩丞一起做公益",
     "元宵节",
     "愿温柔月光照亮你的远方",
@@ -22123,9 +22358,11 @@ const officialGalleryFacets = {
     "展轩新歌晚风",
     "展轩新歌预告",
     "展轩新歌Hmm",
+    "展轩新歌VIBE",
     "展轩阅世改版创刊封面",
     "展轩周日下午3点见",
     "展轩ELLEMEN新青年首封封面",
+    "展轩VIBE",
     "盏盏新年",
     "照片里的青春",
     "致敬中国军人",
