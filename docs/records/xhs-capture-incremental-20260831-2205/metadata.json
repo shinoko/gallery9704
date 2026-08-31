@@ -1,0 +1,272 @@
+{
+  "capturedAt": "2026-08-31T14:27:55.043Z",
+  "source": "xiaohongshu web logged-in browser session",
+  "scope": "three accounts, latest-to-first-existing incremental scan; video notes skipped; all images per image note; thumbnails <=100000 bytes",
+  "accounts": [
+    {
+      "account": {
+        "key": "liu-xuancheng",
+        "name": "刘轩丞",
+        "profileId": "5bacf038bd54a600014be87c",
+        "profileUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c"
+      },
+      "scannedCards": 3,
+      "notes": [
+        {
+          "accountKey": "liu-xuancheng",
+          "accountName": "刘轩丞",
+          "noteIndex": 1,
+          "noteId": "6a9554d200000000080129ae",
+          "title": "还有一组～",
+          "cardText": "还有一组～",
+          "noteUrl": "https://www.xiaohongshu.com/explore/6a9554d200000000080129ae",
+          "webUrl": "https://www.xiaohongshu.com/explore/6a9554d200000000080129ae",
+          "publishTextRaw": "编辑于 3小时前 北京",
+          "publishTimeText": "编辑于 3小时前",
+          "publishDateNormalized": "2026-08-31",
+          "publishDatePrecision": "relative_same_day_approx",
+          "ipLocation": "北京",
+          "publishTimeReference": "capturedAt=2026-08-31 Asia/Shanghai",
+          "text": "还有一组～\n#夏姿陈SHIATZYCHEN #一分钟拍照灵感",
+          "tags": [
+            "夏姿陈SHIATZYCHEN",
+            "一分钟拍照灵感"
+          ],
+          "imageCount": 4,
+          "expectedImageCountText": "4",
+          "isVideo": false,
+          "sourceImageUrls": [],
+          "sourceImageMeta": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g3k8324hgqpfr741g4b6kh0o3hq3sqq69ji0"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g3k8324hgqpfr740g4b6kh0o3hq3st5j6k8o"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g3k8324hgqpfr74004b6kh0o3hq3s09crnf8"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g3k8324hgqpfr74104b6kh0o3hq3sjeojsa8"
+            }
+          ],
+          "images": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g3k8324hgqpfr741g4b6kh0o3hq3sqq69ji0",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a9554d200000000080129ae/01.webp",
+              "thumbnailBytes": 93464,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "ffc2d33b955d989cf76e8542a1c7455410544ecd8274303c3d1c20adaceaf417",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g3k8324hgqpfr740g4b6kh0o3hq3st5j6k8o",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a9554d200000000080129ae/02.jpg",
+              "thumbnailBytes": 94373,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "c67291fd750f3095948018a45adba931eabd33731ea0a20b197b377193af1150",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g3k8324hgqpfr74004b6kh0o3hq3s09crnf8",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a9554d200000000080129ae/03.webp",
+              "thumbnailBytes": 74688,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "99c99b56e80e390cf1da5c044ba559a6296dc89dd05ba4c184dd2ea2dabaad00",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g3k8324hgqpfr74104b6kh0o3hq3sjeojsa8",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a9554d200000000080129ae/04.webp",
+              "thumbnailBytes": 88132,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "c28e367789e5d4813fa5eba068d6ba39d3a1596c7931f6cb6e7b64937e560fa0",
+              "sizeRule": "<=100000 bytes"
+            }
+          ]
+        },
+        {
+          "accountKey": "liu-xuancheng",
+          "accountName": "刘轩丞",
+          "noteIndex": 2,
+          "noteId": "6a92ec11000000001f01d07f",
+          "title": "解锁新妆造😉",
+          "cardText": "解锁新妆造😉",
+          "noteUrl": "https://www.xiaohongshu.com/explore/6a92ec11000000001f01d07f",
+          "webUrl": "https://www.xiaohongshu.com/explore/6a92ec11000000001f01d07f",
+          "publishTextRaw": "1天前 上海",
+          "publishTimeText": "1天前",
+          "publishDateNormalized": "2026-08-30",
+          "publishDatePrecision": "relative_day_approx",
+          "ipLocation": "上海",
+          "publishTimeReference": "capturedAt=2026-08-31 Asia/Shanghai",
+          "text": "解锁新妆造😉\n#oots #刘轩丞丞长没烦恼",
+          "tags": [
+            "oots",
+            "刘轩丞丞长没烦恼"
+          ],
+          "imageCount": 10,
+          "expectedImageCountText": "10",
+          "isVideo": false,
+          "sourceImageUrls": [],
+          "sourceImageMeta": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g2sg324f5euoogs4g4b6kh0o3hq3sinq6b0g"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g2sg324f5euoogs004b6kh0o3hq3s12tuj78"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g2sg324f5euoogs0g4b6kh0o3hq3smcu5748"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g2sg324f5euoogs104b6kh0o3hq3surt2svg"
+            },
+            {
+              "imageIndex": 5,
+              "stableKey": "1040g2sg324f5euoogs1g4b6kh0o3hq3sdks4s08"
+            },
+            {
+              "imageIndex": 6,
+              "stableKey": "1040g2sg324f5euoogs204b6kh0o3hq3sr3vucgo"
+            },
+            {
+              "imageIndex": 7,
+              "stableKey": "1040g2sg324f5euoogs2g4b6kh0o3hq3s2c8c2ho"
+            },
+            {
+              "imageIndex": 8,
+              "stableKey": "1040g2sg324f5euoogs304b6kh0o3hq3s71dg6rg"
+            },
+            {
+              "imageIndex": 9,
+              "stableKey": "1040g2sg324f5euoogs3g4b6kh0o3hq3su4oi0bo"
+            },
+            {
+              "imageIndex": 10,
+              "stableKey": "1040g2sg324f5euoogs404b6kh0o3hq3s0q885rg"
+            }
+          ],
+          "images": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g2sg324f5euoogs4g4b6kh0o3hq3sinq6b0g",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/01.jpg",
+              "thumbnailBytes": 94719,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "4eb55112e7eff6e25813ae92173412735f597bc9a943ae28bd0cfe6a98accb4f",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g2sg324f5euoogs004b6kh0o3hq3s12tuj78",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/02.jpg",
+              "thumbnailBytes": 95733,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "c64b965f2d942e6c73308635141cc271b5c58567396420ef03e9bf2a680465a7",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g2sg324f5euoogs0g4b6kh0o3hq3smcu5748",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/03.jpg",
+              "thumbnailBytes": 75527,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "b409886882d4ae5084b66cf88d8bb942beb73db7bac1f5c9044f7125abcf0e14",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g2sg324f5euoogs104b6kh0o3hq3surt2svg",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/04.jpg",
+              "thumbnailBytes": 88625,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "b87cd35986c3fabd71184236aadfb20e438cf01153de3d2da38e32b648d29090",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 5,
+              "stableKey": "1040g2sg324f5euoogs1g4b6kh0o3hq3sdks4s08",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/05.webp",
+              "thumbnailBytes": 73280,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "fbadcb6422e70e78687a4c2b732fa49c303b019d4e93f61bae50e42a2f9d7226",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 6,
+              "stableKey": "1040g2sg324f5euoogs204b6kh0o3hq3sr3vucgo",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/06.webp",
+              "thumbnailBytes": 81752,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "7c8f21e88c69656f83f1da67f123835d2fd6c29abb4731f9499fa320a1640f20",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 7,
+              "stableKey": "1040g2sg324f5euoogs2g4b6kh0o3hq3s2c8c2ho",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/07.jpg",
+              "thumbnailBytes": 87724,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "7a7d6fc6f936141cbaa9be64eca0cda6ac14d92e8b6f0ccefe0b333cafca06a8",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 8,
+              "stableKey": "1040g2sg324f5euoogs304b6kh0o3hq3s71dg6rg",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/08.jpg",
+              "thumbnailBytes": 88645,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "7f4ac3f1b95e27dec8ec04e7dd746395f42acd32ee677d1ebbc59f064f9ad6f4",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 9,
+              "stableKey": "1040g2sg324f5euoogs3g4b6kh0o3hq3su4oi0bo",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/09.jpg",
+              "thumbnailBytes": 29119,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "64c320b976b31db8a2ba41eb8f9b1c31ee9577ee56f30a41bf1384308766468b",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 10,
+              "stableKey": "1040g2sg324f5euoogs404b6kh0o3hq3s0q885rg",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260831-2205/images/liu-xuancheng/6a92ec11000000001f01d07f/10.jpg",
+              "thumbnailBytes": 99713,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "cd04e954913cf67c196025152608383d4ae2e4ed09c5e0c008b869aa832fafd0",
+              "sizeRule": "<=100000 bytes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

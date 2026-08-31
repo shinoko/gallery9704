@@ -3,6 +3,258 @@
 
 const officialGalleryData = [
   {
+    "id": "https://www.xiaohongshu.com/explore/6a9554d200000000080129ae",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6a9554d200000000080129ae",
+    "webUrl": "",
+    "author": "刘轩丞",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c",
+    "postDate": "2026-08-31",
+    "postTimeText": "编辑于 3小时前 北京",
+    "shootDate": "",
+    "theme": "",
+    "text": "还有一组～\n#夏姿陈SHIATZYCHEN #一分钟拍照灵感",
+    "tags": [
+      "夏姿陈SHIATZYCHEN",
+      "一分钟拍照灵感"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/xhs/liu-xuancheng/6a9554d200000000080129ae/01.webp",
+      "official-images/xhs/liu-xuancheng/6a9554d200000000080129ae/02.jpg",
+      "official-images/xhs/liu-xuancheng/6a9554d200000000080129ae/03.webp",
+      "official-images/xhs/liu-xuancheng/6a9554d200000000080129ae/04.webp"
+    ],
+    "source": {
+      "type": "xhs-person",
+      "accountUid": "",
+      "accountName": "刘轩丞",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6a9554d200000000080129ae"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/8019492674/RfKVc1mG3",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/RfKVc1mG3",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-08-30",
+    "postTimeText": "2026-08-30 10:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩 · #展轩新歌VIBE#  \n \n歌词先行📥，故事就位 \n字字落痕，一起窥见律动起伏的弧线 \n@展轩   《VIBE》歌词海报 \n\n▶ 音源 8/31  00:00 \n▶  MV  9/02  00:00",
+    "tags": [
+      "展轩新歌VIBE"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-30_展轩工作室_RfKVc1mG3_01.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260831",
+      "mblogId": "5337552900325503",
+      "mid": "5337552900325503",
+      "bid": "RfKVc1mG3",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://www.xiaohongshu.com/explore/6a92ec11000000001f01d07f",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6a92ec11000000001f01d07f",
+    "webUrl": "",
+    "author": "刘轩丞",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c",
+    "postDate": "2026-08-30",
+    "postTimeText": "1天前 上海",
+    "shootDate": "",
+    "theme": "",
+    "text": "解锁新妆造😉\n#oots #刘轩丞丞长没烦恼",
+    "tags": [
+      "oots",
+      "刘轩丞丞长没烦恼"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/01.jpg",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/02.jpg",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/03.jpg",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/04.jpg",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/05.webp",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/06.webp",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/07.jpg",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/08.jpg",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/09.jpg",
+      "official-images/xhs/liu-xuancheng/6a92ec11000000001f01d07f/10.jpg"
+    ],
+    "source": {
+      "type": "xhs-person",
+      "accountUid": "",
+      "accountName": "刘轩丞",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6a92ec11000000001f01d07f"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/7904163238/RfGlUf2JV",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/RfGlUf2JV",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-08-29",
+    "postTimeText": "2026-08-29 22:22",
+    "shootDate": "2026-08-29",
+    "theme": "丞长没烦恼曼谷见面会",
+    "text": "收拾好状态，终于和大家见面了，希望今天短暂的相遇，能让大家都不再有烦恼。\n\n落地这座温热的城市，站在舞台上看见大家满目星光，喊出我名字的瞬间，我心里是真的真的很感动。隔着人海与灯火，看着奔赴而来的你们，我真切感受到，所有奔赴与热爱，从来都是双向的奔赴。谢谢你们愿意奔赴异国，把最热烈的掌声、最纯粹的偏爱，悉数赠予我，这是非常沉甸甸的喜欢。\n\n今天在曼谷的每一分、每一秒，我都会好好珍藏，这些都会成为我记忆里最珍贵的限定碎片。是你们，让我的每一次远行都有意义。那……下一场山海，让我们继续双向奔赴。\n\n回程的路上也请大家注意安全，记得报备哦～\n演员刘轩丞#刘轩丞丞长没烦恼#",
+    "tags": [
+      "刘轩丞丞长没烦恼"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_01.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_02.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_03.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_04.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_05.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_06.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_07.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_08.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_09.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_10.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_11.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_12.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfGlUf2JV_13.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260831",
+      "mblogId": "5337377263585455",
+      "mid": "5337377263585455",
+      "bid": "RfGlUf2JV",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/4098005675/RfEswlhja",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/RfEswlhja",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-08-29",
+    "postTimeText": "2026-08-29 17:33",
+    "shootDate": "2026-08-29",
+    "theme": "丞长没烦恼曼谷见面会",
+    "text": "演员刘轩丞 跨越山海，@刘轩丞- 与大家赴曼谷之约\n\n刺绣西装勾勒氛围感，望向窗外是奔赴舞台的期待。#刘轩丞丞长没烦恼# 此刻进行中……",
+    "tags": [
+      "刘轩丞丞长没烦恼"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-29_刘轩丞工作室_RfEswlhja_01.jpg",
+      "official-images/2026-08-29_刘轩丞工作室_RfEswlhja_02.jpg",
+      "official-images/2026-08-29_刘轩丞工作室_RfEswlhja_03.jpg",
+      "official-images/2026-08-29_刘轩丞工作室_RfEswlhja_04.jpg",
+      "official-images/2026-08-29_刘轩丞工作室_RfEswlhja_05.jpg",
+      "official-images/2026-08-29_刘轩丞工作室_RfEswlhja_06.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260831",
+      "mblogId": "5337304485071424",
+      "mid": "5337304485071424",
+      "bid": "RfEswlhja",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/7904163238/RfDS112jv",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/RfDS112jv",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-08-29",
+    "postTimeText": "2026-08-29 16:03",
+    "shootDate": "",
+    "theme": "",
+    "text": "来了！演员刘轩丞",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-08-29_刘轩丞-_RfDS112jv_01.jpg",
+      "official-images/2026-08-29_刘轩丞-_RfDS112jv_02.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260831",
+      "mblogId": "5337281850247225",
+      "mid": "5337281850247225",
+      "bid": "RfDS112jv",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/4098005675/Rfx1UulkP",
     "platform": "weibo",
     "postUrl": "https://weibo.com/4098005675/Rfx1UulkP",
@@ -22094,6 +22346,7 @@ const officialGalleryFacets = {
     "澳门WIEA国际娱乐盛典",
     "巴黎高定周·26夏",
     "巴黎时装周·25秋",
+    "丞长没烦恼曼谷见面会",
     "代言人影响力盛典红毯",
     "赣州Z纪元巅峰音乐节",
     "何日君再来",
@@ -22193,6 +22446,7 @@ const officialGalleryFacets = {
     "刘轩丞巴黎时装周",
     "刘轩丞巴黎时装周封面",
     "刘轩丞参加尼龙创作者之夜",
+    "刘轩丞丞长没烦恼",
     "刘轩丞穿超季系列看秀",
     "刘轩丞打卡一下巴黎铁塔",
     "刘轩丞非你不可上线",
@@ -22296,6 +22550,7 @@ const officialGalleryFacets = {
     "系列剧不一样的她",
     "夏日进行时",
     "夏日青春派对",
+    "夏姿陈SHIATZYCHEN",
     "先喂手机吃一口",
     "小红书影像激励计划",
     "小瓶子涂鸦大赛",
@@ -22318,6 +22573,7 @@ const officialGalleryFacets = {
     "扬州非遗",
     "扬州市仪征市文旅推荐官展轩",
     "夜空总有最大密度的蓝色",
+    "一分钟拍照灵感",
     "一起吃顿年夜饭",
     "一起过五一",
     "一起开启幸运2026",
@@ -22385,6 +22641,7 @@ const officialGalleryFacets = {
     "okcs",
     "okcs分级修护发膜",
     "okcs青春护发代言人",
+    "oots",
     "QQ音乐超级巅峰之夜",
     "RahulMishra",
     "SEEU彼此照亮的2025",
