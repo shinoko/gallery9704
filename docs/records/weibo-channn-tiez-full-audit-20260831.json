@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-08-31T22:55:42+08:00",
+  "scope": {
+    "account": "CHANNN_TIEZ丨0113_0905",
+    "uid": "9021175759",
+    "profileTotal": 73,
+    "pageCount": 8,
+    "scannedUnique": 73
+  },
+  "datasets": {
+    "station": {
+      "records": 1369,
+      "imageRefs": 7320,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedPostUrlMarkers": 1369,
+      "generatedMissing": 0
+    },
+    "official": {
+      "records": 565,
+      "imageRefs": 2569,
+      "missingCount": 0,
+      "zeroByteCount": 0,
+      "duplicatePostUrl": [],
+      "duplicateNoteId": [],
+      "generatedPostUrlMarkers": 565,
+      "generatedMissing": 0
+    }
+  },
+  "collection": {
+    "candidateRecords": 65,
+    "candidateImages": 508,
+    "imageLengthMismatches": 0,
+    "retryCount": 0,
+    "editReviewCount": 0,
+    "skippedCount": 8,
+    "excludedReasons": {
+      "no_weibo_image": 3,
+      "video": 5
+    },
+    "downloadTotal": 508,
+    "downloadOk": 508,
+    "downloadFailed": 0,
+    "newMissing": 0,
+    "newZeroByte": 0,
+    "newOver100000": 0,
+    "newMaxBytes": 52653,
+    "accountAssetFiles": 508,
+    "accountAssetOrphans": []
+  },
+  "manualDeleted": {
+    "records": 29,
+    "containsImageFiles": false,
+    "reintroduced": []
+  }
+}
