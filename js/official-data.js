@@ -3,6 +3,408 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/5080250314/RgR0RAuxU",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/5080250314/RgR0RAuxU",
+    "webUrl": "",
+    "author": "展轩",
+    "authorUrl": "https://weibo.com/u/5080250314",
+    "postDate": "2026-09-06",
+    "postTimeText": "2026-09-06 15:21",
+    "shootDate": "",
+    "theme": "",
+    "text": "碎碎日常展轩",
+    "tags": [],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-06_展轩_RgR0RAuxU_01.jpg",
+      "official-images/2026-09-06_展轩_RgR0RAuxU_02.jpg",
+      "official-images/2026-09-06_展轩_RgR0RAuxU_03.jpg",
+      "official-images/2026-09-06_展轩_RgR0RAuxU_04.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "5080250314",
+      "accountName": "展轩",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5340170338697230",
+      "mid": "5340170338697230",
+      "bid": "RgR0RAuxU",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://www.xiaohongshu.com/explore/6a9d15630000000025035d45",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6a9d15630000000025035d45",
+    "webUrl": "",
+    "author": "展轩",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/55ec26c7c2bdeb5b93ede5b2",
+    "postDate": "2026-09-06",
+    "postTimeText": "7小时前 北京",
+    "shootDate": "",
+    "theme": "",
+    "text": "周日下午好\n#明星不止AB面#",
+    "tags": [
+      "明星不止AB面"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/xhs/zhanxuan/6a9d15630000000025035d45/01.webp",
+      "official-images/xhs/zhanxuan/6a9d15630000000025035d45/02.webp",
+      "official-images/xhs/zhanxuan/6a9d15630000000025035d45/03.webp"
+    ],
+    "source": {
+      "type": "xhs-person",
+      "accountUid": "",
+      "accountName": "展轩",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6a9d15630000000025035d45"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://www.xiaohongshu.com/explore/6a9c1c910000000012027a4f",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6a9c1c910000000012027a4f",
+    "webUrl": "",
+    "author": "刘轩丞",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c",
+    "postDate": "2026-09-05",
+    "postTimeText": "昨天 21:43 北京",
+    "shootDate": "",
+    "theme": "",
+    "text": "22～\n#生日#",
+    "tags": [
+      "生日"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/xhs/liu-xuancheng/6a9c1c910000000012027a4f/01.jpg",
+      "official-images/xhs/liu-xuancheng/6a9c1c910000000012027a4f/02.jpg",
+      "official-images/xhs/liu-xuancheng/6a9c1c910000000012027a4f/03.jpg",
+      "official-images/xhs/liu-xuancheng/6a9c1c910000000012027a4f/04.jpg"
+    ],
+    "source": {
+      "type": "xhs-person",
+      "accountUid": "",
+      "accountName": "刘轩丞",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6a9c1c910000000012027a4f"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/7904163238/RgK4LvcAo",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/RgK4LvcAo",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-09-05",
+    "postTimeText": "2026-09-05 21:41",
+    "shootDate": "",
+    "theme": "",
+    "text": "开心的一天演员刘轩丞",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-05_刘轩丞-_RgK4LvcAo_01.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgK4LvcAo_02.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgK4LvcAo_03.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgK4LvcAo_04.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5339903677436552",
+      "mid": "5339903677436552",
+      "bid": "RgK4LvcAo",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/7904163238/RgByBEPLo",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/RgByBEPLo",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-09-05",
+    "postTimeText": "2026-09-05 00:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "22✌️✌️🎂🎂！！ 演员刘轩丞",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_01.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_02.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_03.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_04.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_05.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_06.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_07.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_08.jpg",
+      "official-images/2026-09-05_刘轩丞-_RgByBEPLo_09.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5339576219732102",
+      "mid": "5339576219732102",
+      "bid": "RgByBEPLo",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/4098005675/RgByElDUT",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/RgByElDUT",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-09-05",
+    "postTimeText": "2026-09-05 00:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "演员刘轩丞\nHi！二十二岁的轩丞，生日快乐✨\n\n这已经是小室陪你走过的第二个生日。\n\n回望这一年，我们见证了你太多崭新的第一次：第一次奔赴陌生的城市，第一次解锁全新的舞台，第一次交出属于自己的音乐作品。时光慢慢磨去青涩，沉淀出从容内敛，从国内到更远的国际舞台，你的每一步“丞”长 ...全文",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-05_刘轩丞工作室_RgByElDUT_01.jpg",
+      "official-images/2026-09-05_刘轩丞工作室_RgByElDUT_02.jpg",
+      "official-images/2026-09-05_刘轩丞工作室_RgByElDUT_03.jpg",
+      "official-images/2026-09-05_刘轩丞工作室_RgByElDUT_04.jpg",
+      "official-images/2026-09-05_刘轩丞工作室_RgByElDUT_05.jpg",
+      "official-images/2026-09-05_刘轩丞工作室_RgByElDUT_06.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5339576245158331",
+      "mid": "5339576245158331",
+      "bid": "RgByElDUT",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/5080250314/Rgyqwq0OV",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/5080250314/Rgyqwq0OV",
+    "webUrl": "",
+    "author": "展轩",
+    "authorUrl": "https://weibo.com/u/5080250314",
+    "postDate": "2026-09-04",
+    "postTimeText": "2026-09-04 16:02",
+    "shootDate": "",
+    "theme": "",
+    "text": "有些事\n试了\n才知道自己行不行\n#青春就是这young##青春华章#",
+    "tags": [
+      "青春就是这young",
+      "青春华章"
+    ],
+    "targetPeople": [],
+    "imageFiles": [
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_01.jpg",
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_02.jpg",
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_03.jpg",
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_04.jpg",
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_05.jpg",
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_06.jpg",
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_07.jpg",
+      "official-images/2026-09-04_展轩_Rgyqwq0OV_08.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "5080250314",
+      "accountName": "展轩",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5339455886199685",
+      "mid": "5339455886199685",
+      "bid": "Rgyqwq0OV",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/7904163238/RgeM2gjLY",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/RgeM2gjLY",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-09-02",
+    "postTimeText": "2026-09-02 14:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "很期待这次可以和大家线上相聚，共度我的✌🏻✌🏻岁 屏幕两端  一起聊一下我的新一岁吧！\n#明星生日汇#演员刘轩丞",
+    "tags": [
+      "明星生日汇"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-02_刘轩丞-_RgeM2gjLY_01.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5338700423889258",
+      "mid": "5338700423889258",
+      "bid": "RgeM2gjLY",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/8019492674/RgdTbut5b",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/8019492674/RgdTbut5b",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://weibo.com/u/8019492674",
+    "postDate": "2026-09-02",
+    "postTimeText": "2026-09-02 11:45",
+    "shootDate": "",
+    "theme": "",
+    "text": "展轩  ·  #展轩新歌VIBE#  \n \n于光影缝隙，接住流动的《VIBE》。一组 MV 现场剧照分享，回溯拍摄时刻，音乐与画面一经相遇，即刻释放专属节奏。 @展轩 新歌《VIBE》MV 已正式上线，一起沉浸式感受完整的视听世界吧",
+    "tags": [
+      "展轩新歌VIBE"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_01.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_02.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_03.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_04.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_05.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_06.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_07.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_08.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_09.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_10.jpg",
+      "official-images/2026-09-02_展轩工作室_RgdTbut5b_11.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "8019492674",
+      "accountName": "展轩工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5338666417261637",
+      "mid": "5338666417261637",
+      "bid": "RgdTbut5b",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/7904163238/Rg3M1Fkrv",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/Rg3M1Fkrv",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-09-01",
+    "postTimeText": "2026-09-01 10:00",
+    "shootDate": "",
+    "theme": "",
+    "text": "有些想念，总要线下见面才算圆满\n很期待9月13日能在澳门和大家见面，把线上的惦念，变成台下真切的相遇吧。\n\n#刘轩丞澳门生日会#演员刘轩丞",
+    "tags": [
+      "刘轩丞澳门生日会"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-01_刘轩丞-_Rg3M1Fkrv_01.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260906",
+      "mblogId": "5338277579850033",
+      "mid": "5338277579850033",
+      "bid": "Rg3M1Fkrv",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://www.xiaohongshu.com/explore/6a9554d200000000080129ae",
     "platform": "xiaohongshu",
     "postUrl": "https://www.xiaohongshu.com/explore/6a9554d200000000080129ae",
@@ -22441,6 +22843,7 @@ const officialGalleryFacets = {
     "另起一行",
     "刘轩丞",
     "刘轩丞0905生日快乐",
+    "刘轩丞澳门生日会",
     "刘轩丞巴黎高定封面",
     "刘轩丞巴黎高定周封面",
     "刘轩丞巴黎时装周",
@@ -22489,6 +22892,7 @@ const officialGalleryFacets = {
     "民族歌剧同心结",
     "民族英雄黄继光",
     "明星不止AB面",
+    "明星生日汇",
     "男大学生",
     "你好春天",
     "逆爱",
@@ -22499,6 +22903,8 @@ const officialGalleryFacets = {
     "七夕节",
     "奇遇正发生",
     "青春",
+    "青春华章",
+    "青春就是这young",
     "青春气息扑面而来",
     "轻轻地碎了",
     "秋冬配饰不重样",
@@ -22508,6 +22914,7 @@ const officialGalleryFacets = {
     "少年感",
     "摄影",
     "生活就像是一场蓝调的梦",
+    "生日",
     "生日快乐",
     "十分短剧",
     "十一去兜风",

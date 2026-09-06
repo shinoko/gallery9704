@@ -1,0 +1,183 @@
+{
+  "capturedAt": "2026-09-06T14:45:40.011Z",
+  "source": "xiaohongshu web logged-in browser session",
+  "scope": "three accounts, latest-to-first-existing incremental scan; video notes skipped; all images per image note; thumbnails <=100000 bytes",
+  "accounts": [
+    {
+      "account": {
+        "key": "zhanxuan",
+        "name": "展轩",
+        "profileId": "55ec26c7c2bdeb5b93ede5b2",
+        "profileUrl": "https://www.xiaohongshu.com/user/profile/55ec26c7c2bdeb5b93ede5b2"
+      },
+      "scannedCards": 4,
+      "notes": [
+        {
+          "accountKey": "zhanxuan",
+          "accountName": "展轩",
+          "noteIndex": 1,
+          "noteId": "6a9d15630000000025035d45",
+          "title": "周日下午好",
+          "cardText": "周日下午好",
+          "noteUrl": "https://www.xiaohongshu.com/explore/6a9d15630000000025035d45",
+          "webUrl": "https://www.xiaohongshu.com/explore/6a9d15630000000025035d45",
+          "publishTextRaw": "7小时前 北京",
+          "publishTimeText": "7小时前",
+          "publishDateNormalized": "2026-09-06",
+          "publishDatePrecision": "relative_approx",
+          "ipLocation": "北京",
+          "publishTimeReference": "capturedAt=2026-09-06 Asia/Shanghai",
+          "text": "周日下午好\n#明星不止AB面#",
+          "tags": [
+            "明星不止AB面"
+          ],
+          "imageCount": 3,
+          "expectedImageCountText": "3",
+          "isVideo": false,
+          "sourceImageUrls": [],
+          "sourceImageMeta": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g3k0324p32r5rnue04157pujcfpdi48gghfg"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g3k0324p32r5rnuf04157pujcfpdi2v74r1g"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g3k0324p32r5rnueg4157pujcfpdihvlaf5o"
+            }
+          ],
+          "images": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g3k0324p32r5rnue04157pujcfpdi48gghfg",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260906-2238/images/zhanxuan/6a9d15630000000025035d45/01.webp",
+              "thumbnailBytes": 51032,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "8382611fbcca42a021cb1d7debe39cc003ee272e4bb510a820a2a21ebbcd1130",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g3k0324p32r5rnuf04157pujcfpdi2v74r1g",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260906-2238/images/zhanxuan/6a9d15630000000025035d45/02.webp",
+              "thumbnailBytes": 82318,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "10cda0e8dd4292238f6e49d17f46903223a613aa622b94a4ba9c92dc7e66d733",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g3k0324p32r5rnueg4157pujcfpdihvlaf5o",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260906-2238/images/zhanxuan/6a9d15630000000025035d45/03.webp",
+              "thumbnailBytes": 53982,
+              "compressed": false,
+              "thumbnailContentType": "image/webp",
+              "thumbnailSha256": "3e21b4dc87786e5569a3516950d2f9be9b60c9ed46c2eba45674332aead2fb4a",
+              "sizeRule": "<=100000 bytes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "account": {
+        "key": "liu-xuancheng",
+        "name": "刘轩丞",
+        "profileId": "5bacf038bd54a600014be87c",
+        "profileUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c"
+      },
+      "scannedCards": 2,
+      "notes": [
+        {
+          "accountKey": "liu-xuancheng",
+          "accountName": "刘轩丞",
+          "noteIndex": 1,
+          "noteId": "6a9c1c910000000012027a4f",
+          "title": "22～",
+          "cardText": "22～",
+          "noteUrl": "https://www.xiaohongshu.com/explore/6a9c1c910000000012027a4f",
+          "webUrl": "https://www.xiaohongshu.com/explore/6a9c1c910000000012027a4f",
+          "publishTextRaw": "昨天 21:43 北京",
+          "publishTimeText": "昨天 21:43",
+          "publishDateNormalized": "2026-09-05",
+          "publishDatePrecision": "relative_approx",
+          "ipLocation": "北京",
+          "publishTimeReference": "capturedAt=2026-09-06 Asia/Shanghai",
+          "text": "22～\n#生日#",
+          "tags": [
+            "生日"
+          ],
+          "imageCount": 4,
+          "expectedImageCountText": "4",
+          "isVideo": false,
+          "sourceImageUrls": [],
+          "sourceImageMeta": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g2sg324o4lq2h72e04b6kh0o3hq3s8gmusf8"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g2sg324o4lq2h72eg4b6kh0o3hq3sk10bdto"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g2sg324o4lq2h72f04b6kh0o3hq3s45go0l8"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g2sg324o4lq2h72fg4b6kh0o3hq3sfpbdhg8"
+            }
+          ],
+          "images": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g2sg324o4lq2h72e04b6kh0o3hq3s8gmusf8",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260906-2238/images/liu-xuancheng/6a9c1c910000000012027a4f/01.jpg",
+              "thumbnailBytes": 54252,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "3fde161370226679c1a10be53ec74a1eeeb11d2b0cf1803669df372298bfebc5",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g2sg324o4lq2h72eg4b6kh0o3hq3sk10bdto",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260906-2238/images/liu-xuancheng/6a9c1c910000000012027a4f/02.jpg",
+              "thumbnailBytes": 73194,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "3d63751543029bf0edd7e7d39ab8b3093d96376a534f7750b833228c2612fe89",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g2sg324o4lq2h72f04b6kh0o3hq3s45go0l8",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260906-2238/images/liu-xuancheng/6a9c1c910000000012027a4f/03.jpg",
+              "thumbnailBytes": 62481,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "616ce3c5caf94909db83c662e6df1e9d544aaf00175f5dd103fa8977f7166d53",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g2sg324o4lq2h72fg4b6kh0o3hq3sfpbdhg8",
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260906-2238/images/liu-xuancheng/6a9c1c910000000012027a4f/04.jpg",
+              "thumbnailBytes": 48408,
+              "compressed": true,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "86d2c1e33b21b9f233295dc1eb59ce282dd5736af2ba4bff063542a668348b63",
+              "sizeRule": "<=100000 bytes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
