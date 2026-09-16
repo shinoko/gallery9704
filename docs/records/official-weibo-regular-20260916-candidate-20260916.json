@@ -1,0 +1,466 @@
+{
+  "collectedAt": "2026-09-16T14:52:42.369Z",
+  "executionDate": "2026-09-16",
+  "sinceDate": "2026-09-06",
+  "endDate": "2026-09-16",
+  "regularIncremental": true,
+  "dataType": "official",
+  "collectionSource": "m-weibo-container-api-incremental-20260916",
+  "summary": {
+    "accounts": [
+      {
+        "name": "展轩",
+        "uid": "5080250314",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 305,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 1,
+        "oldCount": 18,
+        "excludedReasons": {
+          "no_weibo_image": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 1,
+            "old": 8,
+            "minDate": "2026-08-09",
+            "maxDate": "2026-09-13"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-06-30",
+            "maxDate": "2026-08-02"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 191,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 2,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 17,
+        "excludedReasons": {
+          "video": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 3,
+            "kept": 2,
+            "skipped": 1,
+            "existing": 0,
+            "old": 7,
+            "minDate": "2026-09-02",
+            "maxDate": "2026-09-16"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-08-06",
+            "maxDate": "2026-09-02"
+          }
+        ],
+        "imageCount": 18
+      },
+      {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 284,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 1,
+        "skippedNew": 3,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 16,
+        "excludedReasons": {
+          "video": 3
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 4,
+            "kept": 1,
+            "skipped": 3,
+            "existing": 0,
+            "old": 6,
+            "minDate": "2026-08-31",
+            "maxDate": "2026-09-13"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-08-14",
+            "maxDate": "2026-08-31"
+          }
+        ],
+        "imageCount": 1
+      },
+      {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 262,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 3,
+        "skippedNew": 4,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 13,
+        "excludedReasons": {
+          "repost": 3,
+          "video": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 7,
+            "kept": 3,
+            "skipped": 4,
+            "existing": 0,
+            "old": 4,
+            "minDate": "2026-09-05",
+            "maxDate": "2026-09-16"
+          },
+          {
+            "page": 2,
+            "mblogs": 9,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 9,
+            "minDate": "2026-08-29",
+            "maxDate": "2026-09-05"
+          }
+        ],
+        "imageCount": 11
+      }
+    ],
+    "totalRecords": 6,
+    "totalImages": 30,
+    "retryCount": 0,
+    "skippedCount": 9,
+    "editReviewCount": 0,
+    "editReviewResolved": 0,
+    "repostOriginalReviewCount": 0,
+    "repostOriginalNeedsUpdate": 0
+  },
+  "records": [
+    {
+      "author": "刘轩丞-",
+      "authorUrl": "https://weibo.com/u/7904163238",
+      "postUrl": "https://weibo.com/7904163238/Rin4YCHX4",
+      "postDate": "2026-09-16",
+      "postTimeText": "2026-09-16 14:49",
+      "text": "回忆🧩演员刘轩丞",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/008CV3VQly1ih5id2qtj2j30zk1hcqna.jpg",
+        "https://wx2.sinaimg.cn/orj360/008CV3VQly1ih5id4xazij30zk1hc1aq.jpg",
+        "https://wx1.sinaimg.cn/orj360/008CV3VQly1ih5id4hm4ej31hc0zkka5.jpg",
+        "https://wx4.sinaimg.cn/orj360/008CV3VQly1ih5id3kyu0j31hc0zktra.jpg",
+        "https://wx3.sinaimg.cn/orj360/008CV3VQly1ih5id1zgasj35eo3lsx6u.jpg",
+        "https://wx1.sinaimg.cn/orj360/008CV3VQly1ih5id41j3uj30zk1hc1fo.jpg",
+        "https://wx2.sinaimg.cn/orj360/008CV3VQly1ih5id5j6mbj321732k4qq.jpg",
+        "https://wx4.sinaimg.cn/orj360/008CV3VQly1ih5id34s6sj31hc0zkqmq.jpg",
+        "https://wx1.sinaimg.cn/orj360/008CV3VQly1ih5id6vengj35eo3lsnph.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_01.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_02.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_03.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_04.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_05.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_06.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_07.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_08.jpg",
+        "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_09.jpg"
+      ],
+      "sourceType": "official-person",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "collectionAccountUid": "7904163238",
+      "collectionAccountName": "刘轩丞-",
+      "mblogId": "5343786249225418",
+      "mid": "5343786249225418",
+      "bid": "Rin4YCHX4",
+      "rawPicNum": 9
+    },
+    {
+      "author": "刘轩丞-",
+      "authorUrl": "https://weibo.com/u/7904163238",
+      "postUrl": "https://weibo.com/7904163238/Ri32O6KTG",
+      "postDate": "2026-09-14",
+      "postTimeText": "2026-09-14 11:49",
+      "text": "换衣服前五分钟出图！（想象自己有腔调）演员刘轩丞",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/008CV3VQgy1ih31zi54kzj31hc0zkahf.jpg",
+        "https://wx2.sinaimg.cn/orj360/008CV3VQgy1ih31zitt9zj30zk1hcqk5.jpg",
+        "https://wx2.sinaimg.cn/orj360/008CV3VQgy1ih31zhp7d2j30zk1hcwtc.jpg",
+        "https://wx3.sinaimg.cn/orj360/008CV3VQgy1ih31zkf88ej31hc0zknho.jpg",
+        "https://wx2.sinaimg.cn/orj360/008CV3VQgy1ih31zjjai5j30zk1hch48.jpg",
+        "https://wx4.sinaimg.cn/orj360/008CV3VQgy1ih31zluissj30zk1hckbg.jpg",
+        "https://wx2.sinaimg.cn/orj360/008CV3VQgy1ih31zmltx9j31hc0zk7kh.jpg",
+        "https://wx3.sinaimg.cn/orj360/008CV3VQgy1ih31zl4mjnj30zk1hcwxg.jpg",
+        "https://wx4.sinaimg.cn/orj360/008CV3VQgy1ih31znb5trj30zk1hc4fe.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_01.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_02.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_03.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_04.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_05.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_06.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_07.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_08.jpg",
+        "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_09.jpg"
+      ],
+      "sourceType": "official-person",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "collectionAccountUid": "7904163238",
+      "collectionAccountName": "刘轩丞-",
+      "mblogId": "5343016101610244",
+      "mid": "5343016101610244",
+      "bid": "Ri32O6KTG",
+      "rawPicNum": 9
+    },
+    {
+      "author": "展轩工作室",
+      "authorUrl": "https://weibo.com/u/8019492674",
+      "postUrl": "https://weibo.com/8019492674/Rh1tQvhwW",
+      "postDate": "2026-09-07",
+      "postTimeText": "2026-09-07 18:00",
+      "text": "关于展轩先生名誉权维权案件进展的说明\n\n我司委派律师，对针对展轩先生实施名誉权侵权行为的部分网络用户提起了维权诉讼，现就诉讼进展说明如下：\n \n截至目前，已审结案件1起【案号：（2026）冀1024民初2622号】，被告的行为被法院认定为侵权。\n\n法院经审理后认定：被告贾*作为完全民事行为能力人，在 ...全文",
+      "imageUrls": [
+        "https://wx4.sinaimg.cn/orj360/008KIYo2ly1igv9cjqqauj31wx7wuqv7.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-09-07_展轩工作室_Rh1tQvhwW_01.jpg"
+      ],
+      "sourceType": "official-studio",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "collectionAccountUid": "8019492674",
+      "collectionAccountName": "展轩工作室",
+      "mblogId": "5340572707455558",
+      "mid": "5340572707455558",
+      "bid": "Rh1tQvhwW",
+      "rawPicNum": 1
+    },
+    {
+      "author": "刘轩丞工作室",
+      "authorUrl": "https://weibo.com/u/4098005675",
+      "postUrl": "https://weibo.com/4098005675/Ridg0owzk",
+      "postDate": "2026-09-15",
+      "postTimeText": "2026-09-15 13:49",
+      "text": "演员刘轩丞 @刘轩丞- ｜见面，是一封回信。\n\n一袭@GIVENCHY紀梵希 缀珠白西装，静读一纸心意。\n跨越山海奔赴的这场澳门生辰之约，所有藏在字里行间的惦念，终与大家相见。#刘轩丞心想事丞#",
+      "imageUrls": [
+        "https://wx4.sinaimg.cn/orj360/f4429aably1ih4b1qpjz0j23ls5eo1l6.jpg",
+        "https://wx3.sinaimg.cn/orj360/f4429aably1ih4b1mn1ifj20zk1hch5f.jpg",
+        "https://wx1.sinaimg.cn/orj360/f4429aably1ih4b1x7rq3j23ls5eou17.jpg",
+        "https://wx4.sinaimg.cn/orj360/f4429aably1ih4b21v3i1j25eo3ls4qy.jpg",
+        "https://wx2.sinaimg.cn/orj360/f4429aably1ih4b1lq7wpj23c54vjx6u.jpg",
+        "https://wx4.sinaimg.cn/orj360/f4429aably1ih4b26u1ixj25eo3lsb2k.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_01.jpg",
+        "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_02.jpg",
+        "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_03.jpg",
+        "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_04.jpg",
+        "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_05.jpg",
+        "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_06.jpg"
+      ],
+      "sourceType": "official-studio",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "collectionAccountUid": "4098005675",
+      "collectionAccountName": "刘轩丞工作室",
+      "mblogId": "5343408685845070",
+      "mid": "5343408685845070",
+      "bid": "Ridg0owzk",
+      "rawPicNum": 6
+    },
+    {
+      "author": "刘轩丞工作室",
+      "authorUrl": "https://weibo.com/u/4098005675",
+      "postUrl": "https://weibo.com/4098005675/Ri38V4SZj",
+      "postDate": "2026-09-14",
+      "postTimeText": "2026-09-14 12:04",
+      "text": "演员刘轩丞 还有……",
+      "imageUrls": [
+        "https://wx2.sinaimg.cn/orj360/f4429aabgy1ih32gk5yduj20zk1hcarc.jpg",
+        "https://wx4.sinaimg.cn/orj360/f4429aabgy1ih32gl44pgj20zk1hctru.jpg",
+        "https://wx4.sinaimg.cn/orj360/f4429aabgy1ih32glxo39j20zk1hc1dv.jpg",
+        "https://wx3.sinaimg.cn/orj360/f4429aabgy1ih32gn1tfuj21hc0zkh2y.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_01.jpg",
+        "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_02.jpg",
+        "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_03.jpg",
+        "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_04.jpg"
+      ],
+      "sourceType": "official-studio",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "collectionAccountUid": "4098005675",
+      "collectionAccountName": "刘轩丞工作室",
+      "mblogId": "5343019891164689",
+      "mid": "5343019891164689",
+      "bid": "Ri38V4SZj",
+      "rawPicNum": 4
+    },
+    {
+      "author": "刘轩丞工作室",
+      "authorUrl": "https://weibo.com/u/4098005675",
+      "postUrl": "https://weibo.com/4098005675/RhqWSwNmQ",
+      "postDate": "2026-09-10",
+      "postTimeText": "2026-09-10 10:50",
+      "text": "演员刘轩丞 @刘轩丞- 手搓M中……",
+      "imageUrls": [
+        "https://wx1.sinaimg.cn/orj360/f4429aably1igydrjjd5aj22gn1uhqv5.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-09-10_刘轩丞工作室_RhqWSwNmQ_01.jpg"
+      ],
+      "sourceType": "official-studio",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "collectionAccountUid": "4098005675",
+      "collectionAccountName": "刘轩丞工作室",
+      "mblogId": "5341551707816268",
+      "mid": "5341551707816268",
+      "bid": "RhqWSwNmQ",
+      "rawPicNum": 1
+    }
+  ],
+  "retry": [],
+  "editReview": [],
+  "repostOriginalReview": [],
+  "replacementRecords": [],
+  "skipped": [
+    {
+      "account": "展轩",
+      "uid": "5080250314",
+      "postUrl": "https://weibo.com/5080250314/RhUS3mYzq",
+      "postDate": "2026-09-13",
+      "reason": "no_weibo_image",
+      "text": "展轩  小翻一波"
+    },
+    {
+      "account": "刘轩丞-",
+      "uid": "7904163238",
+      "postUrl": "https://weibo.com/7904163238/RhWiEyIYg",
+      "postDate": "2026-09-13",
+      "reason": "video",
+      "text": "一次生日，一次成长。\n这次，以#丞长日记# 的方式开启这场见面会。\n\n距离挡不住心意，舞台的星光，同样留给屏幕前的你，我会全力以赴，把这份故事好好呈现。演员刘轩丞 刘轩丞-的微博视频"
+    },
+    {
+      "account": "展轩工作室",
+      "uid": "8019492674",
+      "postUrl": "https://weibo.com/8019492674/RhUREh7mc",
+      "postDate": "2026-09-13",
+      "reason": "video",
+      "text": "展轩   每一首新歌的诞生，幕后都是旋律与想法不断碰撞的过程。唱腔表达、情绪处理，在一次次沟通与尝试中寻找属于《VIBE》独有的音乐质感。 一起来看#展轩新歌VIBE# 的诞生现场吧 @展轩 展轩工作室的微博视频"
+    },
+    {
+      "account": "展轩工作室",
+      "uid": "8019492674",
+      "postUrl": "https://weibo.com/8019492674/RgZ7BCxGw",
+      "postDate": "2026-09-07",
+      "reason": "video",
+      "text": "展轩 · #展轩新歌VIBE# \n\n我们将《VIBE》MV片场的拍摄实况用心打捞，有面对镜头沉浸表达的时刻，也有拍摄间隙自然松弛的片段。无论是哪一种状态，留存下来的，都是属于展轩首支MV 最难忘的现场印记。\n\n透过这些纪录画面，再次走近 @展轩 的拍摄幕后，回望《VIBE》诞生的现场。也再一次，向所有 ...全文"
+    },
+    {
+      "account": "展轩工作室",
+      "uid": "8019492674",
+      "postUrl": "https://weibo.com/8019492674/RgQSx6Cg1",
+      "postDate": "2026-09-06",
+      "reason": "video",
+      "text": "展轩 · #展轩新歌VIBE# \n\n掉落@展轩   《VIBE》 MV片场setlog一条📸 展轩工作室的微博视频"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/Rin5vzA6H",
+      "postDate": "2026-09-16",
+      "reason": "repost",
+      "text": "演员刘轩丞 鎏金缀衣，少年立于舞台中央接住所有奔赴而来的目光，感谢此次相遇，@刘轩丞- 新岁继续向前。#刘轩丞心想事丞#"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/Ri33f5H8u",
+      "postDate": "2026-09-14",
+      "reason": "repost",
+      "text": "演员刘轩丞 光影定稿，镜头里@刘轩丞- 的故事已经慢慢成型🔛确实有腔调 #刘轩丞心想事丞#"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/RhWiOncvE",
+      "postDate": "2026-09-13",
+      "reason": "repost",
+      "text": "演员刘轩丞 山海有距离，但热爱没有，这次的#丞长日记# 也要送给没能来到现场的每一个你。"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/RgXYFFaiZ",
+      "postDate": "2026-09-07",
+      "reason": "video",
+      "text": "演员刘轩丞 新鲜出炉 @刘轩丞- 手搓焦作花馍馍🍥\n\n#CHIC刘轩丞生日刊封面##刘轩丞0905生日快乐# 刘轩丞工作室的微博视频"
+    }
+  ]
+}

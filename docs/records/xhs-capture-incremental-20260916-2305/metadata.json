@@ -1,0 +1,430 @@
+{
+  "capturedAt": "2026-09-16T15:16:08.781Z",
+  "source": "xiaohongshu web logged-in browser session",
+  "scope": "three accounts, latest-to-first-existing incremental scan; video notes skipped; all images per image note; thumbnails <=100000 bytes; no signed URLs retained",
+  "accounts": [
+    {
+      "account": {
+        "key": "zhanxuan",
+        "name": "展轩",
+        "profileId": "55ec26c7c2bdeb5b93ede5b2",
+        "profileUrl": "https://www.xiaohongshu.com/user/profile/55ec26c7c2bdeb5b93ede5b2"
+      },
+      "scannedCards": 2,
+      "notes": []
+    },
+    {
+      "account": {
+        "key": "liu-xuancheng",
+        "name": "刘轩丞",
+        "profileId": "5bacf038bd54a600014be87c",
+        "profileUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c"
+      },
+      "scannedCards": 3,
+      "notes": [
+        {
+          "accountKey": "liu-xuancheng",
+          "accountName": "刘轩丞",
+          "noteIndex": 1,
+          "noteId": "6aa8d63e0000000028034c1e",
+          "title": "午休时间到",
+          "cardText": "午休时间到",
+          "noteUrl": "https://www.xiaohongshu.com/explore/6aa8d63e0000000028034c1e",
+          "webUrl": "https://www.xiaohongshu.com/explore/6aa8d63e0000000028034c1e",
+          "publishTextRaw": "2026-09-15 13:23 北京",
+          "publishTimeText": "2026-09-15 13:23",
+          "publishDateNormalized": "2026-09-15",
+          "publishDatePrecision": "exact_timestamp",
+          "ipLocation": "北京",
+          "publishTimeReference": "structured note timestamp; Asia/Shanghai",
+          "text": "午休时间到\n#GIVENCHY#",
+          "tags": [
+            "GIVENCHY"
+          ],
+          "imageCount": 6,
+          "expectedImageCountText": "6",
+          "isVideo": false,
+          "sourceImageUrls": [],
+          "sourceImageMeta": [
+            {
+              "imageIndex": 1,
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "stableKey": "1040g3k83254i73vu2uc04b6kh0o3hq3st46drag"
+            },
+            {
+              "imageIndex": 2,
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "stableKey": "1040g3k83254i73vu2ucg4b6kh0o3hq3scsricto"
+            },
+            {
+              "imageIndex": 3,
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "stableKey": "1040g3k83254i73vu2ud04b6kh0o3hq3sdj8apkg"
+            },
+            {
+              "imageIndex": 4,
+              "sourceWidth": 3840,
+              "sourceHeight": 2560,
+              "stableKey": "1040g3k83254i73vu2udg4b6kh0o3hq3smvd6h3g"
+            },
+            {
+              "imageIndex": 5,
+              "sourceWidth": 2628,
+              "sourceHeight": 3840,
+              "stableKey": "1040g3k83254ia90tj0704b6kh0o3hq3sgnr4r40"
+            },
+            {
+              "imageIndex": 6,
+              "sourceWidth": 3840,
+              "sourceHeight": 2560,
+              "stableKey": "1040g3k83254ia90tj07g4b6kh0o3hq3sfpbjgcg"
+            }
+          ],
+          "images": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g3k83254i73vu2uc04b6kh0o3hq3st46drag",
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6aa8d63e0000000028034c1e/01.jpg",
+              "thumbnailBytes": 48963,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "60b4a44842bc8ac267b46956df573c3dcb1ada6a1efc86084cc356e66be71c7e",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g3k83254i73vu2ucg4b6kh0o3hq3scsricto",
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6aa8d63e0000000028034c1e/02.jpg",
+              "thumbnailBytes": 56384,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "8db4447fa95924a195a29a408ee1813e28d9feb3ddf2bbeb64f76ed36c4cdac9",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g3k83254i73vu2ud04b6kh0o3hq3sdj8apkg",
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6aa8d63e0000000028034c1e/03.jpg",
+              "thumbnailBytes": 46823,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "fec2f26a6f0bcd2cb9941d19f7bf2ac410cd960b9f3c8940f62104915c8ada6f",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g3k83254i73vu2udg4b6kh0o3hq3smvd6h3g",
+              "sourceWidth": 3840,
+              "sourceHeight": 2560,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6aa8d63e0000000028034c1e/04.jpg",
+              "thumbnailBytes": 90206,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "13313056497a3eb9f02948951a300a494f2f3172b07464e517b5506bf4b1a660",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 5,
+              "stableKey": "1040g3k83254ia90tj0704b6kh0o3hq3sgnr4r40",
+              "sourceWidth": 2628,
+              "sourceHeight": 3840,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6aa8d63e0000000028034c1e/05.jpg",
+              "thumbnailBytes": 49713,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "2943481bc983781d128ea56754a470f754ba5760189cafdf0101201b880da2f9",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 6,
+              "stableKey": "1040g3k83254ia90tj07g4b6kh0o3hq3sfpbjgcg",
+              "sourceWidth": 3840,
+              "sourceHeight": 2560,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6aa8d63e0000000028034c1e/06.jpg",
+              "thumbnailBytes": 99312,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "a6b207490f94687063a06a1ff36d8a274280e4e26e161503d9e2d4881f2b46d3",
+              "sizeRule": "<=100000 bytes"
+            }
+          ],
+          "rawPicNum": 6
+        },
+        {
+          "accountKey": "liu-xuancheng",
+          "accountName": "刘轩丞",
+          "noteIndex": 2,
+          "noteId": "6a9e1fb4000000001203c5a4",
+          "title": "不想早起😴",
+          "cardText": "不想早起😴",
+          "noteUrl": "https://www.xiaohongshu.com/explore/6a9e1fb4000000001203c5a4",
+          "webUrl": "https://www.xiaohongshu.com/explore/6a9e1fb4000000001203c5a4",
+          "publishTextRaw": "2026-09-07 10:21 北京",
+          "publishTimeText": "2026-09-07 10:21",
+          "publishDateNormalized": "2026-09-07",
+          "publishDatePrecision": "exact_timestamp",
+          "ipLocation": "北京",
+          "publishTimeReference": "structured note timestamp; Asia/Shanghai",
+          "text": "不想早起😴\n#明星不止AB面# #请把这里当成我的搜索记录#",
+          "tags": [
+            "明星不止AB面",
+            "请把这里当成我的搜索记录"
+          ],
+          "imageCount": 3,
+          "expectedImageCountText": "3",
+          "isVideo": false,
+          "sourceImageUrls": [],
+          "sourceImageMeta": [
+            {
+              "imageIndex": 1,
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "stableKey": "1040g3k0324q3i4a31g004b6kh0o3hq3shfbba58"
+            },
+            {
+              "imageIndex": 2,
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "stableKey": "1040g3k0324q3i4a31g0g4b6kh0o3hq3s94l8l00"
+            },
+            {
+              "imageIndex": 3,
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "stableKey": "1040g3k0324q3i4a31g104b6kh0o3hq3s5d92218"
+            }
+          ],
+          "images": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g3k0324q3i4a31g004b6kh0o3hq3shfbba58",
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6a9e1fb4000000001203c5a4/01.jpg",
+              "thumbnailBytes": 59405,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "885cd7e9837e3bf70bdcbcb0cec8be7006bcf187aca668745862cfe4967c51bb",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g3k0324q3i4a31g0g4b6kh0o3hq3s94l8l00",
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6a9e1fb4000000001203c5a4/02.jpg",
+              "thumbnailBytes": 51903,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "43389a745c20348091500e6b45c2cb4422d98481f2f80afae1d9a31c95e80081",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g3k0324q3i4a31g104b6kh0o3hq3s5d92218",
+              "sourceWidth": 2560,
+              "sourceHeight": 3840,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/liu-xuancheng/6a9e1fb4000000001203c5a4/03.jpg",
+              "thumbnailBytes": 65589,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "9b1c1967458254c864af3005bf2fcbae80c9917a32fe1ab5d0ad0cdda457314c",
+              "sizeRule": "<=100000 bytes"
+            }
+          ],
+          "rawPicNum": 3
+        }
+      ]
+    },
+    {
+      "account": {
+        "key": "zhanxuan-studio",
+        "name": "展轩工作室",
+        "profileId": "6635cc5c0000000003032d2d",
+        "profileUrl": "https://www.xiaohongshu.com/user/profile/6635cc5c0000000003032d2d"
+      },
+      "scannedCards": 4,
+      "notes": [
+        {
+          "accountKey": "zhanxuan-studio",
+          "accountName": "展轩工作室",
+          "noteIndex": 1,
+          "noteId": "6aa216360000000028038ca2",
+          "title": "早秋限定⏳",
+          "cardText": "早秋限定⏳",
+          "noteUrl": "https://www.xiaohongshu.com/explore/6aa216360000000028038ca2",
+          "webUrl": "https://www.xiaohongshu.com/explore/6aa216360000000028038ca2",
+          "publishTextRaw": "2026-09-10 10:30 北京",
+          "publishTimeText": "2026-09-10 10:30",
+          "publishDateNormalized": "2026-09-10",
+          "publishDatePrecision": "exact_timestamp",
+          "ipLocation": "北京",
+          "publishTimeReference": "structured note timestamp; Asia/Shanghai",
+          "text": "早秋限定⏳\n@展轩 忽然秋天，咔嚓几张#展轩#",
+          "tags": [
+            "展轩"
+          ],
+          "imageCount": 6,
+          "expectedImageCountText": "6",
+          "isVideo": false,
+          "sourceImageUrls": [],
+          "sourceImageMeta": [
+            {
+              "imageIndex": 1,
+              "sourceWidth": 2765,
+              "sourceHeight": 4031,
+              "stableKey": "1040g3k0324tvchahj2005phlphe0ub9d9o2vsf0"
+            },
+            {
+              "imageIndex": 2,
+              "sourceWidth": 1708,
+              "sourceHeight": 1708,
+              "stableKey": "1040g3k0324tvchahj20g5phlphe0ub9dkuakvfg"
+            },
+            {
+              "imageIndex": 3,
+              "sourceWidth": 2350,
+              "sourceHeight": 2350,
+              "stableKey": "1040g3k0324tvchahj2105phlphe0ub9djnmfvmg"
+            },
+            {
+              "imageIndex": 4,
+              "sourceWidth": 3024,
+              "sourceHeight": 4032,
+              "stableKey": "1040g3k0324tvchahj22g5phlphe0ub9ddu5jqd0"
+            },
+            {
+              "imageIndex": 5,
+              "sourceWidth": 2160,
+              "sourceHeight": 2880,
+              "stableKey": "1040g3k0324tvchahj21g5phlphe0ub9dm5c2ok0"
+            },
+            {
+              "imageIndex": 6,
+              "sourceWidth": 2073,
+              "sourceHeight": 3183,
+              "stableKey": "1040g3k0324tvchahj2205phlphe0ub9dtc21vno"
+            }
+          ],
+          "images": [
+            {
+              "imageIndex": 1,
+              "stableKey": "1040g3k0324tvchahj2005phlphe0ub9d9o2vsf0",
+              "sourceWidth": 2765,
+              "sourceHeight": 4031,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/zhanxuan-studio/6aa216360000000028038ca2/01.jpg",
+              "thumbnailBytes": 44355,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "1126115057c5787df0434c50cf2176afdb9075fe12c5d4d9a720398d617e3f14",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 2,
+              "stableKey": "1040g3k0324tvchahj20g5phlphe0ub9dkuakvfg",
+              "sourceWidth": 1708,
+              "sourceHeight": 1708,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/zhanxuan-studio/6aa216360000000028038ca2/02.jpg",
+              "thumbnailBytes": 50533,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "8de8a646b86105651da8987c83458afb25734b821667dfd61d573df1e3ff007c",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 3,
+              "stableKey": "1040g3k0324tvchahj2105phlphe0ub9djnmfvmg",
+              "sourceWidth": 2350,
+              "sourceHeight": 2350,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/zhanxuan-studio/6aa216360000000028038ca2/03.jpg",
+              "thumbnailBytes": 60335,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "b788a44e9e0bbc7f8c97a2d4890b3067c9b57a47210c5ceec227a506ce7e91bc",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 4,
+              "stableKey": "1040g3k0324tvchahj22g5phlphe0ub9ddu5jqd0",
+              "sourceWidth": 3024,
+              "sourceHeight": 4032,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/zhanxuan-studio/6aa216360000000028038ca2/04.jpg",
+              "thumbnailBytes": 41030,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "26e41726f0498302174141c1d17e847277ad6c6b25acd2beb53161f24c627c8e",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 5,
+              "stableKey": "1040g3k0324tvchahj21g5phlphe0ub9dm5c2ok0",
+              "sourceWidth": 2160,
+              "sourceHeight": 2880,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/zhanxuan-studio/6aa216360000000028038ca2/05.jpg",
+              "thumbnailBytes": 41901,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "54ca5844b5902b828f1415f35d5bf76f8e057490481cd3c9d00a29a1bc4d5f18",
+              "sizeRule": "<=100000 bytes"
+            },
+            {
+              "imageIndex": 6,
+              "stableKey": "1040g3k0324tvchahj2205phlphe0ub9dtc21vno",
+              "sourceWidth": 2073,
+              "sourceHeight": 3183,
+              "thumbnailFile": "/Users/orisun/Downloads/gallery9704/docs/records/xhs-capture-incremental-20260916-2305/images/zhanxuan-studio/6aa216360000000028038ca2/06.jpg",
+              "thumbnailBytes": 45947,
+              "compressed": true,
+              "compressionQuality": 90,
+              "thumbnailContentType": "image/jpeg",
+              "thumbnailSha256": "6ff320d3799a6dc6ffa9d8d55e33834366742e773caecba3ae9d9bea438b1cf5",
+              "sizeRule": "<=100000 bytes"
+            }
+          ],
+          "rawPicNum": 6
+        }
+      ]
+    }
+  ],
+  "skippedVideos": [
+    {
+      "accountKey": "zhanxuan-studio",
+      "accountName": "展轩工作室",
+      "noteId": "6a9693ea0000000011038112",
+      "title": "展轩《VIBE》 MV Teaser 02",
+      "type": "video",
+      "time": 1788253163000
+    },
+    {
+      "accountKey": "zhanxuan-studio",
+      "accountName": "展轩工作室",
+      "noteId": "6a95427a000000002903f8fd",
+      "title": "《VIBE》 MV Teaser 01",
+      "type": "video",
+      "time": 1788166778000
+    }
+  ]
+}

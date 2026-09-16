@@ -3,6 +3,331 @@
 
 const officialGalleryData = [
   {
+    "id": "https://weibo.com/7904163238/Rin4YCHX4",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/Rin4YCHX4",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-09-16",
+    "postTimeText": "2026-09-16 14:49",
+    "shootDate": "",
+    "theme": "",
+    "text": "回忆🧩演员刘轩丞",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_01.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_02.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_03.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_04.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_05.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_06.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_07.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_08.jpg",
+      "official-images/2026-09-16_刘轩丞-_Rin4YCHX4_09.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "mblogId": "5343786249225418",
+      "mid": "5343786249225418",
+      "bid": "Rin4YCHX4",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/4098005675/Ridg0owzk",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/Ridg0owzk",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-09-15",
+    "postTimeText": "2026-09-15 13:49",
+    "shootDate": "2026-09-13",
+    "theme": "心想事丞澳门生日会",
+    "text": "演员刘轩丞 @刘轩丞- ｜见面，是一封回信。\n\n一袭@GIVENCHY紀梵希 缀珠白西装，静读一纸心意。\n跨越山海奔赴的这场澳门生辰之约，所有藏在字里行间的惦念，终与大家相见。#刘轩丞心想事丞#",
+    "tags": [
+      "刘轩丞心想事丞"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_01.jpg",
+      "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_02.jpg",
+      "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_03.jpg",
+      "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_04.jpg",
+      "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_05.jpg",
+      "official-images/2026-09-15_刘轩丞工作室_Ridg0owzk_06.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "mblogId": "5343408685845070",
+      "mid": "5343408685845070",
+      "bid": "Ridg0owzk",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://www.xiaohongshu.com/explore/6aa8d63e0000000028034c1e",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6aa8d63e0000000028034c1e",
+    "webUrl": "",
+    "author": "刘轩丞",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c",
+    "postDate": "2026-09-15",
+    "postTimeText": "2026-09-15 13:23 北京",
+    "shootDate": "",
+    "theme": "",
+    "text": "午休时间到\n#GIVENCHY#",
+    "tags": [
+      "GIVENCHY"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/xhs/liu-xuancheng/6aa8d63e0000000028034c1e/01.jpg",
+      "official-images/xhs/liu-xuancheng/6aa8d63e0000000028034c1e/02.jpg",
+      "official-images/xhs/liu-xuancheng/6aa8d63e0000000028034c1e/03.jpg",
+      "official-images/xhs/liu-xuancheng/6aa8d63e0000000028034c1e/04.jpg",
+      "official-images/xhs/liu-xuancheng/6aa8d63e0000000028034c1e/05.jpg",
+      "official-images/xhs/liu-xuancheng/6aa8d63e0000000028034c1e/06.jpg"
+    ],
+    "source": {
+      "type": "xhs-person",
+      "accountUid": "",
+      "accountName": "刘轩丞",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6aa8d63e0000000028034c1e"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/4098005675/Ri38V4SZj",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/Ri38V4SZj",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-09-14",
+    "postTimeText": "2026-09-14 12:04",
+    "shootDate": "",
+    "theme": "",
+    "text": "演员刘轩丞 还有……",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_01.jpg",
+      "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_02.jpg",
+      "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_03.jpg",
+      "official-images/2026-09-14_刘轩丞工作室_Ri38V4SZj_04.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "mblogId": "5343019891164689",
+      "mid": "5343019891164689",
+      "bid": "Ri38V4SZj",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/7904163238/Ri32O6KTG",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/7904163238/Ri32O6KTG",
+    "webUrl": "",
+    "author": "刘轩丞-",
+    "authorUrl": "https://weibo.com/u/7904163238",
+    "postDate": "2026-09-14",
+    "postTimeText": "2026-09-14 11:49",
+    "shootDate": "",
+    "theme": "",
+    "text": "换衣服前五分钟出图！（想象自己有腔调）演员刘轩丞",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_01.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_02.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_03.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_04.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_05.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_06.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_07.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_08.jpg",
+      "official-images/2026-09-14_刘轩丞-_Ri32O6KTG_09.jpg"
+    ],
+    "source": {
+      "type": "official-person",
+      "accountUid": "7904163238",
+      "accountName": "刘轩丞-",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "mblogId": "5343016101610244",
+      "mid": "5343016101610244",
+      "bid": "Ri32O6KTG",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://weibo.com/4098005675/RhqWSwNmQ",
+    "platform": "weibo",
+    "postUrl": "https://weibo.com/4098005675/RhqWSwNmQ",
+    "webUrl": "",
+    "author": "刘轩丞工作室",
+    "authorUrl": "https://weibo.com/u/4098005675",
+    "postDate": "2026-09-10",
+    "postTimeText": "2026-09-10 10:50",
+    "shootDate": "",
+    "theme": "",
+    "text": "演员刘轩丞 @刘轩丞- 手搓M中……",
+    "tags": [],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/2026-09-10_刘轩丞工作室_RhqWSwNmQ_01.jpg"
+    ],
+    "source": {
+      "type": "official-studio",
+      "accountUid": "4098005675",
+      "accountName": "刘轩丞工作室",
+      "collectionSource": "m-weibo-container-api-incremental-20260916",
+      "mblogId": "5341551707816268",
+      "mid": "5341551707816268",
+      "bid": "RhqWSwNmQ",
+      "noteId": ""
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://www.xiaohongshu.com/explore/6aa216360000000028038ca2",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6aa216360000000028038ca2",
+    "webUrl": "",
+    "author": "展轩工作室",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/6635cc5c0000000003032d2d",
+    "postDate": "2026-09-10",
+    "postTimeText": "2026-09-10 10:30 北京",
+    "shootDate": "",
+    "theme": "",
+    "text": "早秋限定⏳\n@展轩 忽然秋天，咔嚓几张#展轩#",
+    "tags": [
+      "展轩"
+    ],
+    "targetPeople": [
+      "展轩"
+    ],
+    "imageFiles": [
+      "official-images/xhs/zhanxuan-studio/6aa216360000000028038ca2/01.jpg",
+      "official-images/xhs/zhanxuan-studio/6aa216360000000028038ca2/02.jpg",
+      "official-images/xhs/zhanxuan-studio/6aa216360000000028038ca2/03.jpg",
+      "official-images/xhs/zhanxuan-studio/6aa216360000000028038ca2/04.jpg",
+      "official-images/xhs/zhanxuan-studio/6aa216360000000028038ca2/05.jpg",
+      "official-images/xhs/zhanxuan-studio/6aa216360000000028038ca2/06.jpg"
+    ],
+    "source": {
+      "type": "xhs-studio",
+      "accountUid": "",
+      "accountName": "展轩工作室",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6aa216360000000028038ca2"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
+    "id": "https://www.xiaohongshu.com/explore/6a9e1fb4000000001203c5a4",
+    "platform": "xiaohongshu",
+    "postUrl": "https://www.xiaohongshu.com/explore/6a9e1fb4000000001203c5a4",
+    "webUrl": "",
+    "author": "刘轩丞",
+    "authorUrl": "https://www.xiaohongshu.com/user/profile/5bacf038bd54a600014be87c",
+    "postDate": "2026-09-07",
+    "postTimeText": "2026-09-07 10:21 北京",
+    "shootDate": "",
+    "theme": "",
+    "text": "不想早起😴\n#明星不止AB面# #请把这里当成我的搜索记录#",
+    "tags": [
+      "明星不止AB面",
+      "请把这里当成我的搜索记录"
+    ],
+    "targetPeople": [
+      "刘轩丞"
+    ],
+    "imageFiles": [
+      "official-images/xhs/liu-xuancheng/6a9e1fb4000000001203c5a4/01.jpg",
+      "official-images/xhs/liu-xuancheng/6a9e1fb4000000001203c5a4/02.jpg",
+      "official-images/xhs/liu-xuancheng/6a9e1fb4000000001203c5a4/03.jpg"
+    ],
+    "source": {
+      "type": "xhs-person",
+      "accountUid": "",
+      "accountName": "刘轩丞",
+      "collectionSource": "xhs-web-image-note-capture",
+      "mblogId": "",
+      "mid": "",
+      "bid": "",
+      "noteId": "6a9e1fb4000000001203c5a4"
+    },
+    "maintenance": {
+      "status": "todo",
+      "note": "",
+      "updatedAt": ""
+    }
+  },
+  {
     "id": "https://weibo.com/5080250314/RgR0RAuxU",
     "platform": "weibo",
     "postUrl": "https://weibo.com/5080250314/RgR0RAuxU",
@@ -376,8 +701,8 @@ const officialGalleryData = [
     "authorUrl": "https://weibo.com/u/7904163238",
     "postDate": "2026-09-01",
     "postTimeText": "2026-09-01 10:00",
-    "shootDate": "",
-    "theme": "",
+    "shootDate": "2026-09-13",
+    "theme": "心想事丞澳门生日会",
     "text": "有些想念，总要线下见面才算圆满\n很期待9月13日能在澳门和大家见面，把线上的惦念，变成台下真切的相遇吧。\n\n#刘轩丞澳门生日会#演员刘轩丞",
     "tags": [
       "刘轩丞澳门生日会"
@@ -22758,6 +23083,7 @@ const officialGalleryFacets = {
     "同心结",
     "微博奇遇记",
     "襄阳国潮音乐节",
+    "心想事丞澳门生日会",
     "新加坡微博文化交流之夜",
     "扬州枣林湾音乐节",
     "周日下午3点见生日音乐会",
@@ -22867,6 +23193,7 @@ const officialGalleryFacets = {
     "刘轩丞首张EP非你不可",
     "刘轩丞顺发开年",
     "刘轩丞想要刘轩丞得到",
+    "刘轩丞心想事丞",
     "刘轩丞新歌非你不可",
     "刘轩丞新歌男朋友720上线",
     "刘轩丞新剧温柔的脸干最狠的事",
@@ -22907,6 +23234,7 @@ const officialGalleryFacets = {
     "青春就是这young",
     "青春气息扑面而来",
     "轻轻地碎了",
+    "请把这里当成我的搜索记录",
     "秋冬配饰不重样",
     "饶雪漫短剧不一样的她首部开机",
     "热烈丞长进行中",
@@ -23041,6 +23369,7 @@ const officialGalleryFacets = {
     "F风尚志刘轩丞巴黎高定周",
     "FanClub",
     "FanFlash",
+    "GIVENCHY",
     "hello时装周",
     "Hello时装周",
     "LongchampSlideInStyle",

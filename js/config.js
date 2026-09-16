@@ -181,6 +181,11 @@ window.GALLERY9704_CONFIG = {
       "name": "丞长没烦恼曼谷见面会",
       "date": "2026-08-29",
       "order": 35
+    },
+    {
+      "name": "心想事丞澳门生日会",
+      "date": "2026-09-13",
+      "order": 36
     }
   ],
   "platforms": [
