@@ -1,0 +1,277 @@
+{
+  "collectedAt": "2026-09-22T11:47:54.003Z",
+  "executionDate": "2026-09-22",
+  "sinceDate": "2026-09-16",
+  "endDate": "2026-09-22",
+  "regularIncremental": true,
+  "dataType": "official",
+  "collectionSource": "m-weibo-container-api-incremental-20260922",
+  "summary": {
+    "accounts": [
+      {
+        "name": "展轩",
+        "uid": "5080250314",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 306,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 1,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 18,
+        "excludedReasons": {
+          "repost": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 2,
+            "kept": 1,
+            "skipped": 1,
+            "existing": 0,
+            "old": 8,
+            "minDate": "2026-08-09",
+            "maxDate": "2026-09-20"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-07-06",
+            "maxDate": "2026-08-09"
+          }
+        ],
+        "imageCount": 2
+      },
+      {
+        "name": "刘轩丞-",
+        "uid": "7904163238",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 192,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 1,
+        "oldCount": 18,
+        "excludedReasons": {
+          "repost": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 1,
+            "old": 8,
+            "minDate": "2026-09-02",
+            "maxDate": "2026-09-18"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-08-07",
+            "maxDate": "2026-09-02"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "展轩工作室",
+        "uid": "8019492674",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 285,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 0,
+        "skippedNew": 1,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 19,
+        "excludedReasons": {
+          "repost": 1
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 10,
+            "recent": 1,
+            "kept": 0,
+            "skipped": 1,
+            "existing": 0,
+            "old": 9,
+            "minDate": "2026-09-01",
+            "maxDate": "2026-09-17"
+          },
+          {
+            "page": 2,
+            "mblogs": 10,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 10,
+            "minDate": "2026-08-16",
+            "maxDate": "2026-08-31"
+          }
+        ],
+        "imageCount": 0
+      },
+      {
+        "name": "刘轩丞工作室",
+        "uid": "4098005675",
+        "mode": "incremental",
+        "dataType": "official",
+        "total": 263,
+        "pageCount": 2,
+        "scannedUnique": 20,
+        "keptNew": 0,
+        "skippedNew": 2,
+        "retryNew": 0,
+        "editReviewCount": 0,
+        "editReviewResolved": 0,
+        "repostOriginalReviewCount": 0,
+        "repostOriginalNeedsUpdate": 0,
+        "existingCount": 0,
+        "oldCount": 18,
+        "excludedReasons": {
+          "repost": 2
+        },
+        "scannedPages": [
+          {
+            "page": 1,
+            "mblogs": 11,
+            "recent": 2,
+            "kept": 0,
+            "skipped": 2,
+            "existing": 0,
+            "old": 9,
+            "minDate": "2026-09-05",
+            "maxDate": "2026-09-18"
+          },
+          {
+            "page": 2,
+            "mblogs": 9,
+            "recent": 0,
+            "kept": 0,
+            "skipped": 0,
+            "existing": 0,
+            "old": 9,
+            "minDate": "2026-08-29",
+            "maxDate": "2026-09-05"
+          }
+        ],
+        "imageCount": 0
+      }
+    ],
+    "totalRecords": 1,
+    "totalImages": 2,
+    "retryCount": 0,
+    "skippedCount": 5,
+    "editReviewCount": 0,
+    "editReviewResolved": 0,
+    "repostOriginalReviewCount": 0,
+    "repostOriginalNeedsUpdate": 0
+  },
+  "records": [
+    {
+      "author": "展轩",
+      "authorUrl": "https://weibo.com/u/5080250314",
+      "postUrl": "https://weibo.com/5080250314/RiYTf3NBW",
+      "postDate": "2026-09-20",
+      "postTimeText": "2026-09-20 15:05",
+      "text": "哎 没走#车干日常#",
+      "imageUrls": [
+        "https://wx2.sinaimg.cn/orj360/005xOdbcly1iha5el056ij32b62b61ky.jpg",
+        "https://wx2.sinaimg.cn/orj360/005xOdbcly1iha5elf9rlj31u01u0qr4.jpg"
+      ],
+      "imageFiles": [
+        "official-images/2026-09-20_展轩_RiYTf3NBW_01.jpg",
+        "official-images/2026-09-20_展轩_RiYTf3NBW_02.jpg"
+      ],
+      "sourceType": "official-person",
+      "collectionSource": "m-weibo-container-api-incremental-20260922",
+      "collectionAccountUid": "5080250314",
+      "collectionAccountName": "展轩",
+      "mblogId": "5345239690905692",
+      "mid": "5345239690905692",
+      "bid": "RiYTf3NBW",
+      "rawPicNum": 2
+    }
+  ],
+  "retry": [],
+  "editReview": [],
+  "repostOriginalReview": [],
+  "replacementRecords": [],
+  "skipped": [
+    {
+      "account": "展轩",
+      "uid": "5080250314",
+      "postUrl": "https://weibo.com/5080250314/Riz50kc9G",
+      "postDate": "2026-09-17",
+      "reason": "repost",
+      "text": "铭记九一八，以史为鉴，砥砺前行！ #勿忘九一八# #不能忘却的9月18日#"
+    },
+    {
+      "account": "刘轩丞-",
+      "uid": "7904163238",
+      "postUrl": "https://weibo.com/7904163238/RiE49hXiz",
+      "postDate": "2026-09-18",
+      "reason": "repost",
+      "text": "铭记九一八，以史为鉴，砥砺前行！#勿忘九一八# #不能忘却的9月18日#"
+    },
+    {
+      "account": "展轩工作室",
+      "uid": "8019492674",
+      "postUrl": "https://weibo.com/8019492674/Riz6WoYEp",
+      "postDate": "2026-09-17",
+      "reason": "repost",
+      "text": "不能忘却的9月18日，铭记历史，珍爱和平。#勿忘九一八# #不能忘却的9月18日#//@展轩:铭记九一八，以史为鉴，砥砺前行！ #勿忘九一八# #不能忘却的9月18日#"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/RiEqkv3nG",
+      "postDate": "2026-09-18",
+      "reason": "repost",
+      "text": "昭昭前事，惕惕后人。铭记历史，吾辈自强！#勿忘九一八# #不能忘却的9月18日# //@刘轩丞-:铭记九一八，以史为鉴，砥砺前行！#勿忘九一八# #不能忘却的9月18日#"
+    },
+    {
+      "account": "刘轩丞工作室",
+      "uid": "4098005675",
+      "postUrl": "https://weibo.com/4098005675/Rin5vzA6H",
+      "postDate": "2026-09-16",
+      "reason": "repost",
+      "text": "演员刘轩丞 鎏金缀衣，少年立于舞台中央接住所有奔赴而来的目光，感谢此次相遇，@刘轩丞- 新岁继续向前。#刘轩丞心想事丞#"
+    }
+  ]
+}

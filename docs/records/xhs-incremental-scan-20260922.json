@@ -1,0 +1,35 @@
+{
+  "collectedAt": "2026-09-22T11:50:05Z",
+  "mode": "incremental",
+  "accounts": [
+    {
+      "author": "展轩",
+      "profileId": "55ec26c7c2bdeb5b93ede5b2",
+      "identityEvidence": "小红书号 zhanxuan0113；演员；本人唯一账号",
+      "newImageNotes": 0,
+      "skippedPinnedNoteIds": [
+        "6898bfe90000000003030620"
+      ],
+      "firstKnownNoteId": "6a9d15630000000025035d45"
+    },
+    {
+      "author": "刘轩丞",
+      "profileId": "5bacf038bd54a600014be87c",
+      "identityEvidence": "小红书号 lxc20040905；演员",
+      "newImageNotes": 0,
+      "firstKnownNoteId": "6aa8d63e0000000028034c1e"
+    },
+    {
+      "author": "展轩工作室",
+      "profileId": "6635cc5c0000000003032d2d",
+      "identityEvidence": "小红书号 42153474272；展轩工作室",
+      "newImageNotes": 0,
+      "firstKnownNoteId": "6aa216360000000028038ca2"
+    }
+  ],
+  "summary": {
+    "newImageNotes": 0,
+    "newImages": 0,
+    "videoNotesSkipped": 0
+  }
+}
